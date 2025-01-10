@@ -1,6 +1,7 @@
 # Nuxt Layer Starter
 
-Create Nuxt extendable layer with this GitHub template.
+Fork from [shadcn-docs-nuxt](https://github.com/shadcn/shadcn-docs-nuxt)
+at commit 9fa7c925a070c5c7eb0b4616d362671da89d65df (v0.8.9)
 
 ## Setup
 
