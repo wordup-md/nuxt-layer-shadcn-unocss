@@ -1,6 +1,5 @@
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import shadcnModule from './shadcn-module'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
@@ -8,15 +7,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
-    // '@nuxtjs/tailwindcss',
+    // '@nuxt/eslint',
     '@unocss/nuxt',
-    shadcnModule,
     '@vueuse/nuxt',
     '@nuxt/content',
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
-    'nuxt-og-image',
+    // 'nuxt-og-image',
   ],
 
   shadcn: {
@@ -40,7 +38,7 @@ export default defineNuxtConfig({
 
   css: [
     '@unocss/reset/tailwind.css',
-    // join(currentDir, './assets/css/themes.css'),
+    join(currentDir, './assets/css/a11y.css'),
   ],
 
   content: {
@@ -72,4 +70,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: '2025-01-10',
 })

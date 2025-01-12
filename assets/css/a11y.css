@@ -1,0 +1,44 @@
+body.is-a11y {
+  --foreground: 0 0% 0% !important;
+  --muted-foreground: 240 3.8% 16.1% !important;
+  /* --background: 0 0% 100% !important;
+  --card: 0 0% 100% !important;
+  --card-foreground: 240 10% 3.9% !important;
+  --popover: 0 0% 100% !important;
+  --popover-foreground: 240 10% 3.9% !important;
+  --primary: 240 5.9% 10% !important;
+  --primary-foreground: 0 0% 98% !important;
+  --secondary: 240 4.8% 95.9% !important;
+  --secondary-foreground: 240 5.9% 10% !important;
+  --muted: 240 4.8% 95.9% !important;
+  --accent: 240 4.8% 95.9% !important;
+  --accent-foreground: 240 5.9% 10% !important;
+  --destructive: 0 84.2% 60.2% !important;
+  --destructive-foreground: 0 0% 98% !important; */
+  --border: 240 5.9% 70% !important;
+  --input: 240 5.9% 30% !important;
+  /* --ring: 240 5.9% 10% !important;
+  --radius: 0.5rem !important; */
+}
+
+.dark body.is-a11y {
+  --background: 240 10% 3.9% !important;
+  --foreground: 0 0% 100% !important;
+  --muted-foreground: 240 5% 84.9% !important;
+  /*--card: 240 10% 3.9% !important;
+  --card-foreground: 0 0% 98% !important;
+  --popover: 240 10% 3.9% !important;
+  --popover-foreground: 0 0% 98% !important;
+  --primary: 0 0% 98% !important;
+  --primary-foreground: 240 5.9% 10% !important;
+  --secondary: 240 3.7% 15.9% !important;
+  --secondary-foreground: 0 0% 98% !important;
+  --muted: 240 3.7% 15.9% !important;
+  --accent: 240 3.7% 15.9% !important;
+  --accent-foreground: 0 0% 98% !important;
+  --destructive: 0 62.8% 30.6% !important;
+  --destructive-foreground: 0 0% 98% !important; */
+  --border: 240 3.7% 30.9% !important;
+  --input: 240 3.7% 60.9% !important;
+  /* --ring: 240 4.9% 83.9% !important; */
+}

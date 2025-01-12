@@ -14,7 +14,7 @@ export default defineConfig({
     container: {
       center: true,
       padding: '2rem',
-      screens: {
+      maxWidth: {
         '2xl': '1400px',
       },
     },
