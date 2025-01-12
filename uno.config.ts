@@ -1,3 +1,6 @@
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
 import extractorMdc from '@unocss/extractor-mdc'
 import {
   defineConfig,
@@ -8,6 +11,8 @@ import {
 } from 'unocss'
 import presetAnimations from 'unocss-preset-animations'
 import { builtinColors, presetShadcn } from 'unocss-preset-shadcn'
+
+const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   theme: {
@@ -50,7 +55,31 @@ export default defineConfig({
         /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
         // include js/ts files
         'components/ui/**/*.{js,ts}',
+        // Need this for layer
+        `${join(currentDir, 'components/ui')}/**/*.{js,ts}`,
       ],
     },
   },
+  preflights: [
+    {
+      getCSS: ({ theme }) => {
+        const breakpoints = generateBreakpointsCSSVars(theme.breakpoints)
+
+        return `
+        :root {
+          ${breakpoints}
+        }
+      `},
+    },
+  ],
 })
+
+type Breakpoints = Record<string, string>
+function generateBreakpointsCSSVars(breakpoints: Breakpoints) {
+  return Object.entries(breakpoints)
+    .map(([key, value]) => {
+      return `  --breakpoint-${key}: ${value};`
+    })
+    .filter(Boolean)
+    .join('\n')
+}
