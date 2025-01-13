@@ -5,7 +5,9 @@
         <div class="flex w-full gap-1">
           {{ item.title }}
           <Icon
-            :name="isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'"
+            :name="
+              isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'
+            "
             size="12"
             class="ml-auto self-center"
           />
@@ -19,7 +21,12 @@
               :target="link.to"
               class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
             >
-              <SmartIcon v-if="link.icon" :name="link.icon" :size="16" class="mt-1 min-w-5" />
+              <SmartIcon
+                v-if="link.icon"
+                :name="link.icon"
+                :size="16"
+                class="mt-1 min-w-5"
+              />
 
               <div>
                 <div class="font-semibold">
@@ -37,18 +44,27 @@
   </template>
   <NuxtLink v-else :to="item.to" :target="item.target" class="flex w-full p-2">
     {{ item.title }}
-    <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="ml-1 text-muted-foreground" size="12" />
+    <Icon
+      v-if="item.showLinkIcon ?? true"
+      name="lucide:arrow-up-right"
+      class="ml-1 text-muted-foreground"
+      size="12"
+    />
   </NuxtLink>
 </template>
 
 <script setup lang="ts">
+import type { NuxtLink } from "#imports";
+
 const props = defineProps<{
-  item: any;
+  item: NuxtLink;
   index: number;
 }>();
 
 const collapsed = useCollapsedMap();
-const isOpen = ref(collapsed.value.get(`mobile-header-nav${props.index}`) || false);
+const isOpen = ref(
+  collapsed.value.get(`mobile-header-nav${props.index}`) || false
+);
 watch(isOpen, (v) => {
   collapsed.value.set(`mobile-header-nav${props.index}`, v);
 });

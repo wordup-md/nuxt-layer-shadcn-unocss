@@ -1,6 +1,7 @@
 <template>
   <header class="sticky top-0 z-40 bg-background/80 backdrop-blur-lg" :class="{ 'lg:border-b': config.header.border }">
-    <div class="flex h-14 items-center justify-between gap-2 px-4 md:px-8"
+    <div
+class="flex h-14 items-center justify-between gap-2 px-4 md:px-8"
       :class="{ 'border-b lg:border-none': config.header.border, 'container max-w-screen-2xl': config.main.padded }">
       <LayoutHeaderLogo class="hidden flex-1 md:flex" />
       <LayoutMobileNav />

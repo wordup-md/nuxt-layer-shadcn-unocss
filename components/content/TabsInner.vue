@@ -35,7 +35,9 @@
     class="relative mr-auto w-full [&:not(:first-child)]:mt-5"
   >
     <div class="flex items-center justify-between pb-3">
-      <UiTabsList class="h-9 w-full justify-start rounded-none border-b bg-transparent p-0">
+      <UiTabsList
+        class="h-9 w-full justify-start rounded-none border-b bg-transparent p-0"
+      >
         <UiTabsTrigger
           v-for="(slot, i) in $slots.default?.() ?? []"
           :key="`${i}${label(slot.props)}`"
@@ -71,7 +73,7 @@
       <div class="relative flex overflow-x-auto border-b p-0.5 text-sm">
         <div class="flex p-1">
           <div
-            v-for="(slot, i) in ($slots.default?.() ?? [])"
+            v-for="(slot, i) in $slots.default?.() ?? []"
             :key="`${i}${label(slot.props)}`"
             :value="label(slot.props)"
             class="flex cursor-pointer rounded-md px-3 py-1.5 text-muted-foreground transition-all duration-75"
@@ -131,7 +133,11 @@
       </UiPopoverTrigger>
       <UiPopoverContent class="w-[200px] p-0">
         <UiCommand>
-          <UiCommandInput v-if="!disableSearch" class="h-9" :placeholder="searchPlaceholder" />
+          <UiCommandInput
+            v-if="!disableSearch"
+            class="h-9"
+            :placeholder="searchPlaceholder"
+          />
           <UiCommandEmpty>{{ searchEmpty }}</UiCommandEmpty>
           <UiCommandList>
             <UiCommandGroup>
@@ -139,10 +145,12 @@
                 v-for="(slot, i) in $slots.default?.() ?? []"
                 :key="`${i}${label(slot.props)}`"
                 :value="label(slot.props)"
-                @select="() => {
-                  activeTabIndex = i;
-                  dropDownOpen = false;
-                }"
+                @select="
+                  () => {
+                    activeTabIndex = i;
+                    dropDownOpen = false;
+                  }
+                "
               >
                 <SmartIcon
                   v-if="icon(slot?.props)"
@@ -152,10 +160,12 @@
                 {{ label(slot.props) }}
                 <Icon
                   name="lucide:check"
-                  :class="cn(
-                    'ml-auto h-4 w-4',
-                    activeTabIndex === i ? 'opacity-100' : 'opacity-0',
-                  )"
+                  :class="
+                    cn(
+                      'ml-auto h-4 w-4',
+                      activeTabIndex === i ? 'opacity-100' : 'opacity-0'
+                    )
+                  "
                 />
               </UiCommandItem>
             </UiCommandGroup>
@@ -177,12 +187,12 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from '@/lib/utils';
-import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
+import { cn } from "@/lib/utils";
+import ScrollBar from "../ui/scroll-area/ScrollBar.vue";
 
 const { sync, slotsData } = defineProps<{
   slotsData: { label: string; index: number }[];
-  variant?: 'separate' | 'card' | 'line' | 'combobox';
+  variant?: "separate" | "card" | "line" | "combobox";
   padded?: boolean;
   inStack?: boolean;
   disableSearch?: boolean;
@@ -191,11 +201,16 @@ const { sync, slotsData } = defineProps<{
   sync?: string;
 }>();
 
-const syncState = useCookie<{ scope: string; value?: string }[]>('tabs-sync-state', {
-  default: () => [],
-});
+const syncState = useCookie<{ scope: string; value?: string }[]>(
+  "tabs-sync-state",
+  {
+    default: () => [],
+  }
+);
 
-const syncScopeIndex = computed(() => syncState.value.findIndex(x => x.scope === sync));
+const syncScopeIndex = computed(() =>
+  syncState.value.findIndex((x) => x.scope === sync)
+);
 
 const activeTabIndexData = ref(0);
 const activeTabIndex = computed<number>({
@@ -203,8 +218,11 @@ const activeTabIndex = computed<number>({
     if (sync === undefined || syncScopeIndex.value === -1)
       return activeTabIndexData.value;
 
-    return slotsData.find(x => x.label === syncState.value[syncScopeIndex.value]?.value)?.index
-      || activeTabIndexData.value;
+    return (
+      slotsData.find(
+        (x) => x.label === syncState.value[syncScopeIndex.value]?.value
+      )?.index || activeTabIndexData.value
+    );
   },
   set(index: number) {
     if (sync === undefined) {
@@ -221,11 +239,15 @@ const activeTabIndex = computed<number>({
 });
 
 const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
-function icon(props: any) {
-  return props?.icon || iconMap.get(props?.filename?.toLowerCase()) || iconMap.get(props?.language);
+function icon(props: { icon?: string; filename?: string; language?: string }) {
+  return (
+    props?.icon ||
+    iconMap.get(props?.filename?.toLowerCase()) ||
+    iconMap.get(props?.language)
+  );
 }
 
-function label(props: any) {
+function label(props: { label?: string; filename?: string }) {
   return props?.label || props?.filename;
 }
 
