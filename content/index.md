@@ -1,20 +1,5 @@
----
-title: Home
-navigation: false
-layout: breakouts
----
+# Nuxt layer
 
-::div{.bg-zinc-50.py-10.my-10}
-none
-::
-
-::div{.full-width.bg-zinc-50.py-10.my-10}
-full width
-::
-
-::div{.breakout.bg-zinc-50.py-10.my-10}
-breakout
-::
 
 ::hero
 ---
@@ -39,6 +24,22 @@ Effortless and Beautiful :br Docs Template.
 Beautifully designed Nuxt Content template built with shadcn-vue. :br Customizable. Compatible. Open Source.
 ::
 
-<div class="border rounded-lg shadow-md">
-  <iframe src="/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0">
-</div>
+
+::accordion{default-value="first-item" collapsible}
+  ::accordion-item{value="first-item"}
+  #title
+  Is it accessible?
+
+  #content
+  Yes. It adheres to the WAI-ARIA design pattern.
+  ::
+
+  ::accordion-item
+  #title
+  Is it unstyled?
+
+  #content
+  Yes. It's unstyled by default, giving you freedom over the look and feel.
+  ::
+  :accordion-item{title="Can it be animated?" content="Yes! You can use the transition prop to configure the animation."}
+::

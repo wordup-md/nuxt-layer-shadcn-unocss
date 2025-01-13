@@ -1,18 +1,12 @@
 <template>
-  <div
-    class="px-4 py-6 md:px-8"
-    :class="[config.main.padded && 'container']"
-  >
-    <ContentRenderer
-      :key="page._id"
-      :value="page"
-    />
-  </div>
+  <NuxtLayout>
+    <ContentRenderer :key="page._id" :value="page" class="content-grid" />
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-const { page } = useContent();
-const config = useConfig();
+const { page } = useContent()
+const config = useConfig()
 
 useSeoMeta({
   title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,
@@ -21,5 +15,5 @@ useSeoMeta({
   ogDescription: page.value?.description,
   ogImage: config.value.site.ogImage,
   twitterCard: 'summary_large_image',
-});
+})
 </script>
