@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/color-mode',
     // 'nuxt-og-image',
+    '@unpress/nuxt-module',
   ],
 
   shadcn: {

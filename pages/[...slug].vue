@@ -59,11 +59,17 @@
               see this page taking shape.
             </Alert>
 
-            <ContentRenderer
+            <!-- <ContentRenderer
               v-else
               :key="page._id"
               :value="page"
               class="docs-content"
+            /> -->
+            <ContentCms
+              v-else
+              :key="page._id"
+              :value="page"
+              class="content-grid"
             />
 
             <LayoutDocsFooter />
