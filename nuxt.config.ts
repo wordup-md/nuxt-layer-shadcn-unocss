@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
+    '@unpress/nuxt-module',
     // 'nuxt-og-image',
   ],
 
