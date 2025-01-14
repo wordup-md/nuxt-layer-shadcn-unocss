@@ -1,0 +1,61 @@
+.EDITOR_CONTENT {
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  & > p:not(:has(span)) {
+    margin-top: 1.5rem;
+  }
+
+  & h2.\[\&\:not\(\:first-child\)\]\:mt-10:first-child {
+    margin-top: 2.5rem;
+  }
+
+  & h3 {
+    margin-top: 2rem;
+  }
+
+  & code {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    position: relative;
+    border-radius: 0.25rem;
+    padding: 0.2rem 0.3rem;
+
+    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
+    --un-bg-opacity: 1;
+    background-color: hsl(var(--muted) / var(--un-bg-opacity)) /* hsl(var(--muted)) */;
+  }
+
+  & > div {
+    &:has(.LANGUAGE_WRAPPER) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  & a {
+    text-underline-offset: 4px;
+    text-decoration-line: underline;
+    font-weight: 600;
+  }
+
+  & .prosemirror-flat-list {
+    padding-top: 0.5rem;
+    margin-left: 1.5rem;
+
+    &:first-child,
+    :not(&) + & {
+      padding-top: 1.5rem;
+    }
+  }
+
+  /* CodeGroupEditor */
+  & .\[\&\:not\(\:first-child\)\]\:mt-5 {
+    margin-top: 1.25rem;
+  }
+  & div[data-node-view-root="true"]:first-child > div > .\[\&\:not\(\:first-child\)\]\:mt-5 {
+    margin-top: 0rem;
+  }
+}

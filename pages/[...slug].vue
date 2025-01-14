@@ -65,12 +65,7 @@
               :value="page"
               class="docs-content"
             /> -->
-            <ContentCms
-              v-else
-              :key="page._id"
-              :value="page"
-              class="content-grid"
-            />
+            <ContentCms v-else :key="page._id" :value="page" />
 
             <LayoutDocsFooter />
           </div>

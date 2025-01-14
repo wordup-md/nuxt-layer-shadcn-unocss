@@ -40,6 +40,7 @@ export default defineNuxtConfig({
   css: [
     '@unocss/reset/tailwind.css',
     join(currentDir, './assets/css/a11y.css'),
+    join(currentDir, './assets/css/mdc-editor.css'),
   ],
 
   content: {
