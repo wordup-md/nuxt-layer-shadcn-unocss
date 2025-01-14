@@ -12,6 +12,8 @@ import {
 import presetAnimations from 'unocss-preset-animations'
 import { builtinColors, presetShadcn } from 'unocss-preset-shadcn'
 
+import mdcEditorPreset from '@unpress/mdc-editor/unocss-preset'
+
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
@@ -34,6 +36,7 @@ export default defineConfig({
     presetTypography(),
     presetAnimations(),
     presetShadcn(builtinColors.map(c => ({ color: c }))),
+    mdcEditorPreset(),
   ],
   shortcuts: [
     [/^step$/, () => {
