@@ -1,13 +1,15 @@
-import { createDefu } from 'defu';
+import { createDefu } from 'defu'
+type DefaultConfig = typeof defaultConfig
 
 const customDefu = createDefu((obj, key, value) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   if (Array.isArray(value) && value.every((x: any) => typeof x === 'string')) {
-    obj[key] = value;
-    return true;
+    obj[key] = value
+    return true
   }
-});
+})
 
-const defaultConfig: DefaultConfig = {
+const defaultConfig = {
   site: {
     name: 'shadcn-docs',
     description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
@@ -137,27 +139,27 @@ const defaultConfig: DefaultConfig = {
     placeholder: 'Search...',
     placeholderDetailed: 'Search documentation...',
   },
-};
+}
 
 export function useConfig() {
-  const appConfig = computed(() => useAppConfig()?.shadcnDocs || {});
-
-  const { navKeyFromPath } = useContentHelpers();
-  const { navigation, page } = useContent();
-  const route = useRoute();
+  // return computed(() => customDefu(useAppConfig()?.shadcnDocs, defaultConfig))
+  const appConfig = computed(() => useAppConfig()?.shadcnDocs || {})
+  // console.log('nuxt-layer useConfig', appConfig.value)
+  const { navKeyFromPath } = useContentHelpers()
+  const { navigation, page } = useContent()
+  const route = useRoute()
 
   return computed(
     () => {
-      const processedConfig = customDefu(appConfig.value, defaultConfig);
-      const header = processedConfig.header;
-      const main = processedConfig.main;
-      const aside = processedConfig.aside;
-      const banner = processedConfig.banner;
-      const footer = processedConfig.footer;
-      const toc = processedConfig.toc;
+      const processedConfig = customDefu(appConfig.value, defaultConfig)
+      const header = processedConfig.header
+      const main = processedConfig.main
+      const aside = processedConfig.aside
+      const banner = processedConfig.banner
+      const footer = processedConfig.footer
+      const toc = processedConfig.toc
 
       return {
-        ...appConfig.value,
         ...processedConfig,
         header: {
           ...header,
@@ -189,7 +191,7 @@ export function useConfig() {
           ...navKeyFromPath(route.path, 'footer', navigation.value || []),
           ...page.value?.footer,
         } as (typeof footer & DefaultConfig['footer']),
-      };
+      }
     },
-  );
+  )
 }
