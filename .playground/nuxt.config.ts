@@ -2,7 +2,10 @@ import { fileURLToPath } from 'node:url'
 
 export default defineNuxtConfig({
   extends: ['..'],
-  modules: ['@nuxt/eslint'],
+  modules: [
+    '@nuxt/eslint',
+    '@unpress/nuxt-module'
+  ],
 
   unocss: {
     nuxtLayers: true
