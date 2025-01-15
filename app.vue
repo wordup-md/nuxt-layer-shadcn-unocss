@@ -10,14 +10,12 @@
 
     <NuxtPage />
 
-    <Toaster />
+    <UiToaster />
     <LayoutFooter />
   </div>
 </template>
 
 <script setup lang="ts">
-import Toaster from "@/components/ui/toast/Toaster.vue";
-
 const config = useConfig();
 const { themeClass, radius } = useThemes();
 
