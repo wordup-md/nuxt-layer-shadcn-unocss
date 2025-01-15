@@ -101,6 +101,11 @@ watch([Meta_K, Ctrl_K], (v) => {
     open.value = true;
 });
 
+const route = useRoute()
+watch(() => route.path, () => {
+  open.value = false
+})
+
 const input = ref('');
 const searchResult = ref();
 const searchLoading = ref(false);

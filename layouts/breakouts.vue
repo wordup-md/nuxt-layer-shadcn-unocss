@@ -7,7 +7,7 @@
 <style lang="postcss">
 .content-grid {
   --padding-inline: 1rem;
-  --content-max-width: 90ch;
+  --content-max-width: 80ch;
   --breakout-max-width: var(--breakpoint-xl);
 
   --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);

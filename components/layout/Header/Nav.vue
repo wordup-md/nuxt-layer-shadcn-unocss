@@ -30,7 +30,7 @@
           </UiNavigationMenuContent>
         </template>
         <NuxtLink v-else :to="item.to" :target="item.target">
-          <Icon v-if="item.showLinkIcon ?? true" name="lucide:arrow-up-right" class="absolute right-2 top-2 text-muted-foreground" size="13" />
+          <Icon v-if="item.showLinkIcon ?? false" name="lucide:arrow-up-right" class="absolute right-2 top-2 text-muted-foreground" size="13" />
           <div class="bg-transparent font-semibold" :class="[navigationMenuTriggerStyle(), (item.showLinkIcon ?? true) && 'pr-6']">
             {{ item.title }}
           </div>

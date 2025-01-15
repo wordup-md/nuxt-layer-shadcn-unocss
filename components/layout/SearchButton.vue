@@ -18,9 +18,13 @@
       v-else
       variant="ghost"
       size="icon"
+      class="flex gap-2 w-[72px]"
       @click="isOpen = true"
     >
       <Icon name="lucide:search" size="16" />
+      <Kbd class="hidden md:block">
+        <span class="text-xs">⌘</span>K
+      </Kbd>
     </UiButton>
   </template>
 
