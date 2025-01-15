@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <div class="min-h-screen border-b">
+    <div class="h-full border-b">
       <div
         class="flex-1 items-start px-4 md:grid md:gap-6 md:px-8 lg:gap-10"
         :class="[
@@ -10,13 +10,16 @@
         ]"
       >
         <aside
-          v-if="page?.aside ?? true"
+          v-if="page?.aside ?? (page?.body && true)"
           class="sticky top-[162px] z-30 w-full shrink-0 overflow-y-auto md:sticky md:top-[80px] md:block"
         >
           <LayoutAside :is-mobile="false" />
         </aside>
 
-        <div v-if="!page?.body" class="flex h-full items-center justify-center">
+        <div
+          v-if="!page?.body"
+          class="col-span-3 mt-[20vh] flex items-center justify-center"
+        >
           <h3 class="scroll-m-20 border-r px-4 py-3 text-2xl font-semibold">
             404
           </h3>
