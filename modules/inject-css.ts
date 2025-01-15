@@ -8,7 +8,7 @@ export default defineNuxtModule({
     configKey: 'injectCss',
   },
   defaults: {
-    cssPath: 'assets/css/style.css', // Default path to the CSS file
+    cssPath: 'assets/style.css', // Default path to the CSS file
   },
   setup(options, nuxt) {
     // Use the `modules:done` hook to ensure this runs last

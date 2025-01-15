@@ -8,6 +8,7 @@ import {
   presetIcons,
   presetTypography,
   presetUno,
+  transformerDirectives,
 } from 'unocss'
 import presetAnimations from 'unocss-preset-animations'
 import { builtinColors, presetShadcn } from 'unocss-preset-shadcn'
@@ -50,6 +51,9 @@ export default defineConfig({
   extractors: [
     extractorMdc(),
   ],
+  transformers: [
+    transformerDirectives(),
+  ],
   content: {
     filesystem: ['content/**/*.md'],
     pipeline: {
@@ -58,8 +62,11 @@ export default defineConfig({
         /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
         // include js/ts files
         'components/ui/**/*.{js,ts}',
+        // include css files
+        'assets/**/*.css',
         // Need this for layer
         `${join(currentDir, 'components/ui')}/**/*.{js,ts}`,
+        `${join(currentDir, 'assets')}/**/*.css`,
       ],
     },
   },

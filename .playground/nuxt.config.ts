@@ -11,6 +11,10 @@ export default defineNuxtConfig({
     nuxtLayers: true
   },
 
+  css: [
+    '~/assets/style.css'
+  ],
+
   eslint: {
     config: {
       // Use the generated ESLint config for lint root project as well
