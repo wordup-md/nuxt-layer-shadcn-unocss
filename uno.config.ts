@@ -55,7 +55,10 @@ export default defineConfig({
     transformerDirectives(),
   ],
   content: {
-    filesystem: ['content/**/*.md'],
+    filesystem: [
+      'content/**/*.md',
+      // `${join(currentDir, 'content')}/**/*.{md,yaml,yml}`,
+    ],
     pipeline: {
       include: [
         // the default

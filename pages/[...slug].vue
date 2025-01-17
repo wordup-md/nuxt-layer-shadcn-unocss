@@ -11,7 +11,7 @@
       >
         <aside
           v-if="page?.aside ?? (page?.body && true)"
-          class="sticky top-[162px] z-30 w-full shrink-0 overflow-y-auto md:sticky md:top-[80px] md:block"
+          class="sticky top-[162px] z-30 w-full shrink-0 overflow-y-auto md:sticky md:top-[90px] md:block"
         >
           <LayoutAside :is-mobile="false" />
         </aside>
@@ -42,7 +42,7 @@
                 config.main.breadCrumb &&
                 (page.breadcrumb ?? true)
               "
-              class="mb-4"
+              class="mt-8 mb-6"
             />
 
             <LayoutTitle

@@ -15,8 +15,8 @@
         :target="badge.target"
       >
         <UiBadge :variant="badge.variant || 'secondary'" :type="badge.type" class="gap-1 rounded-md">
-          {{ badge.value }}
           <SmartIcon v-if="badge.to || badge.icon" :size="12" :name="badge.icon || 'lucide:external-link'" />
+          {{ badge.value }}
         </UiBadge>
       </NuxtLink>
     </div>
