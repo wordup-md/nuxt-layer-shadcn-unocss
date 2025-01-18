@@ -1,5 +1,5 @@
 {
-  "name": "my-nuxt-layer",
+  "name": "template-nuxt-layer",
   "type": "module",
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
@@ -10,7 +10,8 @@
     "build": "nuxt build .playground",
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "verdaccio": "pnpm publish --registry=https://verdaccio.manutopik.fr --no-git-checks"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.13.0",
