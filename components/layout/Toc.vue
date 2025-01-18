@@ -10,11 +10,13 @@
         <p class="mb-2 text-base font-semibold">
           {{ title }}
         </p>
+
         <LayoutTocTree
           :links="toc.links.filter((x: any) => x.id !== 'hide-toc')"
           :level="0"
           :class="[links.length && 'border-b pb-5']"
         />
+
         <div v-if="links" class="pt-5 text-muted-foreground">
           <NuxtLink
             v-for="(link, i) in links"
@@ -41,6 +43,7 @@
       <!-- <div class="flex-grow" /> -->
     </div>
   </UiScrollArea>
+
   <UiCollapsible
     v-else
     v-model:open="isOpen"
@@ -55,6 +58,7 @@
         :class="[isOpen && 'rotate-90']"
       />
     </UiCollapsibleTrigger>
+
     <UiCollapsibleContent>
       <LayoutTocTree
         :links="toc.links"
@@ -66,7 +70,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ isSmall: boolean }>();
+defineProps<{ isSmall?: boolean }>();
 
 const { toc } = useContent();
 const { title, links: configLinks } = useConfig().value.toc;

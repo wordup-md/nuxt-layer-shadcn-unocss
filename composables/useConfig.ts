@@ -119,6 +119,11 @@ const defaultConfig = {
     credits: '',
     links: [],
   },
+  sidebarRight: {
+    enable: true,
+    title: 'On This Page',
+    components: [],
+  },
   toc: {
     enable: true,
     enableInMobile: false,
@@ -153,11 +158,12 @@ export function useConfig() {
     () => {
       const processedConfig = customDefu(appConfig.value, defaultConfig)
       const header = processedConfig.header
+      const banner = processedConfig.banner
       const main = processedConfig.main
       const aside = processedConfig.aside
-      const banner = processedConfig.banner
-      const footer = processedConfig.footer
+      const sidebarRight = processedConfig.sidebarRight
       const toc = processedConfig.toc
+      const footer = processedConfig.footer
 
       return {
         ...processedConfig,
@@ -181,6 +187,11 @@ export function useConfig() {
           ...navKeyFromPath(route.path, 'aside', navigation.value || []),
           ...page.value?.aside,
         } as (typeof aside & DefaultConfig['aside']),
+        sidebarRight: {
+          ...sidebarRight,
+          ...navKeyFromPath(route.path, 'sidebarRight', navigation.value || []),
+          ...page.value?.sidebarRight,
+        } as (typeof toc & DefaultConfig['sidebarRight']),
         toc: {
           ...toc,
           ...navKeyFromPath(route.path, 'toc', navigation.value || []),
