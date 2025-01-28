@@ -171,7 +171,7 @@ export function useConfig() {
           ...header,
           ...navKeyFromPath(route.path, 'header', navigation.value || []),
           ...page.value?.header,
-        } as (typeof header & DefaultConfig['header']),
+        } as (typeof header),
         banner: {
           ...banner,
           ...navKeyFromPath(route.path, 'banner', navigation.value || []),
