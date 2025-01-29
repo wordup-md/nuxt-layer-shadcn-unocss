@@ -74,5 +74,17 @@ export default defineNuxtConfig({
     },
   },
 
+  nitro: {
+    compressPublicAssets: {
+      gzip: true,
+      brotli: true,
+    }
+  },
+
+  sourcemap: {
+    server: true,
+    client: true,
+  },
+
   compatibilityDate: '2025-01-10',
 })

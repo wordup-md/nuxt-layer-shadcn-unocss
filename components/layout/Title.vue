@@ -3,7 +3,7 @@
     <ProseH1>
       {{ title }}
     </ProseH1>
-    <p class="pt-1 text-lg text-muted-foreground">
+    <p class="pt-1 text-lg text-muted-foreground text-pretty">
       {{ description }}
     </p>
 
@@ -14,8 +14,16 @@
         :to="badge.to"
         :target="badge.target"
       >
-        <UiBadge :variant="badge.variant || 'secondary'" :type="badge.type" class="gap-1 rounded-md">
-          <SmartIcon v-if="badge.to || badge.icon" :size="12" :name="badge.icon || 'lucide:external-link'" />
+        <UiBadge
+          :variant="badge.variant || 'secondary'"
+          :type="badge.type"
+          class="gap-1 rounded-md"
+        >
+          <SmartIcon
+            v-if="badge.to || badge.icon"
+            :size="12"
+            :name="badge.icon || 'lucide:external-link'"
+          />
           {{ badge.value }}
         </UiBadge>
       </NuxtLink>
@@ -32,8 +40,8 @@ defineProps<{
     icon?: string;
     to?: string;
     target?: Target;
-    type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'lime';
-    variant?: 'default' | 'secondary' | 'destructive' | 'outline';
+    type?: "default" | "info" | "warning" | "success" | "danger" | "lime";
+    variant?: "default" | "secondary" | "destructive" | "outline";
   }[];
 }>();
 </script>
