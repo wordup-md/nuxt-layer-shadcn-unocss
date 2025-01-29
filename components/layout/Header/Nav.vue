@@ -104,25 +104,35 @@ function convertH1ToMenuItem(item: MDCElement) {
       if (href.startsWith("/") && href.endsWith("/")) {
         href = href.replace(/\/$/, "");
         const dir = navDirFromPath(href, navigation.value);
-        if (dir)
+        if (dir) {
+          const parentProps = (item.children[0] as MDCElement).props!;
+          const children = dir
+            .map((child) => ({
+              type: "element",
+              tag: "submenu-item",
+              props: {
+                to: child._path,
+                title: child.title,
+                icon: [false, "false"].includes(parentProps.icon)
+                  ? undefined
+                  : child.icon,
+                description: [false, "false"].includes(parentProps.description)
+                  ? undefined
+                  : child.description,
+              },
+              children: [],
+            }))
+            .slice(0, parentProps.limit || Infinity) as MDCElement[];
+
           treeItem.children.push({
             type: "element",
             tag: "template",
             props: {
               "v-slot:content": "",
             },
-            children: dir.map((child) => ({
-              type: "element",
-              tag: "submenu-item",
-              props: {
-                to: child._path,
-                title: child.title,
-                icon: child.icon,
-                description: child.description,
-              },
-              children: [],
-            })), //toRaw(dir) as MDCNode[],
+            children,
           });
+        }
       } else {
         treeItem.props!.to = href;
 

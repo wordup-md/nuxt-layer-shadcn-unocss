@@ -10,7 +10,7 @@
         'container max-w-screen-2xl': config.main.padded,
       }"
     >
-      <LayoutHeaderLogo class="hidden flex-1 md:flex" />
+      <LayoutHeaderLogo class="hidden md:flex" />
 
       <LayoutMobileNav />
 
@@ -19,7 +19,7 @@
         class="flex md:hidden"
       />
 
-      <LayoutHeaderNav class="hidden flex-1 lg:flex" />
+      <LayoutHeaderNav class="hidden lg:flex" />
 
       <div class="flex flex-1 justify-end gap-2">
         <LayoutSearchButton

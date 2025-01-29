@@ -43,7 +43,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "nuxt-og-image": "^4.0.2",
-    "radix-vue": "^1.9.12",
+    "radix-vue": "^1.9.13",
     "tailwind-merge": "^2.6.0"
   }
 }
