@@ -1,5 +1,4 @@
 import { createDefu } from 'defu'
-type DefaultConfig = typeof defaultConfig
 
 const customDefu = createDefu((obj, key, value) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -9,7 +8,7 @@ const customDefu = createDefu((obj, key, value) => {
   }
 })
 
-const defaultConfig = {
+const defaultConfig: DefaultConfig = {
   site: {
     name: 'shadcn-docs',
     description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
@@ -171,7 +170,7 @@ export function useConfig() {
           ...header,
           ...navKeyFromPath(route.path, 'header', navigation.value || []),
           ...page.value?.header,
-        } as (typeof header),
+        } as (typeof header & DefaultConfig['header']),
         banner: {
           ...banner,
           ...navKeyFromPath(route.path, 'banner', navigation.value || []),

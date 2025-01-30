@@ -15,7 +15,7 @@
                   class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
                 >
                   <SmartIcon
-                    v-if="link && 'icon' in link"
+                    v-if="link.icon"
                     :name="link.icon"
                     :size="16"
                     class="mt-1 min-w-5"
