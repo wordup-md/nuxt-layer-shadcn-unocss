@@ -1,7 +1,8 @@
 # Nuxt Layer Starter
 
 Fork from [shadcn-docs-nuxt](https://github.com/shadcn/shadcn-docs-nuxt)
-at commit 9fa7c925a070c5c7eb0b4616d362671da89d65df (v0.8.9)
+at v0.8.13
+`git diff --name-status 54b80e2e96bbc7249170150fb72e20078629a170`
 
 ## Setup
 

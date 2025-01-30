@@ -17,11 +17,15 @@
           <SmartIcon :name="announcement.icon" :size="16" />
           <UiSeparator class="mx-2 h-4" orientation="vertical" />
         </template>
-        <span class="underline-offset-4 hover:underline">{{ announcement.title }}</span>
+        <span class="underline-offset-4 hover:underline">{{
+          announcement.title
+        }}</span>
         <Icon name="lucide:arrow-right" class="ml-1 size-4" />
       </NuxtLink>
 
-      <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
+      <h1
+        class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]"
+      >
         <ContentSlot :use="$slots.title" unwrap="p" />
       </h1>
       <p class="max-w-2xl text-lg font-light text-foreground">
@@ -36,14 +40,25 @@
           :target="action.target"
         >
           <UiButton :variant="action.variant" size="sm">
-            <SmartIcon v-if="action.leftIcon" :name="action.leftIcon" class="mr-1" />
+            <SmartIcon
+              v-if="action.leftIcon"
+              :name="action.leftIcon"
+              class="mr-1"
+            />
             {{ action.name }}
-            <SmartIcon v-if="action.rightIcon" :name="action.rightIcon" class="ml-1" />
+            <SmartIcon
+              v-if="action.rightIcon"
+              :name="action.rightIcon"
+              class="ml-1"
+            />
           </UiButton>
         </NuxtLink>
       </div>
     </section>
-    <div class="mx-auto" :class="{ 'order-first md:order-last': mobileRight === 'top' }">
+    <div
+      class="mx-auto"
+      :class="{ 'order-first md:order-last': mobileRight === 'top' }"
+    >
       <ContentSlot :use="$slots.right" unwrap="p" />
     </div>
   </div>
@@ -57,14 +72,24 @@ defineProps<{
     icon?: string;
     title: string;
   };
-  actions: [{
-    name: string;
-    leftIcon?: string;
-    rightIcon?: string;
-    variant?: 'default' | 'link' | 'destructive' | 'outline' | 'secondary' | 'ghost';
-    to: string;
-    target?: Target;
-  }];
-  mobileRight?: 'top' | 'bottom';
+  actions: [
+    {
+      name: string;
+      leftIcon?: string;
+      rightIcon?: string;
+      variant?:
+        | "default"
+        | "link"
+        | "destructive"
+        | "outline"
+        | "secondary"
+        | "ghost";
+      to: string;
+      target?: Target;
+    }
+  ];
+  mobileRight?: "top" | "bottom";
 }>();
+
+defineSlots();
 </script>

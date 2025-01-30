@@ -1,5 +1,9 @@
 <template>
-  <UiCollapsible v-if="variant === 'card'" v-model:open="isOpen" class="space-y-2">
+  <UiCollapsible
+    v-if="variant === 'card'"
+    v-model:open="isOpen"
+    class="space-y-2"
+  >
     <div class="flex items-center justify-between space-x-4">
       <h4 class="text-sm font-semibold">
         <ContentSlot :use="$slots.title" unwrap="p" />
@@ -45,13 +49,13 @@
 </template>
 
 <script setup lang="ts">
-const {
-  variant = 'simple',
-  defaultOpen = false,
-} = defineProps<{
-  variant?: 'simple' | 'card';
+const { variant = "simple", defaultOpen = false } = defineProps<{
+  variant?: "simple" | "card";
   title?: string;
   defaultOpen?: boolean;
 }>();
+
+defineSlots();
+
 const isOpen = ref(defaultOpen);
 </script>

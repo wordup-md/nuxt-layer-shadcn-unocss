@@ -144,7 +144,7 @@
               <UiCommandItem
                 v-for="(slot, i) in $slots.default?.() ?? []"
                 :key="`${i}${label(slot.props)}`"
-                :value="label(slot.props)"
+                :value="label(slot.props) || ''"
                 @select="
                   () => {
                     activeTabIndex = i;
@@ -200,6 +200,8 @@ const { sync, slotsData } = defineProps<{
   searchEmpty?: string;
   sync?: string;
 }>();
+
+defineSlots();
 
 const syncState = useCookie<{ scope: string; value?: string }[]>(
   "tabs-sync-state",

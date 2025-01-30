@@ -7,13 +7,19 @@
         inStack && 'mb-0 rounded-none border-none shadow-none',
       ]"
     >
-      <NuxtImg
-        v-if="img"
-        :src="img"
-        class="w-full"
-      />
-      <UiCardHeader v-if="icon || title || $slots.title || description || $slots.description" :class="{ 'flex-row items-center gap-5': horizontal }">
-        <SmartIcon v-if="icon" :name="icon" :size="iconSize" :class="{ 'mb-2': !horizontal }" />
+      <NuxtImg v-if="img" :src="img" class="w-full" />
+      <UiCardHeader
+        v-if="
+          icon || title || $slots.title || description || $slots.description
+        "
+        :class="{ 'flex-row items-center gap-5': horizontal }"
+      >
+        <SmartIcon
+          v-if="icon"
+          :name="icon"
+          :size="iconSize"
+          :class="{ 'mb-2': !horizontal }"
+        />
         <div class="flex flex-col gap-1.5">
           <UiCardTitle v-if="title || $slots.title">
             <ContentSlot :use="$slots.title" unwrap="p" />
@@ -33,7 +39,11 @@
         <ContentSlot :use="$slots.footer" unwrap="p" />
         {{ footer }}
       </UiCardFooter>
-      <SmartIcon v-if="to && showLinkIcon" name="lucide:arrow-up-right" class="absolute right-4 top-4" />
+      <SmartIcon
+        v-if="to && showLinkIcon"
+        name="lucide:arrow-up-right"
+        class="absolute right-4 top-4"
+      />
     </UiCard>
   </UseTemplate>
 
@@ -64,5 +74,8 @@ const {
   showLinkIcon?: boolean;
   horizontal?: boolean;
 }>();
+
+defineSlots();
+
 const [UseTemplate, CardInner] = createReusableTemplate();
 </script>
