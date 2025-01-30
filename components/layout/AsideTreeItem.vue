@@ -9,7 +9,10 @@
         >
           <LayoutAsideTreeItemButton :link />
         </div>
-        <LayoutAsideTree :links="link.children" :level="level" />
+        <LayoutAsideTree
+          :links="link.children"
+          :level="level"
+        />
       </template>
       <template v-else>
         <button
@@ -32,7 +35,10 @@
           />
         </button>
         <div v-show="isOpen">
-          <LayoutAsideTree :links="link.children" :level="level + 1" />
+          <LayoutAsideTree
+            :links="link.children"
+            :level="level + 1"
+          />
         </div>
       </template>
     </div>
@@ -52,29 +58,29 @@
 </template>
 
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content';
+import type { NavItem } from '@nuxt/content'
 
 const { link, level } = defineProps<{
-  link: NavItem;
-  level: number;
-}>();
+  link: NavItem
+  level: number
+}>()
 
-const { collapse, collapseLevel, folderStyle: defaultFolderStyle } = useConfig().value.aside;
+const { collapse, collapseLevel, folderStyle: defaultFolderStyle } = useConfig().value.aside
 
-const collapsed = useCollapsedMap();
-const isOpen = ref(collapsed.value.get(link._path) || defaultOpen());
+const collapsed = useCollapsedMap()
+const isOpen = ref(collapsed.value.get(link._path) || defaultOpen())
 
 function defaultOpen() {
   if (link.collapse !== undefined)
-    return !link.collapse;
+    return !link.collapse
 
-  return level < collapseLevel && !collapse;
+  return level < collapseLevel && !collapse
 }
 
 watch(isOpen, (v) => {
-  collapsed.value.set(link._path, v);
-});
-const isActive = computed(() => link._path === useRoute().path);
+  collapsed.value.set(link._path, v)
+})
+const isActive = computed(() => link._path === useRoute().path)
 
-const folderStyle = computed(() => link.sidebar?.style ?? defaultFolderStyle);
+const folderStyle = computed(() => link.sidebar?.style ?? defaultFolderStyle)
 </script>

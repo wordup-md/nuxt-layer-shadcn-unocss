@@ -1,5 +1,9 @@
 <template>
-  <UiButton variant="ghost" size="icon" @click="toggleDark">
+  <UiButton
+    variant="ghost"
+    size="icon"
+    @click="toggleDark"
+  >
     <Icon
       name="lucide:sun"
       class="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
@@ -15,8 +19,8 @@
 </template>
 
 <script setup lang="ts">
-const colorMode = useColorMode();
+const colorMode = useColorMode()
 function toggleDark() {
-  colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 </script>

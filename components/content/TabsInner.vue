@@ -105,7 +105,10 @@
       class="mt-0"
       :class="[padded && ($slots.default?.()[activeTabIndex]?.type as any).tag !== 'pre' && 'p-3']"
     >
-      <component :is="slot" :in-group="true" />
+      <component
+        :is="slot"
+        :in-group="true"
+      />
     </div>
   </UiCard>
 
@@ -163,7 +166,7 @@
                   :class="
                     cn(
                       'ml-auto h-4 w-4',
-                      activeTabIndex === i ? 'opacity-100' : 'opacity-0'
+                      activeTabIndex === i ? 'opacity-100' : 'opacity-0',
                     )
                   "
                 />
@@ -181,77 +184,80 @@
       :value="label(slot.props)"
       class="mt-4"
     >
-      <component :is="slot" :in-group="true" />
+      <component
+        :is="slot"
+        :in-group="true"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { cn } from "@/lib/utils";
-import ScrollBar from "../ui/scroll-area/ScrollBar.vue";
+import ScrollBar from '../ui/scroll-area/ScrollBar.vue'
+import { cn } from '@/lib/utils'
 
 const { sync, slotsData } = defineProps<{
-  slotsData: { label: string; index: number }[];
-  variant?: "separate" | "card" | "line" | "combobox";
-  padded?: boolean;
-  inStack?: boolean;
-  disableSearch?: boolean;
-  searchPlaceholder?: string;
-  searchEmpty?: string;
-  sync?: string;
-}>();
+  slotsData: { label: string, index: number }[]
+  variant?: 'separate' | 'card' | 'line' | 'combobox'
+  padded?: boolean
+  inStack?: boolean
+  disableSearch?: boolean
+  searchPlaceholder?: string
+  searchEmpty?: string
+  sync?: string
+}>()
 
-defineSlots();
+defineSlots()
 
-const syncState = useCookie<{ scope: string; value?: string }[]>(
-  "tabs-sync-state",
+const syncState = useCookie<{ scope: string, value?: string }[]>(
+  'tabs-sync-state',
   {
     default: () => [],
-  }
-);
+  },
+)
 
 const syncScopeIndex = computed(() =>
-  syncState.value.findIndex((x) => x.scope === sync)
-);
+  syncState.value.findIndex(x => x.scope === sync),
+)
 
-const activeTabIndexData = ref(0);
+const activeTabIndexData = ref(0)
 const activeTabIndex = computed<number>({
   get: () => {
     if (sync === undefined || syncScopeIndex.value === -1)
-      return activeTabIndexData.value;
+      return activeTabIndexData.value
 
     return (
       slotsData.find(
-        (x) => x.label === syncState.value[syncScopeIndex.value]?.value
+        x => x.label === syncState.value[syncScopeIndex.value]?.value,
       )?.index || activeTabIndexData.value
-    );
+    )
   },
   set(index: number) {
     if (sync === undefined) {
-      activeTabIndexData.value = index;
-      return;
+      activeTabIndexData.value = index
+      return
     }
 
     if (syncScopeIndex.value === -1)
-      syncState.value.push({ scope: sync, value: undefined });
+      syncState.value.push({ scope: sync, value: undefined })
 
-    syncState.value[syncScopeIndex.value].value = slotsData[index].label;
-    activeTabIndexData.value = index;
+    syncState.value[syncScopeIndex.value].value = slotsData[index].label
+    activeTabIndexData.value = index
   },
-});
+})
 
-const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
-function icon(props: { icon?: string; filename?: string; language?: string }) {
+const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon))
+function icon(props: { icon?: string, filename?: string, language?: string }) {
   return (
-    props?.icon ||
-    iconMap.get(props?.filename?.toLowerCase()) ||
-    iconMap.get(props?.language)
-  );
+    props?.icon
+    || iconMap.get(props?.filename?.toLowerCase())
+    || iconMap.get(props?.language)
+  )
 }
 
-function label(props: { label?: string; filename?: string }) {
-  return props?.label || props?.filename;
+function label(props: { label?: string, filename?: string }) {
+  return props?.label || props?.filename
 }
 
-const dropDownOpen = ref(false);
+const dropDownOpen = ref(false)
 </script>

@@ -1,6 +1,10 @@
 <template>
   <ul :class="[level !== 0 && 'pl-4']">
-    <li v-for="link in links" :key="link.id" class="pt-2">
+    <li
+      v-for="link in links"
+      :key="link.id"
+      class="pt-2"
+    >
       <NuxtLink
         :to="`#${link.id}`"
         class="text-muted-foreground transition-all hover:text-primary"
@@ -18,14 +22,14 @@
 </template>
 
 <script setup lang="ts">
-import type { TocLink } from '@nuxt/content';
+import type { TocLink } from '@nuxt/content'
 
 defineProps<{
-  links: TocLink[];
-  level: number;
-}>();
+  links: TocLink[]
+  level: number
+}>()
 
-const { activeHeadings, updateHeadings } = useScrollspy();
+const { activeHeadings, updateHeadings } = useScrollspy()
 
 onMounted(() =>
   updateHeadings([
@@ -34,5 +38,5 @@ onMounted(() =>
     ...document.querySelectorAll('.docs-content h3'),
     ...document.querySelectorAll('.docs-content h4'),
   ]),
-);
+)
 </script>

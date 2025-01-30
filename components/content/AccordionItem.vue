@@ -1,26 +1,32 @@
 <template>
   <UiAccordionItem :value="value ?? autoValue">
     <UiAccordionTrigger>
-      <ContentSlot :use="$slots.title" unwrap="p" />
+      <ContentSlot
+        :use="$slots.title"
+        unwrap="p"
+      />
       {{ title }}
     </UiAccordionTrigger>
     <UiAccordionContent>
-      <ContentSlot :use="$slots.content" unwrap="p" />
+      <ContentSlot
+        :use="$slots.content"
+        unwrap="p"
+      />
       {{ content }}
     </UiAccordionContent>
   </UiAccordionItem>
 </template>
 
 <script setup lang="ts">
-import { useId } from "radix-vue";
+import { useId } from 'radix-vue'
 
 defineProps<{
-  value?: string;
-  title?: string;
-  content?: string;
-}>();
+  value?: string
+  title?: string
+  content?: string
+}>()
 
-defineSlots();
+defineSlots()
 
-const autoValue = useId();
+const autoValue = useId()
 </script>

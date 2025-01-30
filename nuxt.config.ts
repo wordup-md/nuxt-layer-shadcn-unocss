@@ -4,7 +4,6 @@ import { fileURLToPath } from 'node:url'
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
 
   modules: [
     '@nuxt/eslint',
@@ -18,11 +17,6 @@ export default defineNuxtConfig({
     // 'nuxt-og-image',
   ],
 
-  shadcn: {
-    prefix: 'Ui',
-    componentDir: join(currentDir, './components/ui'),
-  },
-
   components: {
     dirs: [
       {
@@ -31,17 +25,18 @@ export default defineNuxtConfig({
       },
     ],
   },
-
-  colorMode: {
-    classSuffix: '',
-    disableTransition: true,
-  },
+  devtools: { enabled: true },
 
   css: [
     '@unocss/reset/tailwind.css',
     join(currentDir, './assets/css/a11y.css'),
     join(currentDir, './assets/css/mdc-editor.css'),
   ],
+
+  colorMode: {
+    classSuffix: '',
+    disableTransition: true,
+  },
 
   content: {
     documentDriven: true,
@@ -74,17 +69,31 @@ export default defineNuxtConfig({
     },
   },
 
-  nitro: {
-    compressPublicAssets: {
-      gzip: true,
-      brotli: true,
-    }
-  },
-
   sourcemap: {
     server: true,
     client: true,
   },
 
   compatibilityDate: '2025-01-10',
+
+  nitro: {
+    compressPublicAssets: {
+      gzip: true,
+      brotli: true,
+    },
+  },
+
+  eslint: {
+    config: {
+      stylistic: {
+        quotes: 'single',
+        semi: false,
+      },
+    },
+  },
+
+  shadcn: {
+    prefix: 'Ui',
+    componentDir: join(currentDir, './components/ui'),
+  },
 })

@@ -7,7 +7,11 @@
         inStack && 'mb-0 rounded-none border-none shadow-none',
       ]"
     >
-      <NuxtImg v-if="img" :src="img" class="w-full" />
+      <NuxtImg
+        v-if="img"
+        :src="img"
+        class="w-full"
+      />
       <UiCardHeader
         v-if="
           icon || title || $slots.title || description || $slots.description
@@ -22,21 +26,33 @@
         />
         <div class="flex flex-col gap-1.5">
           <UiCardTitle v-if="title || $slots.title">
-            <ContentSlot :use="$slots.title" unwrap="p" />
+            <ContentSlot
+              :use="$slots.title"
+              unwrap="p"
+            />
             {{ title }}
           </UiCardTitle>
           <UiCardDescription v-if="description || $slots.description">
-            <ContentSlot :use="$slots.description" unwrap="p" />
+            <ContentSlot
+              :use="$slots.description"
+              unwrap="p"
+            />
             {{ description }}
           </UiCardDescription>
         </div>
       </UiCardHeader>
       <UiCardContent v-if="content || $slots.content || $slots.default">
-        <ContentSlot :use="$slots.content" unwrap="p" />
+        <ContentSlot
+          :use="$slots.content"
+          unwrap="p"
+        />
         <ContentSlot unwrap="p" />
       </UiCardContent>
       <UiCardFooter v-if="footer || $slots.footer">
-        <ContentSlot :use="$slots.footer" unwrap="p" />
+        <ContentSlot
+          :use="$slots.footer"
+          unwrap="p"
+        />
         {{ footer }}
       </UiCardFooter>
       <SmartIcon
@@ -48,7 +64,11 @@
   </UseTemplate>
 
   <div class="group-has-[div]:mt-0 [&:not(:first-child)]:mt-5">
-    <NuxtLink v-if="to" :to :target>
+    <NuxtLink
+      v-if="to"
+      :to
+      :target
+    >
       <CardInner />
     </NuxtLink>
     <CardInner v-else />
@@ -61,21 +81,21 @@ const {
   horizontal = false,
   iconSize = 24,
 } = defineProps<{
-  title?: string;
-  description?: string;
-  footer?: string;
-  content?: string;
-  to?: string;
-  target?: Target;
-  icon?: string;
-  iconSize?: number;
-  inStack?: boolean;
-  img?: string;
-  showLinkIcon?: boolean;
-  horizontal?: boolean;
-}>();
+  title?: string
+  description?: string
+  footer?: string
+  content?: string
+  to?: string
+  target?: Target
+  icon?: string
+  iconSize?: number
+  inStack?: boolean
+  img?: string
+  showLinkIcon?: boolean
+  horizontal?: boolean
+}>()
 
-defineSlots();
+defineSlots()
 
-const [UseTemplate, CardInner] = createReusableTemplate();
+const [UseTemplate, CardInner] = createReusableTemplate()
 </script>

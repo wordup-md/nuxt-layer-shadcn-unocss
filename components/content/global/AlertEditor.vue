@@ -1,7 +1,11 @@
 <template>
   <div class="group relative">
     <UiEditorDropdown
-      v-model="mdcAttrs.type" chevron tooltip="Type" placement="bottom-end" :items="types"
+      v-model="mdcAttrs.type"
+      chevron
+      tooltip="Type"
+      placement="bottom-end"
+      :items="types"
       class="absolute right-1 top-1 z-10 opacity-25 transition-opacity group-hover:opacity-100"
     >
       <span class="text-xs font-mono capitalize">{{ model.type }}</span>

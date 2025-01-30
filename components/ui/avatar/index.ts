@@ -1,8 +1,8 @@
-import { cva, type VariantProps } from 'class-variance-authority';
+import { cva, type VariantProps } from 'class-variance-authority'
 
-export { default as Avatar } from './Avatar.vue';
-export { default as AvatarFallback } from './AvatarFallback.vue';
-export { default as AvatarImage } from './AvatarImage.vue';
+export { default as Avatar } from './Avatar.vue'
+export { default as AvatarFallback } from './AvatarFallback.vue'
+export { default as AvatarImage } from './AvatarImage.vue'
 
 export const avatarVariant = cva(
   'inline-flex shrink-0 select-none items-center justify-center overflow-hidden bg-secondary font-normal text-foreground',
@@ -19,6 +19,6 @@ export const avatarVariant = cva(
       },
     },
   },
-);
+)
 
-export type AvatarVariants = VariantProps<typeof avatarVariant>;
+export type AvatarVariants = VariantProps<typeof avatarVariant>

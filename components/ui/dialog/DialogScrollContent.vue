@@ -24,7 +24,10 @@
         <DialogClose
           class="absolute right-3 top-3 rounded-md p-0.5 transition-colors hover:bg-secondary"
         >
-          <Icon name="lucide:x" class="block size-4" />
+          <Icon
+            name="lucide:x"
+            class="block size-4"
+          />
           <span class="sr-only">Close</span>
         </DialogClose>
       </DialogContent>
@@ -33,7 +36,6 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from '@/lib/utils';
 import {
   DialogClose,
   DialogContent,
@@ -42,17 +44,18 @@ import {
   DialogOverlay,
   DialogPortal,
   useForwardPropsEmits,
-} from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+} from 'radix-vue'
+import { computed, type HTMLAttributes } from 'vue'
+import { cn } from '@/lib/utils'
 
-const props = defineProps<DialogContentProps & { class?: HTMLAttributes['class'] }>();
-const emits = defineEmits<DialogContentEmits>();
+const props = defineProps<DialogContentProps & { class?: HTMLAttributes['class'] }>()
+const emits = defineEmits<DialogContentEmits>()
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
+  const { class: _, ...delegated } = props
 
-  return delegated;
-});
+  return delegated
+})
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits);
+const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>

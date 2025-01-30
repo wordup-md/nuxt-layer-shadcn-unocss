@@ -1,7 +1,18 @@
 <template>
-  <div class="flex items-center border-b px-3" cmdk-input-wrapper>
-    <Icon v-if="!loading" name="lucide:search" class="mr-2 size-4 shrink-0 opacity-50" />
-    <Icon v-else name="lucide:loader" class="mr-2 size-4 shrink-0 animate-spin opacity-50" />
+  <div
+    class="flex items-center border-b px-3"
+    cmdk-input-wrapper
+  >
+    <Icon
+      v-if="!loading"
+      name="lucide:search"
+      class="mr-2 size-4 shrink-0 opacity-50"
+    />
+    <Icon
+      v-else
+      name="lucide:loader"
+      class="mr-2 size-4 shrink-0 animate-spin opacity-50"
+    />
     <ComboboxInput
       v-bind="{ ...forwardedProps, ...$attrs }"
       auto-focus
@@ -11,24 +22,24 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from '@/lib/utils';
-import { ComboboxInput, type ComboboxInputProps, useForwardProps } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { ComboboxInput, type ComboboxInputProps, useForwardProps } from 'radix-vue'
+import { computed, type HTMLAttributes } from 'vue'
+import { cn } from '@/lib/utils'
 
 defineOptions({
   inheritAttrs: false,
-});
+})
 
 const props = defineProps<ComboboxInputProps & {
-  class?: HTMLAttributes['class'];
-  loading?: boolean;
-}>();
+  class?: HTMLAttributes['class']
+  loading?: boolean
+}>()
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
+  const { class: _, ...delegated } = props
 
-  return delegated;
-});
+  return delegated
+})
 
-const forwardedProps = useForwardProps(delegatedProps);
+const forwardedProps = useForwardProps(delegatedProps)
 </script>

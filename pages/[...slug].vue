@@ -5,8 +5,8 @@
         class="flex-1 items-start px-4 md:grid md:gap-6 md:px-8 lg:gap-10"
         :class="[
           config.main.padded && 'container',
-          (page?.aside ?? true) &&
-            'md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)]',
+          (page?.aside ?? true)
+            && 'md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)]',
         ]"
       >
         <aside
@@ -30,17 +30,17 @@
           v-else
           class="relative container"
           :class="[
-            config.toc.enable &&
-              (page.toc ?? true) &&
-              'lg:grid lg:grid-cols-[1fr_220px] lg:gap-14 lg:py-8',
+            config.toc.enable
+              && (page.toc ?? true)
+              && 'lg:grid lg:grid-cols-[1fr_220px] lg:gap-14 lg:py-8',
           ]"
         >
           <div class="mx-auto w-full min-w-0">
             <LayoutBreadcrumb
               v-if="
-                page?.body &&
-                config.main.breadCrumb &&
-                (page.breadcrumb ?? true)
+                page?.body
+                  && config.main.breadCrumb
+                  && (page.breadcrumb ?? true)
               "
               class="mt-8 mb-6"
             />
@@ -68,7 +68,11 @@
               :value="page"
               class="docs-content"
             /> -->
-            <ContentCms v-else :key="page._id" :value="page" />
+            <ContentCms
+              v-else
+              :key="page._id"
+              :value="page"
+            />
 
             <LayoutDocsFooter />
           </div>
@@ -88,16 +92,16 @@
 </template>
 
 <script setup lang="ts">
-const { page } = useContent();
-const config = useConfig();
+const { page } = useContent()
+const config = useConfig()
 
 useSeoMeta({
-  title: `${page.value?.title ?? "404"} - ${config.value.site.name}`,
+  title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,
   ogTitle: page.value?.title,
   description: page.value?.description,
   ogDescription: page.value?.description,
-  twitterCard: "summary_large_image",
-});
+  twitterCard: 'summary_large_image',
+})
 
 // defineOgImageComponent(config.value.site.ogImageComponent, {
 //   title: page.value?.title,

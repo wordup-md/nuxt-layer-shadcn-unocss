@@ -6,33 +6,33 @@
 </template>
 
 <script lang="ts" setup>
-import type { VueNodeViewProps } from "prosekit/vue";
+import type { VueNodeViewProps } from 'prosekit/vue'
 
 // import { useMdcEditor } from '#imports'
 
-const props = defineProps<VueNodeViewProps>();
+const props = defineProps<VueNodeViewProps>()
 
-const variants = ["separate", "card"];
+const variants = ['separate', 'card']
 
-const { getComponentProps } = useMdcEditor();
+const { getComponentProps } = useMdcEditor()
 const { model } = getComponentProps(props, {
   id: {
     type: String,
   },
   class: {
     type: String,
-    default: "",
+    default: '',
   },
   variant: {
     type: String,
-    default: "separate",
+    default: 'separate',
     validator(value: string) {
-      return variants.includes(value);
+      return variants.includes(value)
     },
   },
   padded: {
     type: Boolean,
     default: true,
   },
-});
+})
 </script>

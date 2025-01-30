@@ -1,23 +1,29 @@
 <script lang="ts" setup>
-import { cn } from "@/lib/utils";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { cn } from '@/lib/utils'
+import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 
-const { to, target, showLinkIcon, icon, title, tag, dropdownClass } =
-  defineProps<{
-    to?: string;
-    target?: string;
-    rel?: string;
-    showLinkIcon?: boolean;
-    icon?: string;
-    title?: string;
-    tag?: string;
-    dropdownClass?: string;
-  }>();
+const { to, target, showLinkIcon, icon, title, tag, dropdownClass }
+  = defineProps<{
+    to?: string
+    target?: string
+    rel?: string
+    showLinkIcon?: boolean
+    icon?: string
+    title?: string
+    tag?: string
+    dropdownClass?: string
+  }>()
 </script>
 
 <template>
   <UiNavigationMenuItem class="relative">
-    <NuxtLink v-if="!$slots.content" :to :target :rel class="relative">
+    <NuxtLink
+      v-if="!$slots.content"
+      :to
+      :target
+      :rel
+      class="relative"
+    >
       <Icon
         v-if="showLinkIcon ?? false"
         name="lucide:arrow-up-right"
@@ -28,7 +34,11 @@ const { to, target, showLinkIcon, icon, title, tag, dropdownClass } =
         class="bg-transparent font-semibold whitespace-break-spaces !flex"
         :class="[navigationMenuTriggerStyle()]"
       >
-        <SmartIcon v-if="icon" :name="icon" class="min-w-5 mr-2" />
+        <SmartIcon
+          v-if="icon"
+          :name="icon"
+          class="min-w-5 mr-2"
+        />
         <span v-if="title">{{ title }}</span>
         <slot v-else-if="$slots.default" />
       </div>

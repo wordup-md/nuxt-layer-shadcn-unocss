@@ -1,5 +1,9 @@
 <template>
-  <Alert :to :target :icon>
+  <Alert
+    :to
+    :target
+    :icon
+  >
     Read more at <span class="font-semibold">{{ computedTitle }}</span>
   </Alert>
 </template>
@@ -10,22 +14,23 @@ const {
   to,
   icon = 'lucide:bookmark',
 } = defineProps<{
-  title?: string;
-  to: string;
-  target?: Target;
-  icon?: string;
-}>();
+  title?: string
+  to: string
+  target?: Target
+  icon?: string
+}>()
 
 const computedTitle = computed<string>(
   () => {
     if (title)
-      return title;
+      return title
 
     try {
-      return useBreadcrumb(to).map(x => x.title).join(' > ');
-    } catch {
-      return to;
+      return useBreadcrumb(to).map(x => x.title).join(' > ')
+    }
+    catch {
+      return to
     }
   },
-);
+)
 </script>

@@ -3,7 +3,10 @@
     :id
     class="scroll-m-20 text-4xl font-extrabold tracking-tight text-pretty lg:text-5xl"
   >
-    <NuxtLink v-if="generate" :to="`#${id}`">
+    <NuxtLink
+      v-if="generate"
+      :to="`#${id}`"
+    >
       <slot />
     </NuxtLink>
     <slot v-else />
@@ -11,14 +14,14 @@
 </template>
 
 <script setup lang="ts">
-const { id } = defineProps<{ id?: string }>();
+const { id } = defineProps<{ id?: string }>()
 
-const { headings } = useRuntimeConfig().public.mdc;
+const { headings } = useRuntimeConfig().public.mdc
 const generate = computed(
   () =>
-    id &&
-    ((typeof headings?.anchorLinks === "boolean" &&
-      headings?.anchorLinks === true) ||
-      (typeof headings?.anchorLinks === "object" && headings?.anchorLinks?.h1))
-);
+    id
+    && ((typeof headings?.anchorLinks === 'boolean'
+      && headings?.anchorLinks === true)
+    || (typeof headings?.anchorLinks === 'object' && headings?.anchorLinks?.h1)),
+)
 </script>

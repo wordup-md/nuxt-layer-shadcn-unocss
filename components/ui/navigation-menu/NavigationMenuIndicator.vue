@@ -5,7 +5,7 @@
       cn(
         'absolute data-[state=hidden]:opacity-0 duration-200 data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[all,transform_250ms_ease]',
         // 'top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in',
-        props.class
+        props.class,
       )
     "
   >
@@ -16,23 +16,23 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from "@/lib/utils";
 import {
   NavigationMenuIndicator,
   type NavigationMenuIndicatorProps,
   useForwardProps,
-} from "radix-vue";
-import { computed, type HTMLAttributes } from "vue";
+} from 'radix-vue'
+import { computed, type HTMLAttributes } from 'vue'
+import { cn } from '@/lib/utils'
 
 const props = defineProps<
-  NavigationMenuIndicatorProps & { class?: HTMLAttributes["class"] }
->();
+  NavigationMenuIndicatorProps & { class?: HTMLAttributes['class'] }
+>()
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
+  const { class: _, ...delegated } = props
 
-  return delegated;
-});
+  return delegated
+})
 
-const forwardedProps = useForwardProps(delegatedProps);
+const forwardedProps = useForwardProps(delegatedProps)
 </script>

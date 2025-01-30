@@ -9,25 +9,40 @@
       class="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
     >
       <template v-if="announcement.icon">
-        <SmartIcon :name="announcement.icon" :size="16" />
-        <UiSeparator class="mx-2 h-4" orientation="vertical" />
+        <SmartIcon
+          :name="announcement.icon"
+          :size="16"
+        />
+        <UiSeparator
+          class="mx-2 h-4"
+          orientation="vertical"
+        />
       </template>
       <span class="sm:hidden">{{ announcement.title }}</span>
       <span class="hidden sm:inline">
         {{ announcement.title }}
       </span>
-      <Icon name="lucide:arrow-right" class="ml-1 size-4" />
+      <Icon
+        name="lucide:arrow-right"
+        class="ml-1 size-4"
+      />
     </NuxtLink>
 
     <h1
       class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]"
     >
-      <ContentSlot :use="$slots.title" unwrap="p" />
+      <ContentSlot
+        :use="$slots.title"
+        unwrap="p"
+      />
     </h1>
     <span
       class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl"
     >
-      <ContentSlot :use="$slots.description" unwrap="p" />
+      <ContentSlot
+        :use="$slots.description"
+        unwrap="p"
+      />
     </span>
 
     <section
@@ -60,28 +75,28 @@
 <script setup lang="ts">
 defineProps<{
   announcement?: {
-    to?: string;
-    target?: Target;
-    icon?: string;
-    title: string;
-  };
+    to?: string
+    target?: Target
+    icon?: string
+    title: string
+  }
   actions: [
     {
-      name: string;
-      leftIcon?: string;
-      rightIcon?: string;
+      name: string
+      leftIcon?: string
+      rightIcon?: string
       variant?:
-        | "default"
-        | "link"
-        | "destructive"
-        | "outline"
-        | "secondary"
-        | "ghost";
-      to: string;
-      target?: Target;
-    }
-  ];
-}>();
+        | 'default'
+        | 'link'
+        | 'destructive'
+        | 'outline'
+        | 'secondary'
+        | 'ghost'
+      to: string
+      target?: Target
+    },
+  ]
+}>()
 
-defineSlots();
+defineSlots()
 </script>

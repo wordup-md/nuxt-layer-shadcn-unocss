@@ -1,13 +1,20 @@
 <template>
   <div class="relative">
     <UiEditorDropdown
-      v-model="mdcAttrs.level" chevron tooltip="Level" placement="bottom-end" :items="levels"
+      v-model="mdcAttrs.level"
+      chevron
+      tooltip="Level"
+      placement="bottom-end"
+      :items="levels"
       class="absolute right-1 top-1 z-10 opacity-25 transition-opacity group-hover:opacity-100"
     >
       <span class="text-xs font-mono capitalize">h{{ model.level }}</span>
     </UiEditorDropdown>
 
-    <Steps v-bind="model" :class="levelClass[model.level]">
+    <Steps
+      v-bind="model"
+      :class="levelClass[model.level]"
+    >
       <div :ref="props.contentRef" />
     </Steps>
   </div>

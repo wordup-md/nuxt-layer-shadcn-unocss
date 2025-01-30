@@ -1,5 +1,8 @@
 <template>
-  <h5 :id class="scroll-m-20 text-lg font-semibold tracking-tight [&:not(:first-child)]:mt-6">
+  <h5
+    :id
+    class="scroll-m-20 text-lg font-semibold tracking-tight [&:not(:first-child)]:mt-6"
+  >
     <NuxtLink
       v-if="id && generate"
       :to="`#${id}`"
@@ -11,8 +14,8 @@
 </template>
 
 <script setup lang="ts">
-const { id } = defineProps<{ id?: string }>();
+const { id } = defineProps<{ id?: string }>()
 
-const { headings } = useRuntimeConfig().public.mdc;
-const generate = computed(() => id && ((typeof headings?.anchorLinks === 'boolean' && headings?.anchorLinks === true) || (typeof headings?.anchorLinks === 'object' && headings?.anchorLinks?.h5)));
+const { headings } = useRuntimeConfig().public.mdc
+const generate = computed(() => id && ((typeof headings?.anchorLinks === 'boolean' && headings?.anchorLinks === true) || (typeof headings?.anchorLinks === 'object' && headings?.anchorLinks?.h5)))
 </script>

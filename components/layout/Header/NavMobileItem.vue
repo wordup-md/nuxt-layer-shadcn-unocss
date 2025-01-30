@@ -15,7 +15,10 @@
       </UiCollapsibleTrigger>
       <UiCollapsibleContent>
         <ul class="pl-2">
-          <li v-for="link in item.links" :key="link.title">
+          <li
+            v-for="link in item.links"
+            :key="link.title"
+          >
             <NuxtLink
               :to="link.to"
               :target="link.to"
@@ -42,7 +45,12 @@
       </UiCollapsibleContent>
     </UiCollapsible>
   </template>
-  <NuxtLink v-else :to="item.to" :target="item.target" class="flex w-full p-2">
+  <NuxtLink
+    v-else
+    :to="item.to"
+    :target="item.target"
+    class="flex w-full p-2"
+  >
     {{ item.title }}
     <Icon
       v-if="item.showLinkIcon ?? true"
@@ -54,18 +62,18 @@
 </template>
 
 <script setup lang="ts">
-import type { NuxtLink } from "#imports";
+import type { NuxtLink } from '#imports'
 
 const props = defineProps<{
-  item: NuxtLink;
-  index: number;
-}>();
+  item: NuxtLink
+  index: number
+}>()
 
-const collapsed = useCollapsedMap();
+const collapsed = useCollapsedMap()
 const isOpen = ref(
-  collapsed.value.get(`mobile-header-nav${props.index}`) || false
-);
+  collapsed.value.get(`mobile-header-nav${props.index}`) || false,
+)
 watch(isOpen, (v) => {
-  collapsed.value.set(`mobile-header-nav${props.index}`, v);
-});
+  collapsed.value.set(`mobile-header-nav${props.index}`, v)
+})
 </script>

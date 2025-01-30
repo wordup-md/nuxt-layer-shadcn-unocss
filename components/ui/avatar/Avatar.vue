@@ -5,21 +5,21 @@
 </template>
 
 <script setup lang="ts">
-import type { HTMLAttributes } from "vue";
-import { cn } from "@/lib/utils";
-import { AvatarRoot } from "radix-vue";
-import { avatarVariant, type AvatarVariants } from ".";
+import type { HTMLAttributes } from 'vue'
+import { AvatarRoot } from 'radix-vue'
+import { avatarVariant, type AvatarVariants } from '.'
+import { cn } from '@/lib/utils'
 
 const props = withDefaults(
   defineProps<{
-    class?: HTMLAttributes["class"];
-    size?: AvatarVariants["size"];
-    shape?: AvatarVariants["shape"];
+    class?: HTMLAttributes['class']
+    size?: AvatarVariants['size']
+    shape?: AvatarVariants['shape']
   }>(),
   {
-    class: "",
-    size: "sm",
-    shape: "circle",
-  }
-);
+    class: '',
+    size: 'sm',
+    shape: 'circle',
+  },
+)
 </script>

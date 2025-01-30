@@ -1,9 +1,15 @@
 <template>
   <UiCard>
     <UiCardHeader>
-      <div class="flex flex-col gap-3" :class="{ 'text-center': center }">
+      <div
+        class="flex flex-col gap-3"
+        :class="{ 'text-center': center }"
+      >
         <UiAvatar :class="{ 'mx-auto': center }">
-          <UiAvatarImage :src="avatar" :alt="name" />
+          <UiAvatarImage
+            :src="avatar"
+            :alt="name"
+          />
         </UiAvatar>
         <div>
           <div class="text-lg font-bold">
@@ -13,8 +19,16 @@
             {{ title }}
           </div>
         </div>
-        <div class="flex gap-3 text-secondary-foreground" :class="{ 'mx-auto': center }">
-          <NuxtLink v-for="link in links" :key="link.to" :to="link.to" :target="link.target">
+        <div
+          class="flex gap-3 text-secondary-foreground"
+          :class="{ 'mx-auto': center }"
+        >
+          <NuxtLink
+            v-for="link in links"
+            :key="link.to"
+            :to="link.to"
+            :target="link.target"
+          >
             <SmartIcon :name="link.icon" />
           </NuxtLink>
         </div>
@@ -25,14 +39,14 @@
 
 <script setup lang="ts">
 const { center = true } = defineProps<{
-  avatar: string;
-  name: string;
-  title?: string;
+  avatar: string
+  name: string
+  title?: string
   links?: ({
-    icon: string;
-    to: string;
-    target?: Target;
-  })[];
-  center?: boolean;
-}>();
+    icon: string
+    to: string
+    target?: Target
+  })[]
+  center?: boolean
+}>()
 </script>

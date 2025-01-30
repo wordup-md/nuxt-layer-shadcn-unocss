@@ -27,7 +27,10 @@
           aria-label="Close banner"
           @click.prevent="open = false"
         >
-          <Icon name="lucide:x" size="36" />
+          <Icon
+            name="lucide:x"
+            size="36"
+          />
         </UiButton>
         <div v-else />
       </div>
@@ -36,8 +39,8 @@
 </template>
 
 <script setup lang="ts">
-const open = useCookie<boolean>("banner-open", { default: () => true });
-const { showClose, content, to, target, border } = useConfig().value.banner;
+const open = useCookie<boolean>('banner-open', { default: () => true })
+const { showClose, content, to, target, border } = useConfig().value.banner
 
 function navigate() {
   if (open.value && to) {
@@ -46,7 +49,7 @@ function navigate() {
       open: {
         target,
       },
-    });
+    })
   }
 }
 </script>

@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 const { type = 'single' } = defineProps<{
-  type?: 'single' | 'multiple';
-  collapsible?: boolean;
-  defaultValue: string | string[];
-}>();
+  type?: 'single' | 'multiple'
+  collapsible?: boolean
+  defaultValue: string | string[]
+}>()
 </script>

@@ -1,5 +1,8 @@
 <template>
-  <MDC :value="md" class="[&:not(:first-child)]:mt-5" />
+  <MDC
+    :value="md"
+    class="[&:not(:first-child)]:mt-5"
+  />
 </template>
 
 <script setup lang="ts">
@@ -10,12 +13,12 @@ const {
   saveDev = false,
   noSync,
 } = defineProps<{
-  inStack?: boolean;
-  name?: string;
-  sync?: string;
-  saveDev?: boolean;
-  noSync?: boolean;
-}>();
+  inStack?: boolean
+  name?: string
+  sync?: string
+  saveDev?: boolean
+  noSync?: boolean
+}>()
 
 const md = `
 ::code-group{${inStack ? 'in-stack' : ''} ${noSync ? '' : `sync="${sync}"`}}
@@ -23,10 +26,10 @@ ${
   usePm().packageManagers.value.map((pm) => {
     const code = name
       ? `${pm.command}${pm.install}${saveDev ? pm.saveDev : ''}${name}`
-      : `${pm.command}${pm.installEmpty}`;
-    return `\`\`\`bash [${pm.name}]\n${code}\n\`\`\`\n`;
+      : `${pm.command}${pm.installEmpty}`
+    return `\`\`\`bash [${pm.name}]\n${code}\n\`\`\`\n`
   }).join('\n')
 }
 ::
-`;
+`
 </script>

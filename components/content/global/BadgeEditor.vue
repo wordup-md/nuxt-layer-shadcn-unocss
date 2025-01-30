@@ -1,32 +1,35 @@
 <template>
-  <Badge v-bind="model" class="[&>div]:inline">
+  <Badge
+    v-bind="model"
+    class="[&>div]:inline"
+  >
     <span :ref="props.contentRef" />
   </Badge>
 </template>
 
 <script lang="ts" setup>
-import type { VueNodeViewProps } from "prosekit/vue";
+import type { VueNodeViewProps } from 'prosekit/vue'
 
-const props = defineProps<VueNodeViewProps>();
+const props = defineProps<VueNodeViewProps>()
 
-const types = ["default", "info", "warning", "success", "danger"];
-const variants = ["default", "secondary", "destructive", "outline"];
-const sizes = ["md", "sm"];
+const types = ['default', 'info', 'warning', 'success', 'danger']
+const variants = ['default', 'secondary', 'destructive', 'outline']
+const sizes = ['md', 'sm']
 
-const { getComponentProps } = useMdcEditor();
+const { getComponentProps } = useMdcEditor()
 const { model } = getComponentProps(props, {
   id: {
     type: String,
   },
   class: {
     type: String,
-    default: "",
+    default: '',
   },
   type: {
     type: String,
-    default: "default",
+    default: 'default',
     validator(value: string) {
-      return types.includes(value);
+      return types.includes(value)
     },
   },
   to: {
@@ -37,17 +40,17 @@ const { model } = getComponentProps(props, {
   },
   variant: {
     type: String,
-    default: "default",
+    default: 'default',
     validator(value: string) {
-      return variants.includes(value);
+      return variants.includes(value)
     },
   },
   size: {
     type: String,
-    default: "md",
+    default: 'md',
     validator(value: string) {
-      return sizes.includes(value);
+      return sizes.includes(value)
     },
   },
-});
+})
 </script>

@@ -7,7 +7,10 @@
       {{ description }}
     </p>
 
-    <div v-if="badges" class="flex gap-2 pt-4">
+    <div
+      v-if="badges"
+      class="flex gap-2 pt-4"
+    >
       <NuxtLink
         v-for="(badge, i) in badges"
         :key="i"
@@ -29,7 +32,10 @@
       </NuxtLink>
     </div>
 
-    <div v-if="authors" class="-mx-4 flex divide-x pt-4">
+    <div
+      v-if="authors"
+      class="-mx-4 flex divide-x pt-4"
+    >
       <NuxtLink
         v-for="author in authors"
         :key="author.name"
@@ -37,8 +43,14 @@
         :target="author.target"
         class="flex items-center gap-2 px-4"
       >
-        <UiAvatar v-if="author.avatar" class="size-8">
-          <UiAvatarImage :src="author.avatar" :alt="author.name" />
+        <UiAvatar
+          v-if="author.avatar"
+          class="size-8"
+        >
+          <UiAvatarImage
+            :src="author.avatar"
+            :alt="author.name"
+          />
         </UiAvatar>
         <div>
           <div class="text-sm font-semibold">
@@ -58,22 +70,22 @@
 
 <script setup lang="ts">
 defineProps<{
-  title?: string;
-  description?: string;
+  title?: string
+  description?: string
   badges?: {
-    value?: string;
-    icon?: string;
-    to?: string;
-    target?: Target;
-    type?: "default" | "info" | "warning" | "success" | "danger" | "lime";
-    variant?: "default" | "secondary" | "destructive" | "outline";
-  }[];
+    value?: string
+    icon?: string
+    to?: string
+    target?: Target
+    type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'lime'
+    variant?: 'default' | 'secondary' | 'destructive' | 'outline'
+  }[]
   authors?: {
-    name: string;
-    username?: string;
-    avatar?: string;
-    to?: string;
-    target?: Target;
-  }[];
-}>();
+    name: string
+    username?: string
+    avatar?: string
+    to?: string
+    target?: Target
+  }[]
+}>()
 </script>

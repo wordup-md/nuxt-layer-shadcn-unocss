@@ -9,8 +9,8 @@
 
 <script setup lang="ts">
 const { level = '3' } = defineProps<{
-  level?: '1' | '2' | '3' | '4' | '5' | '6';
-}>();
+  level?: '1' | '2' | '3' | '4' | '5' | '6'
+}>()
 
 const levelClass = {
   1: '[&>h1]:step',
@@ -19,5 +19,5 @@ const levelClass = {
   4: '[&>h4]:step',
   5: '[&>h5]:step',
   6: '[&>h6]:step',
-};
+}
 </script>

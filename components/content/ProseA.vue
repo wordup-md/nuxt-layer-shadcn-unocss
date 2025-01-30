@@ -14,8 +14,8 @@ const {
   href = '',
   external = false,
 } = defineProps<{
-  href?: string;
-  target?: Target;
-  external?: boolean;
-}>();
+  href?: string
+  target?: Target
+  external?: boolean
+}>()
 </script>

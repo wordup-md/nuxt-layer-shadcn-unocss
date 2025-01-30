@@ -5,14 +5,20 @@
         <span class="text-md font-bold text-primary">
           {{ name }}
         </span>
-        <span v-if="required" class="font-mono text-sm text-muted-foreground">
+        <span
+          v-if="required"
+          class="font-mono text-sm text-muted-foreground"
+        >
           {{ fieldRequiredText }}
         </span>
         <span class="ml-auto font-mono text-sm text-muted-foreground">
           {{ type }}
         </span>
       </div>
-      <div v-if="defaultValue" class="text-muted-foreground">
+      <div
+        v-if="defaultValue"
+        class="text-muted-foreground"
+      >
         <ProseCodeInline>
           {{ defaultValue }}
         </ProseCodeInline>
@@ -27,12 +33,12 @@
 
 <script setup lang="ts">
 defineProps<{
-  name: string;
-  type?: string;
-  required?: boolean;
-  description?: string;
-  defaultValue?: string;
-}>();
+  name: string
+  type?: string
+  required?: boolean
+  description?: string
+  defaultValue?: string
+}>()
 
-const { fieldRequiredText } = useConfig().value.main;
+const { fieldRequiredText } = useConfig().value.main
 </script>

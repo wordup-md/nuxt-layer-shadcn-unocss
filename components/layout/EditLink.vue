@@ -1,5 +1,8 @@
 <template>
-  <div v-if="enabledDocsFooter" class="mb-6 w-fit">
+  <div
+    v-if="enabledDocsFooter"
+    class="mb-6 w-fit"
+  >
     <NuxtLink
       :to="url"
       target="_blank"
@@ -16,5 +19,5 @@
 </template>
 
 <script setup lang="ts">
-const { url, enabledDocsFooter, text, icon } = useEditLink();
+const { url, enabledDocsFooter, text, icon } = useEditLink()
 </script>

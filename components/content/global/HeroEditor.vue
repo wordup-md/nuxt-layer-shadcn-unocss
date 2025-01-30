@@ -9,25 +9,40 @@
       class="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
     >
       <template v-if="model.announcement.icon">
-        <SmartIcon :name="model.announcement.icon" :size="16" />
-        <UiSeparator class="mx-2 h-4" orientation="vertical" />
+        <SmartIcon
+          :name="model.announcement.icon"
+          :size="16"
+        />
+        <UiSeparator
+          class="mx-2 h-4"
+          orientation="vertical"
+        />
       </template>
       <span class="sm:hidden">{{ model.announcement.title }}</span>
       <span class="hidden sm:inline">
         {{ model.announcement.title }}
       </span>
-      <Icon name="lucide:arrow-right" class="ml-1 size-4" />
+      <Icon
+        name="lucide:arrow-right"
+        class="ml-1 size-4"
+      />
     </NuxtLink>
 
     <h1
       class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]"
     >
-      <ContentSlot :use="$slots.title" unwrap="p" />
+      <ContentSlot
+        :use="$slots.title"
+        unwrap="p"
+      />
     </h1>
     <span
       class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl"
     >
-      <ContentSlot :use="$slots.description" unwrap="p" />
+      <ContentSlot
+        :use="$slots.description"
+        unwrap="p"
+      />
     </span>
 
     <section
@@ -39,7 +54,10 @@
         :to="action.to"
         :target="action.target"
       >
-        <UiButton :variant="action.variant" @click.prevent>
+        <UiButton
+          :variant="action.variant"
+          @click.prevent
+        >
           <SmartIcon
             v-if="action.leftIcon"
             :name="action.leftIcon"
@@ -58,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import type { VueNodeViewProps } from "prosekit/vue";
+import type { VueNodeViewProps } from 'prosekit/vue'
 
 // defineProps<{
 //   announcement?: {
@@ -76,8 +94,8 @@ import type { VueNodeViewProps } from "prosekit/vue";
 //     target?: string
 //   }]
 // }>()
-const props = defineProps<VueNodeViewProps>();
-const { getComponentProps } = useMdcEditor();
+const props = defineProps<VueNodeViewProps>()
+const { getComponentProps } = useMdcEditor()
 
 const { model } = getComponentProps(props, {
   id: {
@@ -92,7 +110,7 @@ const { model } = getComponentProps(props, {
   actions: {
     type: Array,
   },
-});
+})
 
-defineSlots();
+defineSlots()
 </script>

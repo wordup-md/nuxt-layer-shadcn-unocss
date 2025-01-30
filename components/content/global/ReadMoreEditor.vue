@@ -1,17 +1,23 @@
 <template>
-  <div class="group relative" contenteditable="false">
+  <div
+    class="group relative"
+    contenteditable="false"
+  >
     <Alert icon="lucide:bookmark">
       Read more in
-      <UiEditorLinkInput v-model="mdcAttrs.to" class="inline-block" />
+      <UiEditorLinkInput
+        v-model="mdcAttrs.to"
+        class="inline-block"
+      />
     </Alert>
   </div>
 </template>
 
 <script lang="ts" setup>
-import type { VueNodeViewProps } from "prosekit/vue";
+import type { VueNodeViewProps } from 'prosekit/vue'
 
-const props = defineProps<VueNodeViewProps>();
-const { getComponentProps } = useMdcEditor();
+const props = defineProps<VueNodeViewProps>()
+const { getComponentProps } = useMdcEditor()
 
 const { mdcAttrs } = getComponentProps(props, {
   id: {
@@ -29,7 +35,7 @@ const { mdcAttrs } = getComponentProps(props, {
   target: {
     type: String,
   },
-});
+})
 
 // const computedTitle = computed<string>(
 //   () => {

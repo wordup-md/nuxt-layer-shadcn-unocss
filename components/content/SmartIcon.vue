@@ -26,21 +26,21 @@
 </template>
 
 <script setup lang="ts">
-import { stringToIcon, validateIconName } from "@iconify/utils";
+import { stringToIcon, validateIconName } from '@iconify/utils'
 
 const { name, size = 16 } = defineProps<{
-  name: string;
-  size?: number | string;
-}>();
+  name: string
+  size?: number | string
+}>()
 
 const isValidIcon = computed(() => {
-  if (name.startsWith("http")) return false;
-  return validateIconName(stringToIcon(name));
-});
+  if (name.startsWith('http')) return false
+  return validateIconName(stringToIcon(name))
+})
 
 const isValidEmoji = computed(() =>
   /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g.test(
-    name
-  )
-);
+    name,
+  ),
+)
 </script>

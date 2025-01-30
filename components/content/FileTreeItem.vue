@@ -54,11 +54,11 @@
 
 <script setup lang="ts">
 const { tree, level } = defineProps<{
-  showArrow: boolean;
-  tree: FileTreeItem;
-  showIcon: boolean;
-  level: number;
-}>();
+  showArrow: boolean
+  tree: FileTreeItem
+  showIcon: boolean
+  level: number
+}>()
 
-const isOpen = ref(true);
+const isOpen = ref(true)
 </script>

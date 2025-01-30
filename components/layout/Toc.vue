@@ -17,7 +17,10 @@
           :class="[links.length && 'border-b pb-5']"
         />
 
-        <div v-if="links" class="pt-5 text-muted-foreground">
+        <div
+          v-if="links"
+          class="pt-5 text-muted-foreground"
+        >
           <NuxtLink
             v-for="(link, i) in links"
             :key="i"
@@ -70,14 +73,14 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ isSmall?: boolean }>();
+defineProps<{ isSmall?: boolean }>()
 
-const { toc } = useContent();
-const { title, links: configLinks } = useConfig().value.toc;
-const { border } = useConfig().value.header;
-const isOpen = ref(false);
+const { toc } = useContent()
+const { title, links: configLinks } = useConfig().value.toc
+const { border } = useConfig().value.header
+const isOpen = ref(false)
 
-const { url, enabledToc, text, icon } = useEditLink();
+const { url, enabledToc, text, icon } = useEditLink()
 
 const links = computed(() => {
   if (enabledToc.value) {
@@ -86,11 +89,11 @@ const links = computed(() => {
         title: text,
         icon,
         to: url.value,
-        target: "_blank",
+        target: '_blank',
         showLinkIcon: true,
       },
-    ]);
+    ])
   }
-  return configLinks;
-});
+  return configLinks
+})
 </script>

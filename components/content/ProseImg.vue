@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, useRuntimeConfig } from '#imports';
-import { joinURL, withLeadingSlash, withTrailingSlash } from 'ufo';
+import { joinURL, withLeadingSlash, withTrailingSlash } from 'ufo'
+import { computed, useRuntimeConfig } from '#imports'
 
 const props = defineProps({
   src: {
@@ -29,14 +29,14 @@ const props = defineProps({
     type: [String, Number],
     default: undefined,
   },
-});
+})
 
 const refinedSrc = computed(() => {
   if (props.src?.startsWith('/') && !props.src.startsWith('//')) {
-    const _base = withLeadingSlash(withTrailingSlash(useRuntimeConfig().app.baseURL));
+    const _base = withLeadingSlash(withTrailingSlash(useRuntimeConfig().app.baseURL))
     if (_base !== '/' && !props.src.startsWith(_base))
-      return joinURL(_base, props.src);
+      return joinURL(_base, props.src)
   }
-  return props.src;
-});
+  return props.src
+})
 </script>

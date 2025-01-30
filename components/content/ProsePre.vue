@@ -6,12 +6,15 @@
     :highlights="highlights"
     :meta="meta"
   >
-    <pre :class="$props.class" :style="style"><slot /></pre>
+    <pre
+      :class="$props.class"
+      :style="style"
+    ><slot /></pre>
   </ProseCode>
 </template>
 
 <script setup lang="ts">
-import type { BuiltinLanguage } from 'shiki';
+import type { BuiltinLanguage } from 'shiki'
 
 defineProps({
   code: {
@@ -42,7 +45,7 @@ defineProps({
     type: [String, Object],
     default: null,
   },
-});
+})
 </script>
 
 <style>

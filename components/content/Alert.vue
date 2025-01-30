@@ -8,18 +8,37 @@
     ]"
     @click="alertClick"
   >
-    <SmartIcon v-if="icon && title" :name="icon" :size="16" />
-    <UiAlertTitle v-if="title" class="font-semibold">
+    <SmartIcon
+      v-if="icon && title"
+      :name="icon"
+      :size="16"
+    />
+    <UiAlertTitle
+      v-if="title"
+      class="font-semibold"
+    >
       {{ title }}
     </UiAlertTitle>
     <UiAlertDescription>
       <div class="flex flex-row gap-2">
-        <SmartIcon v-if="icon && !title" :name="icon" :size="16" class="mb-[2px] min-w-5 self-center" />
-        <span class="w-full" :class="[to && 'pr-3']">
+        <SmartIcon
+          v-if="icon && !title"
+          :name="icon"
+          :size="16"
+          class="mb-[2px] min-w-5 self-center"
+        />
+        <span
+          class="w-full"
+          :class="[to && 'pr-3']"
+        >
           <slot />
         </span>
       </div>
-      <SmartIcon v-if="to && showLinkIcon" name="lucide:arrow-up-right" class="absolute right-4 top-4" />
+      <SmartIcon
+        v-if="to && showLinkIcon"
+        name="lucide:arrow-up-right"
+        class="absolute right-4 top-4"
+      />
     </UiAlertDescription>
   </UiAlert>
 </template>
@@ -33,15 +52,15 @@ const {
   inStack = false,
   showLinkIcon = true,
 } = defineProps<{
-  title?: string;
-  icon?: string;
-  type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'secondary';
-  to?: string;
-  target?: Target;
-  external?: boolean;
-  inStack?: boolean;
-  showLinkIcon?: boolean;
-}>();
+  title?: string
+  icon?: string
+  type?: 'default' | 'info' | 'warning' | 'success' | 'danger' | 'secondary'
+  to?: string
+  target?: Target
+  external?: boolean
+  inStack?: boolean
+  showLinkIcon?: boolean
+}>()
 
 const typeTwClass = {
   default: '',
@@ -52,7 +71,7 @@ const typeTwClass = {
   success: 'border-green-600 text-green-600 [&>svg]:text-green-600',
   danger: 'border-red-600 text-red-600 [&>svg]:text-red-600',
   secondary: 'bg-muted/50',
-};
+}
 
 async function alertClick() {
   if (to) {
@@ -60,11 +79,12 @@ async function alertClick() {
       await navigateTo(to, {
         external: external ?? to.startsWith('http'),
         open: { target },
-      });
-    } else {
+      })
+    }
+    else {
       await navigateTo(to, {
         external: external ?? to.startsWith('http'),
-      });
+      })
     }
   }
 }

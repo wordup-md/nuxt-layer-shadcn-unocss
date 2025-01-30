@@ -6,13 +6,26 @@
       inStack && 'mb-0 rounded-none border-none shadow-none',
     ]"
   >
-    <div v-if="!inGroup && filename" class="flex items-center border-b p-3 font-mono text-sm">
-      <SmartIcon v-if="icon" :name="icon" class="mr-1.5" />
+    <div
+      v-if="!inGroup && filename"
+      class="flex items-center border-b p-3 font-mono text-sm"
+    >
+      <SmartIcon
+        v-if="icon"
+        :name="icon"
+        class="mr-1.5"
+      />
       <span>{{ filename }}</span>
-      <CodeCopy :code class="ml-auto mr-1" />
+      <CodeCopy
+        :code
+        class="ml-auto mr-1"
+      />
     </div>
 
-    <span v-if="!filename" class="absolute right-3 top-3 z-10">
+    <span
+      v-if="!filename"
+      class="absolute right-3 top-3 z-10"
+    >
       <CodeCopy :code />
     </span>
     <div class="bg-muted/30">
@@ -34,8 +47,8 @@
 </template>
 
 <script setup lang="ts">
-import type { BuiltinLanguage } from 'shiki';
-import ScrollBar from '../ui/scroll-area/ScrollBar.vue';
+import type { BuiltinLanguage } from 'shiki'
+import ScrollBar from '../ui/scroll-area/ScrollBar.vue'
 
 const {
   code = '',
@@ -45,32 +58,32 @@ const {
   filename,
   meta,
 } = defineProps<{
-  code?: string;
-  language?: BuiltinLanguage;
-  filename?: string;
-  inGroup?: boolean;
-  inStack?: boolean;
-  highlights?: number[];
-  meta?: string;
-}>();
+  code?: string
+  language?: BuiltinLanguage
+  filename?: string
+  inGroup?: boolean
+  inStack?: boolean
+  highlights?: number[]
+  meta?: string
+}>()
 
 const parsedMeta = computed(() => {
-  const split = meta?.split(' ') ?? [];
-  const params = new Map<string, string | undefined>();
+  const split = meta?.split(' ') ?? []
+  const params = new Map<string, string | undefined>()
 
   for (const param of split) {
-    const [key, val] = param.split('=');
-    params.set(key, val);
+    const [key, val] = param.split('=')
+    params.set(key, val)
   }
 
-  return params;
-});
+  return params
+})
 
-const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon));
+const iconMap = new Map(Object.entries(useConfig().value.main.codeIcon))
 const icon = computed(() => {
-  const filenameLow = filename?.toLowerCase();
-  return parsedMeta.value.get('icon') || (filenameLow && iconMap.get(filenameLow)) || (language && iconMap.get(language));
-});
+  const filenameLow = filename?.toLowerCase()
+  return parsedMeta.value.get('icon') || (filenameLow && iconMap.get(filenameLow)) || (language && iconMap.get(language))
+})
 </script>
 
 <style>

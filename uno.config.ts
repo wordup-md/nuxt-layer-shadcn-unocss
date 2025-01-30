@@ -82,7 +82,8 @@ export default defineConfig({
         :root {
           ${breakpoints}
         }
-      `},
+      `
+      },
     },
   ],
 })
