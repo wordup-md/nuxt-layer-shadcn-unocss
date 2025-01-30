@@ -14,7 +14,7 @@ const variants = ["default", "secondary", "destructive", "outline"];
 const sizes = ["md", "sm"];
 
 const { getComponentProps } = useMdcEditor();
-const { model, mdcAttrs } = getComponentProps(props, {
+const { model } = getComponentProps(props, {
   id: {
     type: String,
   },

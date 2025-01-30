@@ -64,7 +64,7 @@
 // import between from "unist-util-find-all-between";
 // import { findAllAfter } from "unist-util-find-all-after";
 
-import type { Node, Parent } from "unist";
+// import type { Node, Parent } from "unist";
 
 import { navigationMenuTriggerStyle } from "../../ui/navigation-menu";
 // import type { MarkdownNode } from "@nuxt/content";
@@ -182,53 +182,53 @@ const tree = computed<MDCRoot>(() => {
   };
 });
 
-function groupElementsUnderH2(tree: Parent) {
-  const _tree = [] as Node[];
-  let currentH1 = null;
+// function groupElementsUnderH2(tree: Parent) {
+//   const _tree = [] as Node[];
+//   let currentH1 = null;
 
-  for (let index = 0; index < tree.children.length; index++) {
-    const node = tree.children[index];
-    console.log(node, index, tree);
-    if (node.tag !== "h1") {
-      continue; // Skip non-h1 nodes
-    }
+//   for (let index = 0; index < tree.children.length; index++) {
+//     const node = tree.children[index];
+//     console.log(node, index, tree);
+//     if (node.tag !== "h1") {
+//       continue; // Skip non-h1 nodes
+//     }
 
-    // If there's a previous h1, we need to stop collecting nodes for it
-    if (currentH1) {
-      currentH1 = null;
-    }
+//     // If there's a previous h1, we need to stop collecting nodes for it
+//     if (currentH1) {
+//       currentH1 = null;
+//     }
 
-    // Set the current h1
-    currentH1 = node;
-    let nextH1 = tree.children.findIndex(
-      (value, i) => value.tag === "h1" && i > index
-    );
-    console.log(nextH1);
+//     // Set the current h1
+//     currentH1 = node;
+//     let nextH1 = tree.children.findIndex(
+//       (value, i) => value.tag === "h1" && i > index
+//     );
+//     console.log(nextH1);
 
-    // Find all nodes after the current h1 until the next h1
-    const children =
-      nextH1 !== -1
-        ? between(tree, index, nextH1, (n) => n.tag !== "h1")
-        : findAllAfter(tree, index, (n) => n.tag !== "h1");
+//     // Find all nodes after the current h1 until the next h1
+//     const children =
+//       nextH1 !== -1
+//         ? between(tree, index, nextH1, (n) => n.tag !== "h1")
+//         : findAllAfter(tree, index, (n) => n.tag !== "h1");
 
-    console.log("children", children, index);
-    // Add these nodes as children of the current h1
-    if (children.length > 0) {
-      currentH1.children.push({
-        type: "element",
-        tag: "template",
-        props: {
-          "v-slot:content": "",
-        },
-        children,
-      });
-    }
-    _tree.push(currentH1);
-  }
+//     console.log("children", children, index);
+//     // Add these nodes as children of the current h1
+//     if (children.length > 0) {
+//       currentH1.children.push({
+//         type: "element",
+//         tag: "template",
+//         props: {
+//           "v-slot:content": "",
+//         },
+//         children,
+//       });
+//     }
+//     _tree.push(currentH1);
+//   }
 
-  console.log("trrr", _tree);
-  return _tree;
-}
+//   console.log("trrr", _tree);
+//   return _tree;
+// }
 
 function groupElementsAfterElement(
   elements: MDCElement[],
@@ -284,16 +284,16 @@ function groupElementsAfterElement(
 /**
  * Merge consequent Text nodes into single node
  */
-function mergeTextNodes(nodes: Array<VNode>) {
-  const mergedNodes: Array<VNode> = [];
-  for (const node of nodes) {
-    const previousNode = mergedNodes[mergedNodes.length - 1];
-    if (node.type === Text && previousNode?.type === Text) {
-      previousNode.children = (previousNode.children as string) + node.children;
-    } else {
-      mergedNodes.push(node);
-    }
-  }
-  return mergedNodes;
-}
+// function mergeTextNodes(nodes: Array<VNode>) {
+//   const mergedNodes: Array<VNode> = [];
+//   for (const node of nodes) {
+//     const previousNode = mergedNodes[mergedNodes.length - 1];
+//     if (node.type === Text && previousNode?.type === Text) {
+//       previousNode.children = (previousNode.children as string) + node.children;
+//     } else {
+//       mergedNodes.push(node);
+//     }
+//   }
+//   return mergedNodes;
+// }
 </script>

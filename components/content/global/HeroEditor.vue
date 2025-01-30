@@ -1,5 +1,7 @@
 <template>
-  <section class="mx-auto max-w-[980px] flex flex-col items-center gap-2 py-8 lg:py-24 md:py-12 lg:pb-20 md:pb-8">
+  <section
+    class="mx-auto max-w-[980px] flex flex-col items-center gap-2 py-8 lg:py-24 md:py-12 lg:pb-20 md:pb-8"
+  >
     <NuxtLink
       v-if="model.announcement"
       :to="model.announcement.to"
@@ -17,14 +19,20 @@
       <Icon name="lucide:arrow-right" class="ml-1 size-4" />
     </NuxtLink>
 
-    <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
+    <h1
+      class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]"
+    >
       <ContentSlot :use="$slots.title" unwrap="p" />
     </h1>
-    <span class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
+    <span
+      class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl"
+    >
       <ContentSlot :use="$slots.description" unwrap="p" />
     </span>
 
-    <section class="w-full flex items-center justify-center py-4 space-x-4 md:pb-10">
+    <section
+      class="w-full flex items-center justify-center py-4 space-x-4 md:pb-10"
+    >
       <NuxtLink
         v-for="(action, i) in model.actions"
         :key="i"
@@ -32,9 +40,17 @@
         :target="action.target"
       >
         <UiButton :variant="action.variant" @click.prevent>
-          <SmartIcon v-if="action.leftIcon" :name="action.leftIcon" class="mr-1" />
+          <SmartIcon
+            v-if="action.leftIcon"
+            :name="action.leftIcon"
+            class="mr-1"
+          />
           {{ action.name }}
-          <SmartIcon v-if="action.rightIcon" :name="action.rightIcon" class="ml-1" />
+          <SmartIcon
+            v-if="action.rightIcon"
+            :name="action.rightIcon"
+            class="ml-1"
+          />
         </UiButton>
       </NuxtLink>
     </section>
@@ -42,7 +58,7 @@
 </template>
 
 <script setup lang="ts">
-import type { VueNodeViewProps } from 'prosekit/vue'
+import type { VueNodeViewProps } from "prosekit/vue";
 
 // defineProps<{
 //   announcement?: {
@@ -60,10 +76,10 @@ import type { VueNodeViewProps } from 'prosekit/vue'
 //     target?: string
 //   }]
 // }>()
-const props = defineProps<VueNodeViewProps>()
-const { getComponentProps, config } = useMdcEditor()
+const props = defineProps<VueNodeViewProps>();
+const { getComponentProps } = useMdcEditor();
 
-const { model, mdcAttrs } = getComponentProps(props, {
+const { model } = getComponentProps(props, {
   id: {
     type: String,
   },
@@ -76,5 +92,7 @@ const { model, mdcAttrs } = getComponentProps(props, {
   actions: {
     type: Array,
   },
-})
+});
+
+defineSlots();
 </script>
