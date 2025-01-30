@@ -4,41 +4,25 @@ navigation: false
 layout: breakouts
 ---
 
-::div{.bg-zinc-50.py-10.my-10}
-none
-::
-
-::div{.full-width.bg-zinc-50.py-10.my-10}
-full width
-::
-
-::div{.breakout.bg-zinc-50.py-10.my-10}
-breakout
-::
-
 ::hero
 ---
 announcement:
-  title: 'Release v0.8.9'
-  icon: '🎉'
+  title: Release v0.8.13
+  icon: 🎉
   to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases/latest
   target: _blank
 actions:
   - name: Get Started
-    to: /getting-started
+    to: /getting-started/introduction
   - name: GitHub
     variant: outline
     to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
-    leftIcon: 'lucide:github'
+    leftIcon: lucide:github
 ---
-
 #title
 Effortless and Beautiful :br Docs Template.
 
 #description
-Beautifully designed Nuxt Content template built with shadcn-vue. :br Customizable. Compatible. Open Source.
+Beautifully designed Nuxt Content template built with :br
+[shadcn-vue](https://www.shadcn-vue.com) and [unocss](https://unocss.dev).
 ::
-
-<div class="border rounded-lg shadow-md">
-  <iframe src="/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0">
-</div>

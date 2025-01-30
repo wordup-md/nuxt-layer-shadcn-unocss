@@ -7,20 +7,20 @@ export default defineNuxtConfig({
     '@unpress/nuxt-module'
   ],
 
-  unocss: {
-    nuxtLayers: true
-  },
-
   css: [
-    '~/assets/style.css'
+    '~/assets/style.css',
   ],
+
+  compatibilityDate: '2025-01-10',
 
   eslint: {
     config: {
       // Use the generated ESLint config for lint root project as well
-      rootDir: fileURLToPath(new URL('..', import.meta.url))
-    }
+      rootDir: fileURLToPath(new URL('..', import.meta.url)),
+    },
   },
 
-  compatibilityDate: '2025-01-10'
+  unocss: {
+    nuxtLayers: true,
+  },
 })

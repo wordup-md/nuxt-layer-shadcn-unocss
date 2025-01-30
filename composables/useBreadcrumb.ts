@@ -38,7 +38,7 @@ export function useBreadcrumb(url: string): BreadcrumbItem[] {
   breadcrumbItems.unshift({
     title: showHomeTitle ? home?.title : '',
     href: '/',
-    icon: home?.icon,
+    icon: home?.icon || 'i-lucide-house',
     classes: 'transform scale-120',
   })
   return breadcrumbItems

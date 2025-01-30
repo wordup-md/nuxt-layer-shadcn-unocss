@@ -2,7 +2,7 @@ export default defineAppConfig({
   shadcnDocs: {
     site: {
       name: 'shadcn-docs',
-      description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
+      description: 'Beautifully designed Nuxt Content template built with shadcn-vue and unocss.',
       ogImage: '/hero.png',
       ogImageComponent: 'ShadcnDocs',
       ogImageColor: 'dark',
@@ -144,7 +144,7 @@ export default defineAppConfig({
       },
     },
     footer: {
-      credits: 'Made with ❤️ by [**Tony Zhang**](https://github.com/ZTL-UwU/)',
+      credits: 'Made with ❤️ by [**Emmanuel Salomon**](https://github.com/ManUtopiK/) with [Unpress](https://unpress.dev)',
       links: [
         {
           title: 'shadcn-vue',
