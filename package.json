@@ -1,5 +1,5 @@
 {
-  "name": "template-nuxt-layer",
+  "name": "nuxt-layer",
   "type": "module",
   "version": "0.0.2",
   "main": "./nuxt.config.ts",

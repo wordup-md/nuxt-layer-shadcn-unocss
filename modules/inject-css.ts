@@ -24,5 +24,17 @@ export default defineNuxtModule({
         tagPosition: 'bodyClose', // Ensure it's added at the end of the head
       })
     })
+
+    // nuxt.hook('vite:extendConfig', (config, { isClient, isServer }) => {
+    //   config.plugins = config.plugins || []
+    //   config.plugins.push({
+    //     name: 'vite-hmr-listener',
+    //     handleHotUpdate({ file, server }) {
+    //       console.log('File updated:', file)
+    //       // You can add your custom logic here
+    //       return []
+    //     },
+    //   })
+    // })
   },
 })
