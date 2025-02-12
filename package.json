@@ -1,8 +1,21 @@
 {
-  "name": "template-nuxt-layer",
+  "name": "@unpress/nuxt-layer",
   "type": "module",
   "version": "0.0.2",
+  "author": "Emmanuel Salomon <emmanuel.salomon@gmail.com>",
   "main": "./nuxt.config.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unpress/nuxt-layer.git"
+  },
+  "homepage": "https://github.com/unpress/nuxt-layer#readme",
+  "bugs": {
+    "url": "https://github.com/unpress/nuxt-layer/issues"
+  },
+  "keywords": [
+    "unpress"
+  ],
+  "license": "MIT",
   "scripts": {
     "dev": "nuxi dev .playground",
     "dev:root": "nuxi dev",
