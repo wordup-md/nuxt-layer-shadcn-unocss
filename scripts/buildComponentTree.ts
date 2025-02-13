@@ -32,7 +32,7 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
         // Handle directory
         const children = await buildComponentTree(fullPath)
         if (children.length > 0) {
-          const dir: TreeNode = {
+          let dir: TreeNode = {
             title: file,
             children,
           }
@@ -41,9 +41,11 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
           if (await stat(dirConfigPath).catch(() => false)) {
             const _dir = await readFile(fullPath + '/_dir.yml', 'utf-8')
             const yaml = parse(_dir)
-            dir.title = yaml.title
-            dir.description = yaml.description
-            dir.icon = yaml.icon
+            dir = {
+              ...dir,
+              ...yaml,
+            }
+            dir._path = file.replace(/^\d+\./, '')
           }
 
           tree.push(dir)
@@ -55,13 +57,13 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
 
         // Get relative path from components dir
         const relativePath = fullPath.split('2.components/')[1]
-        const pathWithoutExt = relativePath.replace(/\.md$/, '')
+        const pathWithoutExt = relativePath.replace(/^\d+\./, '').replace(/\.md$/, '')
 
         // Extract the numeric prefix if it exists
         // const numMatch = pathWithoutExt.match(/^(\d+)\./)
         const node: TreeNode = {
-          title: pathWithoutExt.replace(/^\d+\./, ''), // Remove numeric prefix from title
-          _path: `/${pathWithoutExt}`.replace(/\.md$/, ''),
+          title: pathWithoutExt, // Remove numeric prefix from title
+          _path: pathWithoutExt,
           content,
           ...data,
         }

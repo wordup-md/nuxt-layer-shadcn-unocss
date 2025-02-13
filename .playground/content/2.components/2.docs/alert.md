@@ -1,4 +1,5 @@
 ---
+title: Alert
 icon: lucide:triangle-alert
 badges:
   - value: Docus
