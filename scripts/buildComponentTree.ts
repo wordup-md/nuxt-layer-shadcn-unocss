@@ -30,34 +30,71 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
         // Handle directory
         const children = await buildComponentTree(fullPath)
         if (children.length > 0) {
-          tree.push({
+          const dir: TreeNode = {
             title: file,
             children,
-          })
+          }
+
+          const dirConfigPath = join(fullPath, '_dir.yml')
+          if (await stat(dirConfigPath).catch(() => false)) {
+            const _dir = await readFile(fullPath + '/_dir.yml', 'utf-8')
+            dir.data = parse(_dir)
+          }
+
+          tree.push(dir)
         }
       }
       else {
         const _content = await readFile(fullPath, 'utf-8')
         const { content, data } = parseFrontMatter(_content)
-        console.log(content, data)
-        // Handle file
-        // Remove extension and convert to title
-        const title = file.replace(/\.[^/.]+$/, '')
 
         // Get relative path from components dir
         const relativePath = fullPath.split('2.components/')[1]
+        const pathWithoutExt = relativePath.replace(/\.md$/, '')
 
-        tree.push({
-          title,
-          _path: relativePath,
+        // Extract the numeric prefix if it exists
+        const numMatch = pathWithoutExt.match(/^(\d+)\./)
+        const node: TreeNode = {
+          title: pathWithoutExt.replace(/^\d+\./, ''), // Remove numeric prefix from title
+          _path: `/ui-doc/${pathWithoutExt}`.replace(/\.md$/, ''),
           content,
           ...data,
-        })
+        }
+
+        if (numMatch) {
+          // Use the number as index (subtract 1 since arrays are 0-based)
+          const index = parseInt(numMatch[1]) - 1
+          tree.splice(index, 0, node)
+        }
+        else {
+          // If no number prefix, just push to the end
+          tree.push(node)
+        }
       }
     }
 
-    // Sort alphabetically
-    return tree.sort((a, b) => a.title.localeCompare(b.title))
+    // Sort items with numeric prefixes first, then alphabetically
+    // return tree.sort((a, b) => {
+    //   const aMatch = a._path.match(/^(\d+)\./)
+    //   const bMatch = b._path.match(/^(\d+)\./)
+
+    //   // If both have numeric prefixes, sort by number
+    //   if (aMatch && bMatch) {
+    //     const aNum = parseInt(aMatch[1])
+    //     const bNum = parseInt(bMatch[1])
+    //     if (aNum !== bNum) {
+    //       return aNum - bNum
+    //     }
+    //   }
+
+    //   // If only one has prefix, it goes first
+    //   if (aMatch && !bMatch) return -1
+    //   if (!aMatch && bMatch) return 1
+
+    //   // Otherwise sort alphabetically
+    //   return a.title.localeCompare(b.title)
+    // })
+    return tree
   }
   catch (err) {
     console.error('Error reading directory:', err)
