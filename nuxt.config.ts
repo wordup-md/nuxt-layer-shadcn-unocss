@@ -70,6 +70,8 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/': { prerender: true },
+    // Admin dashboard renders only on client-side
+    '/admin/**': { ssr: false },
   },
 
   sourcemap: {
