@@ -61,7 +61,7 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
         // const numMatch = pathWithoutExt.match(/^(\d+)\./)
         const node: TreeNode = {
           title: pathWithoutExt.replace(/^\d+\./, ''), // Remove numeric prefix from title
-          _path: `/ui-doc/${pathWithoutExt}`.replace(/\.md$/, ''),
+          _path: `/${pathWithoutExt}`.replace(/\.md$/, ''),
           content,
           ...data,
         }
