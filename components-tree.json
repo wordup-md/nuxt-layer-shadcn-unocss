@@ -7,7 +7,7 @@
     "icon": "lucide:letter-text"
   },
   {
-    "title": "2.docs",
+    "title": "Docs Components",
     "children": [
       {
         "title": "docs/alert",
@@ -356,13 +356,10 @@
         ]
       }
     ],
-    "data": {
-      "title": "Docs Components",
-      "icon": "lucide:book"
-    }
+    "icon": "lucide:book"
   },
   {
-    "title": "3.page",
+    "title": "Page Components",
     "children": [
       {
         "title": "Accordion",
@@ -454,9 +451,6 @@
         ]
       }
     ],
-    "data": {
-      "title": "Page Components",
-      "icon": "lucide:laptop-minimal"
-    }
+    "icon": "lucide:laptop-minimal"
   }
 ]

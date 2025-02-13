@@ -9,6 +9,8 @@ interface TreeNode {
   data?: Record<string, unknown>
   content?: string
   children?: TreeNode[]
+  description?: string
+  icon?: string
 }
 
 export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
@@ -38,7 +40,10 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
           const dirConfigPath = join(fullPath, '_dir.yml')
           if (await stat(dirConfigPath).catch(() => false)) {
             const _dir = await readFile(fullPath + '/_dir.yml', 'utf-8')
-            dir.data = parse(_dir)
+            const yaml = parse(_dir)
+            dir.title = yaml.title
+            dir.description = yaml.description
+            dir.icon = yaml.icon
           }
 
           tree.push(dir)
