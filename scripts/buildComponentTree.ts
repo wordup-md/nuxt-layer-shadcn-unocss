@@ -53,7 +53,7 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
         const pathWithoutExt = relativePath.replace(/\.md$/, '')
 
         // Extract the numeric prefix if it exists
-        const numMatch = pathWithoutExt.match(/^(\d+)\./)
+        // const numMatch = pathWithoutExt.match(/^(\d+)\./)
         const node: TreeNode = {
           title: pathWithoutExt.replace(/^\d+\./, ''), // Remove numeric prefix from title
           _path: `/ui-doc/${pathWithoutExt}`.replace(/\.md$/, ''),
@@ -61,15 +61,16 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
           ...data,
         }
 
-        if (numMatch) {
-          // Use the number as index (subtract 1 since arrays are 0-based)
-          const index = parseInt(numMatch[1]) - 1
-          tree.splice(index, 0, node)
-        }
-        else {
-          // If no number prefix, just push to the end
-          tree.push(node)
-        }
+        tree.push(node)
+        // if (numMatch) {
+        //   // Use the number as index (subtract 1 since arrays are 0-based)
+        //   const index = parseInt(numMatch[1]) - 1
+        //   tree.splice(index, 0, node)
+        // }
+        // else {
+        //   // If no number prefix, just push to the end
+          
+        // }
       }
     }
 
