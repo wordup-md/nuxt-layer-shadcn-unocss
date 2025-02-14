@@ -3,15 +3,15 @@
     <NuxtLink
       v-if="logo.light && logo.dark"
       to="/"
-      class="flex"
+      class="logo-container flex transition"
     >
       <NuxtImg
         :src="logo.light"
-        class="h-7 dark:hidden"
+        class="logo logo-light h-7 dark:hidden"
       />
       <NuxtImg
         :src="logo.dark"
-        class="hidden h-7 dark:block"
+        class="logo logo-dark hidden h-7 dark:block"
       />
       <span
         v-if="showTitle && title"

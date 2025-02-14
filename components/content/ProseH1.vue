@@ -1,7 +1,7 @@
 <template>
   <h1
     :id
-    class="scroll-m-20 text-4xl font-extrabold tracking-tight text-pretty lg:text-5xl"
+    class="prose-h1 scroll-m-20 text-4xl font-extrabold tracking-tight text-pretty lg:text-5xl"
   >
     <NuxtLink
       v-if="generate"

@@ -1,7 +1,7 @@
 <template>
   <h2
     :id
-    class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors [&:not(:first-child)]:mt-10"
+    class="prose-h2 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors [&:not(:first-child)]:mt-10"
   >
     <NuxtLink
       v-if="id && generate"
