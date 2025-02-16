@@ -1,6 +1,11 @@
 <template>
-  <footer class="py-6 text-muted-foreground md:px-8 md:py-0">
-    <div class="container flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row">
+  <footer
+    class="site-footer border-t mt-2 p-6"
+  >
+    <div
+      v-if="!hasMdMenu"
+      class="container flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row"
+    >
       <MDC
         :value="footer.credits"
         class="text-sm"
@@ -26,9 +31,24 @@
         </UiButton>
       </NuxtLink>
     </div>
+
+    <MDCRenderer
+      v-else
+      :body="tree"
+      class=""
+      :class="{ 'container grid grid-cols-4 gap-6': hasMdMenu }"
+    />
   </footer>
 </template>
 
 <script setup lang="ts">
 const { footer } = useConfig().value
+const { data } = await useAsyncData('menu-footer', () =>
+  queryContent('_menu-footer').findOne(),
+)
+const tree = useMdcMenu(data, {
+  menuComponentName: 'footer-item',
+  submenuComponentName: 'submenu-item',
+})
+const hasMdMenu = computed(() => data.value?.body?.children?.length)
 </script>
