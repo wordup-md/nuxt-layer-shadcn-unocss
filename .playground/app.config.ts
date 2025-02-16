@@ -32,6 +32,7 @@ export default defineAppConfig({
         light: '/logo.svg',
         dark: '/logo-dark.svg',
       },
+      class: '',
       darkModeToggle: true,
       nav: [{
         title: 'Docs',
@@ -89,7 +90,9 @@ export default defineAppConfig({
       folderStyle: 'default',
     },
     main: {
-      breadCrumb: true,
+      breadCrumb: {
+        showIcon: true,
+      },
       showTitle: true,
       codeCopyToast: true,
       editLink: {

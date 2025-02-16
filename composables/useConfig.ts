@@ -44,6 +44,7 @@ const defaultConfig: DefaultConfig = {
     },
     showTitleInMobile: false,
     border: false,
+    class: '',
     darkModeToggle: true,
     nav: [],
     links: [],
@@ -55,7 +56,10 @@ const defaultConfig: DefaultConfig = {
     folderStyle: 'default',
   },
   main: {
-    breadCrumb: true,
+    breadCrumb: {
+      homeIcon: 'i-lucide-house',
+      showIcon: true,
+    },
     showTitle: true,
     codeCopyToast: true,
     codeCopyToastText: 'Copied to clipboard!',

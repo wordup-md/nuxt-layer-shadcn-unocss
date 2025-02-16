@@ -62,7 +62,10 @@ interface DefaultConfig {
     folderStyle: 'default' | 'tree' | 'group'
   }
   main: {
-    breadCrumb: boolean
+    breadCrumb: {
+      homeIcon: string
+      showIcon: boolean
+    }
     showTitle: boolean
     codeCopyToast: boolean
     codeCopyToastText: string
