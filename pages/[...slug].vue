@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <div class="h-full border-b">
+    <div class="h-full">
       <div
         class="flex-1 items-start px-4 md:grid md:gap-6 md:px-8 lg:gap-10"
         :class="[
