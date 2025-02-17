@@ -61,6 +61,11 @@ interface DefaultConfig {
     collapseLevel: number
     folderStyle: 'default' | 'tree' | 'group'
   }
+  sidebarRight: {
+    enable: boolean
+    title: string
+    components: string[]
+  }
   main: {
     breadCrumb: {
       homeIcon: string

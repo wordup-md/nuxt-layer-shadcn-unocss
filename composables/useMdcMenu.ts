@@ -15,14 +15,14 @@ export function useMdcMenu(data: Ref<ParsedContent | null>, {
       type: 'root',
       children: [],
     }
-    console.log(menuComponentName)
+    // console.log(menuComponentName)
     // Clone the content to avoid mutating the original data
     const content = JSON.parse(JSON.stringify(data.value!.body!.children))
 
     const grouped = groupElementsAfterElement(content,
       ['h1', 'menu-item'],
     )
-    console.log(grouped)
+    // console.log(grouped)
     const _tree = [] as MDCNode[]
     for (const item of grouped) {
       if (item.tag === 'h1') {
@@ -40,7 +40,7 @@ export function useMdcMenu(data: Ref<ParsedContent | null>, {
         _tree.push(item)
       }
     }
-    console.log(_tree)
+    // console.log(_tree)
     return {
       type: 'root',
       children: _tree,
@@ -83,7 +83,7 @@ function convertH1ToMenuItem({
       const { navigation } = useContent()
 
       // Link to page or list sub-pages
-      if (href.startsWith('/') && href.endsWith('/')) {
+      if (href.startsWith('/') && href.endsWith('/') && navigation.value) {
         href = href.replace(/\/$/, '')
         const dir = navDirFromPath(href, navigation.value)
         if (dir) {
@@ -131,7 +131,7 @@ function convertH1ToMenuItem({
         treeItem.props!.icon = aItem.props?.icon
 
       // Auto-fill empty link with page data. [](/page)
-      if (!aItem.children?.length) {
+      if (!aItem.children?.length && navigation.value) {
         const page = navPageFromPath(href, navigation.value)
         treeItem.props!.title = page?.title || 'Not found'
 

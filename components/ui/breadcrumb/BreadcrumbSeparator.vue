@@ -7,7 +7,7 @@
     <slot>
       <Icon
         name="lucide:chevron-right"
-        class="block size-3.5"
+        class="block size-3.5 mt-1"
       />
     </slot>
   </li>

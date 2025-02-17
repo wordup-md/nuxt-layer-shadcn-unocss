@@ -1,5 +1,8 @@
 <template>
-  <NuxtLoadingIndicator :color="false" class="z-100 bg-primary/80" />
+  <NuxtLoadingIndicator
+    :color="false"
+    class="z-100 bg-primary/80"
+  />
   <NuxtRouteAnnouncer />
 
   <ViewModeSwitcher class="!top-26" />
@@ -18,22 +21,22 @@
 </template>
 
 <script setup lang="ts">
-const config = useConfig();
-const { themeClass, radius } = useThemes();
+const config = useConfig()
+const { themeClass, radius } = useThemes()
 
 useSeoMeta({
   description: config.value.site.description,
   ogDescription: config.value.site.description,
   ogImage: config.value.site.ogImage,
-  twitterCard: "summary_large_image",
-});
+  twitterCard: 'summary_large_image',
+})
 
-useServerHead({
+useHead({
   bodyAttrs: {
     class: themeClass.value,
     style: `--radius: ${radius.value}rem;`,
   },
-});
+})
 </script>
 
 <style lang="postcss" scoped>

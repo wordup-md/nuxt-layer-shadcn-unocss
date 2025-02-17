@@ -55,6 +55,11 @@ const defaultConfig: DefaultConfig = {
     collapseLevel: 1,
     folderStyle: 'default',
   },
+  sidebarRight: {
+    enable: true,
+    title: 'On This Page',
+    components: [],
+  },
   main: {
     breadCrumb: {
       homeIcon: 'i-lucide-house',
@@ -121,11 +126,6 @@ const defaultConfig: DefaultConfig = {
   footer: {
     credits: '',
     links: [],
-  },
-  sidebarRight: {
-    enable: true,
-    title: 'On This Page',
-    components: [],
   },
   toc: {
     enable: true,
