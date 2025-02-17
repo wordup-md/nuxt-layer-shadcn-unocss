@@ -1,7 +1,6 @@
 import type { MDCElement, MDCRoot, MDCNode } from '@nuxtjs/mdc'
-import type { ParsedContent } from '@nuxt/content'
 
-export function useMdcMenu(data: Ref<ParsedContent | null>, {
+export async function useMdcMenu(menu: string, {
   menuComponentName = 'menu-item',
   submenuComponentName = 'submenu-item',
   includeElementsBeforeFirstTag = true,
@@ -10,19 +9,23 @@ export function useMdcMenu(data: Ref<ParsedContent | null>, {
   submenuComponentName?: string
   includeElementsBeforeFirstTag?: boolean
 } = {}) {
+  const { data } = await useAsyncData(menu, () =>
+    queryContent(menu).findOne(),
+  )
+
   const tree = computed<MDCRoot>(() => {
     if (!data.value) return {
       type: 'root',
       children: [],
     }
-    // console.log(menuComponentName)
+
     // Clone the content to avoid mutating the original data
     const content = JSON.parse(JSON.stringify(data.value!.body!.children))
 
     const grouped = groupElementsAfterElement(content,
       ['h1', 'menu-item'],
     )
-    // console.log(grouped)
+
     const _tree = [] as MDCNode[]
     for (const item of grouped) {
       if (item.tag === 'h1') {
@@ -36,11 +39,14 @@ export function useMdcMenu(data: Ref<ParsedContent | null>, {
       else if (item.tag === menuComponentName) {
         _tree.push(item)
       }
+      else if (item.tag === 'div') {
+        _tree.push(item)
+      }
       else if (includeElementsBeforeFirstTag) {
         _tree.push(item)
       }
     }
-    // console.log(_tree)
+
     return {
       type: 'root',
       children: _tree,
@@ -141,7 +147,9 @@ function convertH1ToMenuItem({
       }
     }
   }
-
+  else if (item.tag === 'div') {
+    treeItem = item
+  }
   return treeItem
 }
 
@@ -168,6 +176,9 @@ function groupElementsAfterElement(
       // Track the new tag
       currentTag = element
       result.push(currentTag)
+    }
+    else if (element.tag === 'div') {
+      result.push(element)
     }
     else {
       if (!foundFirstTag) {

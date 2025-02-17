@@ -3,7 +3,7 @@
     class="site-footer border-t mt-2 p-6"
   >
     <div
-      v-if="!hasMdMenu"
+      v-if="!tree"
       class="container flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row"
     >
       <MDC
@@ -36,19 +36,23 @@
       v-else
       :body="tree"
       class=""
-      :class="{ 'container grid grid-cols-4 gap-6': hasMdMenu }"
+      :class="{ 'container grid grid-cols-3 gap-6': !!tree }"
+      :components="{
+        'footer-item': FooterItem,
+        'footer-submenu-item': FooterSubmenuItem,
+      }"
     />
   </footer>
 </template>
 
 <script setup lang="ts">
+import FooterItem from './FooterItem.vue'
+import FooterSubmenuItem from './FooterSubmenuItem.vue'
+
 const { footer } = useConfig().value
-const { data } = await useAsyncData('menu-footer', () =>
-  queryContent('_menu-footer').findOne(),
-)
-const tree = useMdcMenu(data, {
+
+const tree = await useMdcMenu('_menu-footer', {
   menuComponentName: 'footer-item',
-  submenuComponentName: 'submenu-item',
+  submenuComponentName: 'footer-submenu-item',
 })
-const hasMdMenu = computed(() => data.value?.body?.children?.length)
 </script>

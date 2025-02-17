@@ -1,6 +1,6 @@
 <template>
   <UiNavigationMenu
-    v-if="!hasMdMenu"
+    v-if="!tree"
     class="header-menu"
   >
     <UiNavigationMenuList>
@@ -77,19 +77,23 @@
     <MDCRenderer
       :body="tree"
       tag="navigation-menu-list-global"
+      :components="{
+        'header-menu-item': HeaderMenuItem,
+        'header-submenu-item': HeaderSubmenuItem,
+      }"
     />
   </UiNavigationMenu>
 </template>
 
 <script setup lang="ts">
 import { navigationMenuTriggerStyle } from '../../ui/navigation-menu'
+import HeaderMenuItem from './MenuItem.vue'
+import HeaderSubmenuItem from './SubmenuItem.vue'
 
 const { nav } = useConfig().value.header
 
-const { data } = await useAsyncData('menu-header', () =>
-  queryContent('_menu-header').findOne(),
-)
-
-const tree = useMdcMenu(data)
-const hasMdMenu = computed(() => data.value?.body?.children?.length)
+const tree = await useMdcMenu('_menu-header', {
+  menuComponentName: 'header-menu-item',
+  submenuComponentName: 'header-submenu-item',
+})
 </script>

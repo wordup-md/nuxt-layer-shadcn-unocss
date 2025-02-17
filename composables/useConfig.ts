@@ -152,7 +152,6 @@ const defaultConfig: DefaultConfig = {
 export function useConfig() {
   // return computed(() => customDefu(useAppConfig()?.shadcnDocs, defaultConfig))
   const appConfig = computed(() => useAppConfig()?.shadcnDocs || {})
-  // console.log('nuxt-layer useConfig', appConfig.value)
   const { navKeyFromPath } = useContentHelpers()
   const { navigation, page } = useContent()
   const route = useRoute()
