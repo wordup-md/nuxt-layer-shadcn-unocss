@@ -110,7 +110,7 @@ export async function buildContentTree(dirPath: string): Promise<TreeNode[]> {
   }
 }
 
-export async function generateAndSaveContentDoc(): Promise<void> {
+export async function generateAndSaveContentDoc(file: string = 'content-doc.json'): Promise<void> {
   try {
     // Get the root directory of the project
     const rootDir = process.cwd()
@@ -120,7 +120,7 @@ export async function generateAndSaveContentDoc(): Promise<void> {
     const tree = await buildContentTree(basePath)
 
     // Write to components-tree.json in the root directory
-    const outputPath = join(rootDir, 'content-doc-tree.json')
+    const outputPath = join(rootDir, file)
     await writeFile(
       outputPath,
       JSON.stringify(tree, null, 2),
