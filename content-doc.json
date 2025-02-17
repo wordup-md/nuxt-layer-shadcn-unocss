@@ -43,7 +43,7 @@
         ],
         "icon": "lucide:edit",
         "navigation.redirect": "/getting-started/writing/markdown",
-        "_path": "writing"
+        "_path": "getting-started/3.writing"
       }
     ],
     "icon": "lucide:rocket",
@@ -411,7 +411,7 @@
           }
         ],
         "icon": "lucide:book",
-        "_path": "docs"
+        "_path": "components/2.docs"
       },
       {
         "title": "Page Components",
@@ -507,7 +507,7 @@
           }
         ],
         "icon": "lucide:laptop-minimal",
-        "_path": "page"
+        "_path": "components/3.page"
       }
     ],
     "navigation.redirect": "/components/prose",
@@ -583,7 +583,7 @@
         ],
         "icon": "lucide:settings",
         "navigation.redirect": "/api/configuration/shadcn-docs",
-        "_path": "configuration"
+        "_path": "api/1.configuration"
       },
       {
         "title": "Advanced",
@@ -605,7 +605,7 @@
         ],
         "icon": "lucide:pyramid",
         "navigation.redirect": "/api/configuration",
-        "_path": "advanced"
+        "_path": "api/2.advanced"
       },
       {
         "title": "Themes",

@@ -45,7 +45,10 @@ export async function buildContentTree(dirPath: string): Promise<TreeNode[]> {
               ...dir,
               ...yaml,
             }
-            dir._path = file.replace(/^\d+\./, '')
+
+            // Get relative path from content dir
+            const relativePath = fullPath.split('content/')[1]
+            dir._path = relativePath.replace(/^\d+\./, '')
           }
 
           tree.push(dir)
@@ -55,7 +58,7 @@ export async function buildContentTree(dirPath: string): Promise<TreeNode[]> {
         const _content = await readFile(fullPath, 'utf-8')
         const { content, data } = parseFrontMatter(_content)
 
-        // Get relative path from components dir
+        // Get relative path from content dir
         const relativePath = fullPath.split('content/')[1]
         const pathWithoutExt = relativePath.replace(/^\d+\./, '').replace(/\.md$/, '')
 
