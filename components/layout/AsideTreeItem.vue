@@ -49,7 +49,7 @@
       class="flex items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
       :class="[
         isActive && 'bg-muted !text-primary',
-        link.navTruncate !== false && 'h-8',
+        !!link.navTruncate && 'h-8',
       ]"
     >
       <LayoutAsideTreeItemButton :link />

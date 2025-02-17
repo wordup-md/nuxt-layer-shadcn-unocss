@@ -1,7 +1,7 @@
 <template>
   <UiScrollArea
     orientation="vertical"
-    class="relative h-full overflow-hidden py-6 pr-6 text-sm md:pr-4"
+    class="relative h-vh overflow-hidden py-6 pr-6 text-sm md:pr-4"
     type="hover"
   >
     <LayoutHeaderNavMobile
@@ -14,7 +14,7 @@
       class="flex flex-col gap-1 border-b pb-4"
     >
       <li
-        v-for="link in navigation"
+        v-for="link in navigation || nav"
         :key="link.id"
       >
         <NuxtLink
@@ -46,7 +46,7 @@
       </li>
     </ul>
     <LayoutAsideTree
-      :links="tree"
+      :links
       :level="0"
       :class="[config.aside.useLevel ? 'pt-4' : 'pt-1']"
     />
@@ -54,23 +54,29 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ isMobile: boolean }>()
+import type { NavItem } from '@nuxt/content'
+
+const { isMobile, navigation, level = 0 } = defineProps<{
+  isMobile: boolean
+  navigation?: NavItem[]
+  level?: number
+}>()
 
 const { navDirFromPath } = useContentHelpers()
-const { navigation } = useContent()
+const { navigation: nav } = useContent()
 const config = useConfig()
 
-const tree = computed(() => {
+const links = computed(() => {
   const route = useRoute()
   const path = route.path.split('/')
-  if (config.value.aside.useLevel) {
-    const leveledPath = path.splice(0, 2).join('/')
 
-    const dir = navDirFromPath(leveledPath, navigation.value)
+  if (config.value.aside.useLevel) {
+    const leveledPath = path.splice(0, level + 2).join('/')
+    const dir = navDirFromPath(leveledPath, navigation || nav.value)
     return dir ?? []
   }
 
-  return navigation.value
+  return navigation || nav.value
 })
 
 const path = computed(() => useRoute().path)

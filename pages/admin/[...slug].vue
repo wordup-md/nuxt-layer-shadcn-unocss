@@ -1,27 +1,35 @@
 <script setup lang="ts">
+import type { NavItem } from '@nuxt/content'
+
 const { user } = useUnpress()
-console.log(user.value)
+const config = useConfig()
+
 const isAdmin = ref(false)
 if (user.value || import.meta.dev) {
   isAdmin.value = true
 }
-const config = useConfig()
 
 const repo = 'unpress/nuxt-layer'
-const path = 'components-tree.json'
+const path = 'content-doc.json'
 
-const { data, status, error, refresh, clear } = await useAsyncData(
-  'mountains',
+const { data: tree, status, error, refresh, clear } = await useAsyncData<NavItem[]>(
+  'admin-docs',
   () => $fetch(`https://raw.githubusercontent.com/${repo}/main/${path}`), {
     transform: (data) => {
       const _data = JSON.parse(data)
-      console.log(_data)
-      return _data.map((item: any) => ({
+      return _data.map((item: NavItem) => ({
         ...item,
-        _path: `/admin/${item._path}`,
-        children: item.children?.map((child: any) => ({
+        '_path': `/admin/${item._path}`,
+        'navigation.redirect': '/admin' + item['navigation.redirect'],
+        'children': item.children?.map((child: NavItem) => ({
           ...child,
-          _path: `/admin/${child._path}`,
+          '_path': `/admin/${child._path}`,
+          'navigation.redirect': '/admin' + child['navigation.redirect'],
+          'children': child.children?.map((child2: NavItem) => ({
+            ...child2,
+            '_path': `/admin/${child2._path}`,
+            'navigation.redirect': '/admin' + child2['navigation.redirect'],
+          })),
         })),
       }))
     },
@@ -29,23 +37,38 @@ const { data, status, error, refresh, clear } = await useAsyncData(
 )
 
 const { slug } = useRoute().params
-if (slug?.length === 0) {
-  await navigateTo(data.value[0]._path)
-}
 
-const md = computed(() => {
-  if (slug.length > 1) {
-    const level0 = data.value?.find((item: any) => item._path === `/admin/${slug[0]}`)
-    return level0.children?.find((item: any) => item._path === `/admin/${slug[0]}/${slug[1]}`)?.content
+if (slug?.length === 0 && tree.value) {
+  if (tree.value[0]['navigation.redirect']) {
+    await navigateTo(tree.value[0]['navigation.redirect'])
   }
   else {
-    return data.value?.find((item: any) => item._path === `/admin/${slug[0]}`)?.content
+    await navigateTo(tree.value[0]._path)
+  }
+}
+
+const page = computed(() => {
+  if (slug.length > 2) {
+    const level0 = tree.value?.find(item => item._path === `/admin/${slug[0]}`)
+    const level1 = level0?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}`) || level0?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}`)
+    return level1?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}/${slug[2]}`)
+  }
+  else if (slug.length > 1) {
+    const level0 = tree.value?.find(item => item._path === `/admin/${slug[0]}`)
+    return level0?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}`)
+  }
+  else {
+    return tree.value?.find(item => item._path === `/admin/${slug[0]}`)
   }
 })
 </script>
 
 <template>
   <NuxtLayout>
+    <div class="hidden p-8">
+      <!-- it force unocss to trigger some classes -->
+    </div>
+
     <div class="h-full">
       <div
         v-if="isAdmin"
@@ -58,11 +81,11 @@ const md = computed(() => {
         <aside
           class="sticky top-[162px] z-30 w-full shrink-0 overflow-y-auto md:sticky md:top-[90px] md:block"
         >
-          <LayoutAsideTree
-            v-if="data"
-            :links="data"
-            :level="0"
-            class=""
+          <LayoutAside
+            v-if="tree"
+            :level="1"
+            :navigation="tree"
+            :is-mobile="false"
           />
         </aside>
 
@@ -73,10 +96,19 @@ const md = computed(() => {
             'lg:grid lg:grid-cols-[1fr_220px] lg:gap-14 lg:py-8',
           ]"
         >
-          <div class="mx-auto w-full min-w-0">
+          <div
+            v-if="page"
+            class="mx-auto w-full min-w-0"
+          >
+            <LayoutTitle
+              v-if="config.main?.showTitle && (page.showTitle ?? true)"
+              :title="page?.title"
+              :description="page?.description"
+              :badges="page?.badges"
+            />
+
             <MDC
-              v-if="md"
-              :value="md"
+              :value="page.content"
               tag="article"
             />
           </div>
