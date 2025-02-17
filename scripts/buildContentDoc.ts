@@ -13,7 +13,7 @@ interface TreeNode {
   icon?: string
 }
 
-export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
+export async function buildContentTree(dirPath: string): Promise<TreeNode[]> {
   const tree: TreeNode[] = []
 
   try {
@@ -30,7 +30,7 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
 
       if (stats.isDirectory()) {
         // Handle directory
-        const children = await buildComponentTree(fullPath)
+        const children = await buildContentTree(fullPath)
         if (children.length > 0) {
           let dir: TreeNode = {
             title: file,
@@ -56,7 +56,7 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
         const { content, data } = parseFrontMatter(_content)
 
         // Get relative path from components dir
-        const relativePath = fullPath.split('2.components/')[1]
+        const relativePath = fullPath.split('content/')[1]
         const pathWithoutExt = relativePath.replace(/^\d+\./, '').replace(/\.md$/, '')
 
         // Extract the numeric prefix if it exists
@@ -76,7 +76,7 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
         // }
         // else {
         //   // If no number prefix, just push to the end
-          
+
         // }
       }
     }
@@ -110,17 +110,17 @@ export async function buildComponentTree(dirPath: string): Promise<TreeNode[]> {
   }
 }
 
-export async function generateAndSaveComponentTree(): Promise<void> {
+export async function generateAndSaveContentDoc(): Promise<void> {
   try {
     // Get the root directory of the project
     const rootDir = process.cwd()
-    const componentsPath = join(rootDir, '.playground/content/2.components')
+    const basePath = join(rootDir, '.playground/content')
 
     // Generate the tree
-    const tree = await buildComponentTree(componentsPath)
+    const tree = await buildContentTree(basePath)
 
     // Write to components-tree.json in the root directory
-    const outputPath = join(rootDir, 'components-tree.json')
+    const outputPath = join(rootDir, 'content-doc-tree.json')
     await writeFile(
       outputPath,
       JSON.stringify(tree, null, 2),

@@ -24,9 +24,8 @@
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
-    "build:tree": "tsx scripts/buildComponentTree-cli.ts",
-    "verdaccio": "pnpm publish --registry=https://verdaccio.manutopik.fr --no-git-checks",
-    "build:component-tree": "tsx utils/buildComponentTree.ts"
+    "build:json-doc": "tsx scripts/buildContentDoc-cli.ts",
+    "verdaccio": "pnpm publish --registry=https://verdaccio.manutopik.fr --no-git-checks"
   },
   "devDependencies": {
     "@nuxt/eslint": "latest",

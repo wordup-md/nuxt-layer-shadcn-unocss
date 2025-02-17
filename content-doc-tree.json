@@ -1,0 +1,641 @@
+[
+  {
+    "title": "Getting started",
+    "children": [
+      {
+        "title": "Introduction",
+        "_path": "getting-started/1.introduction",
+        "content": "\n\n## Motivations\n\n**shadcn-docs-nuxt** is created as a free alternative documentation solution to [Docus](https://docus.dev/) and [Nuxt UI Pro Docs](https://docs-template.nuxt.dev/).\n\n## Features\n\n- Free and [open source](https://github.com/ZTL-UwU/shadcn-docs-nuxt).\n- Fully [customizable](/api/configuration).\n- Rich [components](/components/prose) to work with.\n- Mobile support.\n- Indexed searching powered by Nuxt Content.\n- Partial component compatibility with `Docus`, `Nuxt UI Pro Docs`, `undocs`.\n\n## Credits\n\n- [Nuxt Content](https://content.nuxt.com/): Content made easy for Vue Developers.\n- [shadcn-ui](https://ui.shadcn.com/): For the beautiful component & docs design.\n- [shadcn-vue](https://www.shadcn-vue.com/): For the vue port of shadcn-ui & some docs component source.\n- [Docus](https://docus.dev/): For inspiration & some docs component source.\n- [Nuxt UI Pro Docs](https://docs-template.nuxt.dev/): For inspiration.\n\n## License\n\n[MIT](https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/LICENSE)\n",
+        "description": "shadcn-docs-nuxt is a Nuxt documentation template built with Nuxt Content and shadcn-vue.",
+        "icon": "lucide:info"
+      },
+      {
+        "title": "Installation",
+        "_path": "getting-started/2.installation",
+        "content": "\n\n## Using the starter template\n\n::steps\n### Get Starter Template\n\n:pm-x{command=\"nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter\"}\n\n::alert\nAlternatively, you can clone or download the template from the [GitHub repo](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter).\n::\n\n### Install Dependencies\n\n:pm-install\n\n### Development Server\n\n:pm-run{script=\"dev\"}\n\n::alert{type=\"success\" icon=\"lucide:circle-check\"}\nWell done! A browser window should automatically open for http://localhost:3000.\n::\n\n### Configure shadcn-docs\n\nPick the theme or adjust other settings to your liking.\n\n:read-more{to=\"/api/configuration/shadcn-docs\"}\n\n::\n",
+        "description": "How to install shadcn-docs-nuxt in your app.",
+        "icon": "lucide:play"
+      },
+      {
+        "title": "Writing",
+        "children": [
+          {
+            "title": "Markdown",
+            "_path": "getting-started/3.writing/1.markdown",
+            "content": "\n\n::alert\n---\nto: https://content.nuxt.com/usage/markdown\ntarget: _blank\nicon: lucide:arrow-big-down\n---\nRead the detailed MDC usage guide in the **Nuxt Content** Docs.\n::\n\n::alert\n---\nto: /components/prose\nicon: lucide:box\n---\nSee MDC components provided by **shadcn-docs-nuxt**.\n::\n\n## Tips\n\n### Hide title from toc\n:badge[0.4.7]{variant=\"outline\"}\n\nSet title `id` to `hide-toc` will hide the heading from toc.\n\n```mdc\n:h2[Footnotes]{id=\"hide-toc\"}\n```\n",
+            "description": "How to write docs with the MDC syntax.",
+            "icon": "lucide:arrow-big-down"
+          },
+          {
+            "title": "Pages",
+            "_path": "getting-started/3.writing/2.pages",
+            "content": "\n\n```md\n---\ntitle: Front Matter\ndescription: Front matter attributes used in shadcn-docs-nuxt.\nicon: lucide:book-type\n\nnavTruncate: false\nnavBadges:\n  - value: New\n    type: lime\n\nbadges:\n  - value: Docus\n    to: https://docus.dev/api/components#alert\n    target: _blank\n  - value: Source\n    icon: lucide:code\n    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Alert.vue\n    target: _blank\n\nauthors:\n  - name: Tony Zhang\n    username: ZTL-UwU\n    avatar: https://www.github.com/ZTL-UwU.png\n    to: https://github.com/ZTL-UwU\n    target: _blank\n---\n\n<!-- Content of the page -->\n```\n\n## Showcases\n\n::tabs{variant=\"line\"}\n::stack{label=\"badges\"}\n![badges-showcase](/front-matter-showcase/badges.png){class=\"w-full\"}\n```yml\nbadges:\n  - value: 0.8.10\n  - value: Source\n    icon: lucide:code\n    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/FileTree.vue\n    target: _blank\n```\n::\n\n::stack{label=\"authors\"}\n![authors-showcase](/front-matter-showcase/authors.png){class=\"w-full\"}\n```yml\nauthors:\n  - name: Tony Zhang\n    username: ZTL-UwU\n    avatar: https://www.github.com/ZTL-UwU.png\n    to: https://github.com/ZTL-UwU\n    target: _blank\n```\n::\n\n::stack{label=\"navBadges\"}\n![nav-badges-showcase](/front-matter-showcase/nav-badges.png){class=\"w-full\"}\n```yml\nnavBadges:\n  - value: New\n    type: lime\n```\n::\n::\n\n## Parameters\n\n::field-group\n  ::field{name=\"title\" type=\"string\"}\n  Title of the page. Defaults to the filename.\n  ::\n  ::field{name=\"description\" type=\"string\"}\n  Description of the page. Defaults to the first `<p>`{lang=\"html\"} of the page.\n  ::\n  ::field{name=\"navigation\" type=\"boolean\" default-value=\"true\"}\n  Define if the page is included in the sidebar. Set it to `false` in `index.md`.\n  ::\n  ::field{name=\"icon\" type=\"string\"}\n  The icon shown in the sidebar for the page.\n  ::\n  ::field{name=\"navBadges\" type=\"[]\"}\n  A list of badges appended to the end of the sidebar link.\n  ::\n  ::field{name=\"navTruncate\" type=\"boolean\" default-value=\"true\"}\n  Whether to truncate the sidebar title.\n  ::\n  ::field{name=\"badges\" type=\"[]\"}\n  A list of badges shown at the bottom of page title.\n  ::\n  ::field{name=\"authors\" type=\"[]\"}\n  A list of authors shown at the bottom of page title.\n  ::\n  ::field{name=\"toc\" type=\"boolean\" default-value=\"true\"}\n  Whether to show the toc section for this page.\n  ::\n  ::field{name=\"aside\" type=\"boolean\" default-value=\"true\"}\n  Whether to show the aside section for this page.\n  ::\n  ::field{name=\"editLink\" type=\"boolean\" default-value=\"true\"}\n  Whether to show the edit link for this page.\n  ::\n  ::field{name=\"prevNext\" type=\"boolean\" default-value=\"true\"}\n  Whether to show the previous & next page buttons.\n  ::\n  ::field{name=\"breadcrumb\" type=\"boolean\" default-value=\"true\"}\n  Whether to show the breadcrumb.\n  ::\n::\n",
+            "description": "Front matter attributes used in shadcn-docs-nuxt.",
+            "icon": "lucide:file"
+          },
+          {
+            "title": "Folders",
+            "_path": "getting-started/3.writing/3.folders",
+            "content": "\n\nYou can customize folders by creating a `_dir.yml` file in the folder.\n\n::code-group\n```yml [_dir.yml]\ntitle: Folder\nicon: lucide:folder\nnavigation.redirect: /frameworks/vue\nnavBadges:\n  - value: New\n    type: lime\nsidebar:\n  style: group\ncollapse: false\n```\n```[Directory structure]\ncontent/\n  1.frameworks/\n    _dir.yml\n    1.vue.md\n    2.nuxt.md\n```\n::\n\n## Parameters\n\n::field-group\n  ::field{name=\"title\" type=\"string\"}\n  Title of the page. Defaults to the filename.\n  ::\n  ::field{name=\"icon\" type=\"string\"}\n  The icon shown in the sidebar for the page.\n  ::\n  ::field{name=\"navBadges\" type=\"[]\"}\n  A list of badges appended to the end of the sidebar link.\n  ::\n  ::field{name=\"collapse\" type=\"boolean\"}\n  Whether the folder should be collapsed by default.\n  ::\n  ::field{name=\"sidebar\" type=\"object\"}\n    ::collapsible{title=\"Details\" default-open}\n      ::field{name=\"style\" type=\"'default' | 'tree' | 'group'\" default-value=\"default\"}\n      The style used for the folder. The default value can be configured in the [appConfig](/api/configuration/shadcn-docs#aside).\n\n      |                      `default`                      |                    `tree`                     |                     `group`                     |\n      | :-------------------------------------------------: | :-------------------------------------------: | :---------------------------------------------: |\n      | ![sidebar-default](/sidebar-default.png){width=400} | ![sidebar-tree](/sidebar-tree.png){width=400} | ![sidebar-group](/sidebar-group.png){width=400} |\n      ::\n    ::\n  ::\n::\n",
+            "icon": "lucide:folder",
+            "description": "Configure directory nodes via _dir.yml files."
+          }
+        ],
+        "icon": "lucide:edit",
+        "navigation.redirect": "/getting-started/writing/markdown",
+        "_path": "writing"
+      }
+    ],
+    "icon": "lucide:rocket",
+    "navigation.redirect": "/getting-started/introduction",
+    "_path": "getting-started"
+  },
+  {
+    "title": "Components",
+    "children": [
+      {
+        "title": "Prose Components",
+        "_path": "components/1.prose",
+        "content": "\n\n## Heading\n\n::stack\n  ::div{class=\"p-4 md:p-8\"}\n  # Heading 1\n  ## Heading 2\n  ### Heading 3\n  #### Heading 4\n  ##### Heading 5\n  ###### Heading 6\n  ::\n\n  ```md\n  # Heading 1\n  ## Heading 2\n  ### Heading 3\n  #### Heading 4\n  ##### Heading 5\n  ###### Heading 6\n  ```\n::\n\n## Link\n\n::stack\n  ::div{class=\"p-4\"}\n  [Link](/getting-started/introduction)\n  ::\n\n  ```md\n  [Link](/getting-started/introduction)\n  ```\n::\n\n## Blockquote\n\n::stack\n  ::div{class=\"p-4\"}\n  > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n  ::\n\n  ```md\n  > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n  ```\n::\n\n## Code Block\n\n::stack\n  ::div{class=\"p-4\"}\n  ```ts\n  export default () => {\n    console.log('Code block');\n  };\n  ```\n  ::\n  ````md\n  ```ts\n  export default () => {\n    console.log('Code block');\n  };\n  ```\n  ````\n::\n\n### With Title\n\n::stack\n  ::div{class=\"p-4\"}\n  ```ts [nuxt.config.ts]\n  export default defineNuxtConfig({\n    // My Nuxt config\n  });\n  ```\n  ::\n  ````md\n  ```ts [nuxt.config.ts]\n  export default defineNuxtConfig({\n    // My Nuxt config\n  });\n  ```\n  ````\n::\n\n### Highlight Lines\n\n::stack\n  ::div{class=\"p-4\"}\n  ```ts{2}\n  export default () => {\n    console.log('Code block');\n  };\n  ```\n  ::\n  ````md\n  ```ts{2}\n  export default () => {\n    console.log('Code block');\n  };\n  ```\n  ````\n::\n\n### Line Numbers\n::stack\n  ::div{class=\"p-4\"}\n  ```ts{1} line-numbers\n  // line-numbers is enabled\n  const line2 = 'This is line 2';\n  const line3 = 'This is line 3';\n  ```\n  ::\n  ````md\n  ```ts{1} line-numbers\n  // line-numbers is enabled\n  const line2 = 'This is line 2';\n  const line3 = 'This is line 3';\n  ```\n  ````\n::\n\n### Fixed Height\n::stack\n  ::div{class=\"p-4\"}\n  ```ts height=150\n  const parsedMeta = computed(() => {\n    const split = meta?.split(' ') ?? [];\n    const params = new Map<string, string | undefined>();\n\n    for (const param of split) {\n      const [key, val] = param.split('=');\n      params.set(key, val);\n    }\n\n    return params;\n  });\n  ```\n  ::\n  ````md\n  ```ts height=150\n  const parsedMeta = computed(() => {\n    const split = meta?.split(' ') ?? [];\n    const params = new Map<string, string | undefined>();\n\n    for (const param of split) {\n      const [key, val] = param.split('=');\n      params.set(key, val);\n    }\n\n    return params;\n  });\n  ```\n  ````\n::\n\n### Custom Icon\n::stack\n  ::div{class=\"p-4\"}\n  ```ts [Custom Icon] icon=lucide:code-xml line-numbers\n  // line-numbers is enabled\n  const line2 = 'This is line 2';\n  const line3 = 'This is line 3';\n  ```\n  ::\n  ````md\n  ```ts [Custom Icon] icon=lucide:code-xml line-numbers\n  // line-numbers is enabled\n  const line2 = 'This is line 2';\n  const line3 = 'This is line 3';\n  ```\n  ````\n::\n\n## Inline Code\n\n::stack\n  ::div{class=\"p-4\"}\n  `code inline`\n\n  `const codeInline: string = 'highlighted code inline'`{lang=\"ts\"}\n  ::\n\n  ```md\n  `code inline`\n\n  `const codeInline: string = 'highlighted code inline'`{lang=\"ts\"}\n  ```\n::\n\n## Horizontal Rule\n\n::stack\n  ::div{class=\"p-4\"}\n  Before\n\n  ---\n\n  After\n  ::\n\n  ```md\n  Before\n\n  ---\n\n  After\n  ```\n::\n\n## Image\n\n::stack\n  ::div{class=\"p-4\"}\n  ![Photo by Drew Beamer](https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80)\n  ::\n\n  ```md\n  ![Photo by Drew Beamer](https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80)\n  ```\n::\n\n## Unordered List\n\n::stack\n  ::div{class=\"p-4\"}\n  - Foo\n  - Bar\n  - Baz\n  ::\n\n  ```md\n  - Foo\n  - Bar\n  - Baz\n  ```\n::\n\n## Ordered List\n\n::stack\n  ::div{class=\"p-4\"}\n  1. Foo\n  2. Bar\n  3. Baz\n  ::\n\n  ```md\n  1. Foo\n  2. Bar\n  3. Baz\n  ```\n::\n\n## Paragraph\n\n::stack\n  ::div{class=\"p-4\"}\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n  ::\n\n  ```md\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n  ```\n::\n\n## Strong\n\n::stack\n  ::div{class=\"p-4\"}\n  **Just a strong paragraph.**\n  ::\n\n  ```md\n  **Just a strong paragraph.**\n  ```\n::\n\n## Italic\n\n::stack\n  ::div{class=\"p-4\"}\n  _Just an italic paragraph._\n  ::\n\n  ```md\n  _Just an italic paragraph._\n  ```\n::\n\n## Table\n\n::stack\n  ::div{class=\"p-4\"}\n  | Key | Type      | Description                                 |\n  | --- | --------- | ------------------------------------------- |\n  | 1   | Wonderful | Table with `some long code snippet example` |\n  | 2   | Wonderful | Data                                        |\n  | 3   | Wonderful | Website                                     |\n  ::\n\n  ```md\n  | Key | Type      | Description                                 |\n  | --- | --------- | ------------------------------------------- |\n  | 1   | Wonderful | Table with `some long code snippet example` |\n  | 2   | Wonderful | Data                                        |\n  | 3   | Wonderful | Website                                     |\n  ```\n::\n\n## Overview\n\n::stack\n  ::div{class=\"p-8\"}\n  # The Joke Tax Chronicles\n\n  Once upon a time, in a far-off land, there was a very lazy king who spent all day lounging on his throne. One day, his advisors came to him with a problem: the kingdom was running out of money.\n\n  ## The King's Plan\n\n  The king thought long and hard, and finally came up with [a brilliant plan](#): he would tax the jokes in the kingdom.\n\n  > \"After all,\" he said, \"everyone enjoys a good joke, so it's only fair that they should pay for the privilege.\"\n\n  ### The Joke Tax\n\n  The king's subjects were not amused. They grumbled and complained, but the king was firm:\n\n  - 1st level of puns: 5 gold coins\n  - 2nd level of jokes: 10 gold coins\n  - 3rd level of one-liners : 20 gold coins\n\n  As a result, people stopped telling jokes, and the kingdom fell into a gloom. But there was one person who refused to let the king's foolishness get him down: a court jester named Jokester.\n\n  ### Jokester's Revolt\n\n  Jokester began sneaking into the castle in the middle of the night and leaving jokes all over the place: under the king's pillow, in his soup, even in the royal toilet. The king was furious, but he couldn't seem to stop Jokester.\n\n  And then, one day, the people of the kingdom discovered that the jokes left by Jokester were so funny that they couldn't help but laugh. And once they started laughing, they couldn't stop.\n\n  ### The People's Rebellion\n\n  The people of the kingdom, feeling uplifted by the laughter, started to tell jokes and puns again, and soon the entire kingdom was in on the joke.\n\n  | King's Treasury | People's happiness |\n  | :-------------- | :----------------- |\n  | Empty           | Overflowing        |\n  | Modest          | Satisfied          |\n  | Full            | Ecstatic           |\n\n  The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax. Jokester was declared a hero, and the kingdom lived happily ever after.\n\n  The moral of the story is: never underestimate the power of a good laugh and always be careful of bad ideas.\n  ::\n\n  ```md height=400\n  # The Joke Tax Chronicles\n\n  Once upon a time, in a far-off land, there was a very lazy king who spent all day lounging on his throne. One day, his advisors came to him with a problem: the kingdom was running out of money.\n\n  ## The King's Plan\n\n  The king thought long and hard, and finally came up with [a brilliant plan](#): he would tax the jokes in the kingdom.\n\n  > \"After all,\" he said, \"everyone enjoys a good joke, so it's only fair that they should pay for the privilege.\"\n\n  ### The Joke Tax\n\n  The king's subjects were not amused. They grumbled and complained, but the king was firm:\n\n  - 1st level of puns: 5 gold coins\n  - 2nd level of jokes: 10 gold coins\n  - 3rd level of one-liners : 20 gold coins\n\n  As a result, people stopped telling jokes, and the kingdom fell into a gloom. But there was one person who refused to let the king's foolishness get him down: a court jester named Jokester.\n\n  ### Jokester's Revolt\n\n  Jokester began sneaking into the castle in the middle of the night and leaving jokes all over the place: under the king's pillow, in his soup, even in the royal toilet. The king was furious, but he couldn't seem to stop Jokester.\n\n  And then, one day, the people of the kingdom discovered that the jokes left by Jokester were so funny that they couldn't help but laugh. And once they started laughing, they couldn't stop.\n\n  ### The People's Rebellion\n\n  The people of the kingdom, feeling uplifted by the laughter, started to tell jokes and puns again, and soon the entire kingdom was in on the joke.\n\n  | King's Treasury | People's happiness |\n  | :-------------- | :----------------- |\n  | Empty           | Overflowing        |\n  | Modest          | Satisfied          |\n  | Full            | Ecstatic           |\n\n  The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax. Jokester was declared a hero, and the kingdom lived happily ever after.\n\n  The moral of the story is: never underestimate the power of a good laugh and always be careful of bad ideas.\n  ```\n::\n",
+        "description": "A showcase of all shadcn-docs prose components.",
+        "icon": "lucide:letter-text"
+      },
+      {
+        "title": "Docs Components",
+        "children": [
+          {
+            "title": "Alert",
+            "_path": "components/2.docs/alert",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n  ::alert{icon=\"lucide:info\"}\n    A **default** alert with `code` and a [link](/).\n  ::\n\n  ::alert{type=\"secondary\" icon=\"lucide:info\"}\n    A **secondary** alert with `code` and a [link](/).\n  ::\n  ::\n  ```mdc\n  ::alert{icon=\"lucide:info\"}\n    A **default** alert with `code` and a [link](/).\n  ::\n\n  ::alert{type=\"secondary\" icon=\"lucide:info\"}\n    A **secondary** alert with `code` and a [link](/).\n  ::\n  ```\n::\n\n### Link\n\n::stack\n  ::div{class=\"p-4\"}\n  ::alert{to=\"https://github.com/ZTL-UwU/shadcn-docs-nuxt\" target=\"_blank\" icon=\"lucide:link\"}\n    A **link** alert.\n  ::\n  ::\n  ```mdc\n  ::alert{to=\"https://github.com/ZTL-UwU/shadcn-docs-nuxt\" target=\"_blank\" icon=\"lucide:link\"}\n    A **link** alert.\n  ::\n  ```\n::\n\n### Variants\n\n::tabs{variant=\"line\"}\n  ::stack{label=\"info\" icon=\"lucide:info\"}\n    ::div{class=\"p-3\"}\n    ::alert{type=\"info\" icon=\"lucide:info\"}\n      An **info** alert with `code` and a [link](/).\n    ::\n    ::\n    ```mdc\n    ::alert{type=\"info\" icon=\"lucide:info\"}\n      An **info** alert with `code` and a [link](/).\n    ::\n    ```\n  ::\n\n  ::stack{label=\"note\" icon=\"lucide:pencil\"}\n    ::div{class=\"p-3\"}\n    ::alert{type=\"note\" icon=\"lucide:pencil\"}\n      A **note** alert with `code` and a [link](/).\n    ::\n    ::\n    ```mdc\n    ::alert{type=\"note\" icon=\"lucide:pencil\"}\n      A **note** alert with `code` and a [link](/).\n    ::\n    ```\n  ::\n\n  ::stack{label=\"success\" icon=\"lucide:lightbulb\"}\n    ::div{class=\"p-3\"}\n    ::alert{type=\"success\" icon=\"lucide:lightbulb\"}\n      A **success** alert with `code` and a [link](/).\n    ::\n    ::\n    ```mdc\n    ::alert{type=\"success\" icon=\"lucide:lightbulb\"}\n      A **success** alert with `code` and a [link](/).\n    ::\n    ```\n  ::\n\n  ::stack{label=\"example\" icon=\"lucide:test-tube\"}\n    ::div{class=\"p-3\"}\n    ::alert{type=\"example\" icon=\"lucide:test-tube\"}\n      An **example** alert with `code` and a [link](/).\n    ::\n    ::\n    ```mdc\n    ::alert{type=\"example\" icon=\"lucide:test-tube\"}\n      An **example** alert with `code` and a [link](/).\n    ::\n    ```\n  ::\n\n  ::stack{label=\"warning\" icon=\"lucide:triangle-alert\"}\n    ::div{class=\"p-3\"}\n    ::alert{type=\"warning\" icon=\"lucide:triangle-alert\"}\n      A **warning** alert with `code` and a [link](/).\n    ::\n    ::\n    ```mdc\n    ::alert{type=\"warning\" icon=\"lucide:triangle-alert\"}\n      A **warning** alert with `code` and a [link](/).\n    ::\n    ```\n  ::\n\n  ::stack{label=\"danger\" icon=\"lucide:circle-x\"}\n    ::div{class=\"p-3\"}\n    ::alert{type=\"danger\" icon=\"lucide:circle-x\"}\n      A **danger** alert with `code` and a [link](/).\n    ::\n    ::\n    ```mdc\n    ::alert{type=\"danger\" icon=\"lucide:circle-x\"}\n      A **danger** alert with `code` and a [link](/).\n    ::\n    ```\n  ::\n::\n\n### Title\n\n::stack\n  ::div{class=\"p-4\"}\n  ::alert{title=\"Title\" icon=\"lucide:layout-list\"}\n    An alert with a title.\n  ::\n  ::\n  ```mdc\n  ::alert{title=\"Title\" icon=\"lucide:layout-list\"}\n    An alert with a title.\n  ::\n  ```\n::\n\n## Props\n\n::field-group\n  :field{name=\"title\" type=\"string\"}[Alert title]\n  :field{name=\"icon\" type=\"string\"}[Alert icon]\n  :field{name=\"type\" type=\"'default' | 'info' | 'warning' | 'success' | 'danger' | 'secondary'\" default-value=\"'default'\"}\n  :field{name=\"to\" type=\"string\"}[Link URL]\n  :field{name=\"target\" type=\"Target\"}[A `target` attribute value to apply on the link]\n  :field{name=\"external\" type=\"boolean\"}[Alias to `target='_blank'`]\n  :field{name=\"showLinkIcon\" type=\"boolean\" default-value=\"true\"}[Whether to show the link indicator :icon{name=\"lucide:arrow-up-right\"}]\n::\n",
+            "icon": "lucide:triangle-alert",
+            "badges": [
+              {
+                "value": "Docus",
+                "to": "https://docus.dev/api/components#alert",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Alert.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Badge",
+            "_path": "components/2.docs/badge",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-3\"}\n  ::badge\n    Default\n  ::\n  ::badge{size=\"sm\"}\n    Small\n  ::\n  ::\n  ```mdc\n  ::badge\n    Default\n  ::\n  ::badge{size=\"sm\"}\n    Small\n  ::\n  ```\n::\n\n### Variants\n\n::tabs{variant=\"line\"}\n  ::stack{label=\"outline\"}\n    ::div{class=\"p-3\"}\n    :badge[Outline]{variant=\"outline\"}\n    ::\n    ```mdc\n    :badge[Outline]{variant=\"outline\"}\n    ```\n  ::\n\n  ::stack{label=\"secondary\"}\n    ::div{class=\"p-3\"}\n    :badge[Secondary]{variant=\"secondary\"}\n    ::\n    ```mdc\n    :badge[Secondary]{variant=\"secondary\"}\n    ```\n  ::\n\n  ::stack{label=\"info\"}\n    ::div{class=\"p-3\"}\n    :badge[Info]{type=\"info\"}\n    ::\n    ```mdc\n    :badge[Info]{type=\"info\"}\n    ```\n  ::\n\n  ::stack{label=\"warning\"}\n    ::div{class=\"p-3\"}\n    :badge[Warning]{type=\"warning\"}\n    ::\n    ```mdc\n    :badge[Warning]{type=\"warning\"}\n    ```\n  ::\n\n  ::stack{label=\"success\"}\n    ::div{class=\"p-3\"}\n    :badge[Success]{type=\"success\"}\n    ::\n    ```mdc\n    :badge[Success]{type=\"success\"}\n    ```\n  ::\n\n  ::stack{label=\"lime\"}\n    ::div{class=\"p-3\"}\n    :badge[lime]{type=\"lime\"}\n    ::\n    ```mdc\n    :badge[lime]{type=\"lime\"}\n    ```\n  ::\n\n  ::stack{label=\"danger\"}\n    ::div{class=\"p-3\"}\n    :badge[Danger]{type=\"danger\"}\n    ::\n    ```mdc\n    :badge[Danger]{type=\"danger\"}\n    ```\n  ::\n::\n\n### Link\n\n::stack\n  ::div{class=\"p-3\"}\n  ::badge{variant=\"outline\" type=\"info\" to=\"https://github.com/ZTL-UwU/shadcn-docs-nuxt\" target=\"_blank\"}\n  Link\n  ::\n  ::\n  ```mdc\n  ::badge{variant=\"outline\" type=\"info\" to=\"https://github.com/ZTL-UwU/shadcn-docs-nuxt\" target=\"_blank\"}\n  Link\n  ::\n  ```\n::\n\n## Props\n\n::field-group\n  :field{name=\"type\" type=\"'default' | 'info' | 'warning' | 'success' | 'danger' | 'lime'\" default-value=\"'default'\"}\n  :field{name=\"variant\" type=\"'default' | 'secondary' | 'destructive' | 'outline'\" default-value=\"'default'\"}\n  :field{name=\"size\" type=\"'md' | 'sm'\" default-value=\"'md'\"}\n  :field{name=\"to\" type=\"string\"}[Link URL]\n  :field{name=\"target\" type=\"Target\"}[A `target` attribute value to apply on the link]\n::\n",
+            "icon": "lucide:badge",
+            "badges": [
+              {
+                "value": "Docus",
+                "to": "https://docus.dev/api/components#badge",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Badge.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Button Link",
+            "_path": "components/2.docs/button-link",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-3 flex gap-4\"}\n  ::button-link{right-icon=\"lucide:arrow-up-right\" to=\"/getting-started\" target=\"_blank\"}\n    Get Started\n  ::\n  ::button-link{left-icon=\"lucide:github\" variant=\"outline\" to=\"https://github.com/ZTL-UwU/shadcn-docs-nuxt\" target=\"_blank\"}\n    GitHub\n  ::\n  ::button-link{left-icon=\"lucide:ghost\" variant=\"ghost\" href=\"https://github.com/ZTL-UwU/shadcn-docs-nuxt\" blank}\n    Ghost\n  ::\n  ::\n  ```mdc\n  ::button-link{right-icon=\"lucide:arrow-up-right\" to=\"/getting-started\" target=\"_blank\"}\n    Get Started\n  ::\n  ::button-link{left-icon=\"lucide:github\" variant=\"outline\" to=\"https://github.com/ZTL-UwU/shadcn-docs-nuxt\" target=\"_blank\"}\n    GitHub\n  ::\n  ::button-link{left-icon=\"lucide:ghost\" variant=\"ghost\" href=\"https://github.com/ZTL-UwU/shadcn-docs-nuxt\" blank}\n    Ghost\n  ::\n  ```\n::\n\n## Props\n\n::field-group\n  :field{name=\"variant\" type=\"'default' | 'secondary' | 'link' | 'destructive' | 'outline' | 'ghost'\" default-value=\"'default'\"}\n  :field{name=\"size\" type=\"'default' | 'icon' | 'sm' | 'xs' | 'lg'\" default-value=\"'default'\"}\n  :field{name=\"leftIcon\" type=\"string\"}[Icon on the left]\n  :field{name=\"rightIcon\" type=\"string\"}[Icon on the right]\n  :field{name=\"to\" type=\"string\"}[Link URL]\n  :field{name=\"href\" type=\"string\"}[Alias to `to`]\n  :field{name=\"target\" type=\"Target\"}[A `target` attribute value to apply on the link]\n  :field{name=\"blank\" type=\"boolean\"}[Alias to `target='_blank'`]\n::\n",
+            "icon": "lucide:external-link",
+            "badges": [
+              {
+                "value": "Docus",
+                "to": "https://docus.dev/api/components#buttonlink",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/ButtonLink.vue",
+                "target": "_blank"
+              },
+              {
+                "value": "0.6.5"
+              }
+            ]
+          },
+          {
+            "title": "Callout",
+            "_path": "components/2.docs/callout",
+            "content": "\n\n::alert{to=\"/components/docs/alert\"}\n`::callout`{lang=\"mdc\"} is an alias to `::alert`{lang=\"mdc\"}.\n::\n",
+            "icon": "lucide:megaphone",
+            "badges": [
+              {
+                "value": "Nuxt UI Pro",
+                "to": "https://ui.nuxt.com/pro/prose/callout",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Callout.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Card Group",
+            "_path": "components/2.docs/card-group",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n    ::card-group\n      ::card\n      ---\n      title: Components\n      icon: lucide:box\n      to: https://nuxt.com/docs/api/components/client-only\n      target: _blank\n      ---\n      Explore Nuxt built-in components for pages, layouts, head, and more.\n      ::\n      ::card\n      ---\n      title: Composables\n      icon: lucide:arrow-right-left\n      to: https://nuxt.com/docs/api/composables/use-app-config\n      target: _blank\n      ---\n      Discover Nuxt composable functions for data-fetching, head management and more.\n      ::\n      ::card\n      ---\n      title: Utils\n      icon: lucide:scissors\n      to: https://nuxt.com/docs/api/utils/dollarfetch\n      target: _blank\n      ---\n      Learn about Nuxt utility functions for navigation, error handling and more.\n      ::\n      ::card\n      ---\n      title: Commands\n      icon: lucide:square-terminal\n      to: https://nuxt.com/docs/api/commands/add\n      target: _blank\n      ---\n      List of Nuxt CLI commands to init, analyze, build, and preview your application.\n      ::\n    ::\n  ::\n  ```mdc\n  ::card-group\n    ::card\n    ---\n    title: Components\n    icon: lucide:box\n    to: https://nuxt.com/docs/api/components/client-only\n    target: _blank\n    ---\n    Explore Nuxt built-in components for pages, layouts, head, and more.\n    ::\n\n    ::card\n    ---\n    title: Composables\n    icon: lucide:arrow-right-left\n    to: https://nuxt.com/docs/api/composables/use-app-config\n    target: _blank\n    ---\n    Discover Nuxt composable functions for data-fetching, head management and more.\n    ::\n\n    ::card\n    ---\n    title: Utils\n    icon: lucide:scissors\n    to: https://nuxt.com/docs/api/utils/dollarfetch\n    target: _blank\n    ---\n    Learn about Nuxt utility functions for navigation, error handling and more.\n    ::\n\n    ::card\n    ---\n    title: Commands\n    icon: lucide:square-terminal\n    to: https://nuxt.com/docs/api/commands/add\n    target: _blank\n    ---\n    List of Nuxt CLI commands to init, analyze, build, and preview your application.\n    ::\n  ::\n  ```\n::\n",
+            "icon": "lucide:layout-grid",
+            "badges": [
+              {
+                "value": "Nuxt UI Pro",
+                "to": "https://ui.nuxt.com/pro/prose/card-group",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/CardGroup.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Card",
+            "_path": "components/2.docs/card",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n  ::card\n  ---\n  icon: lucide:box\n  ---\n\n  #title\n  Card Title\n\n  #description\n  Description\n\n  #content\n  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._\n\n  #footer\n  Footer\n  ::\n  ::\n  ```mdc\n  ::card\n  ---\n  icon: lucide:box\n  ---\n\n  #title\n  Card Title\n\n  #description\n  Description\n\n  #content\n  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._\n\n  #footer\n  Footer\n  ::\n  ```\n::\n\n### Link\n\n::stack\n  ::div{class=\"p-4\"}\n  ::card\n  ---\n  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt\n  target: _blank\n  # showLinkIcon: false\n  ---\n\n  #title\n  Link Card\n\n  #content\n  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._\n  ::\n  ::\n  ```mdc\n  ::card\n  ---\n  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt\n  target: _blank\n  # showLinkIcon: false\n  ---\n\n  #title\n  Link Card\n\n  #content\n  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._\n  ::\n  ```\n::\n\n### Horizontal\n\n::stack\n  ::div{class=\"p-4\"}\n  ::card\n  ---\n  icon: 'lucide:fold-horizontal'\n  icon-size: 26\n  horizontal: true\n  ---\n\n  #title\n  Horizontal Card\n\n  #description\n  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._\n  ::\n  ::\n  ```mdc\n  ::card\n  ---\n  icon: 'lucide:fold-horizontal'\n  icon-size: 26\n  horizontal: true\n  ---\n\n  #title\n  Horizontal Card\n\n  #description\n  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._\n  ::\n  ```\n::\n\n### Image\n\n::stack\n  ::div{class=\"p-4\"}\n  ::card\n  ---\n  img: /og-nuxt.png\n  ---\n  #title\n  Image Card\n\n  #content\n  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._\n  ::\n  ::\n  ```mdc\n  ::card\n  ---\n  img: /og-nuxt.png\n  ---\n  #title\n  Image Card\n\n  #content\n  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._\n  ::\n  ```\n::\n\n## Props\n\n::field-group\n  :field{name=\"title\" type=\"string\"}[Card title]\n  :field{name=\"description\" type=\"string\"}[Card description]\n  :field{name=\"content\" type=\"string\"}[Card content]\n  :field{name=\"footer\" type=\"string\"}[Card footer]\n  :field{name=\"icon\" type=\"string\"}[Card icon]\n  :field{name=\"horizontal\" type=\"boolean\" default-value=\"false\"}\n  :field{name=\"to\" type=\"string\"}[Link URL]\n  :field{name=\"target\" type=\"Target\"}[A `target` attribute value to apply on the link]\n  :field{name=\"iconSize\" type=\"number\" default-value=\"24\"}\n  :field{name=\"img\" type=\"string\"}[Image URL]\n  :field{name=\"showLinkIcon\" type=\"boolean\" default-value=\"true\"}[Whether to show the link indicator :icon{name=\"lucide:arrow-up-right\"}]\n::\n",
+            "icon": "lucide:square",
+            "badges": [
+              {
+                "value": "Nuxt UI Pro",
+                "to": "https://ui.nuxt.com/pro/prose/card",
+                "target": "_blank"
+              },
+              {
+                "value": "Docus",
+                "to": "https://docus.dev/api/components#card",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Card.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Code Group",
+            "_path": "components/2.docs/code-group",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n    ::code-group\n      ```vue [app.vue]\n      <template>\n        <div>\n          <NuxtLayout>\n            <NuxtPage />\n          </NuxtLayout>\n        </div>\n      </template>\n      ```\n\n      ```vue [pages/index.vue]\n      <template>\n        <div>\n          <h1>Welcome to the homepage</h1>\n          <AppAlert>\n            This is an auto-imported component\n          </AppAlert>\n        </div>\n      </template>\n      ```\n    ::\n  ::\n\n  ```mdc\n  ::code-group\n    ```vue [app.vue]\n    <template>\n      <div>\n        <NuxtLayout>\n          <NuxtPage />\n        </NuxtLayout>\n      </div>\n    </template>\n    ```\n\n    ```vue [pages/index.vue]\n    <template>\n      <div>\n        <h1>Welcome to the homepage</h1>\n        <AppAlert>\n          This is an auto-imported component\n        </AppAlert>\n      </div>\n    </template>\n    ```\n  ::\n  ```\n::\n\n::alert{to=\"/components/docs/tabs\"}\n`::code-group`{lang=\"mdc\"} is a wrapper around `::tabs{variant=\"card\"}`{lang=\"mdc\"}.\n::\n\n## Props\n\n:field{name=\"sync\" type=\"string\"}[Sync scope for `::tabs`]\n",
+            "icon": "lucide:code-xml",
+            "badges": [
+              {
+                "value": "Nuxt UI Pro",
+                "to": "https://ui.nuxt.com/pro/prose/code-group",
+                "target": "_blank"
+              },
+              {
+                "value": "Docus",
+                "to": "https://docus.dev/api/components#codegroup",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/CodeGroup.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Code Snippet",
+            "_path": "components/2.docs/code-snippet",
+            "content": "\n\n## Usage\n\n::stack\n::div{class=\"p-4\"}\n  ::code-snippet\n  ---\n  file: /components/DarkModeToggle.vue\n  language: vue\n  ---\n  ::\n::\n```mdc\n::code-snippet\n---\nfile: /components/DarkModeToggle.vue\nlanguage: vue\n---\n::\n```\n::\n\n### Highlighting Lines\n\n::stack\n::div{class=\"p-4\"}\n  ::code-snippet\n  ---\n  file: /composables/useBreadcrumb.ts\n  language: ts\n  title: useBreadcrumb\n  highlights: 9-11\n  meta: line-numbers height=300\n  ---\n  ::\n::\n```mdc\n::code-snippet\n---\nfile: /composables/useBreadcrumb.ts\nlanguage: ts\ntitle: useBreadcrumb\nhighlights: 9-11\nmeta: line-numbers height=300\n---\n::\n```\n::\n\nTranslates to:\n\n`````md\n````ts [useBreadcrumb] {9-11} line-numbers height=300\n// code imported from /composables/useBreadcrumb.ts\n````\n`````\n\n### Using Offset Props\n\n::stack\n::div{class=\"p-4\"}\n  ::code-snippet\n  ---\n  file: /composables/useBreadcrumb.ts\n  language: ts\n  start: 6\n  offset: 4\n  ---\n  ::\n::\n```mdc\n::code-snippet\n---\nfile: /composables/useBreadcrumb.ts\nlanguage: ts\nstart: 6\noffset: 4\n---\n::\n```\n::\n\n### Fetching From a Remote URL\n\n::stack\n::div{class=\"p-4\"}\n  ::code-snippet\n  ---\n  url: https://raw.githubusercontent.com/ZTL-UwU/shadcn-docs-nuxt/refs/heads/main/pages/index.vue\n  language: vue\n  ---\n  ::\n::\n```mdc\n::code-snippet\n---\nurl: https://raw.githubusercontent.com/ZTL-UwU/shadcn-docs-nuxt/refs/heads/main/pages/index.vue\nlanguage: vue\n---\n::\n```\n::\n\n## Props\n\n::alert{icon=\"lucide:info\"}\nThe `/nuxt.config.ts` file can not be imported due to framework constraints\n::\n\n::field-group\n  :field{name=\"file\" type=\"string\"}[The path to the imported file]\n  :field{name=\"url\" type=\"string\"}[A remote URL to fetch the code from]\n  :field{name=\"title\" type=\"string\"}[Code block title]\n  :field{name=\"language\" type=\"string\"}[Code block highlight language]\n  :field{name=\"highlights\" type=\"string\"}[Code block highlights lines]\n  :field{name=\"meta\" type=\"string\"}[Code block meta]\n  :field{name=\"start\" type=\"number\"}[Starting line index]\n  :field{name=\"offset\" type=\"number\"}[Number of lines to display from start]\n::\n",
+            "icon": "lucide:clipboard",
+            "badges": [
+              {
+                "value": "0.8.11"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/CodeSnippet.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Field Group",
+            "_path": "components/2.docs/field-group",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n    ::field-group\n      ::field{name=\"withDefault\" type=\"boolean\" defaultValue=\"true\"}\n      A field with a default value.\n      ::\n      ::field{name=\"requiredField\" type=\"boolean\" required}\n      A required field.\n      ::\n      ::field{name=\"clear (path?: string)\" type=\"void\"}\n      Clears form errors associated with a specific path. If no path is provided, clears all form errors.\n      ::\n      ::field{name=\"getErrors (path?: string)\" type=\"FormError[]\"}\n      Retrieves form errors associated with a specific path. If no path is provided, returns all form errors.\n      ::\n      ::field{name=\"setErrors (errors: FormError[], path?: string)\" type=\"void\"}\n      Sets form errors for a given path. If no path is provided, overrides all errors.\n      ::\n      ::field{name=\"errors\" type=\"Ref<FormError[]>\"}\n      A reference to the array containing validation errors. Use this to access or manipulate the error information.\n      ::\n    ::\n  ::\n\n  ```mdc\n  ::field-group\n    ::field{name=\"withDefault\" type=\"boolean\" defaultValue=\"true\"}\n    A field with a default value.\n    ::\n    ::field{name=\"requiredField\" type=\"boolean\" required}\n    A required field.\n    ::\n    ::field{name=\"clear (path?: string)\" type=\"void\"}\n    Clears form errors associated with a specific path. If no path is provided, clears all form errors.\n    ::\n    ::field{name=\"getErrors (path?: string)\" type=\"FormError[]\"}\n    Retrieves form errors associated with a specific path. If no path is provided, returns all form errors.\n    ::\n    ::field{name=\"setErrors (errors: FormError[], path?: string)\" type=\"void\"}\n    Sets form errors for a given path. If no path is provided, overrides all errors.\n    ::\n    ::field{name=\"errors\" type=\"Ref<FormError[]>\"}\n    A reference to the array containing validation errors. Use this to access or manipulate the error information.\n    ::\n  ::\n  ```\n::\n",
+            "icon": "lucide:settings-2",
+            "badges": [
+              {
+                "value": "Nuxt UI Pro",
+                "to": "https://ui.nuxt.com/pro/prose/field-group",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/FieldGroup.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Field",
+            "_path": "components/2.docs/field",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n    ::field{name=\"Field\" type=\"string\" defaultValue=\"'default'\" required}\n    The _description_ can be set as prop or in the default slot with full **markdown** support.\n    ::\n  ::\n  ```mdc\n  ::field{name=\"Field\" type=\"string\" defaultValue=\"'default'\" required}\n  The _description_ can be set as prop or in the default slot with full **markdown** support.\n  ::\n  ```\n::\n\nThe text `required` is configurable in [`main.fieldRequiredText`](/api/configuration/shadcn-docs#main).\n\n## Props\n\n::field-group\n  :field{name=\"name\" type=\"string\"}[Field name]\n  :field{name=\"type\" type=\"string\"}[Field type]\n  :field{name=\"description\" type=\"string\"}[Field description]\n  :field{name=\"defaultValue\" type=\"string\"}[Field default value]\n  :field{name=\"required\" type=\"boolean\"}[Whether the field is required]\n::\n",
+            "icon": "lucide:settings-2",
+            "badges": [
+              {
+                "value": "Nuxt UI Pro",
+                "to": "https://ui.nuxt.com/pro/prose/field",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Field.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "File Tree",
+            "_path": "components/2.docs/file-tree",
+            "content": "\n\n## Usage\n\n::stack\n::div{class=\"p-4\"}\n  ::file-tree\n  ---\n  tree:\n    - app:\n      - components:\n        - Header.vue\n        - Footer.vue\n      - composables:\n        - useErrorHandler.ts\n      - ^app.vue^\n    - docs:\n      - index.md\n  ---\n  ::\n::\n```mdc\n::file-tree\n---\ntree:\n  - app:\n    - components:\n      - Header.vue\n      - Footer.vue\n    - composables:\n      - useErrorHandler.ts\n    - ^app.vue^ # This is highlighted\n  - docs:\n    - index.md\n---\n::\n```\n::\n\n### Customizations\n\n::stack\n::div{class=\"p-4\"}\n  ::file-tree\n  ---\n  title: File Tree Title\n  icon: lucide:folder-tree\n  autoSlash: false   # Whether to add a slash after every folder automatically\n  showArrow: true    # Whether to show the guide arrow\n  tree:\n    - components:\n      - layout:\n        - Header.vue\n        - Footer.vue\n        - ...\n      - content:\n        - Accordion.vue\n        - Alert.vue\n        - ProseCode.vue\n        - ...\n  ---\n  ::\n::\n```mdc\n::file-tree\n---\ntitle: File Tree Title\nicon: lucide:folder-tree\nautoSlash: false   # Whether to add a slash after every folder automatically\nshowArrow: true    # Whether to show the collapse arrow\ntree:\n  - components:\n    - layout:\n      - Header.vue\n      - Footer.vue\n      - ...\n    - content:\n      - Accordion.vue\n      - Alert.vue\n      - ProseCode.vue\n      - ...\n---\n::\n```\n::\n\n### Disable Icons\n\n::stack\n::div{class=\"p-4\"}\n  ::file-tree\n  ---\n  showIcon: false\n  tree:\n    - app:\n      - components:\n        - Header.vue\n        - Footer.vue\n      - composables:\n        - useErrorHandler.ts\n      - ^app.vue^\n    - docs:\n      - index.md\n  ---\n  ::\n::\n```mdc\n::file-tree\n---\nshowIcon: false\ntree:\n  - app:\n    - components:\n      - Header.vue\n      - Footer.vue\n    - composables:\n      - useErrorHandler.ts\n    - ^app.vue^\n  - docs:\n    - index.md\n---\n::\n```\n::\n\n## Props\n\n::field-group\n  :field{name=\"tree\"}[The file tree]\n  :field{name=\"title\" type=\"string\"}[File tree title]\n  :field{name=\"icon\" type=\"string\"}[File tree title icon]\n  :field{name=\"autoSlash\" type=\"boolean\" default-value=\"true\"}[Whether to add a slash after every folder automatically]\n  :field{name=\"showArrow\" type=\"boolean\" default-value=\"false\"}[Whether to show the collapse arrow]\n  :field{name=\"showIcon\" type=\"boolean\" default-value=\"true\"}[Whether to show file & folder icons]\n::\n",
+            "icon": "lucide:folder-tree",
+            "badges": [
+              {
+                "value": "0.8.10"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/FileTree.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Icon",
+            "_path": "components/2.docs/icon",
+            "content": "\n\n::alert{to=\"https://github.com/nuxt-modules/icon\" target=\"_blank\"}\nThe icon component uses **Nuxt Icon** under the hood. Check out the usage guide from Nuxt Icon.\n::\n\n## Usage\n\n::stack\n  ::div{class=\"p-4 space-x-2\"}\n    :icon{name=\"lucide:box\"}\n    :icon{name=\"vscode-icons:file-type-js-official\"}\n    :icon{name=\"vscode-icons:file-type-vue\"}\n    :icon{name=\"vscode-icons:file-type-nuxt\" size=\"30\"}\n  ::\n\n  ```mdc\n  :icon{name=\"lucide:box\"}\n  :icon{name=\"vscode-icons:file-type-js-official\"}\n  :icon{name=\"vscode-icons:file-type-vue\"}\n  :icon{name=\"vscode-icons:file-type-nuxt\" size=\"30\"}\n  ```\n::\n\nIf you want to use other icons, it is highly recommended to install them locally, which is faster and more reliable on both SSR and client-side.\n\n```bash [Terminal]\nnpm i -D @iconify-json/collection-name\n```\n\n`@iconify-json/lucide` and `@iconify-json/vscode-icons` are installed by default.\n\n### Smart Icon\n\n:badge[0.5.3]{variant=\"outline\"}\n\nYou can put iconify icons, emojis and urls in `smart-icon`. Smart icon will render them automatically.\n\n::stack\n  ::div{class=\"p-4\"}\n    **Iconify**\n    <div class=\"space-x-2\">\n\n    :smart-icon{name=\"lucide:box\"}\n    :smart-icon{name=\"vscode-icons:file-type-js-official\"}\n    :smart-icon{name=\"vscode-icons:file-type-vue\"}\n\n    </div>\n\n    **Emojis**\n    <div class=\"space-x-2\">\n\n    :smart-icon{name=\"😍\"}\n    :smart-icon{name=\"🚀\"}\n    :smart-icon{name=\"🎉\" size=30}\n\n    </div>\n\n    **URL**\n    <div class=\"space-x-2\">\n\n    :smart-icon{name=\"/logo.svg\"}\n    :smart-icon{name=\"https://vueuse.org/favicon.svg\" size=40}\n\n    </div>\n  ::\n\n  ```mdc\n  **Iconify**\n  :smart-icon{name=\"lucide:box\"}\n  :smart-icon{name=\"vscode-icons:file-type-js-official\"}\n  :smart-icon{name=\"vscode-icons:file-type-vue\"}\n\n  **Emojis**\n  :smart-icon{name=\"😍\"}\n  :smart-icon{name=\"🚀\"}\n  :smart-icon{name=\"🎉\" size=30}\n\n  **URL**\n  :smart-icon{name=\"/logo.svg\"}\n  :smart-icon{name=\"https://vueuse.org/favicon.svg\" size=40}\n  ```\n::\n",
+            "icon": "lucide:star",
+            "badges": [
+              {
+                "value": "Docus",
+                "to": "https://docus.dev/api/components#icon",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Icon.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Package Manager",
+            "_path": "components/2.docs/pm",
+            "content": "\n\n## Usage\n\nThe package managers shown can be configured in [`main.pm`](/api/configuration/shadcn-docs#main).\n\n### Install\n\n::stack\n  ::div{class=\"p-4\"}\n    :pm-install{name=\"shadcn-docs-nuxt\"}\n    :pm-install{name=\"shadcn-docs-nuxt\" save-dev}\n    :pm-install\n    :pm-install{name=\"-g nuxi@latest\"}\n  ::\n  ```mdc\n  :pm-install{name=\"shadcn-docs-nuxt\"}\n  :pm-install{name=\"shadcn-docs-nuxt\" save-dev}\n  :pm-install\n  :pm-install{name=\"-g nuxi@latest\"}\n  ```\n::\n\n### Run\n\n::stack\n  ::div{class=\"p-4\"}\n    :pm-run{script=\"dev\"}\n    :pm-run{script=\"build --watch -o\"}\n  ::\n  ```mdc\n  :pm-run{script=\"dev\"}\n  :pm-run{script=\"build --watch -o\"}\n  ```\n::\n\n### X\n\n::stack\n  ::div{class=\"p-4\"}\n  :pm-x{command=\"nuxi@latest init <project-name>\"}\n  ::\n  ```mdc\n  :pm-x{command=\"nuxi@latest init <project-name>\"}\n  ```\n::\n\n### No Sync\n\n::stack\n  ::div{class=\"p-4\"}\n    :pm-x{command=\"nuxi@latest init <project-name>\" no-sync}\n  ::\n  ```mdc\n  :pm-x{command=\"nuxi@latest init <project-name>\" no-sync}\n  ```\n::\n",
+            "icon": "lucide:package",
+            "description": "",
+            "badges": [
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/PmInstall.vue",
+                "target": "_blank"
+              },
+              {
+                "value": "0.8.0"
+              }
+            ]
+          },
+          {
+            "title": "Read More",
+            "_path": "components/2.docs/read-more",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n    :read-more{to=\"/getting-started/writing/markdown\"}\n    :read-more{title=\"Nuxt website\" to=\"https://nuxt.com/\"}\n    :read-more{to=\"https://nuxt.com/\"}\n    :read-more{icon=\"lucide:link\" to=\"https://nuxt.com/\"}\n  ::\n\n  ```mdc\n  :read-more{to=\"/getting-started/writing/markdown\"}\n  :read-more{title=\"Nuxt website\" to=\"https://nuxt.com/\"}\n  :read-more{to=\"https://nuxt.com/\"}\n  :read-more{icon=\"lucide:link\" to=\"https://nuxt.com/\"}\n  ```\n::\n\n## Props\n\n::field-group\n  :field{name=\"title\" type=\"string\"}[Read More title]\n  :field{name=\"icon\" type=\"string\"}[Read More icon]\n  :field{name=\"to\" type=\"string\"}[Link URL]\n  :field{name=\"target\" type=\"Target\"}[A `target` attribute value to apply on the link]\n::\n",
+            "icon": "lucide:bookmark",
+            "badges": [
+              {
+                "value": "undocs",
+                "to": "https://undocs.pages.dev/guide/components#read-more",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/ReadMore.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Shortcut",
+            "_path": "components/2.docs/shortcut",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n    :shortcut{value=\"meta\"} :shortcut{value=\"K\"} :br\n    :shortcut{value=\"xs\" size=\"xs\"} :shortcut{value=\"sm\"} :shortcut{value=\"md\" size=\"md\"}\n  ::\n  ```mdc\n  :shortcut{value=\"meta\"} :shortcut{value=\"K\"}\n\n  :shortcut{value=\"xs\" size=\"xs\"} :shortcut{value=\"sm\"} :shortcut{value=\"md\" size=\"md\"}\n  ```\n::\n\nYou can put `meta` in the `value` field to automatically display either :shortcut{value=\"⌘\"} or :shortcut{value=\"Ctrl\"} based on the platform.\n\n## Props\n\n::field-group\n  :field{name=\"value\" type=\"string\"}[Text in the shortcut]\n  :field{name=\"size\" type=\"'xs' | 'sm' | 'md'\" default-value=\"'sm'\"}\n::\n",
+            "icon": "lucide:keyboard",
+            "badges": [
+              {
+                "value": "Nuxt UI Pro",
+                "to": "https://ui.nuxt.com/pro/prose/shortcut",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Shortcut.vue",
+                "target": "_blank"
+              },
+              {
+                "value": "0.6.3"
+              }
+            ]
+          },
+          {
+            "title": "Stack",
+            "_path": "components/2.docs/stack",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4 md:p-8\"}\n    ::stack\n      ::div{class=\"p-6 text-3xl font-bold\"}\n      ✨ Introducing Inspira UI\n      ::\n      ```vue\n      <template>\n        <RadiantText\n          class=\"inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400\"\n          :duration=\"5\"\n        >\n          <span class=\"text-3xl font-bold\">✨ Introducing Inspira UI</span>\n        </RadiantText>\n      </template>\n      ```\n      :pm-install{name=\"@inspira-ui/plugins\" save-dev}\n      :read-more{title=\"Inspira UI Docs\" to=\"https://inspira-ui.com/components/radiant-text\"}\n      ::card\n      ---\n      title: Commands\n      icon: lucide:square-terminal\n      ---\n      List of Nuxt CLI commands to init, analyze, build, and preview your application.\n      ::\n    ::\n  ::\n  ```mdc\n  ::stack\n    ::div{class=\"p-6 text-3xl font-bold\"}\n    ✨ Introducing Inspira UI\n    ::\n    ```vue\n    <template>\n      <RadiantText\n        class=\"inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400\"\n        :duration=\"5\"\n      >\n        <span class=\"text-3xl font-bold\">✨ Introducing Inspira UI</span>\n      </RadiantText>\n    </template>\n    ```\n    :pm-install{name=\"@inspira-ui/plugins\" save-dev}\n    :read-more{title=\"Inspira UI Docs\" to=\"https://inspira-ui.com/components/radiant-text\"}\n    ::card\n    ---\n    title: Commands\n    icon: lucide:square-terminal\n    ---\n    List of Nuxt CLI commands to init, analyze, build, and preview your application.\n    ::\n  ::\n  ```\n::\n\nStackable components:\n\n- `div`\n- Code Blocks\n- `alert`\n- `callout`\n- `read-more`\n- `code-group`\n- `card`\n- `tabs`\n- `pm-install`\n- `pm-run`\n- `pm-x`\n",
+            "icon": "lucide:rows-3",
+            "badges": [
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Stack.vue",
+                "target": "_blank"
+              },
+              {
+                "value": "0.6.2"
+              }
+            ]
+          },
+          {
+            "title": "Steps",
+            "_path": "components/2.docs/steps",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4 md:p-6\"}\n    ::steps\n      ### Get Starter Template\n\n      ::code-group\n        ```bash [npm]\n        npx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter\n        ```\n        ```bash [pnpm]\n        pnpm dlx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter\n        ```\n        ```bash [bun]\n        bunx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter\n        ```\n      ::\n\n      ::alert\n      Alternatively, you can clone or download the template from the [GitHub repo](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter).\n      ::\n\n      ### Install Dependencies\n\n      ::code-group\n        ```bash [npm]\n        npm install\n        ```\n        ```bash [pnpm]\n        pnpm install\n        ```\n        ```bash [bun]\n        bun install\n        ```\n      ::\n\n      ### Development Server\n\n      ::code-group\n        ```bash [npm]\n        npm run dev -- -o\n        ```\n        ```bash [pnpm]\n        pnpm dev -o\n        ```\n        ```bash [bun]\n        bun run dev -o\n        ```\n      ::\n    ::\n  ::\n  ```mdc height=400\n  ::steps\n    ### Get Starter Template\n\n    ::code-group\n      ```bash [npm]\n      npx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter\n      ```\n      ```bash [pnpm]\n      pnpm dlx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter\n      ```\n      ```bash [bun]\n      bunx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter\n      ```\n    ::\n\n    ::alert\n    Alternatively, you can clone or download the template from the [GitHub repo](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter).\n    ::\n\n    ### Install Dependencies\n\n    ::code-group\n      ```bash [npm]\n      npm install\n      ```\n      ```bash [pnpm]\n      pnpm install\n      ```\n      ```bash [bun]\n      bun install\n      ```\n    ::\n\n    ### Development Server\n\n    ::code-group\n      ```bash [npm]\n      npm run dev -- -o\n      ```\n      ```bash [pnpm]\n      pnpm dev -o\n      ```\n      ```bash [bun]\n      bun run dev -o\n      ```\n    ::\n  ::\n  ```\n::\n\n### Multi-level headings\n:badge[0.4.6]{variant=\"outline\"}\n\n::stack\n  ::div{class=\"p-4 md:p-6\"}\n    ::steps{level=5}\n      ##### Specify the level of headings to use\n\n      ```mdc\n      ::steps{level=5}\n      ```\n\n      ##### Available Headings\n\n      `h1` through `h6`. Defaults to `h3`.\n    ::\n  ::\n  ```mdc\n  ::steps{level=5}\n    ##### Multi-level headings\n\n    ```mdc\n    ::steps{level=5}\n    ```\n\n    ##### Available Headings\n\n    `h1` through `h6`. Defaults to `h3`.\n  ::\n  ```\n::\n\n## Props\n\n:field{name=\"level\" type=\"number\"}[Specify the level of headings to use]\n",
+            "icon": "lucide:arrow-down-0-1",
+            "badges": [
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Steps.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Tabs",
+            "_path": "components/2.docs/tabs",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n    ::tabs\n      ::div{label=\"PostgreSQL\" icon=\"lucide:database\"}\n      ### PostgreSQL column types\n\n      ```ts\n      import { integer, pgTable } from 'drizzle-orm/pg-core';\n\n      export const table = pgTable('table', {\n        int: integer('int')\n      });\n      ```\n      ::\n      ::div{label=\"MySQL\"}\n      ### MySQL column types\n\n      ```ts\n      import { int, mysqlTable } from 'drizzle-orm/mysql-core';\n\n      const table = mysqlTable('table', {\n        int: int('int')\n      });\n      ```\n      ::\n      ::div{label=\"SQLite\"}\n      ### SQLite column types\n\n      ```ts\n      import { integer, sqliteTable } from 'drizzle-orm/sqlite-core';\n\n      const table = sqliteTable('table', {\n        id: integer('id')\n      });\n\n      // you can customize integer mode to be number, boolean, timestamp, timestamp_ms\n      integer('id', { mode: 'number' });\n      integer('id', { mode: 'boolean' });\n      integer('id', { mode: 'timestamp_ms' });\n      integer('id', { mode: 'timestamp' }); // Date\n      ```\n      ::\n    ::\n  ::\n  ```mdc height=300\n  ::tabs\n    ::div{label=\"PostgreSQL\" icon=\"lucide:database\"}\n    ### PostgreSQL column types\n\n    ```ts\n    import { integer, pgTable } from 'drizzle-orm/pg-core';\n\n    export const table = pgTable('table', {\n      int: integer('int')\n    });\n    ```\n    ::\n    ::div{label=\"MySQL\"}\n    ### MySQL column types\n\n    ```ts\n    import { int, mysqlTable } from 'drizzle-orm/mysql-core';\n\n    const table = mysqlTable('table', {\n      int: int('int')\n    });\n    ```\n    ::\n    ::div{label=\"SQLite\"}\n    ### SQLite column types\n\n    ```ts\n    import { integer, sqliteTable } from 'drizzle-orm/sqlite-core';\n\n    const table = sqliteTable('table', {\n      id: integer('id')\n    });\n\n    // you can customize integer mode to be number, boolean, timestamp, timestamp_ms\n    integer('id', { mode: 'number' });\n    integer('id', { mode: 'boolean' });\n    integer('id', { mode: 'timestamp_ms' });\n    integer('id', { mode: 'timestamp' }); // Date\n    ```\n    ::\n  ::\n  ```\n::\n\n### Card Style\n\n::stack\n  ::div{class=\"p-4\"}\n    ::tabs{variant=\"card\"}\n      ::div{label=\"Card Tab\"}\n      ### This is a card-style tab\n      ::\n      ::div{label=\"Tab 2\" icon=\"lucide:atom\"}\n      This is Tab #2\n      ::\n      ```ts [Code Tab]\n      console.log('Hello World!');\n      ```\n    ::\n  ::\n  ```mdc\n  ::tabs{variant=\"card\"}\n    ::div{label=\"Card Tab\"}\n    ### This is a card-style tab\n    ::\n    ::div{label=\"Tab 2\" icon=\"lucide:atom\"}\n    This is Tab #2\n    ::\n    ```ts [Code Tab]\n    console.log('Hello World!');\n    ```\n  ::\n  ```\n::\n\n### Line Style\n:badge[0.6.4]{variant=\"outline\"}\n\n::stack\n  ::div{class=\"p-4\"}\n    ::tabs{variant=\"line\"}\n      ::div{label=\"Preview\" class=\"border flex min-h-[200px] w-full justify-center p-10 items-center rounded-lg shadow-sm\"}\n        :badge[Badge]\n      ::\n      ::div{label=\"Code\"}\n        ```tsx\n        import { Badge } from \"@/components/ui/badge\"\n\n        export function BadgeDemo() {\n          return <Badge>Badge</Badge>\n        }\n        ```\n      ::\n    ::\n  ::\n  ```mdc\n  ::tabs{variant=\"line\"}\n    ::div{label=\"Preview\" class=\"border flex min-h-[200px] w-full justify-center p-10 items-center rounded-lg shadow-sm\"}\n      :badge[Badge]\n    ::\n    ::div{label=\"Code\"}\n      ```tsx\n      import { Badge } from \"@/components/ui/badge\"\n\n      export function BadgeDemo() {\n        return <Badge>Badge</Badge>\n      }\n      ```\n    ::\n  ::\n  ```\n::\n\n### Combobox Style\n:badge[0.7.5]{variant=\"outline\"}\n\n::stack\n  ::div{class=\"p-4\"}\n    ::tabs{variant=\"combobox\" search-placeholder=\"Search database...\" search-empty=\"No database found.\"}\n      ::div{label=\"PostgreSQL\"}\n      ### PostgreSQL column types\n\n      ```ts\n      import { integer, pgTable } from 'drizzle-orm/pg-core';\n\n      export const table = pgTable('table', {\n        int: integer('int')\n      });\n      ```\n      ::\n      ::div{label=\"MySQL\"}\n      ### MySQL column types\n\n      ```ts\n      import { int, mysqlTable } from 'drizzle-orm/mysql-core';\n\n      const table = mysqlTable('table', {\n        int: int('int')\n      });\n      ```\n      ::\n      ::div{label=\"SQLite\"}\n      ### SQLite column types\n\n      ```ts\n      import { integer, sqliteTable } from 'drizzle-orm/sqlite-core';\n\n      const table = sqliteTable('table', {\n        id: integer('id')\n      });\n\n      // you can customize integer mode to be number, boolean, timestamp, timestamp_ms\n      integer('id', { mode: 'number' });\n      integer('id', { mode: 'boolean' });\n      integer('id', { mode: 'timestamp_ms' });\n      integer('id', { mode: 'timestamp' }); // Date\n      ```\n      ::\n    ::\n  ::\n  ```mdc height=300\n  ::tabs{variant=\"combobox\" search-placeholder=\"Search database...\" search-empty=\"No database found.\"}\n    ::div{label=\"PostgreSQL\"}\n    ### PostgreSQL column types\n\n    ```ts\n    import { integer, pgTable } from 'drizzle-orm/pg-core';\n\n    export const table = pgTable('table', {\n      int: integer('int')\n    });\n    ```\n    ::\n    ::div{label=\"MySQL\"}\n    ### MySQL column types\n\n    ```ts\n    import { int, mysqlTable } from 'drizzle-orm/mysql-core';\n\n    const table = mysqlTable('table', {\n      int: int('int')\n    });\n    ```\n    ::\n    ::div{label=\"SQLite\"}\n    ### SQLite column types\n\n    ```ts\n    import { integer, sqliteTable } from 'drizzle-orm/sqlite-core';\n\n    const table = sqliteTable('table', {\n      id: integer('id')\n    });\n\n    // you can customize integer mode to be number, boolean, timestamp, timestamp_ms\n    integer('id', { mode: 'number' });\n    integer('id', { mode: 'boolean' });\n    integer('id', { mode: 'timestamp_ms' });\n    integer('id', { mode: 'timestamp' }); // Date\n    ```\n    ::\n  ::\n  ```\n::\n\n### Synced Tabs\n:badge[0.8.0]{variant=\"outline\"}\n\n:read-more{to=\"/components/docs/pm\"}\n\n::stack\n  ::div{class=\"p-4 md:p-8\"}\n    #### Scope 1\n    ::tabs{variant=\"card\" sync=\"your-scope-name\"}\n      ::div{label=\"Card Tab\"}\n      ### This is a card-style tab\n      ::\n      ```ts [Code Tab]\n      console.log('Hello World!');\n      ```\n    ::\n    ::tabs{variant=\"card\" sync=\"your-scope-name\"}\n      ::div{label=\"Card Tab\"}\n      ### This is a card-style tab\n      ::\n      ::div{label=\"Tab 2\" icon=\"lucide:atom\"}\n      This is Tab #2\n      ::\n      ```ts [Code Tab]\n      console.log('Hello World!');\n      ```\n    ::\n\n    #### Scope 2\n    ::tabs{variant=\"line\" sync=\"scope2\"}\n      ::div{label=\"Card Tab\"}\n      ### This is a card-style tab\n      ::\n      ::div{label=\"Tab 2\" icon=\"lucide:atom\"}\n      This is Tab #2\n      ::\n      ```ts [Code Tab]\n      console.log('Hello World!');\n      ```\n    ::\n    ::tabs{variant=\"separate\" sync=\"scope2\"}\n      ::div{label=\"Card Tab\"}\n      ### This is a card-style tab\n      ::\n      ::div{label=\"Tab 2\" icon=\"lucide:atom\"}\n      This is Tab #2\n      ::\n      ```ts [Code Tab]\n      console.log('Hello World!');\n      ```\n    ::\n  ::\n  ```mdc height=400\n  #### Scope 1\n  ::tabs{variant=\"card\" sync=\"your-scope-name\"}\n    ::div{label=\"Card Tab\"}\n    ### This is a card-style tab\n    ::\n    ```ts [Code Tab]\n    console.log('Hello World!');\n    ```\n  ::\n  ::tabs{variant=\"card\" sync=\"your-scope-name\"}\n    ::div{label=\"Card Tab\"}\n    ### This is a card-style tab\n    ::\n    ::div{label=\"Tab 2\" icon=\"lucide:atom\"}\n    This is Tab #2\n    ::\n    ```ts [Code Tab]\n    console.log('Hello World!');\n    ```\n  ::\n\n  #### Scope 2\n  ::tabs{variant=\"line\" sync=\"scope2\"}\n    ::div{label=\"Card Tab\"}\n    ### This is a card-style tab\n    ::\n    ::div{label=\"Tab 2\" icon=\"lucide:atom\"}\n    This is Tab #2\n    ::\n    ```ts [Code Tab]\n    console.log('Hello World!');\n    ```\n  ::\n  ::tabs{variant=\"separate\" sync=\"scope2\"}\n    ::div{label=\"Card Tab\"}\n    ### This is a card-style tab\n    ::\n    ::div{label=\"Tab 2\" icon=\"lucide:atom\"}\n    This is Tab #2\n    ::\n    ```ts [Code Tab]\n    console.log('Hello World!');\n    ```\n  ::\n  ```\n::\n\n## Props\n\n::field-group\n  :field{name=\"variant\" type=\"'separate' | 'card' | 'line' | 'combobox'\" default-value=\"'separate'\"}\n  :field{name=\"padded\" type=\"boolean\" default-value=\"true\"}\n  :field{name=\"disableSearch\" type=\"boolean\" default-value=\"false\"}[For combobox variant]\n  :field{name=\"searchPlaceholder\" type=\"string\" default-value=\"'Search Tab...'\"}[For combobox variant]\n  :field{name=\"searchEmpty\" type=\"string\" default-value=\"'No tab found.'\"}[For combobox variant]\n  :field{name=\"sync\" type=\"string\"}[Sync scope]\n::\n",
+            "icon": "lucide:table-2",
+            "badges": [
+              {
+                "value": "Nuxt UI Pro",
+                "to": "https://ui.nuxt.com/pro/prose/tabs",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Tabs.vue",
+                "target": "_blank"
+              }
+            ]
+          }
+        ],
+        "icon": "lucide:book",
+        "_path": "docs"
+      },
+      {
+        "title": "Page Components",
+        "children": [
+          {
+            "title": "Accordion",
+            "_path": "components/3.page/accordion",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n    ::accordion{default-value=\"first-item\" collapsible}\n      ::accordion-item{value=\"first-item\"}\n      #title\n      Is it accessible?\n\n      #content\n      Yes. It adheres to the WAI-ARIA design pattern.\n      ::\n      ::accordion-item\n      #title\n      Is it unstyled?\n\n      #content\n      Yes. It's unstyled by default, giving you freedom over the look and feel.\n      ::\n      :accordion-item{title=\"Can it be animated?\" content=\"Yes! You can use the transition prop to configure the animation.\"}\n    ::\n  ::\n  ```mdc\n  ::accordion{default-value=\"first-item\" collapsible}\n    ::accordion-item{value=\"first-item\"}\n    #title\n    Is it accessible?\n\n    #content\n    Yes. It adheres to the WAI-ARIA design pattern.\n    ::\n\n    ::accordion-item\n    #title\n    Is it unstyled?\n\n    #content\n    Yes. It's unstyled by default, giving you freedom over the look and feel.\n    ::\n    :accordion-item{title=\"Can it be animated?\" content=\"Yes! You can use the transition prop to configure the animation.\"}\n  ::\n  ```\n::\n\nThe `value` prop in `::accordion-item`{lang=\"mdc\"} is auto-generated by default. You can set them to other _unique_ values and put them in the `default-value` prop of `::accordion`{lang=\"mdc\"}.\n\n## Props\n\n#### `::accordion-item`{lang=\"mdc\"}\n\n::field-group\n  :field{name=\"type\" type=\"'single' | 'multiple'\" default-value=\"'single'\"}\n  :field{name=\"collapsible\" type=\"boolean\" default-value=\"undefined\"}[Whether the items can be collapsed]\n  :field{name=\"defaultValue\" type=\"string | string[]\"}[Default open item]\n::\n\n#### `::accordion`{lang=\"mdc\"}\n\n::field-group\n  :field{name=\"value\" type=\"string\"}[Item value]\n  :field{name=\"title\" type=\"string\"}[Item title]\n  :field{name=\"content\" type=\"string\"}[Item content]\n::\n",
+            "icon": "lucide:layout-list",
+            "badges": [
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Accordion.vue",
+                "target": "_blank"
+              },
+              {
+                "value": "0.5.0"
+              }
+            ]
+          },
+          {
+            "title": "Collapsible",
+            "_path": "components/3.page/collapsible",
+            "content": "\n\n## Usage\n\n### Simple\n\n::stack\n  ::div{class=\"p-4 md:p-6\"}\n    ::collapsible\n    #title\n    Show properties\n\n    #content\n    This is a **Simple** style collapsible.\n    ::\n  ::\n  ```mdc\n  ::collapsible\n  #title\n  Show properties\n\n  #content\n  This is a **Simple** style collapsible.\n  ::\n  ```\n::\n\n### Card\n\n::stack\n  ::div{class=\"p-4 md:p-6\"}\n    ::collapsible{variant=\"card\" title=\"@peduarte starred 3 repositories\"}\n    @radix-ui/primitives\n    ::\n  ::\n  ```mdc\n  ::collapsible{variant=\"card\" title=\"@peduarte starred 3 repositories\"}\n  @radix-ui/primitives\n  ::\n  ```\n::\n\n## Props\n\n::field-group\n  :field{name=\"variant\" type=\"'simple' | 'card'\" default-value=\"'simple'\"}\n  :field{name=\"title\" type=\"string\"}[Collapsible title]\n  :field{name=\"defaultOpen\" type=\"boolean\" default-value=\"false\"}\n::\n",
+            "icon": "lucide:list-collapse",
+            "badges": [
+              {
+                "value": "Nuxt UI Pro",
+                "to": "https://ui.nuxt.com/pro/prose/collapsible",
+                "target": "_blank"
+              },
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Collapsible.vue",
+                "target": "_blank"
+              },
+              {
+                "value": "0.5.8"
+              }
+            ]
+          },
+          {
+            "title": "HeroAlt",
+            "_path": "components/3.page/hero-alt",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n    ::hero-alt\n    ---\n    announcement:\n      title: 'Introducing Charts'\n      icon: 'lucide:pie-chart'\n      to: /getting-started\n    actions:\n      - name: Get Started\n        to: /getting-started\n      - name: GitHub\n        variant: ghost\n        to: https://github.com/ZTL-UwU/shadcn-docs-nuxt\n    ---\n\n    #title\n    Build your component library\n\n    #description\n    Beautifully designed components that you can copy and paste into your apps.\n    ::\n  ::\n  ```mdc\n  ::hero-alt\n  ---\n  announcement:\n    title: 'Introducing Charts'\n    icon: 'lucide:pie-chart'\n    to: /getting-started\n  actions:\n    - name: Get Started\n      to: /getting-started\n    - name: GitHub\n      variant: outline\n      to: https://github.com/ZTL-UwU/shadcn-docs-nuxt\n      leftIcon: 'lucide:github'\n  ---\n\n  #title\n  Build your component library\n\n  #description\n  Beautifully designed components that you can copy and paste into your apps.\n  ::\n  ```\n::\n\n### Right\n\n::stack\n  ::div{class=\"p-4\"}\n    ::hero-alt\n    ---\n    announcement:\n      title: 'Introducing Charts'\n      icon: 'lucide:pie-chart'\n      to: /getting-started\n    actions:\n      - name: Get Started\n        to: /getting-started\n      - name: GitHub\n        variant: ghost\n        to: https://github.com/ZTL-UwU/shadcn-docs-nuxt\n    mobileRight: 'top' # 'top' | 'bottom'\n    ---\n\n    #title\n    Build your component library\n\n    #description\n    Beautifully designed components that you can copy and paste into your apps.\n\n    #right\n    ![logo](/logo.svg)\n    ::\n  ::\n  ```mdc\n  ::hero-alt\n  ---\n  announcement:\n    title: 'Introducing Charts'\n    icon: 'lucide:pie-chart'\n    to: /getting-started\n  actions:\n    - name: Get Started\n      to: /getting-started\n    - name: GitHub\n      variant: ghost\n      to: https://github.com/ZTL-UwU/shadcn-docs-nuxt\n  mobileRight: 'top' # 'top' | 'bottom'\n  ---\n\n  #title\n  Build your component library\n\n  #description\n  Beautifully designed components that you can copy and paste into your apps.\n\n  #right\n  ![logo](/logo.svg)\n  ::\n  ```\n::\n",
+            "icon": "lucide:align-left",
+            "badges": [
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/HeroAlt.vue",
+                "target": "_blank"
+              },
+              {
+                "value": "0.4.0"
+              }
+            ],
+            "toc": false
+          },
+          {
+            "title": "Hero",
+            "_path": "components/3.page/hero",
+            "content": "\n\n## Usage\n\n::stack\n  ::div{class=\"p-4\"}\n    ::hero\n    ---\n    announcement:\n      title: 'Release v1.0.0'\n      icon: 'lucide:party-popper'\n      to: /getting-started\n    actions:\n      - name: Get Started\n        to: /getting-started\n      - name: GitHub\n        variant: outline\n        to: https://github.com/ZTL-UwU/shadcn-docs-nuxt\n        leftIcon: 'lucide:github'\n    ---\n\n    #title\n    Effortless and Beautiful :br Docs Template.\n\n    #description\n    Beautifully designed Nuxt Content template with shadcn-vue. :br Customizable. Compatible. Open Source.\n    ::\n  ::\n  ```mdc\n  ::hero\n  ---\n  announcement:\n    title: 'Release v1.0.0'\n    icon: 'lucide:party-popper'\n    to: /getting-started\n  actions:\n    - name: Get Started\n      to: /getting-started\n    - name: GitHub\n      variant: outline\n      to: https://github.com/ZTL-UwU/shadcn-docs-nuxt\n      leftIcon: 'lucide:github'\n  ---\n\n  #title\n  Effortless and Beautiful :br Docs Template.\n\n  #description\n  Beautifully designed Nuxt Content template with shadcn-vue. :br Customizable. Compatible. Open Source.\n  ::\n  ```\n::\n",
+            "icon": "lucide:align-center",
+            "badges": [
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Hero.vue",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "Team Card",
+            "_path": "components/3.page/team-card",
+            "content": "\n\n::stack\n  ::div{class=\"p-4\"}\n    ::team-card-group\n      ::team-card\n      ---\n      avatar: https://www.github.com/ZTL-UwU.png\n      name: Tony Zhang\n      title: Author of shadcn-docs-nuxt\n      links:\n        - icon: lucide:github\n          to: https://github.com/ZTL-UwU\n        - icon: lucide:twitter\n          to: https://x.com/ZTL_UwU\n        - icon: lucide:coffee\n          to: https://ko-fi.com/ztl_uwu\n      ---\n      ::\n\n      ::team-card\n      ---\n      center: false\n      avatar: https://www.github.com/ZTL-UwU.png\n      name: Tony Zhang\n      title: Author of shadcn-docs-nuxt\n      links:\n        - icon: lucide:github\n          to: https://github.com/ZTL-UwU\n        - icon: lucide:twitter\n          to: https://x.com/ZTL_UwU\n        - icon: lucide:coffee\n          to: https://ko-fi.com/ztl_uwu\n      ---\n      ::\n    ::\n  ::\n  ```mdc\n  ::team-card-group\n    ::team-card\n    ---\n    avatar: https://www.github.com/ZTL-UwU.png\n    name: Tony Zhang\n    title: Author of shadcn-docs-nuxt\n    links:\n      - icon: lucide:github\n        to: https://github.com/ZTL-UwU\n      - icon: lucide:twitter\n        to: https://x.com/ZTL_UwU\n      - icon: lucide:coffee\n        to: https://ko-fi.com/ztl_uwu\n    ---\n    ::\n\n    ::team-card\n    ---\n    center: false\n    avatar: https://www.github.com/ZTL-UwU.png\n    name: Tony Zhang\n    title: Author of shadcn-docs-nuxt\n    links:\n      - icon: lucide:github\n        to: https://github.com/ZTL-UwU\n      - icon: lucide:twitter\n        to: https://x.com/ZTL_UwU\n      - icon: lucide:coffee\n        to: https://ko-fi.com/ztl_uwu\n    ---\n    ::\n  ::\n  ```\n::\n",
+            "icon": "lucide:users",
+            "description": "",
+            "badges": [
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/TeamCard.vue",
+                "target": "_blank"
+              },
+              {
+                "value": "0.7.7"
+              }
+            ]
+          }
+        ],
+        "icon": "lucide:laptop-minimal",
+        "_path": "page"
+      }
+    ],
+    "navigation.redirect": "/components/prose",
+    "icon": "lucide:box",
+    "_path": "components"
+  },
+  {
+    "title": "API",
+    "children": [
+      {
+        "title": "Configuration",
+        "children": [
+          {
+            "title": "Overview",
+            "_path": "api/1.configuration/1.shadcn-docs",
+            "content": "\n\nshadcn-docs-nuxt is configured through `app.config.ts`.\n\n```ts [app.config.ts]\nexport default defineAppConfig({\n  shadcnDocs: {\n    header: {\n      // ...\n    },\n    aside: {\n      // ...\n    },\n    main: {\n      // ...\n    },\n    // ...\n  },\n});\n```\n\n## Fields Reference\n\nIllustrative type declarations:\n\n```ts\ntype Target = '_blank' | '_parent' | '_self' | '_top' | (string & object) | null | undefined;\n\ninterface ILink {\n  title?: string;\n  icon?: string;\n  to: string;\n  target?: Target;\n  showLinkIcon?: boolean; // For nav and toc link section\n}\n\ninterface INav {\n  title: string;\n  links?: (ILink & { description: string; icon: string })[];\n  to?: string;\n  target?: Target;\n}\n```\n\n### Icons\n\nAll configurable icons can be set to iconify icons, emojis and urls, using [smart icon](/components/docs/icon#smart-icon) under the hood.\n\n## `site`\n\n::field-group\n  ::field{name=\"name\" type=\"string\"}\n  The site name shown on the tap title: `<page> - <site_name>`.\n  ::\n  ::field{name=\"description\" type=\"string\"}\n  The site description for SEO.\n  ::\n  ::field{name=\"ogImage\" type=\"string\"}\n  The path to the Open Graph image.\n  ::\n  ::field{name=\"ogImageComponent\" type=\"string\" default-value=\"ShadcnDocs\"}\n  The component to use for the dynamic ogImage. Possible values: `ShadcnDocs`, `Nuxt`, `NuxtSeo` or your custom component name.\n  ::\n  ::field{name=\"ogImageColor\" type=\"'light' | 'dark'\" default-value=\"light\"}\n  Color mode to use for the dynamic ogImage.\n  ::\n  ::field{name=\"umami\" type=\"object\"}\n    ::collapsible{title=\"Details\"}\n      ::field-group\n        ::field{name=\"enable\" type=\"boolean\" default-value=\"false\"}\n        Whether to turn on the umami integration.\n        ::\n        ::field{name=\"src\" type=\"string\" default-value=\"https://cloud.umami.is/script.js\"}\n        The link src in the tracking code.\n        ::\n        ::field{name=\"dataWebsiteId\" type=\"string\"}\n        The _Website ID_ from umami dashboard.\n        ::\n      ::\n    ::\n  ::\n::\n\n## `theme`\n\n::field-group\n  ::field{name=\"customizable\" type=\"boolean\" defaultValue=\"true\"}\n  Whether the theme can be customized by the user (show the customize button in the header).\n  ::\n  ::field{name=\"color\" type=\"Color\" defaultValue=\"zinc\"}\n  The default color theme. https://www.shadcn-vue.com/themes.html\n  ::\n  ::field{name=\"radius\" type=\"string\" defaultValue=\"0.5\"}\n  The default radius.\n  ::\n::\n\n## `banner`\n\n:read-more{to=\"/api/configuration/banner\"}\n\n::field-group\n  ::field{name=\"enable\" type=\"boolean\" default-value=\"false\"}\n  Whether to enable the banner.\n  ::\n  ::field{name=\"showClose\" type=\"boolean\" default-value=\"true\"}\n  Whether to show to close button.\n  ::\n  ::field{name=\"to\" type=\"string\"}\n  Link to navigate to. Don't set any value if you don't want to navigate.\n  ::\n  ::field{name=\"content\" type=\"string\"}\n  The content to show (parsed by the MDC parser).\n  ::\n  ::field{name=\"target\" type=\"Target\" default-value=\"_blank\"}\n  Navigation target.\n  ::\n  ::field{name=\"border\" type=\"boolean\" default-value=\"true\"}\n  Whether to show the border at the bottom of the banner.\n  ::\n::\n\n## `header`\n\n::field-group\n  ::field{name=\"showLoadingIndicator\" type=\"boolean\" defaultValue=\"true\"}\n  Whether to show the nuxt loading indicator.\n  ::\n  ::field{name=\"title\" type=\"string\"}\n  The title shown on the header next to the icon.\n  ::\n  ::field{name=\"showTitle\" type=\"boolean\" defaultValue=\"true\"}\n  Whether to show the title text on the header.\n  ::\n  ::field{name=\"border\" type=\"boolean\" defaultValue=\"false\"}\n  Whether to show the bottom border of the header.\n  ::\n  ::field{name=\"darkModeToggle\" type=\"boolean\" defaultValue=\"true\"}\n  Whether to show the dark mode toggle.\n  ::\n  ::field{name=\"logo\" type=\"{ light: string; dark: string; }\" defaultValue=\"{ light: '/logo.svg', dark: '/logo-dark.svg' }\"}\n  The path to the logo image files in `/public`. `light` is for the icon shown in light mode, `dark` is for the icon shown in dark mode.\n  ::\n  ::field{name=\"showTitleInMobile\" type=\"boolean\" defaultValue=\"false\"}\n  Whether to show the logo and title in mobile. (Recommended to use with [button styled search bar](/api/configuration#search))\n  ::\n  ::field{name=\"nav\" type=\"INav[]\" defaultValue=\"[]\"}\n  The content of the navbar in the header.\n  ::\n  ::field{name=\"links\" type=\"ILink[]\" defaultValue=\"[]\"}\n  The links on the right of the header.\n  ::\n::\n\n## `aside`\n\n::field-group\n  ::field{name=\"useLevel\" type=\"boolean\" defaultValue=\"true\"}\n  Whether to use level-styled sidebar.\n  ::\n  ::field{name=\"collapse\" type=\"boolean\" defaultValue=\"false\"}\n  Whether to collapse all collapsible by default.\n  ::\n  ::field{name=\"collapseLevel\" type=\"number\" defaultValue=\"1\"}\n  Collapse folders that are deeper than the defined level. (Set it to `Infinity` if you want to expand all)\n  ::\n  ::field{name=\"folderStyle\" type=\"'default' | 'tree' | 'group'\" defaultValue=\"default\"}\n  The default style used for [folders](/getting-started/writing/folders#parameters).\n  ::\n::\n\n## `main`\n\n::field-group\n  ::field{name=\"padded\" type=\"boolean\" defaultValue=\"true\"}\n  Whether the page is padded.\n  ::\n  ::field{name=\"breadCrumb\" type=\"boolean\" defaultValue=\"true\"}\n  Whether to show the bread crumb.\n  ::\n  ::field{name=\"showTitle\" type=\"boolean\" defaultValue=\"true\"}\n  Whether to show the title section.\n  ::\n  ::field{name=\"codeCopyToast\" type=\"boolean\" defaultValue=\"true\"}\n  Whether to show a toast on code copy.\n  ::\n  ::field{name=\"codeCopyToastText\" type=\"string\" defaultValue=\"'Copied to clipboard!'\"}\n  The text shown in the toaster.\n  ::\n  ::field{name=\"fieldRequiredText\" type=\"string\" defaultValue=\"'required'\"}\n  The text shown in the [field](/components/docs/field) component when a field is required.\n  ::\n  ::field{name=\"pm\" type=\"('npm' | 'pnpm' | 'bun' | 'yarn')[]\" default-value=\"['npm', 'pnpm', 'bun', 'yarn']\"}\n  Package managers shown in the [pm components](/components/docs/pm).\n  ::\n  ::field{name=\"codeIcon\" type=\"Record<string, string>\"}\n  The icon mapping for language / filename in the [code group](/components/docs/code-group) header.\n  ::\n  ::field{name=\"editLink\" type=\"object\"}\n    ::collapsible{title=\"Details\"}\n      ::field-group\n        ::field{name=\"enable\" type=\"boolean\" default-value=\"false\"}\n        Whether to turn on the edit link.\n        ::\n        ::field{name=\"pattern\" type=\"string\"}\n        The link pattern.\n        ::\n        ::field{name=\"text\" type=\"string\" default-value=\"Edit this page\"}\n        Text displayed on the link.\n        ::\n        ::field{name=\"icon\" type=\"string\" default-value=\"lucide:square-pen\"}\n        The icon preceding the link.\n        ::\n        ::field{name=\"placement\" type=\"('docsFooter' | 'toc')[]\" default-value=\"['docsFooter']\"}\n        Where to place the edit link.\n        ::\n      ::\n    ::\n  ::\n::\n\n## `footer`\n\n::field-group\n  ::field{name=\"credits\" type=\"string\" defaultValue=\"''\"}\n  The credit text on the left side of the footer (parsed by the MDC parser).\n  ::\n  ::field{name=\"links\" type=\"ILink[]\" defaultValue=\"[]\"}\n  The links on the right side of the footer.\n  ::\n::\n\n## `toc`\n\n::field-group\n  ::field{name=\"enable\" type=\"boolean\" defaultValue=\"true\"}\n  Whether to turn on the toc section.\n  ::\n  ::field{name=\"enableInMobile\" type=\"boolean\" defaultValue=\"false\"}\n  Whether to turn on the toc section in mobile.\n  ::\n  ::field{name=\"title\" type=\"string\" defaultValue=\"'On This Page'\"}\n  The title for the toc section.\n  ::\n  ::field{name=\"links\" type=\"ILink[]\" defaultValue=\"[]\"}\n  The links under the toc section.\n  ::\n  ::field{name=\"carbonAds\" type=\"object\"}\n    ::collapsible{title=\"Details\"}\n      ::field-group\n        ::field{name=\"enable\" type=\"boolean\" default-value=\"false\"}\n        Whether to turn on Carbon Ads.\n        ::\n        ::field{name=\"disableInDev\" type=\"boolean\" default-value=\"false\"}\n        Whether to disable Carbon Ads in dev environment.\n        ::\n        ::field{name=\"code\" type=\"string\"}\n        Carbon Ads code.\n        ::\n        ::field{name=\"placement\" type=\"string\"}\n        Carbon Ads placement.\n        ::\n        ::field{name=\"format\" type=\"'cover' | 'responsive'\" default-value=\"cover\"}\n        Carbon Ads format.\n        ::\n      ::\n    ::\n  ::\n::\n\n## `search`\n\n::field-group\n  ::field{name=\"enable\" type=\"boolean\" defaultValue=\"true\"}\n  Whether to turn on the search feature.\n  ::\n  ::field{name=\"inAside\" type=\"boolean\" defaultValue=\"false\"}\n  Whether to show the search bar in the sidebar.\n  ::\n  ::field{name=\"style\" type=\"'input' | 'button'\" defaultValue=\"input\"}\n  Whether the search bar is displayed as a input or a button.\n  ::\n  ::field{name=\"placeholder\" type=\"string\" defaultValue=\"'Search...'\"}\n  The placeholder text shown in the search bar.\n  ::\n  ::field{name=\"placeholderDetailed\" type=\"string\" defaultValue=\"'Search documentation...'\"}\n  The placeholder text shown in the search dialog input.\n  ::\n::\n\n## Default Config\n\n:read-more{to=\"https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/composables/useConfig.ts\" title=\"source file\" icon=\"lucide:code\"}\n",
+            "description": "Customizing shadcn-docs-nuxt.",
+            "icon": "lucide:settings-2"
+          },
+          {
+            "title": "Nuxt Content",
+            "_path": "api/1.configuration/2.nuxt-content",
+            "content": "\n\n::Alert\n---\nto: https://content.nuxt.com/get-started/configuration\ntarget: _blank\n---\nRead the detailed configuration guide in **Nuxt Content** Docs.\n::\n\nThe default nuxt content config can be overridden in `nuxt.config.ts`.\n\n```ts [nuxt.config.ts]\nexport default defineNuxtConfig({\n  devtools: { enabled: true },\n  extends: ['shadcn-docs-nuxt'],\n\n  // Here\n  content: {\n    // ...\n  },\n\n  compatibilityDate: '2024-07-06',\n});\n```\n\n## Syntax Highlighting\n\n### Theme\n\n```ts [nuxt.config.ts]\nexport default defineNuxtConfig({\n  content: {\n    highlight: {\n      theme: {\n        // Default theme\n        default: 'github-light',\n        // Theme used in dark-mode\n        dark: 'github-dark',\n      }\n    }\n  }\n});\n```\n\n:read-more{to=\"https://shiki.style/themes\"}\n\n### Languages\n\nThe default highlighted languages are: `['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini']`{lang=\"js\"}.\n\nIf you need to highlight other languages, add them in your `nuxt.config.ts`.\n\n```ts [nuxt.config.ts]\nexport default defineNuxtConfig({\n  content: {\n    highlight: {\n      langs: ['c', 'cpp'],\n    },\n  },\n});\n```\n\n:read-more{to=\"https://shiki.style/languages\"}\n\n## Default Config\n\n```ts [nuxt.config.ts]\nexport default defineNuxtConfig({\n  content: {\n    documentDriven: true,\n    highlight: {\n      theme: {\n        default: 'github-light',\n        dark: 'github-dark',\n      },\n      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],\n    },\n    navigation: {\n      fields: ['icon'],\n    },\n    experimental: {\n      search: {\n        indexed: true,\n      },\n    },\n  },\n});\n```\n",
+            "description": "Configuring the Nuxt Content module.",
+            "icon": "lucide:book"
+          },
+          {
+            "title": "OG Image",
+            "_path": "api/1.configuration/3.og-image",
+            "content": "\n\n**shadcn-docs-nuxt** utilizes the [nuxt-og-image](https://nuxtseo.com/og-image/getting-started/installation) module to generate dynamic OG Images.\n\nThe dynamic OG Image is used in all pages **except** the index page. The index page uses a static OG Image defined in the [`ogImage`](/api/configuration/shadcn-docs#site) field instead.\n\n## Using Built-in Templates\n\nTo use a template, set the name of the OG Image component in the [`ogImageComponent`](/api/configuration/shadcn-docs#site).\n\n```ts [app.config.ts]\nexport default defineAppConfig({\n  shadcnDocs: {\n    site: {\n      ogImageComponent: 'ShadcnDocs',\n      ogImageColor: 'light', // or 'dark'\n    },\n  },\n});\n```\n\nOut of the box, a shadcn-docs-nuxt template and multiple community templates are available.\n\n::tabs{variant=\"card\"}\n  ::div{label=\"ShadcnDocs\"}\n    ![Shadcn Docs OG Image Preview](/og-shadcn-docs.png){width=\"1000\"}\n  ::\n  ::div{label=\"ShadcnDocs (Dark)\"}\n    ![Shadcn Docs OG Image Preview](/og-shadcn-docs-dark.png){width=\"1000\"}\n  ::\n  ::div{label=\"Nuxt\"}\n    ![Nuxt OG Image Preview](/og-nuxt.png){width=\"1000\"}\n  ::\n  ::div{label=\"Nuxt SEO\"}\n    ![NuxtSEO OG Image Preview](/og-nuxt-seo.png){width=\"1000\"}\n  ::\n::\n\n::alert{to=\"https://github.com/nuxt-modules/og-image/tree/main/src/runtime/nuxt/components/Templates/Community\" icon=\"lucide:list\"}\nSee the full list of community templates.\n::\n\n## Using Custom Templates\n\nTo use a custom template, create a template by following the guide in the [Nuxt SEO Docs](https://nuxtseo.com/og-image/getting-started/getting-familar-with-nuxt-og-image#_1-create-your-template-component). Then set the component name of your template in `ogImageComponent`.\n\n::code-group\n```vue [components/OgImage/BlogPost.vue]\n<template>\n  <div class=\"flex size-full items-start justify-start border-[12px] border-solid border-blue-500 bg-gray-50\">\n    <div class=\"flex h-full items-start justify-start\">\n      <div class=\"flex size-full flex-col justify-between\">\n        <h1 class=\"p-20 text-left text-[80px] font-black\">\n          {{ title }}\n        </h1>\n        <p class=\"mb-0 px-20 pb-10 text-2xl font-bold\">\n          mycoolsite.com\n        </p>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nwithDefaults(defineProps<{\n  title?: string;\n}>(), {\n  title: 'title',\n});\n</script>\n```\n\n```ts [app.config.ts]\nexport default defineAppConfig({\n  shadcnDocs: {\n    site: {\n      ogImageComponent: 'BlogPost',\n    },\n  },\n});\n```\n::\n",
+            "description": "Customizing the dynamic OG Image.",
+            "icon": "lucide:image"
+          },
+          {
+            "title": "Edit Link",
+            "_path": "api/1.configuration/4.edit-link",
+            "content": "\n\nAn edit link allows you to display a link at the end of each page to edit the page on GitHub / GitLab.\n\n```ts [app.config.ts]\nexport default defineAppConfig({\n  shadcnDocs: {\n    main: {\n      editLink: {\n        enable: true,\n        pattern: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/edit/main/content/:path',\n        text: 'Edit this page on GitHub',\n        icon: 'lucide:square-pen',\n        placement: ['docsFooter', 'toc'],\n      },\n    }\n  },\n});\n```\n\n- The `pattern` option defines the URL structure for the link, and `:path` is going to be replaced with the page path.\n\n- The `text` option allows you to customize the link text (default is `Edit this page`)\n\n- The `icon` option allows you to customize the icon (default is `lucide:square-pen`)\n\n- The `placement` option controls the places to put the edit link.\n  - `docsFooter`: at the end of the page.\n  - `toc`: in the TOC links section.\n\n### Front Matter\n\nThe edit link can be disabled per-page using the `editLink` option in front matter.\n\n```yaml\n---\neditLink: false\n---\n```\n\n## Parameters\n\n::field-group\n  ::field{name=\"enable\" type=\"boolean\" default-value=\"false\"}\n  Whether to turn on the edit link.\n  ::\n  ::field{name=\"pattern\" type=\"string\"}\n  The link pattern.\n  ::\n  ::field{name=\"text\" type=\"string\" default-value=\"Edit this page\"}\n  Text displayed on the link.\n  ::\n  ::field{name=\"icon\" type=\"string\" default-value=\"lucide:square-pen\"}\n  The icon preceding the link.\n  ::\n  ::field{name=\"placement\" type=\"('docsFooter' | 'toc')[]\" default-value=\"['docsFooter']\"}\n  Where to place the edit link.\n  ::\n::\n",
+            "icon": "lucide:square-pen",
+            "description": "A link to the source file."
+          },
+          {
+            "title": "Banner",
+            "_path": "api/1.configuration/5.banner",
+            "content": "\n\n::stack\n```ts [app.config.ts]\nexport default defineAppConfig({\n  shadcnDocs: {\n    banner: {\n      enable: true,\n      showClose: true,\n      content: 'Welcome to **shadcn-docs-nuxt**',\n      to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',\n      target: '_blank',\n      border: true,\n    },\n  },\n});\n```\n![Preview](/banner-preview.png){width=\"1000\"}\n::\n\n## Parameters\n\n::field-group\n  ::field{name=\"enable\" type=\"boolean\" default-value=\"false\"}\n  Whether to enable the banner.\n  ::\n  ::field{name=\"showClose\" type=\"boolean\" default-value=\"true\"}\n  Whether to show to close button.\n  ::\n  ::field{name=\"to\" type=\"string\"}\n  Link to navigate to. Don't set any value if you don't want to navigate.\n  ::\n  ::field{name=\"content\" type=\"string\"}\n  The content to show (parsed by the MDC parser).\n  ::\n  ::field{name=\"target\" type=\"Target\" default-value=\"_blank\"}\n  Navigation target.\n  ::\n  ::field{name=\"border\" type=\"boolean\" default-value=\"true\"}\n  Whether to show the border at the bottom of the banner.\n  ::\n::\n",
+            "icon": "lucide:panel-top",
+            "description": "Show a banner on the top of the page.",
+            "badges": [
+              {
+                "value": "Source",
+                "icon": "lucide:code",
+                "to": "https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/layout/Banner.vue",
+                "target": "_blank"
+              },
+              {
+                "value": "0.8.3"
+              }
+            ]
+          },
+          {
+            "title": "Carbon Ads",
+            "_path": "api/1.configuration/6.carbon-ads",
+            "content": "\n\n**shadcn-docs-nuxt** has built-in support for [Carbon Ads](https://www.carbonads.net/). Add your Carbon Ads credentials to `app.config.ts` and ads will be displayed at the bottom of the toc section.\n\n```ts [app.config.ts]\nexport default defineAppConfig({\n  shadcnDocs: {\n    toc: {\n      enable: true,\n      carbonAds: {\n        enable: true,\n        disableInDev: false,\n        code: 'your-carbon-code',\n        placement: 'your-carbon-placement',\n        format: 'your-carbon-format', // defaults to 'cover'\n      },\n    }\n  },\n});\n```\n\nThese values are used to call carbon CDN script as shown below.\n\n```ts\n`//cdn.carbonads.com/carbon.js?serve=${code}&placement=${placement}&format=${format}`;\n```\n\n:read-more{title=\"Carbon Ads website\" to=\"https://www.carbonads.net/\"}\n\n### Disabling on certain pages\n\n```md\n---\ntitle: Page Title\ntoc:\n  carbonAds:\n    enable: false\n---\n\n<!-- Page Content -->\n```\n\n## Parameters\n\n::field-group\n  ::field{name=\"enable\" type=\"boolean\" default-value=\"false\"}\n  Whether to turn on Carbon Ads.\n  ::\n  ::field{name=\"disableInDev\" type=\"boolean\" default-value=\"false\"}\n  Whether to disable Carbon Ads in dev environment.\n  ::\n  ::field{name=\"code\" type=\"string\"}\n  Carbon Ads code.\n  ::\n  ::field{name=\"placement\" type=\"string\"}\n  Carbon Ads placement.\n  ::\n  ::field{name=\"format\" type=\"'cover' | 'responsive'\" default-value=\"cover\"}\n  Carbon Ads format.\n  ::\n::\n",
+            "icon": "lucide:chart-line",
+            "description": "Run ads at the bottom of the TOC section."
+          },
+          {
+            "title": "Umami",
+            "_path": "api/1.configuration/7.umami",
+            "content": "\n\n**shadcn-docs-nuxt** has built-in support for [Umami Analytics](https://umami.is/). Add your Umami `data-website-id` to `app.config.ts`.\n\n```ts [app.config.ts]\nexport default defineAppConfig({\n  shadcnDocs: {\n    site: {\n      umami: {\n        enable: true,\n        src: 'https://cloud.umami.is/script.js',\n        dataWebsiteId: 'your-data-website-id',\n      },\n    },\n  },\n});\n```\n\nThese values are used to add the Umami script to `<head>`{lang=\"html\"} as shown below.\n\n```html\n<script defer src=\"https://cloud.umami.is/script.js\" data-website-id=\"your-data-website-id\"></script>\n```\n\n## Parameters\n\n::field-group\n  ::field{name=\"enable\" type=\"boolean\" default-value=\"false\"}\n  Whether to turn on the umami integration.\n  ::\n  ::field{name=\"src\" type=\"string\" default-value=\"https://cloud.umami.is/script.js\"}\n  The link src in the tracking code.\n  ::\n  ::field{name=\"dataWebsiteId\" type=\"string\"}\n  The _Website ID_ from umami dashboard.\n  ::\n::\n",
+            "icon": "lucide:cloud",
+            "description": "Integration for Umami analytics."
+          }
+        ],
+        "icon": "lucide:settings",
+        "navigation.redirect": "/api/configuration/shadcn-docs",
+        "_path": "configuration"
+      },
+      {
+        "title": "Advanced",
+        "children": [
+          {
+            "title": "Overriding",
+            "_path": "api/2.advanced/1.override",
+            "content": "\n\n_shadcn-docs-nuxt_ is a [Nuxt Layer](https://nuxt.com/docs/getting-started/layers). You can override any component in _shadcn-docs-nuxt_ by creating a custom vue component in your project with the same path as the original component. **Make sure that your component contains the same props as the original component.**\n\nHere is a brief showcase of the `components/` folder in _shadcn-docs-nuxt_.\n\n::file-tree\n---\ntree:\n  - components:\n    - layout:\n      - Header.vue\n      - Footer.vue\n      - ...\n    - content:\n      - Accordion.vue\n      - Alert.vue\n      - ProseCode.vue\n      - ...\n    - ui:\n      - button/\n      - card/\n      - ...\n---\n::\n\n:alert[Check out the complete file structure on **GitHub**]{to=\"https://github.com/ZTL-UwU/shadcn-docs-nuxt/tree/main/components\" target=\"_blank\"}\n\nFor example, if you want to override the `Footer` component, create `/components/layout/Footer.vue` in your project root.\n\n```vue [/components/layout/Footer.vue]\n<template>\n  <footer class=\"py-6 text-muted-foreground md:px-8 md:py-0\">\n    <div class=\"container flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row\">\n      My footer\n      <span class=\"flex-1\" />\n      {{ footer.credits }}\n    </div>\n  </footer>\n</template>\n\n<script setup lang=\"ts\">\nconst { footer } = useConfig().value;\n</script>\n```\n",
+            "icon": "lucide:blocks",
+            "description": "Replacing shadcn-docs-nuxt components with custom vue components."
+          },
+          {
+            "title": "Math Equations",
+            "_path": "api/2.advanced/2.math",
+            "content": "\n\n::tabs{variant=\"line\"}\n  ::div{label=\"KaTeX\"}\n    ::steps\n      ### Install Plugins\n      :pm-install{name=\"remark-math rehype-katex\" save-dev}\n\n      ### Add Plugins to Nuxt Config\n      ```ts [nuxt.config.ts]\n      export default defineNuxtConfig({\n        devtools: { enabled: true },\n        extends: ['shadcn-docs-nuxt'],\n        css: [\n          'katex/dist/katex.min.css',\n        ],\n        content: {\n          markdown: {\n            remarkPlugins: [\n              'remark-math',\n            ],\n            rehypePlugins: {\n              'rehype-katex': {\n                output: 'html',\n              },\n            },\n          },\n        },\n      });\n      ```\n\n      ### Write LaTeX\n      ````mdc\n      #### Inline\n      $E = mc^2$\n\n      #### Centered\n      When $a \\ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are\n      $$ x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a} $$\n\n      #### Math Block\n      ```math\n      L = \\frac{1}{2} \\rho v^2 S C_L\n      ```\n      ````\n    ::\n  ::\n  ::div{label=\"MathJax\"}\n    ::steps\n      ### Install Plugins\n      :pm-install{name=\"remark-math rehype-mathjax\" save-dev}\n\n      ### Add Plugins to Nuxt Config\n      ```ts [nuxt.config.ts]\n      export default defineNuxtConfig({\n        devtools: { enabled: true },\n        extends: ['shadcn-docs-nuxt'],\n        content: {\n          markdown: {\n            remarkPlugins: [\n              'remark-math',\n            ],\n            rehypePlugins: [\n              'rehype-mathjax',\n            ],\n          },\n        },\n      });\n      ```\n\n      ### Write LaTeX\n      ````mdc\n      $E = mc^2$\n\n      $$\n      E = mc^2\n      $$\n\n      ```math\n      E = mc^2\n      ```\n      ````\n    ::\n  ::\n::\n",
+            "icon": "lucide:sigma",
+            "description": "Write LaTeX in shadcn-docs-nuxt."
+          }
+        ],
+        "icon": "lucide:pyramid",
+        "navigation.redirect": "/api/configuration",
+        "_path": "advanced"
+      },
+      {
+        "title": "Themes",
+        "_path": "api/3.themes",
+        "content": "\n\n::Alert{to=\"/api/configuration#theme\"}\nSee how to customize the theme in **Configuration**.\n::\n",
+        "icon": "lucide:palette",
+        "description": "Add colors. Make it yours."
+      },
+      {
+        "title": "Composables",
+        "_path": "api/4.composables",
+        "content": "\n\n### `useConfig()`\n\nGet the config from `app.config.ts`.\n\n- `main`, `header`, `aside`, `footer` and `toc` can be set from `_dir.yml` and any `page.md` file.\n\n```ts\nconst {\n  site,\n  search,\n  header,\n  main,\n  aside,\n  footer,\n  toc,\n} = useConfig();\n```\n\n### `useScrollspy()`\n\nModified from [docus](https://github.com/nuxt-themes/docus/blob/main/composables/useScrollspy.ts). `useScrollspy()` is used in docs layout to make the ToC display the currently visible headings.\n\n```ts\nconst {\n  // Headings on the page\n  visibleHeadings,\n  // Active headings (for the current page)\n  activeHeadings,\n  // Update headings (an array of DOM nodes)\n  updateHeadings\n} = useScrollspy();\n```\n",
+        "description": "Composable functions exported by shadcn-docs-nuxt.",
+        "icon": "lucide:square-function"
+      }
+    ],
+    "icon": "lucide:code-xml",
+    "navigation.redirect": "/api/configuration",
+    "_path": "api"
+  },
+  {
+    "title": "Home",
+    "_path": "index",
+    "content": "\n\n::hero\n---\nannouncement:\n  title: Release v0.8.13\n  icon: 🎉\n  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases/latest\n  target: _blank\nactions:\n  - name: Get Started\n    to: /getting-started/introduction\n  - name: GitHub\n    variant: outline\n    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt\n    leftIcon: lucide:github\n---\n#title\nEffortless and Beautiful :br Docs Template.\n\n#description\nBeautifully designed Nuxt Content template built with :br\n[shadcn-vue](https://www.shadcn-vue.com) and [unocss](https://unocss.dev).\n::\n",
+    "navigation": false,
+    "layout": "breakouts"
+  },
+  {
+    "title": "test",
+    "_path": "test",
+    "content": "\n\n\n::hero\n---\nactions:\n  - name: Get Started\n    to: /getting-started\n  - name: GitHub\n    variant: outline\n    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt\n    leftIcon: lucide:github\nannouncement:\n  title: Release v1.0.0\n  icon: lucide:party-popper\n  to: /getting-started\n---\n#title\nEffortless and Beautiful Docs Template.\n\n#description\nBeautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.\n::\n\n:read-more{title=\"Nuxt website\" to=\"/api/composables\"}\n\n::steps\n### Get Starter Template\n\n  :::code-group\n  ```bash [npm]\n  npx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter\n  ```\n  \n  ```bash [pnpm]\n  pnpm dlx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter\n  ```\n  \n  ```bash [bun]\n  bunx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter\n  ```\n  :::\n\n  :::alert\n  Alternatively, you can clone or download the template from the [GitHub repo](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter).\n  :::\n\n### Install Dependencies\n\n  :::code-group\n  ```bash [npm]\n  npm install\n  ```\n  \n  ```bash [pnpm]\n  pnpm install\n  ```\n  \n  ```bash [bun]\n  bun install\n  ```\n  :::\n\n### Development Server\n\n  :::code-group\n  ```bash [npm]\n  npm run dev -- -o\n  ```\n  \n  ```bash [pnpm]\n  pnpm dev -o\n  ```\n  \n  ```bash [bun]\n  bun run dev -o\n  ```\n  :::\n::\n"
+  }
+]
