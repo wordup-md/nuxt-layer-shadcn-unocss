@@ -1,8 +1,5 @@
 <template>
-  <NuxtLoadingIndicator
-    :color="false"
-    class="z-100 bg-primary/80"
-  />
+  <NuxtLoadingIndicator :color="false" class="z-100 bg-primary/80" />
   <NuxtRouteAnnouncer />
 
   <ViewModeSwitcher class="!top-26" />

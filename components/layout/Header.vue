@@ -41,8 +41,16 @@
             :to="link?.to"
             :target="link?.target"
           >
-            <UiButton variant="ghost" size="icon" class="flex gap-2">
-              <SmartIcon v-if="link?.icon" :name="link.icon" :size="18" />
+            <UiButton
+              variant="ghost"
+              size="icon"
+              class="flex gap-2"
+            >
+              <SmartIcon
+                v-if="link?.icon"
+                :name="link.icon"
+                :size="18"
+              />
             </UiButton>
           </NuxtLink>
         </div>
@@ -59,5 +67,5 @@
 </template>
 
 <script setup lang="ts">
-const config = useConfig();
+const config = useConfig()
 </script>

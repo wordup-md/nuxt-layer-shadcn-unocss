@@ -74,14 +74,16 @@
     disable-hover-trigger
     class="header-menu"
   >
-    <MDCRenderer
-      :body="tree"
-      tag="navigation-menu-list-global"
-      :components="{
-        'header-menu-item': HeaderMenuItem,
-        'header-submenu-item': HeaderSubmenuItem,
-      }"
-    />
+    <UiNavigationMenuList>
+      <MDCRenderer
+        :body="tree"
+        :tag="false"
+        :components="{
+          'header-menu-item': HeaderMenuItem,
+          'header-submenu-item': HeaderSubmenuItem,
+        }"
+      />
+    </UiNavigationMenuList>
   </UiNavigationMenu>
 </template>
 
