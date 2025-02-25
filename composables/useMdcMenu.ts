@@ -14,7 +14,7 @@ export async function useMdcMenu(menu: string, {
   )
 
   const tree = computed<MDCRoot | undefined>(() => {
-    if (!data.value) return
+    if (!data.value?.body?.children) return
 
     // Clone the content to avoid mutating the original data
     const content = JSON.parse(JSON.stringify(data.value!.body!.children))

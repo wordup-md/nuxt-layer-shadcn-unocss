@@ -3,7 +3,7 @@
     class="site-footer border-t mt-2 p-2"
   >
     <div
-      v-if="!tree"
+      v-if="!tree?.children.length"
       class="container flex flex-col items-center justify-between gap-2 md:flex-row"
     >
       <MDC
@@ -62,7 +62,7 @@ import FooterSubmenuItem from './FooterSubmenuItem.vue'
 
 const { footer } = useConfig().value
 
-const tree = await useMdcMenu('_menu-footer', {
+const tree = await useMdcMenu('/_menu-footer', {
   menuComponentName: 'footer-item',
   submenuComponentName: 'footer-submenu-item',
 })

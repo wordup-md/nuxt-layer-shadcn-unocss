@@ -1,6 +1,6 @@
 <template>
   <UiNavigationMenu
-    v-if="!tree"
+    v-if="!tree?.children.length"
     class="header-menu"
   >
     <UiNavigationMenuList>
@@ -94,7 +94,7 @@ import HeaderSubmenuItem from './SubmenuItem.vue'
 
 const { nav } = useConfig().value.header
 
-const tree = await useMdcMenu('_menu-header', {
+const tree = await useMdcMenu('/_menu-header', {
   menuComponentName: 'header-menu-item',
   submenuComponentName: 'header-submenu-item',
 })
