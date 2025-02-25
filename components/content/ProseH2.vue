@@ -16,6 +16,7 @@
 <script setup lang="ts">
 const { id } = defineProps<{ id?: string }>()
 
+// TODO: keep id of the heading in mdcEditor
 const { headings } = useRuntimeConfig().public.mdc
 const generate = computed(() => id && ((typeof headings?.anchorLinks === 'boolean' && headings?.anchorLinks === true) || (typeof headings?.anchorLinks === 'object' && headings?.anchorLinks?.h2)))
 </script>

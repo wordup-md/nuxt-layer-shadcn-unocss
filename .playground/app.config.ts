@@ -18,7 +18,7 @@ export default defineAppConfig({
       radius: 0.5,
     },
     banner: {
-      enable: false,
+      enable: true,
       showClose: true,
       content: 'Welcome to **shadcn-docs-nuxt**',
       to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
@@ -32,7 +32,7 @@ export default defineAppConfig({
         light: '/logo.svg',
         dark: '/logo-dark.svg',
       },
-      class: '',
+      class: 'fixed',
       darkModeToggle: true,
       nav: [{
         title: 'Docs',
@@ -78,8 +78,8 @@ export default defineAppConfig({
         showLinkIcon: true,
       }],
       links: [{
-        icon: 'lucide:github',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+        icon: 'lucide:twitter',
+        to: 'https://x.com/unpress_dev',
         target: '_blank',
       }],
     },
@@ -151,6 +151,7 @@ export default defineAppConfig({
       links: [
         {
           title: 'shadcn-vue',
+          icon: 'https://www.shadcn-vue.com/favicon.ico',
           to: 'https://www.shadcn-vue.com/',
           target: '_blank',
         },

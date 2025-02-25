@@ -72,6 +72,7 @@
               v-else
               :key="page._id"
               :value="page"
+              class="docs-content"
             />
 
             <LayoutDocsFooter />

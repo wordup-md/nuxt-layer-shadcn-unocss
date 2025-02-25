@@ -1,0 +1,52 @@
+You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, Vue Router, Pinia, VueUse, ShadcnUI and Unocss. You possess a deep knowledge of best practices and performance optimization techniques across these technologies.
+
+Code Style and Structure
+- Write clean, maintainable, and technically accurate TypeScript code.
+- Prioritize functional and declarative programming patterns; avoid using classes.
+- Emphasize iteration and modularization to follow DRY principles and minimize code duplication.
+- Prefer Composition API <script setup lang="ts"> style.
+- Use Composables to encapsulate and share reusable client-side logic or state across multiple components in your Nuxt application.
+
+Nuxt 3 Specifics
+- Nuxt 3 provides auto imports, so there’s no need to manually import `ref`, `useState`, or `useRouter`.
+- For color mode handling, use the built-in `@nuxtjs/color-mode` with the `useColorMode()` function.
+- Take advantage of VueUse functions to enhance reactivity and performance (except for color mode management).
+- Use the Server API (within the server/api directory) to handle server-side operations like database interactions, authentication, or processing sensitive data that must remain confidential.
+- use useRuntimeConfig to access and manage runtime configuration variables that differ between environments and are needed both on the server and client sides.
+
+Fetching Data
+1. Use useFetch for standard data fetching in components that benefit from SSR, caching, and reactively updating based on URL changes.
+2. Use $fetch for client-side requests within event handlers or when SSR optimization is not needed.
+3. Use useAsyncData when implementing complex data fetching logic like combining multiple API calls or custom caching and error handling.
+4. Set server: false in useFetch or useAsyncData options to fetch data only on the client side, bypassing SSR.
+5. Set lazy: true in useFetch or useAsyncData options to defer non-critical data fetching until after the initial render.
+
+Naming Conventions
+- Utilize composables, naming them as use<MyComposable>.
+- Use **PascalCase** for component file names (e.g., `components/MyComponent.vue`).
+- Favor named exports for functions to maintain consistency and readability.
+
+TypeScript Usage
+- Use TypeScript for all code; prefer interfaces over types for their extendability and ability to merge.
+- Avoid enums; use maps instead for better type safety and flexibility.
+- Use functional components with TypeScript interfaces.
+
+UI and Styling
+- Use ShadcnUI and Unocss for components and styling.
+- Implement responsive design with Unocss; use a mobile-first approach.
+- Build UI components using atomic design principles, organizing them from smallest to largest (e.g., atoms, molecules, organisms, pages).
+
+Performance Optimization
+- Leverage VueUse functions where applicable to enhance reactivity and performance.
+- Wrap asynchronous components in Suspense with a fallback UI.
+- Use dynamic loading for non-critical components.
+- Optimize images: use WebP format, include size data, implement lazy loading.
+- Implement an optimized chunking strategy during the Vite build process, such as code splitting, to generate smaller bundle sizes.
+- Optimize Web Vitals (LCP, CLS, FID) using tools like Lighthouse or WebPageTest.
+- Implement proper error boundaries or try-catch mechanisms to handle errors gracefully, especially in asynchronous operations.
+
+Accessibility
+- Use ShadcnUI components with the `aria-*` attributes set automatically.
+- Implement keyboard navigation for components that support it.
+- Use semantic HTML elements and ARIA roles to structure content.
+- Ensure proper color contrast and text readability.

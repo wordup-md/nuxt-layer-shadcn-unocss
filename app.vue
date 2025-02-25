@@ -1,14 +1,15 @@
 <template>
-  <NuxtLoadingIndicator :color="false" class="z-100 bg-primary/80" />
+  <NuxtLoadingIndicator
+    :color="false"
+    class="z-100 bg-primary/80"
+  />
   <NuxtRouteAnnouncer />
 
   <ViewModeSwitcher class="!top-26" />
 
-  <div class="app-default-layout grid grid-cols-1 grid-rows-2 min-h-screen">
-    <div>
-      <LayoutBanner v-if="config.banner.enable" />
-      <LayoutHeader />
-    </div>
+  <div class="app-default-layout grid grid-cols-1 grid-rows-2 min-h-dvh">
+    <LayoutBanner v-if="config.banner.enable" />
+    <LayoutHeader />
 
     <NuxtPage />
 

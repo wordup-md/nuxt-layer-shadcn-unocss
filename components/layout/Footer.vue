@@ -1,10 +1,10 @@
 <template>
   <footer
-    class="site-footer border-t mt-2 p-6"
+    class="site-footer border-t mt-2 p-2"
   >
     <div
       v-if="!tree"
-      class="container flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row"
+      class="container flex flex-col items-center justify-between gap-2 md:flex-row"
     >
       <MDC
         :value="footer.credits"
@@ -30,6 +30,17 @@
           <span v-if="link?.title">{{ link.title }}</span>
         </UiButton>
       </NuxtLink>
+
+      <CmsAuth>
+        <template #default="{ login }">
+          <UiButton
+            variant="ghost"
+            @click="login()"
+          >
+            Admin
+          </Uibutton>
+        </template>
+      </CmsAuth>
     </div>
 
     <MDCRenderer

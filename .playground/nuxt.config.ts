@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   extends: ['..'],
   modules: [
     '@nuxt/eslint',
-    '@unpress/nuxt-module'
+    '@unpress/nuxt-module',
+    // '../../../unpress/packages/nuxt-module/src/module',
   ],
 
   css: [
@@ -22,5 +23,9 @@ export default defineNuxtConfig({
 
   unocss: {
     nuxtLayers: true,
+  },
+
+  unpress: {
+    // autoMountIfDevMode: false,
   },
 })

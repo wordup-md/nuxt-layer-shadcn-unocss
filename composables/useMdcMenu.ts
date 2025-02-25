@@ -13,11 +13,8 @@ export async function useMdcMenu(menu: string, {
     queryContent(menu).findOne(),
   )
 
-  const tree = computed<MDCRoot>(() => {
-    if (!data.value) return {
-      type: 'root',
-      children: [],
-    }
+  const tree = computed<MDCRoot | undefined>(() => {
+    if (!data.value) return
 
     // Clone the content to avoid mutating the original data
     const content = JSON.parse(JSON.stringify(data.value!.body!.children))

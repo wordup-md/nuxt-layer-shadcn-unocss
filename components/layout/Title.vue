@@ -1,11 +1,18 @@
 <template>
   <div class="mb-6">
-    <ProseH1>
-      {{ title }}
-    </ProseH1>
-    <p class="pt-1 text-lg text-muted-foreground text-pretty">
-      {{ description }}
-    </p>
+    <MDC
+      v-if="title"
+      tag="prose-h1"
+      :value="title"
+      unwrap="p"
+      class="-ml-0.5"
+    />
+    <MDC
+      v-if="description"
+      :value="description"
+      unwrap="p"
+      class="pt-1 text-2xl text-muted-foreground text-pretty"
+    />
 
     <div
       v-if="badges"
