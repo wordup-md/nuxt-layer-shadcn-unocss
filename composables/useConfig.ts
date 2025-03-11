@@ -126,6 +126,7 @@ const defaultConfig: DefaultConfig = {
   footer: {
     credits: '',
     links: [],
+    class: '',
   },
   toc: {
     enable: true,

@@ -96,6 +96,7 @@ interface DefaultConfig {
       to: string
       target: string
     })[]
+    class: string
   }
   toc: {
     enable: boolean

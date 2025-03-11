@@ -21,7 +21,7 @@
 
       <LayoutHeaderNav class="hidden lg:flex" />
 
-      <div class="flex flex-1 justify-end gap-2">
+      <div class="flex justify-end gap-2">
         <LayoutSearchButton
           v-if="!config.search.inAside && config.search.style === 'input'"
         />

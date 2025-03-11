@@ -1,12 +1,14 @@
 <template>
   <footer
     class="site-footer border-t mt-2 p-2"
+    :class="footer.class"
   >
     <div
       v-if="!tree?.children.length"
       class="container flex flex-col items-center justify-between gap-2 md:flex-row"
     >
       <MDC
+        v-if="footer.credits"
         :value="footer.credits"
         class="text-sm"
       />
