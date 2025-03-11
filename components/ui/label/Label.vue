@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { Label, type LabelProps } from 'radix-vue'
+import { Label, type LabelProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
 

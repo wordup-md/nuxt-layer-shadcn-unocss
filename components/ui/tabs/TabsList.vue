@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { TabsList, type TabsListProps } from 'radix-vue'
+import { TabsList, type TabsListProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
 

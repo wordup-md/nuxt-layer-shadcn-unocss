@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { TabsContent, type TabsContentProps } from 'radix-vue'
+import { TabsContent, type TabsContentProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
 

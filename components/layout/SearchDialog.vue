@@ -151,7 +151,7 @@
 </template>
 
 <script setup lang="ts">
-import { VisuallyHidden } from 'radix-vue'
+import { VisuallyHidden } from 'reka-ui'
 
 const { darkModeToggle } = useConfig().value.header
 

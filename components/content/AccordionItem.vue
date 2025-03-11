@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { useId } from 'radix-vue'
+import { useId } from 'vue'
 
 defineProps<{
   value?: string

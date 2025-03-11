@@ -9,7 +9,6 @@
     "
   >
     <slot />
-    <!-- <NavigationMenuIndicator /> -->
   </NavigationMenuList>
 </template>
 
@@ -18,14 +17,11 @@ import {
   NavigationMenuList,
   type NavigationMenuListProps,
   useForwardProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
-// import NavigationMenuIndicator from "./NavigationMenuIndicator.vue";
 
-const props = defineProps<
-  NavigationMenuListProps & { class?: HTMLAttributes['class'] }
->()
+const props = defineProps<NavigationMenuListProps & { class?: HTMLAttributes['class'] }>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props

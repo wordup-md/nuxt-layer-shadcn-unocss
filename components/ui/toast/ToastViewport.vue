@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { ToastViewport, type ToastViewportProps } from 'radix-vue'
+import { ToastViewport, type ToastViewportProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
 

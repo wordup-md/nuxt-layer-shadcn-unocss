@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import type { ComboboxEmptyProps } from 'radix-vue'
-import { ComboboxEmpty } from 'radix-vue'
+import type { ComboboxEmptyProps } from 'reka-ui'
+import { ComboboxEmpty } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
 

@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { ToastAction, type ToastActionProps } from 'radix-vue'
+import { ToastAction, type ToastActionProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
 

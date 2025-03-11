@@ -4,10 +4,10 @@ import { fileURLToPath } from 'node:url'
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export default defineNuxtConfig({
-
   modules: [
     '@nuxt/eslint',
     '@unocss/nuxt',
+    'shadcn-nuxt',
     '@vueuse/nuxt',
     '@nuxt/content',
     '@nuxt/image',
@@ -25,6 +25,7 @@ export default defineNuxtConfig({
       },
     ],
   },
+
   devtools: { enabled: true },
 
   css: [
@@ -68,6 +69,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   routeRules: {
     '/': { prerender: true },
     // Admin dashboard renders only on client-side

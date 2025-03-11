@@ -10,8 +10,8 @@
 </template>
 
 <script setup lang="ts">
-import type { ComboboxContentEmits, ComboboxContentProps } from 'radix-vue'
-import { ComboboxContent, useForwardPropsEmits } from 'radix-vue'
+import type { ComboboxContentEmits, ComboboxContentProps } from 'reka-ui'
+import { ComboboxContent, useForwardPropsEmits } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
 
