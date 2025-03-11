@@ -11,7 +11,7 @@ import {
   transformerDirectives,
 } from 'unocss'
 import presetAnimations from 'unocss-preset-animations'
-import { builtinColors, presetShadcn } from 'unocss-preset-shadcn'
+// import { builtinColors, presetShadcn } from 'unocss-preset-shadcn'
 
 import mdcEditorPreset from '@unpress/mdc-editor/unocss-preset'
 
@@ -36,7 +36,7 @@ export default defineConfig({
     }),
     presetTypography(),
     presetAnimations(),
-    presetShadcn(builtinColors.map(c => ({ color: c }))),
+    // presetShadcn(builtinColors.map(c => ({ color: c }))),
     mdcEditorPreset(),
   ],
   shortcuts: [
