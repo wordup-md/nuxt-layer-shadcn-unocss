@@ -4,7 +4,7 @@
     outline: none;
   }
 
-  & > p:not(:has(span)) {
+  & > p:not(:has(span)):not(:first-child) {
     margin-top: 1.5rem;
   }
 
