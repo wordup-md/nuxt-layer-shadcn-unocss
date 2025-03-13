@@ -1,73 +1,116 @@
 <template>
   <UseTemplate>
     <UiCard
-      class="relative h-full overflow-hidden transition-all"
+      class="relative flex flex-col h-full overflow-hidden transition-all min-h-8"
       :class="[
-        to && 'hover:bg-muted',
+        to && 'hover:shadow-lg',
         inStack && 'mb-0 rounded-none border-none shadow-none',
+        ['left', 'right'].includes(mediaPosition) && 'flex-row',
+        mediaPosition === 'right' && 'flex-row-reverse',
+        mediaPosition === 'bottom' && 'flex-col-reverse',
+        ['cover', 'center'].includes(mediaPosition) && 'bg-opacity-0',
+        mediaPosition === 'center' && 'text-center items-center flex-row p-8',
+        $attrs.class,
       ]"
     >
-      <NuxtImg
-        v-if="img"
-        :src="img"
-        class="w-full"
-      />
-      <UiCardHeader
-        v-if="
-          icon || title || $slots.title || description || $slots.description
-        "
-        :class="{ 'flex-row items-center gap-5': horizontal }"
+      <div
+        class="overflow-hidden"
+        :class="{
+          'w-5/13 shrink-0': media && (mediaPosition === 'left' || mediaPosition === 'right'),
+          'absolute -z-1 inset-0': ['cover', 'center'].includes(mediaPosition),
+        }"
       >
-        <SmartIcon
-          v-if="icon"
-          :name="icon"
-          :size="iconSize"
-          :class="{ 'mb-2': !horizontal }"
+        <NuxtImg
+          v-if="media"
+          :src="media"
+          class="w-full h-full object-cover"
+          :class="{
+            'group-hover/card:scale-105 transition-all': to,
+          }"
         />
-        <div class="flex flex-col gap-1.5">
-          <UiCardTitle v-if="title || $slots.title">
-            <ContentSlot
-              :use="$slots.title"
-              unwrap="p"
-            />
-            {{ title }}
-          </UiCardTitle>
-          <UiCardDescription v-if="description || $slots.description">
-            <ContentSlot
-              :use="$slots.description"
-              unwrap="p"
-            />
-            {{ description }}
-          </UiCardDescription>
+        <ContentSlot
+          :use="$slots.media"
+          unwrap="p"
+        />
+      </div>
+
+      <div class="w-full">
+        <UiCardHeader
+          v-if="
+            icon || title || $slots.title || description || $slots.description
+          "
+          :class="{
+            'flex-row gap-5': iconPosition === 'left',
+            'items-center': mediaPosition === 'center',
+          }"
+        >
+          <SmartIcon
+            v-if="icon"
+            :name="icon"
+            :size="iconSize"
+            :class="{ 'mb-2': iconPosition !== 'left' && (title || $slots.title) }"
+          />
+
+          <div class="flex flex-col gap-1.5 w-full">
+            <UiCardTitle
+              v-if="title || $slots.title"
+              :class="{ 'group-hover/card:underline': to, 'pr-4': ['left', 'bottom'].includes(mediaPosition) && to }"
+            >
+              <ContentSlot
+                :use="$slots.title"
+                unwrap="p"
+              />
+              {{ title }}
+            </UiCardTitle>
+
+            <UiCardDescription v-if="description || $slots.description">
+              <ContentSlot
+                :use="$slots.description"
+                unwrap="p"
+              />
+              {{ description }}
+            </UiCardDescription>
+          </div>
+        </UiCardHeader>
+
+        <UiCardContent
+          v-if="content || $slots.content || $slots.default"
+          :class="{ 'py-3': !icon && !(title || $slots.title) && !(description || $slots.description) }"
+        >
+          <ContentSlot
+            :use="$slots.content"
+            unwrap="p"
+          />
+          <ContentSlot unwrap="p" />
+        </UiCardContent>
+
+        <UiCardFooter v-if="footer || $slots.footer">
+          <ContentSlot
+            :use="$slots.footer"
+            unwrap="p"
+          />
+          {{ footer }}
+        </UiCardFooter>
+
+        <div
+          v-if="to && showLinkIcon"
+          class="absolute right-3 top-3 p-1 group-hover/card:translate-x-1 group-hover/card:translate-y--1 transition bg-background/50 rounded"
+        >
+          <SmartIcon
+            name="lucide:arrow-up-right"
+            class="block"
+          />
         </div>
-      </UiCardHeader>
-      <UiCardContent v-if="content || $slots.content || $slots.default">
-        <ContentSlot
-          :use="$slots.content"
-          unwrap="p"
-        />
-        <ContentSlot unwrap="p" />
-      </UiCardContent>
-      <UiCardFooter v-if="footer || $slots.footer">
-        <ContentSlot
-          :use="$slots.footer"
-          unwrap="p"
-        />
-        {{ footer }}
-      </UiCardFooter>
-      <SmartIcon
-        v-if="to && showLinkIcon"
-        name="lucide:arrow-up-right"
-        class="absolute right-4 top-4"
-      />
+      </div>
     </UiCard>
   </UseTemplate>
 
-  <div class="group-has-[div]:mt-0 [&:not(:first-child)]:mt-5">
+  <div class="group/card group-has-[div]:mt-0 [&:not(:first-child)]:mt-5">
     <NuxtLink
       v-if="to"
       :to
       :target
+      style="text-decoration: none; font-weight: 500"
     >
       <CardInner />
     </NuxtLink>
@@ -76,26 +119,39 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({
+  inheritAttrs: false,
+})
+
 const {
   showLinkIcon = true,
-  horizontal = false,
   iconSize = 24,
+  iconPosition = 'left',
+  mediaPosition = 'top',
 } = defineProps<{
   title?: string
   description?: string
-  footer?: string
   content?: string
+  footer?: string
+
   to?: string
   target?: Target
+  showLinkIcon?: boolean
+
   icon?: string
   iconSize?: number
+  iconPosition?: 'top' | 'left'
+
+  media?: string
+  mediaPosition?: 'left' | 'right' | 'top' | 'bottom' | 'cover' | 'center'
+
   inStack?: boolean
-  img?: string
-  showLinkIcon?: boolean
-  horizontal?: boolean
 }>()
 
 defineSlots()
 
 const [UseTemplate, CardInner] = createReusableTemplate()
+
+// const _slots: SetupContext['slots'] = useSlots()
+// console.log(_slots)
 </script>
