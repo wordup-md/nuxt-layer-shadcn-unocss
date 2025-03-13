@@ -2,7 +2,6 @@
 title: test
 ---
 
-
 ::hero
 ---
 actions:

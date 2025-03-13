@@ -25,9 +25,9 @@ const _slots: SetupContext['slots'] = useSlots()
 function render() {
   const slots2 = _slots?.default?.() || []
   const Tabs = resolveComponent('Tabs')
-  console.log(slots2, model, mdcAttrs, Tabs, props.node.value.content.content)
+  // console.log(slots2, model, mdcAttrs, Tabs, props.node.value.content.content)
   const slots = props.node.value.content.content.map((tab) => {
-    console.log('tab', tab)
+    // console.log('tab', tab)
     const filename = tab.attrs?.meta?.replace('[', '').replace(']', '')
     return h(
       'div',

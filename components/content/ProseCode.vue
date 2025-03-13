@@ -84,6 +84,11 @@ const icon = computed(() => {
   const filenameLow = filename?.toLowerCase()
   return parsedMeta.value.get('icon') || (filenameLow && iconMap.get(filenameLow)) || (language && iconMap.get(language))
 })
+
+// const _slots: SetupContext['slots'] = useSlots()
+
+// const slots = _slots?.default?.() ?? []
+// console.log(slots)
 </script>
 
 <style>
