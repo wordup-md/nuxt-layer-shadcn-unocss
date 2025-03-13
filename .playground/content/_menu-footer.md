@@ -1,0 +1,5 @@
+---
+title: test
+---
+
+[tada](/api)

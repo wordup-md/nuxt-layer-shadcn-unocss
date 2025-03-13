@@ -1,6 +1,0 @@
-# [](/getting-started/)
-
-# [](/components/)
-
-### tes
-
