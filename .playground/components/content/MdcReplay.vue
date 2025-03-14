@@ -1,9 +1,15 @@
 <template>
   <ClientOnly>
     <UiCard class="relative px-8 py-4 [&:not(:first-child)]:mt-5 overflow-hidden">
-      <MdcEditor v-model="markdown" />
+      <MdcEditor
+        v-model="markdown"
+        @editor-created="handleEditorCreated"
+      />
 
-      <div class="absolute w-full flex items-center justify-center gap-2 mx--6 mt--10 [--primary:142_71%_45%] h-8">
+      <div
+        v-if="isEditorReady"
+        class="absolute w-full flex items-center justify-center gap-2 mx--6 mt--10 [--primary:142_71%_45%] h-8"
+      >
         <Shortcut
           v-for="(char, index) in currentChars"
           :key="index + currentPosition[0]"
@@ -93,6 +99,8 @@
 </template>
 
 <script setup lang="ts">
+import type { Editor } from 'prosekit/core'
+
 const props = defineProps<{
   content: string
   defaultPosition?: number
@@ -117,10 +125,16 @@ const processedContent = computed(() => {
       inMark = false
       i += 7 // Skip the </Xmark> tag
     }
-    else if (content.slice(i, i + 6) === '<Xkbd>') {
+    else if (content.slice(i, i + 6) === '<Xkbd>' || content.slice(i, i + 11) === '<Xkbd mark>') {
       inKbd = true
       currentKbdContent = ''
-      i += 5
+      if (content.slice(i, i + 11) === '<Xkbd mark>') {
+        inMark = true
+        i += 10
+      }
+      else {
+        i += 5
+      }
     }
     else if (content.slice(i, i + 7) === '</Xkbd>') {
       inKbd = false
@@ -133,6 +147,7 @@ const processedContent = computed(() => {
         markedPositions.add(currentPos)
       }
       if (inKbd) {
+        inMark = false
         currentKbdContent += content[i]
       }
       else {
@@ -157,7 +172,6 @@ const currentPosition = ref(props.defaultPosition ? [props.defaultPosition] : [0
 // Update getMdContent to use markedPositions
 const getMdContent = (position: number) => {
   return _content.value.slice(0, position).map((char) => {
-    // Replace Xkbd content with 'X'
     return char.length > 1 ? '\\\n' : char
   }).join('')
 }
@@ -198,8 +212,11 @@ const startReplay = () => {
   isPlaying.value = true
   replayInterval.value = setInterval(() => {
     if (currentPosition.value[0] < _content.value.length) {
+      typeInEditor(_content.value[currentPosition.value[0]])
       currentPosition.value = [currentPosition.value[0] + 1]
-      markdown.value = getMdContent(currentPosition.value[0])
+      // markdown.value = getMdContent(currentPosition.value[0])
+      if (!editor.value?.editor?.focused)
+        editor.value?.editor?.focus()
     }
     else {
       stopReplay()
@@ -260,5 +277,43 @@ watch(currentPosition, (newPos) => {
 const getCurrentChar = (pos: number): string | null => {
   const char = _content.value[pos - 1] || null
   return char === ' ' ? '␣' : char === '\n' ? '↵' : char
+}
+
+const editor = ref<{ editor: Editor }>()
+const isEditorReady = ref(false)
+const handleEditorCreated = (_editor: { editor: Editor }) => {
+  editor.value = _editor
+  isEditorReady.value = true
+}
+
+const typeInEditor = (key: string) => {
+  if (!editor.value?.editor || !key) return
+  const _editor = toRaw(editor.value.editor)
+
+  if (key === '\n') {
+    const tr = _editor.view.state.tr.replaceSelectionWith(_editor.view.state.schema.nodes.paragraph.create())
+    _editor.view.dispatch(tr)
+  }
+  else if (key === 'Shift+Enter') {
+    const tr = _editor.view.state.tr.replaceSelectionWith(_editor.view.state.schema.node('hardBreak'))
+    _editor.view.dispatch(tr)
+  }
+  else if (key === 'Enter') {
+    // Handle space separately
+    const tr = _editor.view.state.tr.replaceSelectionWith(_editor.view.state.schema.node('hardBreak'))
+    _editor.view.dispatch(tr)
+  }
+  else {
+    // Insert text at current selection
+    // const { from, to } = _editor.view.state.selection
+    // const tr = _editor.view.state.tr.replaceWith(
+    //   from,
+    //   to,
+    //   _editor.view.state.schema.text(key),
+    // )
+    const node = _editor.view.state.schema.text(key)
+    const tr = _editor.view.state.tr.replaceSelectionWith(node)
+    _editor.view.dispatch(tr)
+  }
 }
 </script>
