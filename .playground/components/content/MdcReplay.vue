@@ -70,6 +70,15 @@
           >
             x{{ speedLabel }}
           </UiButton>
+
+          <UiButton
+            class="min-w-12"
+            size="xs"
+            variant="outline"
+            @click="onReload"
+          >
+            <Icon name="lucide:rotate-cw" />
+          </UiButton>
         </div>
 
         <UiSlider
@@ -235,6 +244,10 @@ const prevChar = () => {
 const firstChar = () => {
   currentPosition.value = [0]
   markdown.value = ''
+}
+
+const onReload = () => {
+  currentPosition.value = props.defaultPosition ? [props.defaultPosition] : [0]
 }
 
 // Watch for manual slider changes when not playing
