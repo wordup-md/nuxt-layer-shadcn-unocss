@@ -62,8 +62,14 @@ const defaultConfig: DefaultConfig = {
   },
   main: {
     breadCrumb: {
-      homeIcon: 'i-lucide-house',
       showIcon: true,
+      iconSize: 16,
+      home: {
+        title: '',
+        href: '/',
+        icon: 'i-lucide-house',
+        iconSize: 18,
+      },
     },
     showTitle: true,
     codeCopyToast: true,

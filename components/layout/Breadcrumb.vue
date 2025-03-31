@@ -8,20 +8,12 @@
         <UiBreadcrumbItem>
           <NuxtLink
             :href="breadcrumb.href || '#'"
-            class="transition-colors hover:text-foreground flex items-center gap-1"
-            :class="[
-              index === breadcrumbs.length - 1 && 'text-foreground',
-              breadcrumb.classes,
-            ]"
+            class="transition-colors hover:text-foreground flex items-center gap-2"
+            :class="index === breadcrumbs.length - 1 && 'text-foreground'"
           >
             <SmartIcon
-              v-if="index === 0 && config.main.breadCrumb.homeIcon"
-              :size="14"
-              :name="config.main.breadCrumb.homeIcon"
-            />
-            <SmartIcon
-              v-else-if="(breadcrumb.icon && config.main.breadCrumb.showIcon)"
-              :size="14"
+              v-if="(breadcrumb.icon && config.main.breadCrumb.showIcon)"
+              :size="breadcrumb.iconSize || config.main.breadCrumb.iconSize || 14"
               :name="breadcrumb.icon"
             />
             {{ breadcrumb.title }}
