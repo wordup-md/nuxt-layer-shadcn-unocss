@@ -94,8 +94,19 @@ import HeaderSubmenuItem from './SubmenuItem.vue'
 
 const { nav } = useConfig().value.header
 
-const tree = await useMdcMenu('/_menu-header', {
-  menuComponentName: 'header-menu-item',
-  submenuComponentName: 'header-submenu-item',
-})
+const menu = '/_menu-header'
+const { data: count } = await useAsyncData(menu, () =>
+  queryContent(menu).count(),
+)
+
+let tree = undefined
+if (count.value) {
+  const { data } = await useAsyncData(menu, () =>
+    queryContent(menu).findOne(),
+  )
+  tree = await useMdcMenu(data, {
+    menuComponentName: 'header-menu-item',
+    submenuComponentName: 'header-submenu-item',
+  })
+}
 </script>

@@ -64,8 +64,19 @@ import FooterSubmenuItem from './FooterSubmenuItem.vue'
 
 const { footer } = useConfig().value
 
-const tree = await useMdcMenu('/_menu-footer', {
-  menuComponentName: 'footer-item',
-  submenuComponentName: 'footer-submenu-item',
-})
+const menu = '/_menu-footer'
+const { data: count } = await useAsyncData(menu, () =>
+  queryContent(menu).count(),
+)
+
+let tree = undefined
+if (count.value) {
+  const { data } = await useAsyncData(menu, () =>
+    queryContent(menu).findOne(),
+  )
+  tree = await useMdcMenu(data, {
+    menuComponentName: 'footer-item',
+    submenuComponentName: 'footer-submenu-item',
+  })
+}
 </script>
