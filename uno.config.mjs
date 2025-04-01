@@ -56,7 +56,7 @@ export default defineConfig({
   content: {
     filesystem: [
       'content/**/*.md',
-      // `${join(currentDir, 'content')}/**/*.{md,yaml,yml}`,
+      `${join(currentDir, 'content')}/**/*.{md,yaml,yml}`,
     ],
     pipeline: {
       include: [

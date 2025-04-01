@@ -7,14 +7,14 @@ export default defineAppConfig({
       ogImageComponent: 'ShadcnDocs',
       ogImageColor: 'dark',
       umami: {
-        enable: true,
+        enable: false,
         src: 'https://cloud.umami.is/script.js',
-        dataWebsiteId: 'd793fbf3-461e-4e26-9ec9-4e9141df96ee',
+        dataWebsiteId: '',
       },
     },
     theme: {
       customizable: true,
-      color: 'zinc',
+      color: 'orange',
       radius: 0.5,
     },
     banner: {
@@ -32,7 +32,7 @@ export default defineAppConfig({
         light: '/logo.svg',
         dark: '/logo-dark.svg',
       },
-      class: 'fixed',
+      // class: 'fixed',
       darkModeToggle: true,
       nav: [{
         title: 'Docs',
@@ -90,6 +90,7 @@ export default defineAppConfig({
       folderStyle: 'default',
     },
     main: {
+      // padded: true,
       breadCrumb: {
         showIcon: true,
       },
