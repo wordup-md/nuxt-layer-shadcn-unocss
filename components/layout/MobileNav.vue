@@ -17,7 +17,7 @@
       side="left"
       class="pr-0 unpress-padding"
     >
-      <LayoutHeaderLogo class="mx-auto w-fit block" />
+      <LayoutHeaderLogo class="mx-auto w-fit block pr-6" />
       <LayoutAside is-mobile />
       <UiDialogTitle class="sr-only" />
       <UiDialogDescription class="sr-only" />

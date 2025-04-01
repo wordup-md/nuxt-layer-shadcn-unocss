@@ -1,8 +1,14 @@
 <template>
   <header
-    class="sticky top-0 z-40 bg-background/80 backdrop-blur-lg"
-    :class="[config.header.border && 'lg:border-b', config.header.class]"
+    class="app__header"
+    :class="cn(
+      'sticky top-0 z-40 w-full bg-background/80 backdrop-blur-lg',
+      !config.header.border && 'lg:border-b mb-[-1px]',
+      config.header.class,
+    )"
   >
+    <LayoutBanner v-if="config.banner.enable" />
+
     <div
       class="flex h-14 items-center justify-between gap-2 px-4 md:px-8"
       :class="{
@@ -67,5 +73,7 @@
 </template>
 
 <script setup lang="ts">
+import { cn } from '@/lib/utils'
+
 const config = useConfig()
 </script>

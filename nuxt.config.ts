@@ -70,6 +70,10 @@ export default defineNuxtConfig({
     },
   },
 
+  build: {
+    transpile: ['shiki', 'ohash'],
+  },
+
   routeRules: {
     '/': { prerender: true },
     // Admin dashboard renders only on client-side

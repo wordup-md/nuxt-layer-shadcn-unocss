@@ -2,7 +2,7 @@
   <Transition>
     <NuxtLink
       v-if="open"
-      class="block transition-colors bg-primary/10"
+      class="app__banner block transition-colors bg-primary/10"
       :class="{
         'hover:cursor-pointer hover:bg-primary/25': to,
         'border-b': border,
@@ -23,7 +23,7 @@
         <UiButton
           v-if="showClose"
           variant="ghost"
-          class="z-40 size-10 p-2"
+          class="z-40 size-10 p-2 [--accent:var(--primary)] !bg-opacity-25"
           aria-label="Close banner"
           @click.prevent="open = false"
         >
@@ -40,7 +40,7 @@
 
 <script setup lang="ts">
 const open = useCookie<boolean>('banner-open', { default: () => true })
-const { showClose, content, to, target, border } = useConfig().value.banner
+const { showClose, content, to, target, border, height } = useConfig().value.banner
 
 function navigate() {
   if (open.value && to) {
@@ -52,6 +52,14 @@ function navigate() {
     })
   }
 }
+
+watch(open, () => {
+  useHead({
+    bodyAttrs: {
+      style: `--banner-height: ${open.value ? height : '0px'};`,
+    },
+  })
+}, { immediate: true })
 </script>
 
 <style scoped>

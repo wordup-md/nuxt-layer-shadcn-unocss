@@ -33,6 +33,7 @@ const defaultConfig: DefaultConfig = {
     to: '',
     target: '_blank',
     border: true,
+    height: '3rem',
   },
   header: {
     showLoadingIndicator: true,
@@ -48,6 +49,7 @@ const defaultConfig: DefaultConfig = {
     darkModeToggle: true,
     nav: [],
     links: [],
+    height: '3.5rem',
   },
   aside: {
     useLevel: true,

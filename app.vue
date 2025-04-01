@@ -1,14 +1,29 @@
 <template>
   <NuxtLoadingIndicator
-    :color="false"
-    class="z-100 bg-primary/80"
+    color="repeating-linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.25) 100%)"
+    class="z-100"
   />
   <NuxtRouteAnnouncer />
 
-  <ViewModeSwitcher class="!top-26" />
+  <ViewModeSwitcher class="!top-[calc(var(--header-height)+var(--banner-height)+0.75rem)] [&>div]:shadow-xl [&>div]:border [&_span]:w-0 [&_span]:ml--2 [&_span]:hover:ml-0 [&_span]:transition-all">
+    <template #footer>
+      <div class="border-t my-0.5 mx-1" />
+      <div class="pb-0.5">
+        <nuxt-link
+          to="/admin"
+          class="flex items-center gap-2 py-1 transition hover:opacity-100 px-2 opacity-50 hover:bg-blue-500/10"
+          :class="$route.path.startsWith('/admin') && 'text-primary opacity-100'"
+        >
+          <div class="i-lucide-book" />
+          <span class="of-hidden">
+            {{ 'Docs' }}
+          </span>
+        </nuxt-link>
+      </div>
+    </template>
+  </ViewModeSwitcher>
 
-  <div class="app-default-layout grid grid-cols-1 grid-rows-2 min-h-dvh">
-    <LayoutBanner v-if="config.banner.enable" />
+  <div class="app-default-layout grid grid-cols-1 min-h-dvh">
     <LayoutHeader />
 
     <NuxtPage />
@@ -32,13 +47,13 @@ useSeoMeta({
 useHead({
   bodyAttrs: {
     class: themeClass.value,
-    style: `--radius: ${radius.value}rem;`,
+    style: `--radius: ${radius.value}rem;--header-height: ${config.value.header.height};`,
   },
 })
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .app-default-layout {
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
 }
 </style>

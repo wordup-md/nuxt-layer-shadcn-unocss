@@ -25,11 +25,11 @@
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
     "build:json-doc": "tsx scripts/buildContentDoc-cli.ts",
-    "verdaccio": "pnpm publish --registry=https://verdaccio.manutopik.fr --no-git-checks"
+    "clean": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name '.nuxt' -type d -prune -exec rm -rf '{}' + && find . -name '.output' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -prune -exec rm -rf '{}' +"
   },
   "devDependencies": {
     "@nuxt/eslint": "latest",
-    "@nuxt/kit": "^3.15.4",
+    "@nuxt/kit": "^3.16.1",
     "@unocss/eslint-plugin": "^66.0.0",
     "@unocss/extractor-mdc": "^66.0.0",
     "@unocss/nuxt": "^66.0.0",
@@ -42,9 +42,9 @@
     "typescript": "^5.8.2",
     "unocss": "^66.0.0",
     "unocss-preset-animations": "^1.1.1",
-    "unocss-preset-shadcn": "^0.4.0",
+    "unocss-preset-shadcn": "^0.5.0",
     "vue": "latest",
-    "yaml": "^2.7.0"
+    "yaml": "^2.7.1"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.29",
@@ -53,12 +53,12 @@
     "@nuxt/icon": "^1.10.3",
     "@nuxt/image": "^1.9.0",
     "@nuxtjs/color-mode": "^3.5.2",
-    "@unpress/nuxt-module": "0.1.10-beta.4",
+    "@unpress/nuxt-module": "0.1.11-beta.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "nuxt": "3.15.4",
+    "nuxt": "3.16.1",
     "nuxt-og-image": "^4.1.4",
-    "reka-ui": "^2.0.2",
+    "reka-ui": "^2.1.1",
     "tailwind-merge": "^3.0.2"
   },
   "packageManager": "pnpm@10.4.1"

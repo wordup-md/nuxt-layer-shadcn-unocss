@@ -1,7 +1,7 @@
 <template>
   <UiScrollArea
     orientation="vertical"
-    class="relative h-vh overflow-hidden py-6 pr-6 text-sm md:pr-4"
+    class="app__aside relative overflow-hidden text-sm mt-6 pr-6 md:pr-4 h-[calc(100vh-var(--header-height)-var(--banner-height)-3rem)]"
     type="hover"
   >
     <LayoutHeaderNavMobile

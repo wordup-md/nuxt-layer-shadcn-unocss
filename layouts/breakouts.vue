@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style lang="postcss">
+<style lang="css">
 .content-grid {
   --padding-inline: 1rem;
   --content-max-width: 80ch;

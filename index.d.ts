@@ -124,6 +124,12 @@ interface DefaultConfig {
      * @default true
      */
     border: boolean
+    /**
+     * Height of banner
+     *
+     * @default 3rem // h-12
+     */
+    height: string
   }
   /**
    * Header configuration
@@ -188,6 +194,12 @@ interface DefaultConfig {
      * @default ''
      */
     class: string
+    /**
+     * Height of header
+     *
+     * @default '3.5rem' // h-14
+     */
+    height: string
     /**
      * Navigation menu items
      *

@@ -21,7 +21,6 @@ export default defineConfig({
   theme: {
     container: {
       center: true,
-      padding: '2rem',
       maxWidth: {
         '2xl': '1400px',
       },

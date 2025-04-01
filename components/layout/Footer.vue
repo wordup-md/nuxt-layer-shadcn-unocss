@@ -48,8 +48,8 @@
     <MDCRenderer
       v-else
       :body="tree"
-      class=""
-      :class="{ 'container grid grid-cols-3 gap-6': !!tree }"
+      class="min-h-10"
+      :class="{ 'container grid grid-cols-3 gap-6 items-center': !!tree }"
       :components="{
         'footer-item': FooterItem,
         'footer-submenu-item': FooterSubmenuItem,

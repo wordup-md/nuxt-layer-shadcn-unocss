@@ -1,7 +1,7 @@
 <template>
   <UiNavigationMenu
     v-if="!tree?.children.length"
-    class="header-menu"
+    class="app__header-menu"
   >
     <UiNavigationMenuList>
       <UiNavigationMenuItem
