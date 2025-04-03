@@ -19,8 +19,8 @@ badges:
     A **default** alert with `code` and a [link](/).
   ::
 
-  ::alert{type="secondary" icon="lucide:info"}
-    A **secondary** alert with `code` and a [link](/).
+  ::alert{type="success" icon="lucide:info"}
+    A **success** alert with `code` and a [link](/).
   ::
   ::
   ```mdc
@@ -28,8 +28,8 @@ badges:
     A **default** alert with `code` and a [link](/).
   ::
 
-  ::alert{type="secondary" icon="lucide:info"}
-    A **secondary** alert with `code` and a [link](/).
+  ::alert{type="success" icon="lucide:info"}
+    A **success** alert with `code` and a [link](/).
   ::
   ```
 ::
@@ -38,13 +38,19 @@ badges:
 
 ::stack
   ::div{class="p-4"}
+  ::alert{to="/getting-started/introduction" icon="lucide:rocket"}
+    An **internal link** alert.
+  ::
   ::alert{to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank" icon="lucide:link"}
-    A **link** alert.
+    An **external link** alert.
   ::
   ::
   ```mdc
+  ::alert{to="/getting-started/introduction" icon="lucide:rocket"}
+    An **internal link** alert.
+  ::
   ::alert{to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank" icon="lucide:link"}
-    A **link** alert.
+    An **external link** alert.
   ::
   ```
 ::
