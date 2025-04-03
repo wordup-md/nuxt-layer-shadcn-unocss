@@ -4,7 +4,7 @@
     :class="[
       typeTwClass[type],
       to && 'hover:bg-muted/50',
-      noClick && to && 'cursor-pointer',
+      !noClick && to && 'cursor-pointer',
       inStack && 'm-0 rounded-none border-none',
     ]"
     @click="alertClick"
