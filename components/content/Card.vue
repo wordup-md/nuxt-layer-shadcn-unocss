@@ -17,7 +17,7 @@
         class="overflow-hidden"
         :class="{
           'w-5/13 shrink-0': media && (mediaPosition === 'left' || mediaPosition === 'right'),
-          'absolute -z-1 inset-0': ['cover', 'center'].includes(mediaPosition),
+          'absolute inset-0': ['cover', 'center'].includes(mediaPosition),
         }"
       >
         <NuxtImg
@@ -34,7 +34,7 @@
         />
       </div>
 
-      <div class="w-full">
+      <div class="w-full z-1">
         <UiCardHeader
           v-if="
             icon || title || $slots.title || description || $slots.description

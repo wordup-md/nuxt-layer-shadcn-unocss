@@ -35,7 +35,7 @@
                     <div class="font-semibold">
                       {{ link.title }}
                     </div>
-                    <div class="text-sm text-muted-foreground">
+                    <div class="text-sm opacity-80">
                       {{ link.description }}
                     </div>
                   </div>
@@ -52,7 +52,7 @@
           <Icon
             v-if="item.showLinkIcon ?? false"
             name="lucide:arrow-up-right"
-            class="absolute right-2 top-2 text-muted-foreground"
+            class="absolute right-2 top-2 opacity-80"
             size="13"
           />
           <div

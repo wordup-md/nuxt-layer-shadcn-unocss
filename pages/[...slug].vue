@@ -9,7 +9,7 @@
     >
       <aside
         v-if="page?.aside ?? (page?.body && true)"
-        class="sticky hidden z-30 w-full shrink-0 overflow-y-auto top-[calc(var(--header-height)+var(--banner-height))] ttop-[162px] md:sticky md:ttop-[90px] md:block"
+        class="sticky hidden z-30 w-full shrink-0 overflow-y-auto top-[calc(var(--header-height)+var(--banner-height))] md:sticky md:block"
       >
         <LayoutAside :is-mobile="false" />
       </aside>
@@ -78,7 +78,7 @@
 
         <div
           v-if="config.toc.enable && (page.toc ?? true)"
-          class="text-sm pt-4 hidden lg:block lg:sticky lg:top-[calc(var(--header-height)+var(--banner-height))] h-min max-h-[calc(100vh-var(--header-height)-var(--banner-height))]"
+          class="text-sm hidden lg:block lg:sticky lg:top-[calc(var(--header-height)+var(--banner-height)+1.75rem)] h-min max-h-[calc(100vh-var(--header-height)-var(--banner-height)-6rem)]"
         >
           <div class="overflow-hidden">
             <LayoutToc :is-small="false" />
