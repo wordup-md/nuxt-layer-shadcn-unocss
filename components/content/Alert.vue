@@ -84,7 +84,7 @@ const typeTwClass = {
 const _external = computed(() => external ?? to?.startsWith('http'))
 
 async function alertClick() {
-  if (noClick && to) {
+  if (!noClick && to) {
     if (target) {
       await navigateTo(to, {
         external: _external.value,
