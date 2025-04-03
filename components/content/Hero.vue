@@ -2,7 +2,7 @@
   <section
     class="hero relative mx-auto flex max-w-[980px] items-center gap-6 mb-8 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20"
     :class="[
-      $attrs.class.includes('full-width') && 'w-full max-w-full',
+      ($attrs?.class || '').includes('full-width') && 'w-full max-w-full',
       ['left', 'right'].includes(mediaPosition) && 'flex-row',
       mediaPosition === 'right' && 'flex-row-reverse',
       mediaPosition === 'bottom' && 'flex-col-reverse',
@@ -34,7 +34,7 @@
         :to="announcement.to"
         :target="announcement.target"
         class="hero__announcement inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
-        :class="$attrs.class.includes('full-width') && 'w-max mx-auto'"
+        :class="($attrs?.class || '').includes('full-width') && 'w-max mx-auto'"
       >
         <template v-if="announcement.icon">
           <SmartIcon
@@ -65,7 +65,7 @@
 
       <span
         class="hero__description max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl"
-        :class="$attrs.class.includes('full-width') && 'max-w-full'"
+        :class="($attrs?.class || '').includes('full-width') && 'max-w-full'"
       >
         <ContentSlot
           :use="$slots.description"

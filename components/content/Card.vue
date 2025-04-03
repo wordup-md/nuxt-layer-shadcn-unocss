@@ -92,15 +92,12 @@
           {{ footer }}
         </UiCardFooter>
 
-        <div
-          v-if="to && showLinkIcon"
-          class="absolute right-3 top-3 p-1 group-hover/card:translate-x-1 group-hover/card:translate-y--1 transition bg-background/50 rounded"
-        >
-          <SmartIcon
-            name="lucide:arrow-up-right"
-            class="block"
-          />
-        </div>
+        <LinkIcon
+          v-if="showLinkIcon"
+          :to
+          :target
+          :external
+        />
       </div>
     </UiCard>
   </UseTemplate>
@@ -124,6 +121,8 @@ defineOptions({
 })
 
 const {
+  to,
+  external = undefined,
   showLinkIcon = true,
   iconSize = 24,
   iconPosition = 'left',
@@ -136,6 +135,7 @@ const {
 
   to?: string
   target?: Target
+  external?: boolean
   showLinkIcon?: boolean
 
   icon?: string

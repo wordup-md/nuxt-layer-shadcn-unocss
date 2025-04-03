@@ -1,6 +1,6 @@
 <template>
   <UiAlert
-    class="transition-all [&:not(:first-child)]:mt-5"
+    class="transition-all [&:not(:first-child)]:mt-5 group/card"
     :class="[
       typeTwClass[type],
       to && 'hover:bg-muted/50',
@@ -39,11 +39,11 @@
         </span>
       </div>
 
-      <SmartIcon
-        v-if="(noClick || to) && showLinkIcon"
-        :name="_external || target === '_blank' ? 'lucide:arrow-up-right' : 'lucide:arrow-right'"
-        class="absolute right-4 top-4"
-        :size="20"
+      <LinkIcon
+        v-if="showLinkIcon"
+        :to
+        :target
+        :external
       />
     </UiAlertDescription>
   </UiAlert>
@@ -81,19 +81,17 @@ const typeTwClass = {
   secondary: 'bg-muted/50',
 }
 
-const _external = computed(() => external ?? to?.startsWith('http'))
-
 async function alertClick() {
   if (!noClick && to) {
     if (target) {
       await navigateTo(to, {
-        external: _external.value,
+        external: external ?? to?.startsWith('http'),
         open: { target },
       })
     }
     else {
       await navigateTo(to, {
-        external: _external.value,
+        external: external ?? to?.startsWith('http'),
       })
     }
   }
