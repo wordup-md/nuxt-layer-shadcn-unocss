@@ -4,16 +4,18 @@
     :target
     :icon
   >
-    Read more at <span class="font-semibold">{{ computedTitle }}</span>
+    {{ prefix }} <span class="font-semibold">{{ computedTitle }}</span>
   </Alert>
 </template>
 
 <script setup lang="ts">
 const {
+  prefix = 'Read more at',
   title,
   to,
   icon = 'lucide:bookmark',
 } = defineProps<{
+  prefix?: string
   title?: string
   to: string
   target?: Target
@@ -26,7 +28,10 @@ const computedTitle = computed<string>(
       return title
 
     try {
-      return useBreadcrumb(to).map(x => x.title).join(' > ')
+      if (to?.startsWith('http'))
+        return to.replace('http://', '').replace('https://', '').replace(/\/$/, '')
+
+      return useBreadcrumb(to).filter(x => x.title !== '').map(x => x.title).join(' > ')
     }
     catch {
       return to

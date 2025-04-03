@@ -3,7 +3,8 @@
     class="transition-all [&:not(:first-child)]:mt-5"
     :class="[
       typeTwClass[type],
-      to && 'cursor-pointer hover:bg-muted/50',
+      to && 'hover:bg-muted/50',
+      noClick && to && 'cursor-pointer',
       inStack && 'm-0 rounded-none border-none',
     ]"
     @click="alertClick"
@@ -13,31 +14,36 @@
       :name="icon"
       :size="16"
     />
+
     <UiAlertTitle
       v-if="title"
       class="font-semibold"
     >
       {{ title }}
     </UiAlertTitle>
-    <UiAlertDescription>
+
+    <UiAlertDescription class="w-full">
       <div class="flex flex-row gap-2">
         <SmartIcon
           v-if="icon && !title"
           :name="icon"
           :size="16"
-          class="mb-[2px] min-w-5 self-center"
+          class="mb-[2px] mt-0.5 min-w-5 self-start"
         />
+
         <span
           class="w-full"
-          :class="[to && 'pr-3']"
+          :class="[to && 'pr-8']"
         >
           <slot />
         </span>
       </div>
+
       <SmartIcon
-        v-if="to && showLinkIcon"
-        name="lucide:arrow-up-right"
+        v-if="(noClick || to) && showLinkIcon"
+        :name="_external || target === '_blank' ? 'lucide:arrow-up-right' : 'lucide:arrow-right'"
         class="absolute right-4 top-4"
+        :size="20"
       />
     </UiAlertDescription>
   </UiAlert>
@@ -51,6 +57,7 @@ const {
   external = undefined,
   inStack = false,
   showLinkIcon = true,
+  noClick = false,
 } = defineProps<{
   title?: string
   icon?: string
@@ -60,6 +67,7 @@ const {
   external?: boolean
   inStack?: boolean
   showLinkIcon?: boolean
+  noClick?: boolean
 }>()
 
 const typeTwClass = {
@@ -73,17 +81,19 @@ const typeTwClass = {
   secondary: 'bg-muted/50',
 }
 
+const _external = computed(() => external ?? to?.startsWith('http'))
+
 async function alertClick() {
-  if (to) {
+  if (noClick && to) {
     if (target) {
       await navigateTo(to, {
-        external: external ?? to.startsWith('http'),
+        external: _external.value,
         open: { target },
       })
     }
     else {
       await navigateTo(to, {
-        external: external ?? to.startsWith('http'),
+        external: _external.value,
       })
     }
   }
