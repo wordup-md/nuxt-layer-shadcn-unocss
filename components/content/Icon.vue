@@ -1,10 +1,17 @@
 <template>
+  <span
+    v-if="name.endsWith('.svg')"
+    class="svg-icon"
+    :style="`--svg: url(${name}); width: ${size}px; height: ${size}px;`"
+    v-bind="$attrs"
+  />
   <!-- Iconify Icons -->
-  <Icon
-    v-if="isValidIcon"
+  <NuxtIcon
+    v-else-if="isValidIcon"
     :name
     :size="+size"
     :style="`min-width: ${+size + 1}px; min-height: ${+size + 1}px;`"
+    :class="$attrs.class"
   />
 
   <!-- Emojis // Need v-bind to apply class in ssr mode -->
@@ -21,7 +28,7 @@
     v-else
     :src="name"
     :style="`width: ${size}px; height: ${size}px;`"
-    class="inline"
+    :class="$attrs.class"
   />
 </template>
 
@@ -44,3 +51,18 @@ const isValidEmoji = computed(() =>
   ),
 )
 </script>
+
+<style scoped>
+.svg-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+</style>

@@ -18,7 +18,7 @@
           size="sm"
           class="w-9 p-0"
         >
-          <Icon name="lucide:chevrons-up-down" />
+          <NuxtIcon name="lucide:chevrons-up-down" />
           <span class="sr-only">Toggle</span>
         </UiButton>
       </UiCollapsibleTrigger>
@@ -41,7 +41,7 @@
   >
     <UiCollapsibleTrigger class="w-full text-left">
       <div class="flex w-full gap-1">
-        <SmartIcon
+        <NuxtIcon
           name="lucide:chevron-down"
           class="self-center transition-all"
           :class="[!isOpen && '-rotate-90']"

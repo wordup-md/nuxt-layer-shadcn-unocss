@@ -39,7 +39,7 @@
                     :to="child._path"
                   >
                     <UiCommandItem :value="child._path">
-                      <SmartIcon
+                      <Icon
                         v-if="child.icon"
                         :name="child.icon"
                         class="mr-2 size-4"
@@ -63,7 +63,7 @@
                   value="light"
                   @click="colorMode.preference = 'light'"
                 >
-                  <Icon
+                  <NuxtIcon
                     name="lucide:sun"
                     class="mr-2 size-4"
                   />
@@ -73,7 +73,7 @@
                   value="dark"
                   @click="colorMode.preference = 'dark'"
                 >
-                  <Icon
+                  <NuxtIcon
                     name="lucide:moon"
                     class="mr-2 size-4"
                   />
@@ -83,7 +83,7 @@
                   value="system"
                   @click="colorMode.preference = 'auto'"
                 >
-                  <Icon
+                  <NuxtIcon
                     name="lucide:monitor"
                     class="mr-2 size-4"
                   />
@@ -108,7 +108,7 @@
                   activeSelect = i;
                 "
               >
-                <SmartIcon
+                <Icon
                   v-if="getItemIcon(item.id)"
                   :name="getItemIcon(item.id)"
                   class="mr-2 size-4 shrink-0 self-center"
@@ -124,7 +124,7 @@
                   class="flex shrink-0 self-center"
                 >
                   {{ subtitle }}
-                  <Icon
+                  <NuxtIcon
                     name="lucide:chevron-right"
                     class="mx-0.5 self-center text-muted-foreground"
                   />

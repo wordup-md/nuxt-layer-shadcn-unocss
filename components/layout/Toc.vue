@@ -28,13 +28,13 @@
             :target="link.target"
             class="flex w-full gap-1 underline-offset-4 hover:underline [&:not(:first-child)]:pt-3"
           >
-            <SmartIcon
+            <Icon
               v-if="link.icon"
               :name="link.icon"
               class="mr-1 self-center"
             />
             {{ link.title }}
-            <Icon
+            <NuxtIcon
               v-if="link.showLinkIcon ?? true"
               name="lucide:arrow-up-right"
               class="ml-auto self-center text-muted-foreground"
@@ -55,7 +55,7 @@
   >
     <UiCollapsibleTrigger class="flex w-full px-4 py-3 text-left font-medium">
       {{ title }}
-      <Icon
+      <NuxtIcon
         name="lucide:chevron-right"
         class="ml-auto self-center transition-all"
         :class="[isOpen && 'rotate-90']"

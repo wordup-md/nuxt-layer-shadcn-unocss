@@ -37,7 +37,7 @@
         :class="($attrs?.class || '').includes('full-width') && 'w-max mx-auto'"
       >
         <template v-if="announcement.icon">
-          <SmartIcon
+          <Icon
             :name="announcement.icon"
             :size="16"
           />
@@ -50,7 +50,7 @@
         <span class="hidden sm:inline">
           {{ announcement.title }}
         </span>
-        <Icon
+        <NuxtIcon
           name="lucide:arrow-right"
           class="ml-1 size-4"
         />
@@ -84,13 +84,13 @@
           :target="action.target"
         >
           <UiButton :variant="action.variant">
-            <SmartIcon
+            <Icon
               v-if="action.leftIcon"
               :name="action.leftIcon"
               class="mr-1"
             />
             {{ action.name }}
-            <SmartIcon
+            <Icon
               v-if="action.rightIcon"
               :name="action.rightIcon"
               class="ml-1"

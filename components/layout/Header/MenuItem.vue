@@ -24,7 +24,7 @@ const { to, target, showLinkIcon, icon, title, tag, dropdownClass }
       :rel
       class="relative"
     >
-      <Icon
+      <NuxtIcon
         v-if="showLinkIcon ?? false"
         name="lucide:arrow-up-right"
         class="absolute right-1 top-1 text-muted-foreground"
@@ -34,7 +34,7 @@ const { to, target, showLinkIcon, icon, title, tag, dropdownClass }
         class="bg-transparent font-semibold whitespace-break-spaces !flex"
         :class="[navigationMenuTriggerStyle()]"
       >
-        <SmartIcon
+        <Icon
           v-if="icon"
           :name="icon"
           class="min-w-5 mr-2"

@@ -9,7 +9,7 @@
         v-if="side === 'left'"
         class="flex size-6 min-w-6"
       >
-        <Icon
+        <NuxtIcon
           name="lucide:arrow-left"
           size="20"
           class="mx-auto self-center"
@@ -30,7 +30,7 @@
         v-if="side === 'right'"
         class="ml-auto flex size-6 min-w-6"
       >
-        <Icon
+        <NuxtIcon
           name="lucide:arrow-right"
           size="20"
           class="mx-auto self-center"

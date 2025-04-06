@@ -44,7 +44,7 @@
             'items-center': mediaPosition === 'center',
           }"
         >
-          <SmartIcon
+          <Icon
             v-if="icon"
             :name="icon"
             :size="iconSize"

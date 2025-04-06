@@ -4,7 +4,7 @@
     :class="cn(navigationMenuTriggerStyle(), 'group', props.class)"
   >
     <slot />
-    <Icon
+    <NuxtIcon
       name="lucide:chevron-down"
       class="relative top-px ml-1 block size-3 transition duration-200 group-data-[state=open]:rotate-180"
       aria-hidden="true"

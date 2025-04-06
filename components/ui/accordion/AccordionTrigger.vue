@@ -11,7 +11,7 @@
     >
       <slot />
       <slot name="icon">
-        <Icon
+        <NuxtIcon
           name="lucide:chevron-down"
           class="flex size-4 shrink-0 transition-transform duration-200"
         />

@@ -29,7 +29,7 @@
             :to="link.to"
             :target="link.target"
           >
-            <SmartIcon :name="link.icon" />
+            <Icon :name="link.icon" />
           </NuxtLink>
         </div>
       </div>

@@ -6,7 +6,7 @@
         size="icon"
         class="md:hidden"
       >
-        <Icon
+        <NuxtIcon
           name="lucide:menu"
           size="24"
         />

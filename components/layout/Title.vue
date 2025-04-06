@@ -29,7 +29,7 @@
           :type="badge.type"
           class="gap-1 rounded-md"
         >
-          <SmartIcon
+          <Icon
             v-if="badge.to || badge.icon"
             :size="12"
             :name="badge.icon || 'lucide:external-link'"

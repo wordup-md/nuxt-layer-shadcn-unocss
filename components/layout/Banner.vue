@@ -27,7 +27,7 @@
           aria-label="Close banner"
           @click.prevent="open = false"
         >
-          <Icon
+          <NuxtIcon
             name="lucide:x"
             size="36"
           />

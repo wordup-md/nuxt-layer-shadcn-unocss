@@ -3,12 +3,12 @@
     class="flex items-center border-b px-3"
     cmdk-input-wrapper
   >
-    <Icon
+    <NuxtIcon
       v-if="!loading"
       name="lucide:search"
       class="mr-2 size-4 shrink-0 opacity-50"
     />
-    <Icon
+    <NuxtIcon
       v-else
       name="lucide:loader"
       class="mr-2 size-4 shrink-0 animate-spin opacity-50"

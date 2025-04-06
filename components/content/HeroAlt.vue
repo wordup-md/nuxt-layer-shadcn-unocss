@@ -14,7 +14,7 @@
         class="inline-flex items-center px-0.5 text-sm font-medium"
       >
         <template v-if="announcement.icon">
-          <SmartIcon
+          <Icon
             :name="announcement.icon"
             :size="16"
           />
@@ -26,7 +26,7 @@
         <span class="underline-offset-4 hover:underline">{{
           announcement.title
         }}</span>
-        <Icon
+        <NuxtIcon
           name="lucide:arrow-right"
           class="ml-1 size-4"
         />
@@ -58,13 +58,13 @@
             :variant="action.variant"
             size="sm"
           >
-            <SmartIcon
+            <Icon
               v-if="action.leftIcon"
               :name="action.leftIcon"
               class="mr-1"
             />
             {{ action.name }}
-            <SmartIcon
+            <Icon
               v-if="action.rightIcon"
               :name="action.rightIcon"
               class="ml-1"

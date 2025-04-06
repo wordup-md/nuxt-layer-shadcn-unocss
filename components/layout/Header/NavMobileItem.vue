@@ -4,7 +4,7 @@
       <UiCollapsibleTrigger class="w-full p-2 text-left">
         <div class="flex w-full gap-1">
           {{ item.title }}
-          <Icon
+          <NuxtIcon
             :name="
               isOpen ? 'lucide:chevrons-down-up' : 'lucide:chevrons-up-down'
             "
@@ -24,7 +24,7 @@
               :target="link.to"
               class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
             >
-              <SmartIcon
+              <Icon
                 v-if="link.icon"
                 :name="link.icon"
                 :size="16"
@@ -52,7 +52,7 @@
     class="flex w-full p-2"
   >
     {{ item.title }}
-    <Icon
+    <NuxtIcon
       v-if="item.showLinkIcon ?? true"
       name="lucide:arrow-up-right"
       class="ml-1 text-muted-foreground"

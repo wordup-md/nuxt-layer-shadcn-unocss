@@ -21,7 +21,7 @@
       class="flex gap-2 w-[72px]"
       @click="isOpen = true"
     >
-      <Icon
+      <NuxtIcon
         name="lucide:search"
         size="16"
       />

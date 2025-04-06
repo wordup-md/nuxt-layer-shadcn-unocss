@@ -10,7 +10,7 @@
       v-if="!inGroup && filename"
       class="flex items-center border-b p-3 font-mono text-sm"
     >
-      <SmartIcon
+      <Icon
         v-if="icon"
         :name="icon"
         class="mr-1.5"

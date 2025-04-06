@@ -7,13 +7,13 @@
       :variant
       :size
     >
-      <SmartIcon
+      <Icon
         v-if="leftIcon"
         :name="leftIcon"
         class="mr-1"
       />
       <ContentSlot unwrap="p" />
-      <SmartIcon
+      <Icon
         v-if="rightIcon"
         :name="rightIcon"
         class="ml-1"

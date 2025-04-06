@@ -22,7 +22,7 @@
           class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
           :class="[path.startsWith(link._path) && 'bg-muted !text-primary']"
         >
-          <SmartIcon
+          <Icon
             v-if="link.icon"
             :name="link.icon"
             class="self-center"

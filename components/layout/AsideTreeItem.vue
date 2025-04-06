@@ -20,14 +20,14 @@
           :class="[link.navTruncate !== false && 'h-8']"
           @click="isOpen = !isOpen"
         >
-          <SmartIcon
+          <NuxtIcon
             v-if="folderStyle === 'tree'"
             name="lucide:chevron-down"
             class="transition-transform"
             :class="[!isOpen && '-rotate-90']"
           />
           <LayoutAsideTreeItemButton :link />
-          <SmartIcon
+          <NuxtIcon
             v-if="folderStyle === 'default'"
             name="lucide:chevron-down"
             class="ml-auto transition-transform"

@@ -10,7 +10,7 @@
         :key="`${i}${label(slot.props)}`"
         :value="i"
       >
-        <SmartIcon
+        <Icon
           v-if="icon(slot?.props)"
           :name="icon(slot?.props)!"
           class="mr-1.5 self-center"
@@ -44,7 +44,7 @@
           :value="i"
           class="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
         >
-          <SmartIcon
+          <Icon
             v-if="icon(slot?.props)"
             :name="icon(slot?.props)!"
             class="mr-1.5 self-center"
@@ -80,7 +80,7 @@
             :class="[activeTabIndex === i && 'bg-muted text-primary']"
             @mousedown.left="activeTabIndex = i"
           >
-            <SmartIcon
+            <Icon
               v-if="icon(slot?.props)"
               :name="icon(slot?.props)!"
               class="mr-1.5 self-center"
@@ -122,7 +122,7 @@
           class="w-[200px] justify-between"
         >
           <div class="flex items-center">
-            <SmartIcon
+            <Icon
               v-if="icon(($slots.default?.() ?? [])[activeTabIndex].props)"
               :name="icon(($slots.default?.() ?? [])[activeTabIndex].props)!"
               class="mr-1.5"
@@ -131,7 +131,7 @@
               {{ label(($slots.default?.() ?? [])[activeTabIndex].props) }}
             </span>
           </div>
-          <Icon name="lucide:chevrons-up-down" />
+          <NuxtIcon name="lucide:chevrons-up-down" />
         </UiButton>
       </UiPopoverTrigger>
       <UiPopoverContent class="w-[200px] p-0">
@@ -155,13 +155,13 @@
                   }
                 "
               >
-                <SmartIcon
+                <Icon
                   v-if="icon(slot?.props)"
                   :name="icon(slot?.props)!"
                   class="mr-1.5 self-center"
                 />
                 {{ label(slot.props) }}
-                <Icon
+                <NuxtIcon
                   name="lucide:check"
                   :class="
                     cn(

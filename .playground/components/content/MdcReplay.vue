@@ -40,7 +40,7 @@
             variant="outline"
             @click="firstChar"
           >
-            <Icon name="lucide:chevron-first" />
+            <NuxtIcon name="lucide:chevron-first" />
           </UiButton>
 
           <UiButton
@@ -49,14 +49,14 @@
             variant="outline"
             @click="prevChar"
           >
-            <Icon name="lucide:chevron-left" />
+            <NuxtIcon name="lucide:chevron-left" />
           </UiButton>
 
           <UiButton
             size="sm"
             @click="togglePlayPause"
           >
-            <Icon :name="isPlaying ? 'lucide:pause' : 'lucide:play'" />
+            <NuxtIcon :name="isPlaying ? 'lucide:pause' : 'lucide:play'" />
           </UiButton>
 
           <UiButton
@@ -65,7 +65,7 @@
             :disabled="currentPosition[0] >= _content.length"
             @click="nextChar"
           >
-            <Icon name="lucide:chevron-right" />
+            <NuxtIcon name="lucide:chevron-right" />
           </UiButton>
 
           <UiButton
@@ -83,7 +83,7 @@
             variant="outline"
             @click="onReload"
           >
-            <Icon name="lucide:rotate-cw" />
+            <NuxtIcon name="lucide:rotate-cw" />
           </UiButton>
         </div>
 

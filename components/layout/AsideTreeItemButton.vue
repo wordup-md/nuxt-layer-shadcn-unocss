@@ -1,5 +1,5 @@
 <template>
-  <SmartIcon
+  <Icon
     v-if="link.icon"
     :name="link.icon"
     class="min-w-4"

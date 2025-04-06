@@ -103,6 +103,10 @@ export default defineNuxtConfig({
     },
   },
 
+  icon: {
+    componentName: 'NuxtIcon',
+  },
+
   shadcn: {
     prefix: 'Ui',
     componentDir: join(currentDir, './components/ui'),

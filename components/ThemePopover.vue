@@ -5,7 +5,7 @@
         variant="ghost"
         size="icon"
       >
-        <Icon
+        <NuxtIcon
           name="lucide:paintbrush"
           size="16"
         />

@@ -9,7 +9,7 @@
       class="text-sm font-semibold text-primary"
     >
       <div class="flex items-center gap-2">
-        <SmartIcon :name="icon" />
+        <Icon :name="icon" />
         <span>
           {{ text }}
         </span>

@@ -52,7 +52,7 @@
               size="icon"
               class="flex gap-2"
             >
-              <SmartIcon
+              <Icon
                 v-if="link?.icon"
                 :name="link.icon"
                 :size="18"

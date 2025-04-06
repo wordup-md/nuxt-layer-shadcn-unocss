@@ -25,7 +25,7 @@
               class="flex size-5 items-center justify-center rounded-full"
               :style="{ backgroundColor: backgroundColor(color) }"
             >
-              <Icon
+              <NuxtIcon
                 v-if="theme === color"
                 name="lucide:check"
                 size="16"
@@ -67,7 +67,7 @@
           :class="{ 'border-2 border-primary': colorMode.preference === 'light' }"
           @click="colorMode.preference = 'light'"
         >
-          <Icon
+          <NuxtIcon
             name="lucide:sun"
             size="16"
           />
@@ -79,7 +79,7 @@
           :class="{ 'border-2 border-primary': colorMode.preference === 'dark' }"
           @click="colorMode.preference = 'dark'"
         >
-          <Icon
+          <NuxtIcon
             name="lucide:moon"
             size="16"
           />
@@ -91,7 +91,7 @@
           :class="{ 'border-2 border-primary': colorMode.preference === 'system' }"
           @click="colorMode.preference = 'system'"
         >
-          <Icon
+          <NuxtIcon
             name="lucide:monitor"
             size="16"
           />

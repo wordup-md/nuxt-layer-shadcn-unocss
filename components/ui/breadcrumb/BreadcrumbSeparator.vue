@@ -5,7 +5,7 @@
     :class="cn('[&>svg]:size-3.5', props.class)"
   >
     <slot>
-      <Icon
+      <NuxtIcon
         name="lucide:chevron-right"
         class="block size-3.5 mt-0.5"
       />

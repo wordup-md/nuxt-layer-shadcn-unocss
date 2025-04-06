@@ -24,7 +24,7 @@
                   :target="link.target"
                   class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
                 >
-                  <SmartIcon
+                  <Icon
                     v-if="link.icon"
                     :name="link.icon"
                     :size="16"
@@ -49,7 +49,7 @@
           :to="item.to"
           :target="item.target"
         >
-          <Icon
+          <NuxtIcon
             v-if="item.showLinkIcon ?? false"
             name="lucide:arrow-up-right"
             class="absolute right-2 top-2 opacity-80"

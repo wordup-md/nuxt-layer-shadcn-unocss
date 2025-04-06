@@ -17,7 +17,7 @@ const { to, target, icon, title, description, tag } = defineProps<{
       :target
       class="mb-1 flex w-full gap-1 group"
     >
-      <SmartIcon
+      <Icon
         v-if="icon"
         :name="icon"
         class="mt-1"

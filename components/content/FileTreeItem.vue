@@ -7,14 +7,14 @@
         :class="[tree.highlighted && 'underline underline-offset-4']"
         @click="isOpen = !isOpen"
       >
-        <SmartIcon
+        <NuxtIcon
           v-if="showArrow"
           name="lucide:chevron-down"
           class="transition-transform"
           :class="[!isOpen && '-rotate-90']"
         />
 
-        <SmartIcon
+        <Icon
           v-if="showIcon && tree.icon"
           :name="tree.icon"
           class="min-w-4"
@@ -39,7 +39,7 @@
       class="flex w-full items-center gap-2 rounded-md px-2 py-1 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
       :class="[tree.highlighted && 'underline underline-offset-4']"
     >
-      <SmartIcon
+      <Icon
         v-if="showIcon && tree.icon"
         :name="tree.icon"
         class="min-w-4"

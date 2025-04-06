@@ -8,7 +8,7 @@
       'group-hover/card:translate-x-1': !_external,
     }"
   >
-    <SmartIcon
+    <NuxtIcon
       :name="_external ? 'lucide:arrow-up-right' : 'lucide:arrow-right'"
       :size="size"
     />

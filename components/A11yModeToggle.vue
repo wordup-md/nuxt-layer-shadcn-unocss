@@ -14,7 +14,7 @@ function toggleA11yMode() {
     :class="{ 'border-2 border-primary': isA11yMode }"
     @click="toggleA11yMode()"
   >
-    <Icon
+    <NuxtIcon
       name="lucide:glasses"
       size="16"
     />

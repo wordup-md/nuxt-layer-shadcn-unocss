@@ -9,7 +9,7 @@
     ]"
     @click="alertClick"
   >
-    <SmartIcon
+    <Icon
       v-if="icon && title"
       :name="icon"
       :size="16"
@@ -24,7 +24,7 @@
 
     <UiAlertDescription class="w-full">
       <div class="flex flex-row gap-2">
-        <SmartIcon
+        <Icon
           v-if="icon && !title"
           :name="icon"
           :size="16"

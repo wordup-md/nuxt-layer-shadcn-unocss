@@ -24,7 +24,7 @@
         <DialogClose
           class="absolute right-3 top-3 rounded-md p-0.5 transition-colors hover:bg-secondary"
         >
-          <Icon
+          <NuxtIcon
             name="lucide:x"
             class="block size-4"
           />
