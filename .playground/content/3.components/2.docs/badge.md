@@ -32,71 +32,71 @@ badges:
   ```
 ::
 
+### Types
+
+::stack{label="default"}
+  ::div{class="p-3"}
+    :badge[Default]
+    :badge[Primary]{type="primary"}
+    :badge[Secondary]{type="secondary"}
+    :badge[Info]{type="info"}
+    :badge[Warning]{type="warning"}
+    :badge[Success]{type="success"}
+    :badge[Danger]{type="danger"}
+    :badge[New]{type="new"}
+  ::
+
+  ```mdc
+  :badge[Default]
+  :badge[Info]{type="info"}
+  :badge[Warning]{type="warning"}
+  :badge[Success]{type="success"}
+  :badge[Danger]{type="danger"}
+  :badge[New]{type="new"}
+  ```
+::
+
 ### Variants
 
-::tabs{variant="line"}
-  ::stack{label="outline"}
-    ::div{class="p-3"}
-    :badge[Outline]{variant="outline"}
-    ::
-    ```mdc
-    :badge[Outline]{variant="outline"}
-    ```
+::stack{label="default"}
+  ::div{class="p-3"}
+    :badge[Default]{variant="fill"}
+    :badge[Primary]{type="primary" variant="fill"}
+    :badge[Secondary]{type="secondary" variant="fill"}
+    :badge[Info]{type="info" variant="fill"}
+    :badge[Warning]{type="warning" variant="fill"}
+    :badge[Success]{type="success" variant="fill"}
+    :badge[Danger]{type="danger" variant="fill"}
+    :badge[New]{type="new" variant="fill"}
   ::
 
-  ::stack{label="secondary"}
-    ::div{class="p-3"}
-    :badge[Secondary]{variant="secondary"}
-    ::
-    ```mdc
-    :badge[Secondary]{variant="secondary"}
-    ```
+  ::div{class="p-3"}
+    :badge[Default]{variant="outline"}
+    :badge[Primary]{type="primary" variant="outline"}
+    :badge[Secondary]{type="secondary" variant="outline"}
+    :badge[Info]{type="info" variant="outline"}
+    :badge[Warning]{type="warning" variant="outline"}
+    :badge[Success]{type="success" variant="outline"}
+    :badge[Danger]{type="danger" variant="outline"}
+    :badge[New]{type="new" variant="outline"}
   ::
 
-  ::stack{label="info"}
-    ::div{class="p-3"}
-    :badge[Info]{type="info"}
-    ::
-    ```mdc
-    :badge[Info]{type="info"}
-    ```
+  ::div{class="p-3"}
+    :badge[Default]{variant="text"}
+    :badge[Primary]{type="primary" variant="text"}
+    :badge[Secondary]{type="secondary" variant="text"}
+    :badge[Info]{type="info" variant="text"}
+    :badge[Warning]{type="warning" variant="text"}
+    :badge[Success]{type="success" variant="text"}
+    :badge[Danger]{type="danger" variant="text"}
+    :badge[New]{type="new" variant="text"}
   ::
 
-  ::stack{label="warning"}
-    ::div{class="p-3"}
-    :badge[Warning]{type="warning"}
-    ::
-    ```mdc
-    :badge[Warning]{type="warning"}
-    ```
-  ::
-
-  ::stack{label="success"}
-    ::div{class="p-3"}
-    :badge[Success]{type="success"}
-    ::
-    ```mdc
-    :badge[Success]{type="success"}
-    ```
-  ::
-
-  ::stack{label="lime"}
-    ::div{class="p-3"}
-    :badge[lime]{type="lime"}
-    ::
-    ```mdc
-    :badge[lime]{type="lime"}
-    ```
-  ::
-
-  ::stack{label="danger"}
-    ::div{class="p-3"}
-    :badge[Danger]{type="danger"}
-    ::
-    ```mdc
-    :badge[Danger]{type="danger"}
-    ```
-  ::
+  ```mdc
+  :badge[...]{type="..." variant="fill"}
+  :badge[...]{type="..." variant="outline"}
+  :badge[...]{type="..." variant="text"}
+  ```
 ::
 
 ### Link
