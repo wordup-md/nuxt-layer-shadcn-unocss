@@ -28,6 +28,8 @@
       :class="[
         size === 'sm'
           && 'rounded-md px-1.5 py-0.5 text-xs font-normal leading-none',
+        size === 'lg'
+          && 'px-3 text-base',
       ]"
     >
       <ContentSlot unwrap="p" />
@@ -45,6 +47,6 @@ const {
   to?: string
   target?: Target
   variant?: 'default' | 'fill' | 'outline' | 'text'
-  size?: 'md' | 'sm'
+  size?: 'sm' | 'md' | 'lg'
 }>()
 </script>

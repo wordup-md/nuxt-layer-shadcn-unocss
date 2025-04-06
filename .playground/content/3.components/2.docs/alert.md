@@ -71,19 +71,6 @@ badges:
     ```
   ::
 
-  ::stack{label="note" icon="lucide:pencil"}
-    ::div{class="p-3"}
-    ::alert{type="note" icon="lucide:pencil"}
-      A **note** alert with `code` and a [link](/).
-    ::
-    ::
-    ```mdc
-    ::alert{type="note" icon="lucide:pencil"}
-      A **note** alert with `code` and a [link](/).
-    ::
-    ```
-  ::
-
   ::stack{label="success" icon="lucide:lightbulb"}
     ::div{class="p-3"}
     ::alert{type="success" icon="lucide:lightbulb"}
@@ -93,19 +80,6 @@ badges:
     ```mdc
     ::alert{type="success" icon="lucide:lightbulb"}
       A **success** alert with `code` and a [link](/).
-    ::
-    ```
-  ::
-
-  ::stack{label="example" icon="lucide:test-tube"}
-    ::div{class="p-3"}
-    ::alert{type="example" icon="lucide:test-tube"}
-      An **example** alert with `code` and a [link](/).
-    ::
-    ::
-    ```mdc
-    ::alert{type="example" icon="lucide:test-tube"}
-      An **example** alert with `code` and a [link](/).
     ::
     ```
   ::
@@ -135,18 +109,31 @@ badges:
     ::
     ```
   ::
+
+  ::stack{label="example" icon="lucide:test-tube"}
+    ::div{class="p-3"}
+    ::alert{type="example" icon="lucide:test-tube"}
+      An **example** alert with `code` and a [link](/).
+    ::
+    ::
+    ```mdc
+    ::alert{type="example" icon="lucide:test-tube"}
+      An **example** alert with `code` and a [link](/).
+    ::
+    ```
+  ::
 ::
 
 ### Title
 
 ::stack
   ::div{class="p-4"}
-  ::alert{title="Title" icon="lucide:layout-list"}
+  ::alert{title="Title" icon="lucide:layout-list" type="info"}
     An alert with a title.
   ::
   ::
   ```mdc
-  ::alert{title="Title" icon="lucide:layout-list"}
+  ::alert{title="Title" icon="lucide:layout-list" type="info"}
     An alert with a title.
   ::
   ```

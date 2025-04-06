@@ -1,24 +1,33 @@
 <template>
-  <div class="[&:not(:first-child)]:mt-4 [&:not(:first-child)]:pt-4">
+  <div class="[&:not(:first-child)]:mt-4 [&:not(:first-child)]:pt-4 animate-scroll-fade-in-up">
     <div class="mb-2">
       <div class="flex items-center gap-2">
-        <span class="text-md font-bold text-primary">
+        <Badge
+          type="primary"
+          size="lg"
+        >
           {{ name }}
-        </span>
+        </Badge>
+
         <span
           v-if="required"
           class="font-mono text-sm text-muted-foreground"
         >
           {{ fieldRequiredText }}
         </span>
-        <span class="ml-auto font-mono text-sm text-muted-foreground">
+
+        <span class="ml-auto font-mono text-sm text-muted-foreground text-right text-balance">
           {{ type }}
         </span>
       </div>
+
       <div
         v-if="defaultValue"
-        class="text-muted-foreground"
+        class="text-muted-foreground text-right"
       >
+        <span class="font-bold mr-1 text-sm text-muted-foreground">
+          default:
+        </span>
         <ProseCodeInline>
           {{ defaultValue }}
         </ProseCodeInline>

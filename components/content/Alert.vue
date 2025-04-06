@@ -9,18 +9,20 @@
     ]"
     @click="alertClick"
   >
-    <Icon
-      v-if="icon && title"
-      :name="icon"
-      :size="16"
-    />
+    <div class="flex flex-row gap-2">
+      <Icon
+        v-if="icon && title"
+        :name="icon"
+        :size="16"
+      />
 
-    <UiAlertTitle
-      v-if="title"
-      class="font-semibold"
-    >
-      {{ title }}
-    </UiAlertTitle>
+      <UiAlertTitle
+        v-if="title"
+        class="font-semibold mb-3"
+      >
+        {{ title }}
+      </UiAlertTitle>
+    </div>
 
     <UiAlertDescription class="w-full">
       <div class="flex flex-row gap-2">
@@ -32,7 +34,7 @@
         />
 
         <span
-          class="w-full"
+          class="w-full text-foreground"
           :class="[to && 'pr-8']"
         >
           <slot />
@@ -72,12 +74,11 @@ const {
 
 const typeTwClass = {
   default: '',
-  info: 'border-sky-600 text-sky-600 [&>svg]:text-sky-600',
-  note: 'border-blue-700 text-blue-700 [&>svg]:text-blue-700',
-  example: 'border-violet-600 text-violet-600 [&>svg]:text-violet-600',
-  warning: 'border-amber-600 text-amber-600 [&>svg]:text-amber-600',
-  success: 'border-green-600 text-green-600 [&>svg]:text-green-600',
-  danger: 'border-red-600 text-red-600 [&>svg]:text-red-600',
+  info: 'border-info text-info bg-info/05 [&>svg]:text-info',
+  warning: 'border-warning text-warning bg-warning/05 [&>svg]:text-warning',
+  success: 'border-success text-success bg-success/05 [&>svg]:text-success',
+  danger: 'border-danger text-danger bg-danger/05 [&>svg]:text-danger',
+  example: 'border-violet-600 border-dashed text-violet-600 bg-violet-600/05 [&>svg]:text-violet-600',
   secondary: 'bg-muted/50',
 }
 

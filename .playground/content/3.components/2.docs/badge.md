@@ -21,6 +21,9 @@ badges:
   ::badge{size="sm"}
     Small
   ::
+  ::badge{size="lg"}
+    Large
+  ::
   ::
   ```mdc
   ::badge
@@ -28,6 +31,9 @@ badges:
   ::
   ::badge{size="sm"}
     Small
+  ::
+  ::badge{size="lg"}
+    Large
   ::
   ```
 ::
