@@ -19,6 +19,10 @@ body.is-a11y {
   --input: 240 5.9% 30% !important;
   /* --ring: 240 5.9% 10% !important;
   --radius: 0.5rem !important; */
+
+  [class^="a11y"], [class*=" a11y"] {
+    color: var(--foreground) !important;
+  }
 }
 
 .dark body.is-a11y {

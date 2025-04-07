@@ -16,7 +16,7 @@ export const badgeVariants = cva(
         danger: 'bg-danger text-danger border-danger',
         new: 'bg-new text-new-foreground border-new',
         // info: 'bg-sky-500 text-sky-500 border-sky-500',
-        // warning: 'bg-yellow-400 text-yellow-500 border-yellow-500 a11y:text-black',
+        // warning: 'bg-yellow-400 text-yellow-500 border-yellow-500',
         // success: 'bg-green-500 text-green-600 border-green-600',
         // danger: 'bg-red-500 text-red-500 border-red-500',
         // new: 'bg-[#adfa1d] dark:text-[#adfa1d] border-[#adfa1d]',
@@ -29,7 +29,7 @@ export const badgeVariants = cva(
         outline:
           '!bg-opacity-0',
         text:
-          'bg-transparent border-transparent',
+          '!bg-transparent border-transparent',
         // default:
         //   'border-transparent bg-primary text-primary-foreground hover:bg-primary/80',
         // secondary:
@@ -61,7 +61,7 @@ export const badgeVariants = cva(
       },
       {
         type: ['new'],
-        variant: 'outline',
+        variant: ['outline', 'text'],
         class: 'dark:text-new',
       },
     ],

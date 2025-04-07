@@ -1,5 +1,34 @@
 <template>
   <div class="group grid gap-4 md:grid-cols-2 [&:not(:first-child)]:mt-5">
-    <slot />
+    <slot v-if="!data" />
+
+    <template v-else>
+      <Card
+        v-for="(item, index) in _data"
+        :key="index"
+        :title="item.title"
+        :description="item.description"
+        :to="item._path"
+        :icon="item.icon"
+
+        :media="item.cover"
+      />
+    </template>
   </div>
 </template>
+
+<script setup lang="ts">
+const props = defineProps<{
+  data?: string
+}>()
+
+const _data = ref<any[]>([])
+
+if (props.data) {
+  _data.value = (await queryContent(props.data).find()).filter(item => !item._partial)
+  console.log('card group data', _data.value)
+  // console.log('card group data', _data.value)
+}
+
+defineSlots()
+</script>

@@ -74,11 +74,11 @@ const {
 
 const typeTwClass = {
   default: '',
-  info: 'border-info text-info bg-info/05 [&>svg]:text-info',
-  warning: 'border-warning text-warning bg-warning/05 [&>svg]:text-warning',
-  success: 'border-success text-success bg-success/05 [&>svg]:text-success',
-  danger: 'border-danger text-danger bg-danger/05 [&>svg]:text-danger',
-  example: 'border-violet-600 border-dashed text-violet-600 bg-violet-600/05 [&>svg]:text-violet-600',
+  info: 'border-info text-info bg-info/05 dark:bg-info/15 [&>svg]:text-info',
+  warning: 'border-warning text-warning bg-warning/05 dark:bg-warning/15 [&>svg]:text-warning',
+  success: 'border-success text-success bg-success/05 dark:bg-success/15 [&>svg]:text-success',
+  danger: 'border-danger text-danger bg-danger/05 dark:bg-danger/15 [&>svg]:text-danger',
+  example: 'border-violet-600 border-dashed text-violet-600 bg-violet-600/05 dark:bg-violet-600/15 [&>svg]:text-violet-600',
   secondary: 'bg-muted/50',
 }
 

@@ -1,7 +1,7 @@
 <template>
   <UseTemplate>
     <UiCard
-      class="relative flex flex-col h-full overflow-hidden transition-all min-h-8"
+      class="card relative flex flex-col h-full overflow-hidden transition-all min-h-8"
       :class="[
         to && 'hover:shadow-lg',
         inStack && 'mb-0 rounded-none border-none shadow-none',
@@ -14,6 +14,7 @@
       ]"
     >
       <div
+        v-if="media || $slots.media"
         class="overflow-hidden"
         :class="{
           'w-5/13 shrink-0': media && (mediaPosition === 'left' || mediaPosition === 'right'),
@@ -60,7 +61,11 @@
                 :use="$slots.title"
                 unwrap="p"
               />
-              {{ title }}
+              <MDC
+                v-if="title"
+                :value="title"
+                unwrap="p"
+              />
             </UiCardTitle>
 
             <UiCardDescription v-if="description || $slots.description">
@@ -68,7 +73,11 @@
                 :use="$slots.description"
                 unwrap="p"
               />
-              {{ description }}
+              <MDC
+                v-if="description"
+                :value="description"
+                unwrap="p"
+              />
             </UiCardDescription>
           </div>
         </UiCardHeader>
@@ -77,11 +86,11 @@
           v-if="content || $slots.content || $slots.default"
           :class="{ 'py-3': !icon && !(title || $slots.title) && !(description || $slots.description) }"
         >
+          <ContentSlot unwrap="p" />
           <ContentSlot
             :use="$slots.content"
             unwrap="p"
           />
-          <ContentSlot unwrap="p" />
         </UiCardContent>
 
         <UiCardFooter v-if="footer || $slots.footer">
@@ -121,6 +130,7 @@ defineOptions({
 })
 
 const {
+  title,
   to,
   external = undefined,
   showLinkIcon = true,

@@ -1,4 +1,8 @@
 .EDITOR_CONTENT {
+  --mdc-editor-border-color: 220 13% 86%;
+  --mdc-editor-border-style: dashed;
+  --mdc-editor-border-width: 2px;
+  overflow: visible !important;
 
   &:focus-visible {
     outline: none;
@@ -8,12 +12,24 @@
     margin-top: 1.5rem;
   }
 
-  & h2.\[\&\:not\(\:first-child\)\]\:mt-10:first-child {
+  & h2.prose-h2:first-child {
     margin-top: 2.5rem;
   }
 
-  & h3 {
+  & h3.prose-h3:first-child {
     margin-top: 2rem;
+  }
+
+  & h4.prose-h4:first-child {
+    margin-top: 1.5rem;
+  }
+
+  & h5.prose-h5:first-child {
+    margin-top: 1.5rem;
+  }
+
+  & h6.prose-h6:first-child {
+    margin-top: 1.5rem;
   }
 
   & code {
@@ -58,4 +74,18 @@
   & div[data-node-view-root="true"]:first-child > div > .\[\&\:not\(\:first-child\)\]\:mt-5 {
     margin-top: 0rem;
   }
+}
+
+.animate-scroll-fade-in-up {
+  animation: fade-in-up linear;
+  animation-timeline: view();
+  animation-range: 0 25dvh;
+}
+
+.docs-content > * {
+  --una-enter-translate-y: 5dvh;
+  --una-enter-opacity: 0.5;
+  animation: una-in linear;
+  animation-timeline: view();
+  animation-range: 0 25dvh;
 }
