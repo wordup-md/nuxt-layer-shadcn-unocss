@@ -1,6 +1,6 @@
 <template>
   <span
-    v-if="name.endsWith('.svg')"
+    v-if="name?.endsWith('.svg')"
     class="svg-icon"
     :style="`--svg: url(${name}); width: ${size}px; height: ${size}px;`"
     v-bind="$attrs"
@@ -41,6 +41,7 @@ const { name, size = 16 } = defineProps<{
 }>()
 
 const isValidIcon = computed(() => {
+  if (!name) return false
   if (name.startsWith('http')) return false
   return validateIconName(stringToIcon(name))
 })
