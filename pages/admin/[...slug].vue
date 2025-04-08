@@ -38,7 +38,7 @@ const { data: tree, status, error, refresh, clear } = await useAsyncData<NavItem
 
 const { slug } = useRoute().params
 
-if (slug?.length === 0 && tree.value) {
+if (isAdmin.value && slug?.length === 0 && tree.value) {
   if (tree.value[0]['navigation.redirect']) {
     await navigateTo(tree.value[0]['navigation.redirect'])
   }
@@ -119,10 +119,22 @@ const page = computed(() => {
         v-else
         class="col-span-3 mt-[20vh] flex items-center justify-center"
       >
-        <h3 class="scroll-m-20 border-r px-4 py-3 text-2xl font-semibold">
+        <CmsAuth class="flex items-center justify-center">
+          <template
+            #default="{ login }"
+          >
+            <h3 class="scroll-m-20 px-4 py-3 text-2xl font-semibold">
+              Open administration &rarr;
+            </h3>
+            <UiButton @click="login()">
+              Connect & Open
+            </Uibutton>
+          </template>
+        </CmsAuth>
+        <!-- <h3 class="scroll-m-20 border-r px-4 py-3 text-2xl font-semibold">
           404
         </h3>
-        <span class="scroll-m-20 px-4"> This page could not be found. </span>
+        <span class="scroll-m-20 px-4"> This page could not be found. </span> -->
       </div>
     </div>
   </NuxtLayout>

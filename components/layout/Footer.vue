@@ -32,17 +32,6 @@
           <span v-if="link?.title">{{ link.title }}</span>
         </UiButton>
       </NuxtLink>
-
-      <CmsAuth>
-        <template #default="{ login }">
-          <UiButton
-            variant="ghost"
-            @click="login()"
-          >
-            Admin
-          </Uibutton>
-        </template>
-      </CmsAuth>
     </div>
 
     <MDCRenderer
