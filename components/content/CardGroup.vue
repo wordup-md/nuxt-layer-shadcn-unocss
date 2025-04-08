@@ -22,11 +22,14 @@ const props = defineProps<{
   data?: string
 }>()
 
-const _data = ref<any[]>([])
+const _data = ref<any[] | undefined>(undefined)
 
 if (props.data) {
-  _data.value = (await queryContent(props.data).find()).filter(item => !item._partial)
-  console.log('card group data', _data.value)
+  const { data } = await useAsyncData('card-group-data', () =>
+    queryContent(props.data!).find(),
+  )
+  // Remove _dir.yaml ...
+  _data.value = data.value?.filter(item => !item._partial)
   // console.log('card group data', _data.value)
 }
 

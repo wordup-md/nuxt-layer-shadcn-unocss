@@ -73,11 +73,13 @@
                 :use="$slots.description"
                 unwrap="p"
               />
-              <MDC
+              <!-- v-if="description" -->
+              <!-- <MDC
                 v-if="description"
-                :value="description"
+                :value="description || ''"
                 unwrap="p"
-              />
+              /> -->
+              {{ description }}
             </UiCardDescription>
           </div>
         </UiCardHeader>

@@ -42,8 +42,8 @@ export default defineAppConfig({
           description: 'Start building your document with shadcn-docs-nuxt',
           icon: 'lucide:rocket',
         }, {
-          title: 'API',
-          to: '/api',
+          title: 'Development',
+          to: '/development',
           description: 'Discover the configurations and exposed APIs.',
           target: '_self',
           icon: 'lucide:code',
@@ -73,7 +73,7 @@ export default defineAppConfig({
         }],
       }, {
         title: 'Use This Template',
-        to: '/getting-started/installation',
+        to: '/getting-started/introduction',
         target: '_self',
         showLinkIcon: true,
       }],
