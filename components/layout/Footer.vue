@@ -43,6 +43,8 @@
           </UiButton>
         </template>
       </CmsAuth>
+
+      Hola!
     </div>
 
     <MDCRenderer
