@@ -5,6 +5,7 @@ import * as flat from 'flat'
 
 interface TreeNode {
   title: string
+  _id?: string
   _path?: string
   data?: Record<string, unknown>
   content?: string
@@ -48,7 +49,7 @@ export async function buildContentTree(dirPath: string): Promise<TreeNode[]> {
 
             // Get relative path from content dir
             const relativePath = fullPath.split('content/')[1]
-            dir._path = relativePath.replace(/^\d+\./, '')
+            dir._path = relativePath.replaceAll(/(^|\/)\d+\./g, '/').replace(/^\//, '')
           }
 
           tree.push(dir)
@@ -57,21 +58,22 @@ export async function buildContentTree(dirPath: string): Promise<TreeNode[]> {
       else {
         const _content = await readFile(fullPath, 'utf-8')
         const { content, data } = parseFrontMatter(_content)
-
         // Get relative path from content dir
         const relativePath = fullPath.split('content/')[1]
-        const pathWithoutExt = relativePath.replace(/^\d+\./, '').replace(/\.md$/, '')
+        const pathWithoutExt = relativePath.replaceAll(/(^|\/)\d+\./g, '/').replace(/\.md$/, '').replace(/^\//, '')
 
         // Extract the numeric prefix if it exists
         // const numMatch = pathWithoutExt.match(/^(\d+)\./)
         const node: TreeNode = {
           title: pathWithoutExt, // Remove numeric prefix from title
+          _id: 'content:' + relativePath.replace(/\//g, ':'),
           _path: pathWithoutExt,
           content,
           ...data,
         }
 
-        tree.push(node)
+        if (node._path !== 'index' && !/^test.*/i.test(node._path || '') && !node._path?.startsWith('_'))
+          tree.push(node)
         // if (numMatch) {
         //   // Use the number as index (subtract 1 since arrays are 0-based)
         //   const index = parseInt(numMatch[1]) - 1
@@ -123,7 +125,7 @@ export async function generateAndSaveContentDoc(file: string = 'content-doc.json
     const tree = await buildContentTree(basePath)
 
     // Write to components-tree.json in the root directory
-    const outputPath = join(rootDir, file)
+    const outputPath = join(rootDir, 'public', file)
     await writeFile(
       outputPath,
       JSON.stringify(tree, null, 2),

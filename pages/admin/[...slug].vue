@@ -1,44 +1,43 @@
 <script setup lang="ts">
 import type { NavItem } from '@nuxt/content'
+import { useUnpress } from '#imports'
 
-const { user } = useUnpress()
+const { client, mountCms, login } = useUnpress()
 const config = useConfig()
 
-const isAdmin = ref(false)
-if (user.value || import.meta.dev) {
-  isAdmin.value = true
-}
+const isDev = import.meta.dev
+const isLoggedIn = computed(() => !!client.value)
 
-const repo = 'unpress/nuxt-layer'
 const path = 'content-doc.json'
 
 const { data: tree, status, error, refresh, clear } = await useAsyncData<NavItem[]>(
   'admin-docs',
-  () => $fetch(`https://raw.githubusercontent.com/${repo}/main/${path}`), {
+  () => $fetch(`/${path}`), {
     transform: (data) => {
-      const _data = JSON.parse(data)
-      return _data.map((item: NavItem) => ({
+      console.log(data)
+      // const _data = JSON.parse(data)
+      return data.map((item: NavItem) => ({
         ...item,
         '_path': `/admin/${item._path}`,
-        'navigation.redirect': '/admin' + item['navigation.redirect'],
+        'navigation.redirect': item['navigation.redirect'] ? '/admin' + item['navigation.redirect'] : undefined,
         'children': item.children?.map((child: NavItem) => ({
           ...child,
           '_path': `/admin/${child._path}`,
-          'navigation.redirect': '/admin' + child['navigation.redirect'],
+          'navigation.redirect': child['navigation.redirect'] ? '/admin' + child['navigation.redirect'] : undefined,
           'children': child.children?.map((child2: NavItem) => ({
             ...child2,
             '_path': `/admin/${child2._path}`,
-            'navigation.redirect': '/admin' + child2['navigation.redirect'],
+            'navigation.redirect': child2['navigation.redirect'] ? '/admin' + child2['navigation.redirect'] : undefined,
           })),
         })),
       }))
     },
   },
 )
-
+console.log(tree.value)
 const { slug } = useRoute().params
 
-if (isAdmin.value && slug?.length === 0 && tree.value) {
+if (isLoggedIn.value && slug?.length === 0 && tree.value) {
   if (tree.value[0]['navigation.redirect']) {
     await navigateTo(tree.value[0]['navigation.redirect'])
   }
@@ -50,7 +49,7 @@ if (isAdmin.value && slug?.length === 0 && tree.value) {
 const page = computed(() => {
   if (slug.length > 2) {
     const level0 = tree.value?.find(item => item._path === `/admin/${slug[0]}`)
-    const level1 = level0?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}`) || level0?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}`)
+    const level1 = level0?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}`)
     return level1?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}/${slug[2]}`)
   }
   else if (slug.length > 1) {
@@ -58,9 +57,21 @@ const page = computed(() => {
     return level0?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}`)
   }
   else {
-    return tree.value?.find(item => item._path === `/admin/${slug[0]}`)
+    const page = tree.value?.find(item => item._path === `/admin/${slug[0]}`)
+
+    if (!page?.['navigation.redirect'] && !page?.content && page?.children?.length) {
+      return page.children.find(item => item._path === `/admin/${slug[0]}/index`)
+    }
+
+    return page
   }
 })
+
+watch(page, async (newVal) => {
+  if (newVal?.['navigation.redirect']) {
+    await navigateTo(newVal['navigation.redirect'])
+  }
+}, { immediate: true })
 </script>
 
 <template>
@@ -71,7 +82,7 @@ const page = computed(() => {
 
     <div class="h-full">
       <div
-        v-if="isAdmin"
+        v-if="isLoggedIn"
         class="flex-1 items-start px-4 md:grid md:gap-6 md:px-8 lg:gap-10"
         :class="[
           config.main.padded && 'container',
@@ -108,6 +119,7 @@ const page = computed(() => {
             />
 
             <MDC
+              v-if="page.content"
               :value="page.content"
               tag="article"
             />
@@ -116,25 +128,28 @@ const page = computed(() => {
       </div>
 
       <div
+        v-else-if="isDev && !isLoggedIn"
+        class="col-span-3 mt-[20vh] flex items-center justify-center"
+      >
+        <div class="flex items-center justify-center gap-4">
+          <h3 class="scroll-m-20 py-3 text-2xl font-semibold">
+            Open administration
+          </h3>
+          <Icon name="lucide:arrow-right" />
+          <UiButton @click="isDev ? mountCms() : login()">
+            Connect & Open
+          </Uibutton>
+        </div>
+      </div>
+
+      <div
         v-else
         class="col-span-3 mt-[20vh] flex items-center justify-center"
       >
-        <CmsAuth class="flex items-center justify-center">
-          <template
-            #default="{ login }"
-          >
-            <h3 class="scroll-m-20 px-4 py-3 text-2xl font-semibold">
-              Open administration &rarr;
-            </h3>
-            <UiButton @click="login()">
-              Connect & Open
-            </Uibutton>
-          </template>
-        </CmsAuth>
-        <!-- <h3 class="scroll-m-20 border-r px-4 py-3 text-2xl font-semibold">
+        <h3 class="scroll-m-20 border-r px-4 py-3 text-2xl font-semibold">
           404
         </h3>
-        <span class="scroll-m-20 px-4"> This page could not be found. </span> -->
+        <span class="scroll-m-20 px-4"> This page could not be found. </span>
       </div>
     </div>
   </NuxtLayout>
