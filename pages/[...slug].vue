@@ -33,7 +33,7 @@
             && 'lg:grid lg:grid-cols-[1fr_220px] lg:gap-14',
         ]"
       >
-        <div class="mx-auto w-full min-w-0">
+        <article class="mx-auto w-full min-w-0">
           <LayoutBreadcrumb
             v-if="
               page?.body
@@ -74,7 +74,7 @@
           />
 
           <LayoutDocsFooter />
-        </div>
+        </article>
 
         <div
           v-if="config.toc.enable && (page.toc ?? true)"
