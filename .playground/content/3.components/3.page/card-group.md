@@ -98,3 +98,18 @@ badges:
   ::
   ```
 ::
+
+## Automatically bind data from route
+
+You can automatically bind data from route by using the `data` prop.
+
+::stack
+  ::div{class="p-4"}
+  ::card-group{data="/components/page/"}
+  ::
+  ::
+  ```mdc
+  ::card-group{data="/components/page/"}
+  ::
+  ```
+::

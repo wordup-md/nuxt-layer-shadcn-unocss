@@ -25,12 +25,11 @@ const props = defineProps<{
 const _data = ref<any[] | undefined>(undefined)
 
 if (props.data) {
-  const { data } = await useAsyncData('card-group-data', () =>
+  const { data } = await useAsyncData('card-group-data-' + String(props.data), () =>
     queryContent(props.data!).find(),
   )
   // Remove _dir.yaml ...
   _data.value = data.value?.filter(item => !item._partial)
-  // console.log('card group data', _data.value)
 }
 
 defineSlots()

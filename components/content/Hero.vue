@@ -33,8 +33,8 @@
         v-if="announcement"
         :to="announcement.to"
         :target="announcement.target"
-        class="hero__announcement inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
-        :class="($attrs?.class || '').includes('full-width') && 'w-max mx-auto'"
+        class="hero__announcement inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium mx-auto"
+        :class="($attrs?.class || '').includes('full-width') && 'w-max'"
       >
         <template v-if="announcement.icon">
           <Icon

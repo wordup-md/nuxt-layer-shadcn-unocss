@@ -24,7 +24,7 @@
         <NuxtImg
           v-if="media"
           :src="media"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover aspect-video"
           :class="{
             'group-hover/card:scale-105 transition-all': to,
           }"

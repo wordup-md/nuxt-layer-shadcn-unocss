@@ -14,8 +14,6 @@ const { data: tree, status, error, refresh, clear } = await useAsyncData<NavItem
   'admin-docs',
   () => $fetch(`/${path}`), {
     transform: (data) => {
-      console.log(data)
-      // const _data = JSON.parse(data)
       return data.map((item: NavItem) => ({
         ...item,
         '_path': `/admin/${item._path}`,
@@ -34,7 +32,7 @@ const { data: tree, status, error, refresh, clear } = await useAsyncData<NavItem
     },
   },
 )
-console.log(tree.value)
+
 const { slug } = useRoute().params
 
 if (isLoggedIn.value && slug?.length === 0 && tree.value) {
@@ -76,10 +74,6 @@ watch(page, async (newVal) => {
 
 <template>
   <NuxtLayout>
-    <div class="hidden p-8">
-      <!-- it force unocss to trigger some classes -->
-    </div>
-
     <div class="h-full">
       <div
         v-if="isLoggedIn"
@@ -111,6 +105,10 @@ watch(page, async (newVal) => {
             v-if="page"
             class="mx-auto w-full min-w-0"
           >
+            <div class="p-1 mb-4 rounded border border-red-500">
+              <LayoutBreadcrumb />
+            </div>
+
             <LayoutTitle
               v-if="config.main?.showTitle && (page.showTitle ?? true)"
               :title="page?.title"

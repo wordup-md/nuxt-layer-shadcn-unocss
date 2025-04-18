@@ -92,48 +92,14 @@ badges:
   ```
 ::
 
-### Horizontal
+### Media
 
 ::stack
   ::div{class="p-4"}
   ::card
   ---
-  icon: 'lucide:fold-horizontal'
-  icon-size: 26
-  horizontal: true
-  ---
-
-  #title
-  Horizontal Card
-
-  #description
-  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
-  ::
-  ::
-  ```mdc
-  ::card
-  ---
-  icon: 'lucide:fold-horizontal'
-  icon-size: 26
-  horizontal: true
-  ---
-
-  #title
-  Horizontal Card
-
-  #description
-  Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
-  ::
-  ```
-::
-
-### Image
-
-::stack
-  ::div{class="p-4"}
-  ::card
-  ---
-  img: /og-nuxt.png
+  media: /og-nuxt.png
+  media-position: left
   ---
   #title
   Image Card
@@ -145,10 +111,11 @@ badges:
   ```mdc
   ::card
   ---
-  img: /og-nuxt.png
+  media: /og-nuxt.png
+  media-position: left
   ---
   #title
-  Image Card
+  Media Card
 
   #content
   Beautifully designed **Nuxt Content** template with **shadcn-vue**. _Customizable. Compatible. Open Source._
@@ -163,11 +130,13 @@ badges:
   :field{name="description" type="string"}[Card description]
   :field{name="content" type="string"}[Card content]
   :field{name="footer" type="string"}[Card footer]
-  :field{name="icon" type="string"}[Card icon]
-  :field{name="horizontal" type="boolean" default-value="false"}
   :field{name="to" type="string"}[Link URL]
   :field{name="target" type="Target"}[A `target` attribute value to apply on the link]
-  :field{name="iconSize" type="number" default-value="24"}
-  :field{name="img" type="string"}[Image URL]
+  :field{name="external" type="boolean"}[Alias to `target='_blank'`]
   :field{name="showLinkIcon" type="boolean" default-value="true"}[Whether to show the link indicator :icon{name="lucide:arrow-up-right"}]
+  :field{name="icon" type="string"}[Card icon]
+  :field{name="iconSize" type="number" default-value="24"}
+  :field{name="iconPosition" type="'top' | 'left'" default-value="'top'"}[Icon position]
+  :field{name="media" type="string"}[Media URL]
+  :field{name="media-position" type="'top' | 'left' | 'right' | 'bottom' | 'cover' | 'center'" default-value="'top'"}[Media position]
 ::
