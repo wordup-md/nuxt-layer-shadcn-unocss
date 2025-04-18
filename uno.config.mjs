@@ -102,6 +102,17 @@ export default defineConfig({
         return `
         :root {
           ${breakpoints}
+
+          --info: 200 90% 50%;
+          --info-foreground: 200 90% 50%;
+          --warning: 42.4 100% 50%;
+          --warning-foreground: 42.4 100% 50%;
+          --success: 94.5 100% 39.6%;
+          --success-foreground: 94.5 100% 39.6%;
+          --danger: 358.3 100% 64.9%;
+          --danger-foreground: 358.3 100% 64.9%;
+          --new: 81 96% 55%;
+          --new-foreground: 81 96% 15%;
         }
       `
       },
