@@ -27,8 +27,8 @@ importers:
         specifier: ^3.5.2
         version: 3.5.2(magicast@0.3.5)
       '@unpress/nuxt-module':
-        specifier: 0.1.11-beta.6
-        version: 0.1.11-beta.6(yfd2x56zzgbcaj7zntmj7cidyi)
+        specifier: 0.1.11-beta.7
+        version: 0.1.11-beta.7(yfd2x56zzgbcaj7zntmj7cidyi)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1616,35 +1616,35 @@ packages:
     peerDependencies:
       webpack: ^4 || ^5
 
-  '@unpress/cms@0.1.11-beta.6':
-    resolution: {integrity: sha512-kuqxresLx3nvamH15uo92uGtdgmLXmUCCZoss9c3dCuUdpGPG//aN+H32xqaa3CaOwIF4QJE+HUz6xxbPrXeZw==}
+  '@unpress/cms@0.1.11-beta.7':
+    resolution: {integrity: sha512-RFLoMWYDaxufw+Ugkix6G2Isz+b4ytzppC3820TCv98YyN5NOmdfW3O97rKdHbAMLvgKmFUzKblyEfisxyYH+g==}
 
-  '@unpress/git-connect@0.1.11-beta.6':
-    resolution: {integrity: sha512-gsY9i9f69izBLe4PYXrWWvXUYK4vAu2BUQBCLZI18/wWnpWQou+ka+Wm586Yylb8DeZyjCo5YTpwFkorOYuVyQ==}
+  '@unpress/git-connect@0.1.11-beta.7':
+    resolution: {integrity: sha512-FVxwKr58amH77CRtfUHor8lxsxGfp/R6pBBf0dCRry4WUczWa9Inkp7DEJr9iZgDZ2F+LsfBaLmHztUYlRrURg==}
 
-  '@unpress/kit@0.1.11-beta.6':
-    resolution: {integrity: sha512-Zx/HzlyCHwJYS6cnZeifJe27t5MID80D4b1zPc+qYWDjd/eO/oB0lTbySXssTq272lnLfXRUGUdTt/WHDbkBOg==}
+  '@unpress/kit@0.1.11-beta.7':
+    resolution: {integrity: sha512-blRVbK0YgXK3UGtffPhJNhNzBkurnoJLkbAhK/VSm4yIV+0XN+TTirVvq6MPHVYjo81/B1E0MGIjpSqB76rJQA==}
     peerDependencies:
       nuxt: ^3.16.0
       vite: '*'
 
-  '@unpress/mdc-editor@0.1.11-beta.6':
-    resolution: {integrity: sha512-CSfWRmjEf8brMdnViOc70UGkHpjyVZkngg5u5jPbtbn8aZ5wARVs/uzAis201ZbMBt7aYlrZ2khUfqV/eB7ZNQ==}
+  '@unpress/mdc-editor@0.1.11-beta.7':
+    resolution: {integrity: sha512-LwqiaXhBIfyOUCTWLgqZzceVl9vw2vBD0iYprE0gd62adqKnp/wV1xTveywucxIw2DNsfUznPju2l7Y03SqgOw==}
 
-  '@unpress/mdc-prosemirror@0.1.11-beta.6':
-    resolution: {integrity: sha512-HBfaB0C/t4Zicg3H8qRuGcQ6EpwPhMbtRdEO6FKuTqEo9d3S4pq/9K5WAEfekpeJBsrA5UTZNLgSHihPfc8xXQ==}
+  '@unpress/mdc-prosemirror@0.1.11-beta.7':
+    resolution: {integrity: sha512-CUIaoCGRBtbt95j5t5dZi/4o7PXOiQbGwefl5JIfovZcUKJC8U6hWWtb+P1mM5ZFt12q7CtC3k7sfbC0/5OJsw==}
 
-  '@unpress/nuxt-layer-pro@0.1.11-beta.6':
-    resolution: {integrity: sha512-Ns+x+47gnzej82wkrdn1cQd2z6bqasSVqXR3HdMGvaFtK33+nX2rOqLGL5yoV+aUQgTQkOxdt/7bTqXWl0hrnw==}
+  '@unpress/nuxt-layer-pro@0.1.11-beta.7':
+    resolution: {integrity: sha512-1KMwXysBSM3F/NPrQOgJ2BIWHjT6NV3cbTpTDo+fYyRvaus22MCHZI1jcrgggfW8jajr5KprWM/zb5rjGTsThw==}
 
-  '@unpress/nuxt-module@0.1.11-beta.6':
-    resolution: {integrity: sha512-C/ZAxdKeEUJiyjE9kmQPUmq/5QoSrW/RFIcoTb/oDwOjbvPR+5KGbwQixuBhvWM4ORV0zLQNeOG57aTzwVfOKQ==}
+  '@unpress/nuxt-module@0.1.11-beta.7':
+    resolution: {integrity: sha512-8yOKaC2KBbetB7h1k/GBhjE1Ji4q+VVK8BPvhyNGzOQWwcP9139u2V7aDtQuFnGHKUcmmouGudK8f4SGeiadvQ==}
     peerDependencies:
       '@nuxt/content': ^2.13.2
       vite: '*'
 
-  '@unpress/nuxt-server@0.1.11-beta.6':
-    resolution: {integrity: sha512-U58GAW3RsxKnQcjcswE+Xs4HqUhoMHtEv/Gse22KW5uaT1poNDPSRSybrhUm/IPXjsf3Q2e40IqzA0tLyjr82Q==}
+  '@unpress/nuxt-server@0.1.11-beta.7':
+    resolution: {integrity: sha512-O78Yx26kNUx/W3jG3WnFMkkW6jpuFmjVOGsK5YSnVk1ngh12ugS81boLVbfROKk4FOUdz6+fdoN0wyXKjyJIIA==}
 
   '@unrs/resolver-binding-darwin-arm64@1.3.3':
     resolution: {integrity: sha512-EpRILdWr3/xDa/7MoyfO7JuBIJqpBMphtu4+80BK1bRfFcniVT74h3Z7q1+WOc92FuIAYatB1vn9TJR67sORGw==}
@@ -7837,7 +7837,7 @@ snapshots:
       webpack: 5.98.0(esbuild@0.25.2)
       webpack-sources: 3.2.3
 
-  '@unpress/cms@0.1.11-beta.6(@nuxt/devtools@2.3.2(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(@parcel/watcher@2.5.1)(@types/hast@3.0.4)(@types/node@22.13.14)(@unocss/preset-wind@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(@vue/compiler-core@3.5.13)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(monaco-editor@0.52.2)(optionator@0.9.4)(postcss@8.5.3)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(remark@12.0.1)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(unocss@66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))(webpack@5.98.0(esbuild@0.25.2))(yaml@2.7.1)':
+  '@unpress/cms@0.1.11-beta.7(@nuxt/devtools@2.3.2(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(@parcel/watcher@2.5.1)(@types/hast@3.0.4)(@types/node@22.13.14)(@unocss/preset-wind@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(@vue/compiler-core@3.5.13)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(monaco-editor@0.52.2)(optionator@0.9.4)(postcss@8.5.3)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(remark@12.0.1)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(unocss@66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))(webpack@5.98.0(esbuild@0.25.2))(yaml@2.7.1)':
     dependencies:
       '@iconify-json/twemoji': 1.2.2
       '@nuxt/devtools-ui-kit': 2.3.2(@nuxt/devtools@2.3.2(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(@vue/compiler-core@3.5.13)(fuse.js@7.1.0)(idb-keyval@6.2.1)(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))(webpack@5.98.0(esbuild@0.25.2))
@@ -7845,10 +7845,10 @@ snapshots:
       '@nuxtlabs/monarch-mdc': 0.5.0
       '@unocss/nuxt': 66.0.0(magicast@0.3.5)(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))(webpack@5.98.0(esbuild@0.25.2))
       '@unocss/runtime': 66.0.0
-      '@unpress/git-connect': 0.1.11-beta.6
-      '@unpress/kit': 0.1.11-beta.6(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
-      '@unpress/mdc-editor': 0.1.11-beta.6(@types/hast@3.0.4)(@unocss/preset-wind@66.0.0)(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(remark@12.0.1)(unocss@66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))
-      '@unpress/nuxt-layer-pro': 0.1.11-beta.6(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
+      '@unpress/git-connect': 0.1.11-beta.7
+      '@unpress/kit': 0.1.11-beta.7(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
+      '@unpress/mdc-editor': 0.1.11-beta.7(@types/hast@3.0.4)(@unocss/preset-wind@66.0.0)(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(remark@12.0.1)(unocss@66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))
+      '@unpress/nuxt-layer-pro': 0.1.11-beta.7(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
       '@vueuse/core': 13.0.0(vue@3.5.13(typescript@5.8.2))
       fuse.js: 7.1.0
       idb-keyval: 6.2.1
@@ -7943,9 +7943,9 @@ snapshots:
       - xml2js
       - yaml
 
-  '@unpress/git-connect@0.1.11-beta.6': {}
+  '@unpress/git-connect@0.1.11-beta.7': {}
 
-  '@unpress/kit@0.1.11-beta.6(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))':
+  '@unpress/kit@0.1.11-beta.7(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))':
     dependencies:
       '@nuxt/kit': 3.16.1(magicast@0.3.5)
       '@nuxt/schema': 3.16.1
@@ -7955,12 +7955,12 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@unpress/mdc-editor@0.1.11-beta.6(@types/hast@3.0.4)(@unocss/preset-wind@66.0.0)(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(remark@12.0.1)(unocss@66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))':
+  '@unpress/mdc-editor@0.1.11-beta.7(@types/hast@3.0.4)(@unocss/preset-wind@66.0.0)(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(remark@12.0.1)(unocss@66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))':
     dependencies:
       '@nuxt/kit': 3.16.1(magicast@0.3.5)
       '@unocss/preset-icons': 66.0.0
-      '@unpress/mdc-prosemirror': 0.1.11-beta.6(remark@12.0.1)
-      '@unpress/nuxt-server': 0.1.11-beta.6(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
+      '@unpress/mdc-prosemirror': 0.1.11-beta.7(remark@12.0.1)
+      '@unpress/nuxt-server': 0.1.11-beta.7(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
       clsx: 2.1.1
       lorem-ipsum: 2.0.8
       prosekit: 0.8.2(@types/hast@3.0.4)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(vue@3.5.13(typescript@5.8.2))
@@ -7989,7 +7989,7 @@ snapshots:
       - vite
       - vue
 
-  '@unpress/mdc-prosemirror@0.1.11-beta.6(remark@12.0.1)':
+  '@unpress/mdc-prosemirror@0.1.11-beta.7(remark@12.0.1)':
     dependencies:
       defu: 6.1.4
       micromark-util-character: 2.1.1
@@ -8008,7 +8008,7 @@ snapshots:
       - remark
       - supports-color
 
-  '@unpress/nuxt-layer-pro@0.1.11-beta.6(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))':
+  '@unpress/nuxt-layer-pro@0.1.11-beta.7(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))':
     dependencies:
       '@vue-leaflet/vue-leaflet': 0.10.1(leaflet@1.9.4)(typescript@5.8.2)
       chart.js: 4.4.8
@@ -8020,15 +8020,15 @@ snapshots:
       - typescript
       - vue
 
-  '@unpress/nuxt-module@0.1.11-beta.6(yfd2x56zzgbcaj7zntmj7cidyi)':
+  '@unpress/nuxt-module@0.1.11-beta.7(yfd2x56zzgbcaj7zntmj7cidyi)':
     dependencies:
       '@nuxt/content': 2.13.4(db0@0.3.1)(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))
       '@nuxt/kit': 3.16.1(magicast@0.3.5)
-      '@unpress/cms': 0.1.11-beta.6(@nuxt/devtools@2.3.2(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(@parcel/watcher@2.5.1)(@types/hast@3.0.4)(@types/node@22.13.14)(@unocss/preset-wind@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(@vue/compiler-core@3.5.13)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(monaco-editor@0.52.2)(optionator@0.9.4)(postcss@8.5.3)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(remark@12.0.1)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(unocss@66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))(webpack@5.98.0(esbuild@0.25.2))(yaml@2.7.1)
-      '@unpress/git-connect': 0.1.11-beta.6
-      '@unpress/kit': 0.1.11-beta.6(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
-      '@unpress/mdc-editor': 0.1.11-beta.6(@types/hast@3.0.4)(@unocss/preset-wind@66.0.0)(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(remark@12.0.1)(unocss@66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))
-      '@unpress/nuxt-server': 0.1.11-beta.6(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
+      '@unpress/cms': 0.1.11-beta.7(@nuxt/devtools@2.3.2(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(@parcel/watcher@2.5.1)(@types/hast@3.0.4)(@types/node@22.13.14)(@unocss/preset-wind@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(@vue/compiler-core@3.5.13)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(monaco-editor@0.52.2)(optionator@0.9.4)(postcss@8.5.3)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(remark@12.0.1)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(unocss@66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))(webpack@5.98.0(esbuild@0.25.2))(yaml@2.7.1)
+      '@unpress/git-connect': 0.1.11-beta.7
+      '@unpress/kit': 0.1.11-beta.7(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
+      '@unpress/mdc-editor': 0.1.11-beta.7(@types/hast@3.0.4)(@unocss/preset-wind@66.0.0)(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)(prosemirror-view@1.38.1)(remark@12.0.1)(unocss@66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2)))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.2))
+      '@unpress/nuxt-server': 0.1.11-beta.7(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
       defu: 6.1.4
       is-installed-globally: 1.0.0
       vite: 6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1)
@@ -8120,10 +8120,10 @@ snapshots:
       - xml2js
       - yaml
 
-  '@unpress/nuxt-server@0.1.11-beta.6(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))':
+  '@unpress/nuxt-server@0.1.11-beta.7(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))':
     dependencies:
       '@nuxt/kit': 3.16.1(magicast@0.3.5)
-      '@unpress/kit': 0.1.11-beta.6(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
+      '@unpress/kit': 0.1.11-beta.7(magicast@0.3.5)(nuxt@3.16.1(@parcel/watcher@2.5.1)(@types/node@22.13.14)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.38.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1))(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
       defu: 6.1.4
     transitivePeerDependencies:
       - magicast
