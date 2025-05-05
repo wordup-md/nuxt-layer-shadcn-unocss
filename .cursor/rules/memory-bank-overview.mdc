@@ -1,0 +1,17 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Memory Bank Overview
+
+The Memory Bank is the project's documentation backbone, ensuring continuity and clarity across sessions. It consists of the following core files:
+
+- [projectbrief.md](mdc:memory-bank/projectbrief.md): Defines core requirements, goals, and project scope. Source of truth for all documentation.
+- [productContext.md](mdc:memory-bank/productContext.md): Explains why the project exists, the problems it solves, and user experience goals.
+- [systemPatterns.md](mdc:memory-bank/systemPatterns.md): Documents system architecture, key technical decisions, design patterns, and component relationships.
+- [techContext.md](mdc:memory-bank/techContext.md): Details technologies used, development setup, technical constraints, and dependencies.
+- [activeContext.md](mdc:memory-bank/activeContext.md): Tracks current work focus, recent changes, next steps, and active decisions.
+- [progress.md](mdc:memory-bank/progress.md): Monitors what works, what's left to build, current status, and known issues.
+
+These files are interlinked and should be updated as the project evolves. See each file for detailed context.

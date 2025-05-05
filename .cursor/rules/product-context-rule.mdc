@@ -1,0 +1,8 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Product Context Rule
+
+The [productContext.md](mdc:memory-bank/productContext.md) file explains why the project exists, the problems it solves, and the intended user experience. It provides essential context for understanding the project's purpose and how it should function from a user's perspective.

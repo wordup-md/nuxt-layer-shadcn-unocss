@@ -1,0 +1,8 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Active Context Rule
+
+The [activeContext.md](mdc:memory-bank/activeContext.md) file tracks the current work focus, recent changes, next steps, and active decisions. It is updated frequently to reflect the project's current state and guide ongoing development.

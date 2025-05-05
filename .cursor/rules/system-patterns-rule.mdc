@@ -1,0 +1,8 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# System Patterns Rule
+
+The [systemPatterns.md](mdc:memory-bank/systemPatterns.md) file documents the system architecture, key technical decisions, design patterns, and component relationships. It serves as a reference for how the project is structured and the rationale behind major technical choices.

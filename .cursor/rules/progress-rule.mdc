@@ -1,0 +1,8 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Progress Rule
+
+The [progress.md](mdc:memory-bank/progress.md) file monitors what works, what's left to build, the current status, and known issues. It provides a snapshot of project progress and helps prioritize future work.

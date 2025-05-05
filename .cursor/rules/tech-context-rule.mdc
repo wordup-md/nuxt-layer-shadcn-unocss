@@ -1,0 +1,8 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Tech Context Rule
+
+The [techContext.md](mdc:memory-bank/techContext.md) file details the technologies used, development setup, technical constraints, and dependencies. It provides a technical overview for onboarding and maintaining consistency across the project.

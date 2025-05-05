@@ -1,0 +1,8 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Project Brief Rule
+
+The [projectbrief.md](mdc:memory-bank/projectbrief.md) file is the foundation of all project documentation. It defines the core requirements, goals, and scope, serving as the source of truth for project direction and decision-making. All other Memory Bank files build upon the context established here.
