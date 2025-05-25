@@ -53,6 +53,7 @@
     "@nuxt/icon": "^1.12.0",
     "@nuxt/image": "^1.10.0",
     "@nuxtjs/color-mode": "^3.5.2",
+    "@nuxtjs/i18n": "^9.5.4",
     "@unpress/nuxt-module": "0.1.12-beta.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

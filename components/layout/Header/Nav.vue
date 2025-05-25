@@ -11,7 +11,7 @@
       >
         <template v-if="item.links">
           <UiNavigationMenuTrigger class="bg-transparent font-semibold">
-            {{ item.title }}
+            {{ $t(item.title) }}
           </UiNavigationMenuTrigger>
           <UiNavigationMenuContent>
             <ul class="w-[250px] p-2">
@@ -33,10 +33,10 @@
 
                   <div>
                     <div class="font-semibold">
-                      {{ link.title }}
+                      {{ $t(link.title) }}
                     </div>
                     <div class="text-sm opacity-80">
-                      {{ link.description }}
+                      {{ $t(link.description) }}
                     </div>
                   </div>
                 </NuxtLink>
@@ -62,7 +62,7 @@
               (item.showLinkIcon ?? false) && 'pr-6',
             ]"
           >
-            {{ item.title }}
+            {{ $t(item.title) }}
           </div>
         </NuxtLink>
       </UiNavigationMenuItem>

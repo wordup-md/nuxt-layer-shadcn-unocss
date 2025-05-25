@@ -14,6 +14,23 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-01-10',
 
+  // vite: {
+  //   server: {
+  //     fs: {
+  //       allow: [
+  //         // Always allow the project root
+  //         fileURLToPath(new URL('.', import.meta.url)),
+  //         // Allow the parent directory (for monorepos)
+  //         fileURLToPath(new URL('../../..', import.meta.url)),
+  //         // Add any other custom paths you need
+  //       ],
+  //     },
+  //   },
+  //   optimizeDeps: {
+  //     include: ['extend', 'debug'],
+  //   },
+  // },
+
   eslint: {
     config: {
       // Use the generated ESLint config for lint root project as well
@@ -21,11 +38,15 @@ export default defineNuxtConfig({
     },
   },
 
+  i18n: {
+    defaultLocale: 'fr',
+  },
+
   unocss: {
     nuxtLayers: true,
   },
 
   unpress: {
-    autoMountIfDevMode: false,
+    // autoMountIfDevMode: false,
   },
 })

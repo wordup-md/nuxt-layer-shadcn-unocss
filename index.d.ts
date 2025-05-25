@@ -214,6 +214,19 @@ interface DefaultConfig {
      */
     behavior: 'fixed' | 'hide-on-scroll'
     /**
+     * Language switcher configuration
+     */
+    languageSwitcher: {
+      /**
+       * Enable language switcher
+       *
+       * @default false
+       */
+      enable: boolean
+      triggerType: 'icon' | 'text'
+      dropdownType: 'select' | 'popover'
+    }
+    /**
      * Navigation menu items
      *
      * @default []
@@ -539,6 +552,12 @@ interface DefaultConfig {
      * @default 'Search documentation...'
      */
     placeholderDetailed: string
+    /**
+     * Display shortcut key
+     *
+     * @default true
+     */
+    displayShortcut: boolean
   }
 }
 

@@ -19,7 +19,7 @@
         v-if="showTitle && title"
         class="ml-3 self-center font-bold whitespace-nowrap"
       >
-        {{ title }}
+        {{ $t(title) }}
       </div>
     </NuxtLink>
   </div>

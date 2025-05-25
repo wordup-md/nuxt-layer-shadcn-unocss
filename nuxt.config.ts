@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
-    '@unpress/nuxt-module',
+    '@nuxtjs/i18n',
     // 'nuxt-og-image',
   ],
 
@@ -101,6 +101,14 @@ export default defineNuxtConfig({
         semi: false,
       },
     },
+  },
+
+  i18n: {
+    defaultLocale: 'en',
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
+    strategy: 'prefix_except_default',
   },
 
   icon: {

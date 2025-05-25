@@ -9,7 +9,7 @@
     >
       <MDC
         v-if="footer.credits"
-        :value="footer.credits"
+        :value="$t(footer.credits)"
         class="text-sm"
       />
       <span class="flex-1" />
@@ -29,7 +29,7 @@
             :name="link.icon"
             :size="20"
           />
-          <span v-if="link?.title">{{ link.title }}</span>
+          <span v-if="link?.title">{{ $t(link.title) }}</span>
         </UiButton>
       </NuxtLink>
 

@@ -49,6 +49,11 @@ const defaultConfig: DefaultConfig = {
     behavior: 'fixed',
     class: '',
     darkModeToggle: true,
+    languageSwitcher: {
+      enable: false,
+      triggerType: 'icon',
+      dropdownType: 'select',
+    },
     nav: [],
     links: [],
     height: '3.5rem',
@@ -156,6 +161,7 @@ const defaultConfig: DefaultConfig = {
     inAside: false,
     style: 'input',
     placeholder: 'Search...',
+    displayShortcut: true,
     placeholderDetailed: 'Search documentation...',
   },
 }

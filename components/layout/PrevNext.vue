@@ -20,5 +20,5 @@
 
 <script setup lang="ts">
 const { page } = useContent()
-const { prev, next } = useContent()
+const { prev, next } = useI18nDocs()
 </script>

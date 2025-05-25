@@ -33,10 +33,10 @@
 
               <div>
                 <div class="font-semibold">
-                  {{ link.title }}
+                  {{ $t(link.title) }}
                 </div>
                 <div class="text-sm text-muted-foreground">
-                  {{ link.description }}
+                  {{ $t(link.description) }}
                 </div>
               </div>
             </NuxtLink>

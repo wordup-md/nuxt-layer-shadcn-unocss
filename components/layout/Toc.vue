@@ -8,7 +8,7 @@
     <div class="flex flex-col">
       <div v-if="toc?.links.length">
         <p class="mb-2 text-base font-semibold">
-          {{ title }}
+          {{ $t(title) }}
         </p>
 
         <LayoutTocTree
@@ -33,7 +33,7 @@
               :name="link.icon"
               class="mr-1 self-center"
             />
-            {{ link.title }}
+            {{ $t(link.title) }}
             <NuxtIcon
               v-if="link.showLinkIcon ?? true"
               name="lucide:arrow-up-right"
@@ -54,7 +54,7 @@
     :class="{ 'border-b': border }"
   >
     <UiCollapsibleTrigger class="flex w-full px-4 py-3 text-left font-medium">
-      {{ title }}
+      {{ $t(title) }}
       <NuxtIcon
         name="lucide:chevron-right"
         class="ml-auto self-center transition-all"

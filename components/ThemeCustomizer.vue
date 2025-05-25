@@ -2,10 +2,10 @@
   <div class="grid gap-6">
     <div class="grid space-y-1">
       <h1 class="text-lg font-semibold text-foreground">
-        Customize
+        {{ $t('Customize') }}
       </h1>
       <p class="text-sm text-muted-foreground">
-        Pick a style and color for the docs.
+        {{ $t('Pick a style and color for the docs.') }}
       </p>
     </div>
     <div class="space-y-1.5">

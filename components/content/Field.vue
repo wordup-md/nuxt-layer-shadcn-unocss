@@ -13,7 +13,7 @@
           v-if="required"
           class="font-mono text-sm text-muted-foreground"
         >
-          {{ fieldRequiredText }}
+          {{ $t(fieldRequiredText) }}
         </span>
 
         <span class="ml-auto font-mono text-sm text-muted-foreground text-right text-balance">

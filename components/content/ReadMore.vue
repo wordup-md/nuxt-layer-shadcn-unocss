@@ -4,7 +4,7 @@
     :target
     :icon
   >
-    {{ prefix }} <span class="font-semibold">{{ computedTitle }}</span>
+    {{ $t(prefix) }} <span class="font-semibold">{{ computedTitle }}</span>
   </Alert>
 </template>
 
