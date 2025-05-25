@@ -1,11 +1,11 @@
 <template>
   <footer
-    class="site-footer border-t mt-2 p-2"
+    class="site-footer border-t mt-6"
     :class="footer.class"
   >
     <div
       v-if="!tree?.children.length"
-      class="container flex flex-col items-center justify-between gap-2 md:flex-row"
+      class="container flex flex-col items-center justify-between gap-2 md:flex-row p-4 md:px-8"
     >
       <MDC
         v-if="footer.credits"
@@ -49,7 +49,7 @@
       v-else
       :body="tree"
       class="min-h-10"
-      :class="{ 'container grid grid-cols-3 gap-6 items-center': !!tree }"
+      :class="{ 'container grid grid-cols-3 gap-6 p-4 md:px-8': !!tree }"
       :components="{
         'footer-item': FooterItem,
         'footer-submenu-item': FooterSubmenuItem,

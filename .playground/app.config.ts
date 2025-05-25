@@ -31,7 +31,7 @@ export default defineAppConfig({
         light: '/logo.svg',
         dark: '/logo-dark.svg',
       },
-      // class: 'fixed',
+      border: true,
       darkModeToggle: true,
       nav: [{
         title: 'Docs',
@@ -179,11 +179,7 @@ export default defineAppConfig({
         showLinkIcon: true,
       }],
       carbonAds: {
-        enable: true,
-        disableInDev: true,
-        code: 'CW7ITKJN',
-        placement: 'shadcn-docs-nuxtvercelapp',
-        format: 'cover',
+        enable: false,
       },
     },
     search: {
