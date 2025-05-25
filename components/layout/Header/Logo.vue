@@ -3,22 +3,24 @@
     <NuxtLink
       v-if="logo.light && logo.dark"
       to="/"
-      class="logo-container flex transition"
+      class="logo__container flex transition"
     >
-      <NuxtImg
-        :src="logo.light"
-        class="logo logo-light h-7 dark:hidden"
+      <Icon
+        :name="logo.light"
+        size="28"
+        class="logo logo-light h-7 dark:hidden!"
       />
-      <NuxtImg
-        :src="logo.dark"
-        class="logo logo-dark hidden h-7 dark:block"
+      <Icon
+        :name="logo.dark"
+        size="28"
+        class="logo logo-dark h-7 hidden! dark:block!"
       />
-      <span
+      <div
         v-if="showTitle && title"
         class="ml-3 self-center font-bold whitespace-nowrap"
       >
         {{ title }}
-      </span>
+      </div>
     </NuxtLink>
   </div>
 </template>

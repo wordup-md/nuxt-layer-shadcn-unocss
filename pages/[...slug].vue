@@ -66,6 +66,7 @@
               :value="page"
               class="docs-content"
             /> -->
+          <!-- ℹ️ .docs-content is only used for TOC -->
           <ContentCms
             v-else
             :key="page._id"

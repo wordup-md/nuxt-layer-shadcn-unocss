@@ -4,16 +4,16 @@
       v-bind="delegatedProps"
       :class="
         cn(
-          'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
+          'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>.ui-chevron]:rotate-180',
           props.class,
         )
       "
     >
       <slot />
       <slot name="icon">
-        <NuxtIcon
+        <Icon
           name="lucide:chevron-down"
-          class="flex size-4 shrink-0 transition-transform duration-200"
+          class="ui-chevron flex size-4 shrink-0 transition-transform duration-200"
         />
       </slot>
     </AccordionTrigger>

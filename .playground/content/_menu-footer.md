@@ -2,4 +2,4 @@
 title: test
 ---
 
-[tada](/api)
+[tada](/)

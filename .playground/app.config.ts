@@ -13,7 +13,6 @@ export default defineAppConfig({
       },
     },
     theme: {
-      customizable: true,
       color: 'orange',
       radius: 0.5,
     },
@@ -188,7 +187,6 @@ export default defineAppConfig({
       },
     },
     search: {
-      enable: true,
       inAside: false,
     },
   },

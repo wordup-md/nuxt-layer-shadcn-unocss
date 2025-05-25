@@ -8,10 +8,7 @@
 <script lang="ts" setup>
 import type { VueNodeViewProps } from 'prosekit/vue'
 
-// import { useMdcEditor } from '#imports'
-
 const props = defineProps<VueNodeViewProps>()
-
 const { getComponentProps } = useMdcEditor()
 const { model } = getComponentProps(props, {
   id: {
@@ -23,5 +20,3 @@ const { model } = getComponentProps(props, {
   },
 })
 </script>
-
-<style lang="postcss" scoped></style>

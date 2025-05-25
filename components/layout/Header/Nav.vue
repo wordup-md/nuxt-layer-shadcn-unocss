@@ -95,7 +95,7 @@ import HeaderSubmenuItem from './SubmenuItem.vue'
 const { nav } = useConfig().value.header
 
 const menu = '/_menu-header'
-const { data: count } = await useAsyncData(menu, () =>
+const { data: count } = await useAsyncData(menu + '-count', () =>
   queryContent(menu).count(),
 )
 

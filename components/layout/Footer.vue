@@ -65,9 +65,7 @@ import FooterSubmenuItem from './FooterSubmenuItem.vue'
 const { footer } = useConfig().value
 
 const menu = '/_menu-footer'
-const { data: count } = await useAsyncData(menu, () =>
-  queryContent(menu).count(),
-)
+const { data: count } = await useAsyncData(menu + '-count', () => queryContent(menu).count())
 
 let tree = undefined
 if (count.value) {

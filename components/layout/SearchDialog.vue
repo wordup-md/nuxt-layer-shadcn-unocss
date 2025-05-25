@@ -1,6 +1,6 @@
 <template>
   <UiDialog v-model:open="open">
-    <UiDialogContent class="p-0">
+    <UiDialogContent class="p-0 max-w-xl">
       <VisuallyHidden as-child>
         <UiDialogTitle />
       </VisuallyHidden>
@@ -9,7 +9,7 @@
       </VisuallyHidden>
       <UiCommand
         v-model:search-term="input"
-        class="h-svh sm:h-[350px]"
+        class="h-svh sm:h-[50svh]"
       >
         <UiCommandInput
           :loading="searchLoading"
