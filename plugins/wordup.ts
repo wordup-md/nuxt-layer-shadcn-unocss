@@ -1,4 +1,5 @@
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
+  // export default defineNuxtPlugin((nuxtApp) => {
   // nuxtApp.hook('mdc-editor:config', ({ config, editor }: { config: any, editor: any }) => {
   //   config.components.push({
   //     displayName: 'Callout',

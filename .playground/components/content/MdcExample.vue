@@ -67,10 +67,10 @@ const code = computed({
   },
 })
 
-const updateCode = (event: Event) => {
-  md.value = (event.target as HTMLTextAreaElement).innerText
-  console.log('Code updated:', md.value)
-}
+// const updateCode = (event: Event) => {
+//   md.value = (event.target as HTMLTextAreaElement).innerText
+//   console.log('Code updated:', md.value)
+// }
 // function render() {
 //   const slots = _slots?.default?.() || []
 //   const code = slots[0]

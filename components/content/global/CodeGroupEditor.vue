@@ -10,16 +10,16 @@ import type { SetupContext } from 'vue'
 
 const props = defineProps<VueNodeViewProps>()
 
-const { getComponentProps } = useMdcEditor()
-const { model, mdcAttrs } = getComponentProps(props, {
-  id: {
-    type: String,
-  },
-  class: {
-    type: String,
-    default: '',
-  },
-})
+// const { getComponentProps } = useMdcEditor()
+// const { model, mdcAttrs } = getComponentProps(props, {
+//   id: {
+//     type: String,
+//   },
+//   class: {
+//     type: String,
+//     default: '',
+//   },
+// })
 
 const _slots: SetupContext['slots'] = useSlots()
 function render() {

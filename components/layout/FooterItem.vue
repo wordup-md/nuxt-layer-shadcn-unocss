@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const props = defineProps<{
+defineProps<{
   to?: string
   target?: string
   showLinkIcon?: boolean

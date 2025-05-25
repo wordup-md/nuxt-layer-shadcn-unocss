@@ -10,7 +10,8 @@ const isLoggedIn = computed(() => !!client.value)
 
 const path = 'content-doc.json'
 
-const { data: tree, status, error, refresh, clear } = await useAsyncData<NavItem[]>(
+// const { data: tree, status, error, refresh, clear } = await useAsyncData<NavItem[]>(
+const { data: tree } = await useAsyncData<NavItem[]>(
   'admin-docs',
   () => $fetch(`/${path}`), {
     transform: (data) => {

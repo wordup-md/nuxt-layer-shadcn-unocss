@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <UiDialog v-model:open="open">
     <UiDialogContent class="p-0 max-w-2xl">

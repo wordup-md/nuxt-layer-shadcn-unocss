@@ -1,20 +1,33 @@
 <template>
-  <Hero :id="model.id" :announcement="model.announcement" :actions="model.actions" :class="model.class">
+  <Hero
+    :id="model.id"
+    :announcement="model.announcement"
+    :actions="model.actions"
+    :class="model.class"
+  >
     <template #title>
-      <ContentSlot :use="$slots.title" unwrap="p" />
+      <ContentSlot
+        :use="$slots.title"
+        unwrap="p"
+      />
     </template>
     <template #description>
-      <ContentSlot :use="$slots.description" unwrap="p" />
+      <ContentSlot
+        :use="$slots.description"
+        unwrap="p"
+      />
     </template>
     <template #support>
-      <ContentSlot :use="$slots.support" unwrap="p" />
+      <ContentSlot
+        :use="$slots.support"
+        unwrap="p"
+      />
     </template>
   </Hero>
-  
 </template>
 
 <script setup lang="ts">
-import type { VueNodeViewProps } from "prosekit/vue";
+import type { VueNodeViewProps } from 'prosekit/vue'
 
 // defineProps<{
 //   announcement?: {
@@ -32,8 +45,8 @@ import type { VueNodeViewProps } from "prosekit/vue";
 //     target?: string
 //   }]
 // }>()
-const props = defineProps<VueNodeViewProps>();
-const { getComponentProps } = useMdcEditor();
+const props = defineProps<VueNodeViewProps>()
+const { getComponentProps } = useMdcEditor()
 
 const { model } = getComponentProps(props, {
   id: {
@@ -48,7 +61,7 @@ const { model } = getComponentProps(props, {
   actions: {
     type: Array,
   },
-});
+})
 
-defineSlots();
+defineSlots()
 </script>

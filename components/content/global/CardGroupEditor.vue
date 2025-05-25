@@ -30,7 +30,7 @@ import type { VueNodeViewProps } from 'prosekit/vue'
 const props = defineProps<VueNodeViewProps>()
 const { getComponentProps } = useMdcEditor()
 
-const { model, mdcAttrs } = getComponentProps(props, {
+const { mdcAttrs } = getComponentProps(props, {
   id: {
     type: String,
   },
