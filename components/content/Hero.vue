@@ -2,7 +2,7 @@
   <section
     class="hero relative mx-auto flex max-w-[980px] items-center gap-6 mb-8 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20"
     :class="[
-      ($attrs?.class || '').includes('full-width') && 'w-full max-w-full',
+      String($attrs.class).includes('full-width') && 'w-full max-w-full',
       ['left', 'right'].includes(mediaPosition) && 'flex-row',
       mediaPosition === 'right' && 'flex-row-reverse',
       mediaPosition === 'bottom' && 'flex-col-reverse',
@@ -11,6 +11,7 @@
     ]"
   >
     <div
+      v-if="media || $slots.media"
       class="hero__media overflow-hidden"
       :class="{
         'w-5/13 shrink-0': media && (mediaPosition === 'left' || mediaPosition === 'right'),
@@ -28,13 +29,13 @@
       />
     </div>
 
-    <div class="hero__content flex flex-col gap-6 w-full z-1">
+    <div class="hero__content flex flex-col gap-6 w-full z-1 of-hidden">
       <NuxtLink
         v-if="announcement"
         :to="announcement.to"
         :target="announcement.target"
-        class="hero__announcement inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium mx-auto"
-        :class="($attrs?.class || '').includes('full-width') && 'w-max'"
+        class="hero__announcement inline-flex items-center rounded-lg bg-muted bg-opacity-80 px-3 py-1 text-sm font-medium mx-auto"
+        :class="String($attrs.class).includes('full-width') && 'w-max'"
       >
         <template v-if="announcement.icon">
           <Icon
@@ -64,8 +65,8 @@
       </h1>
 
       <span
-        class="hero__description max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl"
-        :class="($attrs?.class || '').includes('full-width') && 'max-w-full'"
+        class="hero__description max-w-[750px] text-center text-lg text-muted-foreground sm:text-2xl"
+        :class="String($attrs.class).includes('full-width') && 'max-w-full'"
       >
         <ContentSlot
           :use="$slots.description"
@@ -83,7 +84,10 @@
           :to="action.to"
           :target="action.target"
         >
-          <UiButton :variant="action.variant">
+          <UiButton
+            :variant="action.variant"
+            size="lg"
+          >
             <Icon
               v-if="action.leftIcon"
               :name="action.leftIcon"
@@ -98,6 +102,17 @@
           </UiButton>
         </NuxtLink>
       </section>
+
+      <div
+        v-if="arrowDown"
+        class="hero__arrow-down text-center mt-8"
+      >
+        <Icon
+          name="lucide:chevron-down"
+          size="64"
+          class="animate-bounce"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -132,6 +147,7 @@ const {
 
   media?: string
   mediaPosition?: 'left' | 'right' | 'top' | 'bottom' | 'cover' | 'center'
+  arrowDown?: boolean
 }>()
 
 defineSlots()
