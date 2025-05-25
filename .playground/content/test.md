@@ -1,5 +1,8 @@
 ---
 title: test
+layout: editorial
+header:
+  position: over
 ---
 
 ::hero
@@ -15,6 +18,9 @@ announcement:
   title: Release v1.0.0
   icon: lucide:party-popper
   to: /getting-started
+class: full-width force-dark
+media: https://picsum.photos/id/62/2000/500
+mediaPosition: cover
 ---
 #title
 Effortless and Beautiful Docs Template.
@@ -23,7 +29,7 @@ Effortless and Beautiful Docs Template.
 Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compatible. Open Source.
 ::
 
-:read-more{title="Nuxt website" to="/api/composables"}
+:read-more{title="Nuxt website" to="/development/composables"}
 
 ::steps
 ### Get Starter Template
@@ -41,6 +47,8 @@ Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compat
   bunx nuxi@latest init <project-name> -t github:ZTL-UwU/shadcn-docs-nuxt-starter
   ```
   :::
+
+{{ $doc.title || 'default' }}
 
   :::alert
   Alternatively, you can clone or download the template from the [GitHub repo](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter).

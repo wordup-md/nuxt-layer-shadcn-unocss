@@ -1,7 +1,9 @@
 ---
 title: Home
 navigation: false
-layout: breakouts
+layout: editorial
+header:
+  position: over
 ---
 
 ::hero

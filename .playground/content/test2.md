@@ -7,3 +7,6 @@ title: test 2
 > test
 ```
 ::
+
+::mdc-replay{content="test"}
+::

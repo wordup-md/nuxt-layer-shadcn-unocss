@@ -1,6 +1,9 @@
 ---
 title: Test 3
+layout: editorial
 toc: false
+aside: false
+breadcrumb: false
 ---
 
 ## Basic
@@ -15,9 +18,6 @@ test
 ---
 to: https://shadcn-vue.com
 ---
-
-
-
 
 ### title
 
