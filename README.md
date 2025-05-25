@@ -1,8 +1,26 @@
 # Nuxt Layer Starter
 
-Fork from [shadcn-docs-nuxt](https://github.com/shadcn/shadcn-docs-nuxt)
-at v0.8.13
+Fork of [shadcn-docs-nuxt](https://github.com/shadcn/shadcn-docs-nuxt) at v0.8.13
 `git diff --name-status 54b80e2e96bbc7249170150fb72e20078629a170`
+
+## Build your website using this layer
+
+- Create a new Nuxt project
+```bash
+npx create-nuxt-app <project-name>
+```
+
+- Install the layer
+```bash
+pnpm add @unpress/nuxt-layer-shadcn-unocss
+```
+
+- Extend the layer in your nuxt.config.ts
+```ts
+defineNuxtConfig({
+  extends: '@unpress/nuxt-layer-shadcn-unocss'
+})
+``` 
 
 ## Setup
 

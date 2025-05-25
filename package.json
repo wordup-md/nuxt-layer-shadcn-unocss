@@ -1,16 +1,16 @@
 {
-  "name": "@unpress/nuxt-layer",
+  "name": "@unpress/nuxt-layer-shadcn-unocss",
   "type": "module",
   "version": "0.1.7-beta.1",
   "author": "Emmanuel Salomon <emmanuel.salomon@gmail.com>",
   "main": "./nuxt.config.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unpress/nuxt-layer.git"
+    "url": "git+https://github.com/unpress/nuxt-layer-shadcn-unocss.git"
   },
-  "homepage": "https://github.com/unpress/nuxt-layer#readme",
+  "homepage": "https://github.com/unpress/nuxt-layer-shadcn-unocss#readme",
   "bugs": {
-    "url": "https://github.com/unpress/nuxt-layer/issues"
+    "url": "https://github.com/unpress/nuxt-layer-shadcn-unocss/issues"
   },
   "keywords": [
     "unpress"
