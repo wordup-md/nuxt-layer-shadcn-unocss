@@ -100,7 +100,11 @@
             :use="$slots.footer"
             unwrap="p"
           />
-          {{ footer }}
+          <MDC
+            v-if="footer"
+            :value="footer"
+            unwrap="p"
+          />
         </UiCardFooter>
 
         <LinkIcon

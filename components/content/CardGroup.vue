@@ -18,11 +18,13 @@
 </template>
 
 <script setup lang="ts">
+import type { ParsedContent } from '@nuxt/content'
+
 const props = defineProps<{
   data?: string
 }>()
 
-const _data = ref<any[] | undefined>(undefined)
+const _data = ref<ParsedContent[] | undefined>(undefined)
 
 if (props.data) {
   const { data } = await useAsyncData('card-group-data-' + String(props.data), () =>
