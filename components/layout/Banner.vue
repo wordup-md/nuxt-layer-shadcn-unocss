@@ -1,45 +1,47 @@
 <template>
   <Transition>
-    <NuxtLink
-      v-if="open"
+    <div
+      v-if="open === true"
       class="app__banner block transition-colors bg-primary/10"
       :class="{
         'hover:cursor-pointer hover:bg-primary/25': to,
         'border-b': border,
       }"
-      :to
-      @click.prevent="navigate"
     >
-      <div
-        class="container flex h-12 max-w-screen-2xl items-center justify-between"
-      >
-        <div class="hidden lg:block" />
-        <div class="text-sm">
-          <MDC
-            :value="content"
-            class="flex items-center text-primary text-lg"
-          />
-        </div>
+      <div class="container h-10 flex items-center justify-between px-4 md:px-8">
+        <NuxtLink
+
+          :to
+          @click.prevent="navigate"
+        >
+          <div class="hidden lg:block" />
+          <div class="text-sm">
+            <MDC
+              :value="content"
+              class="flex items-center text-primary text-lg"
+            />
+          </div>
+        </NuxtLink>
+
         <UiButton
           v-if="showClose"
           variant="ghost"
-          class="z-40 size-10 p-2 [--accent:var(--primary)] !bg-opacity-25"
+          class="z-40 size-10 p-2 [--accent:var(--primary)] !bg-opacity-25 rounded-none"
           aria-label="Close banner"
-          @click.prevent="open = false"
+          @click.prevent="open = Date.now()"
         >
           <NuxtIcon
             name="lucide:x"
             size="36"
           />
         </UiButton>
-        <div v-else />
       </div>
-    </NuxtLink>
+    </div>
   </Transition>
 </template>
 
 <script setup lang="ts">
-const open = useCookie<boolean>('banner-open', { default: () => true })
+const open = useCookie<boolean | number>('banner-open', { default: () => true })
 const { showClose, content, to, target, border, height } = useConfig().value.banner
 
 function navigate() {
@@ -56,7 +58,7 @@ function navigate() {
 watch(open, () => {
   useHead({
     bodyAttrs: {
-      style: `--banner-height: ${open.value ? height : '0px'};`,
+      style: `--banner-height: ${open.value === true ? height : '0px'};`,
     },
   })
 }, { immediate: true })
