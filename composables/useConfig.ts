@@ -45,6 +45,8 @@ const defaultConfig: DefaultConfig = {
     },
     showTitleInMobile: false,
     border: false,
+    position: null,
+    behavior: 'fixed',
     class: '',
     darkModeToggle: true,
     nav: [],

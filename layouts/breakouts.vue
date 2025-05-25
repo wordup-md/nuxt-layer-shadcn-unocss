@@ -52,11 +52,10 @@
   }
 } */
 
-.header-above {
+.header-over {
   margin-top: calc((var(--header-height) + var(--banner-height)) * -1);
-}
-
-.header-above .content-grid > :first-child {
-  padding-top: calc(var(--header-height) + var(--banner-height) + 6rem);
+  & .content-grid > :first-child {
+    padding-top: calc(var(--header-height) + var(--banner-height) + 6rem);
+  }
 }
 </style>

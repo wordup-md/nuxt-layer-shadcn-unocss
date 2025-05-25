@@ -195,11 +195,24 @@ interface DefaultConfig {
      */
     class: string
     /**
+     * Position of header
+     *
+     * @default null
+     * @value 'over' The header is positioned over the content
+     */
+    position: 'over' | 'floating' | null
+    /**
      * Height of header
      *
      * @default '3.5rem' // h-14
      */
     height: string
+    /**
+     * Behavior of header
+     *
+     * @default 'fixed'
+     */
+    behavior: 'fixed' | 'hide-on-scroll'
     /**
      * Navigation menu items
      *
