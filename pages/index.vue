@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout :class="page.header.position === 'over' && 'header-over'">
+  <NuxtLayout :class="page.header?.position === 'over' && 'header-over'">
     <ContentCms
       :key="page._id"
       :value="page"

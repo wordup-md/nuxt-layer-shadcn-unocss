@@ -93,7 +93,7 @@
               :name="action.leftIcon"
               class="mr-1"
             />
-            {{ action.name }}
+            <span>{{ action.name }}</span>
             <Icon
               v-if="action.rightIcon"
               :name="action.rightIcon"
