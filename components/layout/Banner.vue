@@ -2,39 +2,39 @@
   <Transition>
     <div
       v-if="open === true"
-      class="app__banner block transition-colors bg-primary/10"
+      class="app__banner block relative h-[var(--banner-height)] transition-colors bg-primary/10"
       :class="{
         'hover:cursor-pointer hover:bg-primary/25': to,
         'border-b': border,
       }"
     >
-      <div class="container h-10 flex items-center justify-between px-4 md:px-8">
-        <NuxtLink
+      <NuxtLink
+        :to
+        class="container flex items-stretch w-full md:px-8 h-full"
+        @click.stop="navigate"
+      >
+        <div class="hidden lg:block" />
+        <MDC
+          :value="content"
+          class="flex items-center justify-center text-primary text-lg w-full"
+        />
+      </NuxtLink>
 
-          :to
-          @click.prevent="navigate"
-        >
-          <div class="hidden lg:block" />
-          <div class="text-sm">
-            <MDC
-              :value="content"
-              class="flex items-center text-primary text-lg"
+      <div class="absolute right-0 top-0 w-full h-full">
+        <div class="container h-full flex items-stretch justify-end">
+          <UiButton
+            v-if="showClose"
+            variant="ghost"
+            class="z-40 h-auto px-3 [--accent:var(--primary)] !bg-opacity-25 rounded-none"
+            aria-label="Close banner"
+            @click.stop="open = Date.now()"
+          >
+            <NuxtIcon
+              name="lucide:x"
+              size="24"
             />
-          </div>
-        </NuxtLink>
-
-        <UiButton
-          v-if="showClose"
-          variant="ghost"
-          class="z-40 size-10 p-2 [--accent:var(--primary)] !bg-opacity-25 rounded-none"
-          aria-label="Close banner"
-          @click.prevent="open = Date.now()"
-        >
-          <NuxtIcon
-            name="lucide:x"
-            size="36"
-          />
-        </UiButton>
+          </UiButton>
+        </div>
       </div>
     </div>
   </Transition>

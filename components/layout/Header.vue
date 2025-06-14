@@ -19,7 +19,7 @@
     <LayoutBanner v-if="config.banner.enable" />
 
     <div
-      class="flex h-14 items-center justify-between gap-2 px-4 md:px-8"
+      class="flex h-[var(--header-height)] items-center justify-between gap-2 px-4 md:px-8"
       :class="{
         'border-b lg:border-none': config.header.border,
         'container': config.main.padded,
@@ -110,7 +110,6 @@ const scrollUp = computed(() => {
       startingScrollUpPosition = y.value
     }
     if (startingScrollUpPosition - y.value > scrollUpOffset) {
-      console.log(timelineScrollRangeExceeded.value, isScrollingUp)
       if (timelineScrollRangeExceeded.value || scrollUp.value) isScrollingUp = true
     }
   }
