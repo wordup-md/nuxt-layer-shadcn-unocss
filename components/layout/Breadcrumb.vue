@@ -16,6 +16,11 @@
               :size="breadcrumb.iconSize || config.main.breadCrumb.iconSize || 14"
               :name="breadcrumb.icon"
             />
+            <Icon
+              v-if="(breadcrumb.image && showImage)"
+              :size="breadcrumb.iconSize || config.main.breadCrumb.iconSize || 14"
+              :name="breadcrumb.image"
+            />
             {{ breadcrumb.title }}
           </NuxtLink>
         </UiBreadcrumbItem>
@@ -27,6 +32,10 @@
 </template>
 
 <script setup lang="ts">
+const { showImage = false } = defineProps<{
+  showImage?: boolean
+}>()
+
 const route = useRoute()
 const config = useConfig()
 

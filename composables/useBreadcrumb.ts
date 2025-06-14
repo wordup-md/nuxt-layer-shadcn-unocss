@@ -1,6 +1,8 @@
-export function useBreadcrumb(url: string): BreadcrumbItem[] {
+import type { NavItem } from '@nuxt/content'
+
+export function useBreadcrumb(url: string, navigation?: NavItem[]): BreadcrumbItem[] {
   const config = useConfig()
-  const { navigation } = useContent()
+  const { navigation: _nav } = useContent()
   const breadcrumbItems: BreadcrumbItem[] = []
 
   // Remove empty segments
@@ -8,7 +10,7 @@ export function useBreadcrumb(url: string): BreadcrumbItem[] {
 
   // Construct breadcrumb for each segment
   let href = ''
-  let nav = navigation.value
+  let nav = navigation || _nav.value
 
   if (!nav) return []
 
@@ -22,6 +24,7 @@ export function useBreadcrumb(url: string): BreadcrumbItem[] {
       title: page?.title ?? segment,
       href,
       icon: page?.icon,
+      image: page?.image,
     })
   }
 
