@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 
 // Don't inherit attrs, we want to use it with cn
 defineOptions({
@@ -21,11 +21,11 @@ defineProps<{
     )"
   > -->
   <section
-    :class="[
+    :class="cn(
       'relative p-6 mt-6',
       classToString($attrs.class),
       color,
-    ]"
+    )"
   >
     <div>
       <prose-h2 class="text-2xl font-bold mb-6">

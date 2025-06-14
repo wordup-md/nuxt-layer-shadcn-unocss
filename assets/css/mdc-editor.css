@@ -8,7 +8,8 @@
     outline: none;
   }
 
-  & > p:not(:has(span)):not(:first-child) {
+  /* & > p:not(:has(span)):not(:first-child) { */
+  & > p:not(:first-child) {
     margin-top: 1.5rem;
   }
 
