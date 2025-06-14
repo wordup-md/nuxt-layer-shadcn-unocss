@@ -3,12 +3,12 @@
     <div
       class="h-full flex-1 items-start px-4 md:grid md:gap-6 md:px-8 lg:gap-10"
       :class="[
-        (page?.aside ?? true)
+        showAside
           && 'md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)]',
       ]"
     >
       <aside
-        v-if="page?.aside ?? (page?.body && true)"
+        v-if="showAside"
         class="sticky hidden z-30 w-full shrink-0 overflow-y-auto top-[calc(var(--header-height)+var(--banner-height))] md:sticky md:block"
       >
         <LayoutAside :is-mobile="false" />
@@ -93,6 +93,10 @@
 <script setup lang="ts">
 const { page } = useContent()
 const config = useConfig()
+
+const showAside = computed(() => {
+  return (Object.keys(config.value.aside).length || page.value?.aside) && (page.value?.body && true)
+})
 
 useSeoMeta({
   title: `${page.value?.title ?? '404'} - ${config.value.site.name}`,
