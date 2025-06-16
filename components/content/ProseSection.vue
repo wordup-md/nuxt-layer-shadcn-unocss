@@ -8,33 +8,54 @@ defineOptions({
 
 defineProps<{
   title?: string
-  color?: string
 }>()
+
+defineSlots()
 </script>
 
 <template>
-  <!-- <section
-    :class="cn(
-      'relative p-6 mt-6',
-      classToString($attrs.class),
-      color,
-    )"
-  > -->
   <section
+    class="prose-section"
     :class="cn(
       'relative p-6 mt-6',
       classToString($attrs.class),
-      color,
     )"
   >
     <div>
-      <prose-h2 class="text-2xl font-bold mb-6">
+      <div
+        v-if="$slots.before"
+        class="prose-section__before"
+      >
+        <ContentSlot
+          :use="$slots.before"
+          unwrap="p"
+        />
+      </div>
+
+      <ProseH2 v-if="title">
         {{ title }}
-      </prose-h2>
+      </ProseH2>
 
       <!-- <span class="absolute bg-muted-foreground/05 -left-2 -top-1 -bottom-1 -right-2 md:-left-3 md:-top-0 md:-bottom-0 md:-right-3 -rotate-1" /> -->
-      <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,auto))] gap-6 [&>*]:mt-0!">
-        <slot />
+      <!-- <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,auto))] gap-6 [&>*]:mt-0!"> -->
+      <div
+        v-if="$slots.default"
+        class="prose-section__content"
+      >
+        <ContentSlot
+          :use="$slots.default"
+          unwrap="p"
+        />
+      </div>
+
+      <div
+        v-if="$slots.after"
+        class="prose-section__after"
+      >
+        <ContentSlot
+          :use="$slots.after"
+          unwrap="p"
+        />
       </div>
     </div>
   </section>
