@@ -399,10 +399,10 @@ interface DefaultConfig {
       /**
        * Where to show edit link
        *
-       * @values 'docsFooter', 'toc'
-       * @default ['docsFooter']
+       * @values 'pageFooter', 'toc'
+       * @default ['pageFooter']
        */
-      placement: ('docsFooter' | 'toc')[]
+      placement: ('pageFooter' | 'toc')[]
     }
     /**
      * Package managers to show in code blocks

@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="enabledDocsFooter"
+    v-if="enabledPageFooter"
     class="mb-6 w-fit"
   >
     <NuxtLink
@@ -19,5 +19,5 @@
 </template>
 
 <script setup lang="ts">
-const { url, enabledDocsFooter, text, icon } = useEditLink()
+const { url, enabledPageFooter, text, icon } = useEditLink()
 </script>

@@ -90,7 +90,7 @@ const defaultConfig: DefaultConfig = {
       pattern: '',
       text: 'Edit this page',
       icon: 'lucide:square-pen',
-      placement: ['docsFooter'],
+      placement: ['pageFooter'],
     },
     pm: ['npm', 'pnpm', 'bun', 'yarn'],
     codeIcon: {

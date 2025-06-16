@@ -83,7 +83,7 @@
   animation-range: 0 25dvh;
 }
 
-.docs-content:not(.EDITOR_CONTENT) > * {
+.page-content:not(.EDITOR_CONTENT) > * {
   --una-enter-translate-y: 5dvh;
   --una-enter-opacity: 0.5;
   animation: una-in linear;

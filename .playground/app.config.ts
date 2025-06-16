@@ -100,7 +100,7 @@ export default defineAppConfig({
         pattern: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/edit/main/content/:path',
         text: 'Edit this page',
         icon: 'lucide:square-pen',
-        placement: ['docsFooter', 'toc'],
+        placement: ['pageFooter', 'toc'],
       },
       codeIcon: {
         'package.json': 'vscode-icons:file-type-node',

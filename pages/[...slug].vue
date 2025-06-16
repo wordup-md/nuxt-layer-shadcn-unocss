@@ -74,7 +74,7 @@
             class="docs-content"
           />
 
-          <LayoutDocsFooter />
+          <LayoutPageFooter />
         </article>
 
         <div

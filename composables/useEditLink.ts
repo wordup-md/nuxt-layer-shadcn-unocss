@@ -13,8 +13,8 @@ export function useEditLink() {
   const enabledToc = computed(
     () => enabled.value && placement.includes('toc'),
   )
-  const enabledDocsFooter = computed(
-    () => enabled.value && placement.includes('docsFooter'),
+  const enabledPageFooter = computed(
+    () => enabled.value && placement.includes('pageFooter'),
   )
 
   return {
@@ -22,6 +22,6 @@ export function useEditLink() {
     text,
     icon,
     enabledToc,
-    enabledDocsFooter,
+    enabledPageFooter,
   }
 }

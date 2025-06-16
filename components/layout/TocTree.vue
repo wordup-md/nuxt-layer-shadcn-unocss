@@ -33,10 +33,10 @@ const { activeHeadings, updateHeadings } = useScrollspy()
 
 onMounted(() =>
   updateHeadings([
-    ...document.querySelectorAll('.docs-content h1'),
-    ...document.querySelectorAll('.docs-content h2'),
-    ...document.querySelectorAll('.docs-content h3'),
-    ...document.querySelectorAll('.docs-content h4'),
+    ...document.querySelectorAll('.page-content h1'),
+    ...document.querySelectorAll('.page-content h2'),
+    ...document.querySelectorAll('.page-content h3'),
+    ...document.querySelectorAll('.page-content h4'),
   ]),
 )
 </script>
