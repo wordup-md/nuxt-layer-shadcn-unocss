@@ -24,7 +24,7 @@ export function useBreadcrumb(url: string, navigation?: NavItem[]): BreadcrumbIt
       title: page?.title ?? segment,
       href,
       icon: page?.icon,
-      image: page?.image,
+      media: page?.media,
     })
   }
 

@@ -591,6 +591,7 @@ interface BreadcrumbItem {
   title: string
   href: string
   icon?: string
+  media?: string
   classes?: string
   iconSize?: number
 }

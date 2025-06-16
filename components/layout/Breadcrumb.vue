@@ -17,9 +17,9 @@
               :name="breadcrumb.icon"
             />
             <Icon
-              v-if="(breadcrumb.image && showImage)"
+              v-if="(breadcrumb.media && showImage)"
               :size="breadcrumb.iconSize || config.main.breadCrumb.iconSize || 14"
-              :name="breadcrumb.image"
+              :name="breadcrumb.media"
             />
             {{ breadcrumb.title }}
           </NuxtLink>
