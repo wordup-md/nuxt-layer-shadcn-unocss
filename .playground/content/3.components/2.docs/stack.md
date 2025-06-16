@@ -71,7 +71,6 @@ Stackable components:
 - `div`
 - Code Blocks
 - `alert`
-- `callout`
 - `read-more`
 - `code-group`
 - `card`
