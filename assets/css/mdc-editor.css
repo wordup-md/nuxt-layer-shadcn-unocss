@@ -62,10 +62,12 @@
     padding-top: 0.5rem;
     margin-left: 1.5rem;
 
-    &:first-child,
-    :not(&) + & {
+    &:first-child {
       padding-top: 1.5rem;
     }
+  }
+  &:not(.prosemirror-flat-list) + .prosemirror-flat-list {
+    padding-top: 1.5rem;
   }
 
   /* CodeGroupEditor */
@@ -75,6 +77,10 @@
   & div[data-node-view-root="true"]:first-child > div > .\[\&\:not\(\:first-child\)\]\:mt-5 {
     margin-top: 0rem;
   }
+}
+
+.underline-none {
+  text-decoration: none !important;
 }
 
 .animate-scroll-fade-in-up {
