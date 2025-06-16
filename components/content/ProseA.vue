@@ -3,13 +3,15 @@
     :to="href"
     :target="target"
     :external="external"
-    class="font-semibold underline underline-offset-4"
+    :class="cn('font-semibold underline underline-offset-4', String($attrs.class || ''))"
   >
     <slot />
   </NuxtLink>
 </template>
 
 <script setup lang="ts">
+import { cn } from '@/lib/utils'
+
 const {
   href = '',
   external = false,
