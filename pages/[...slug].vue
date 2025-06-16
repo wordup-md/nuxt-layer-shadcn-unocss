@@ -28,9 +28,7 @@
         v-else
         class="relative mt-3"
         :class="[
-          config.toc.enable
-            && (page.toc ?? true)
-            && 'lg:grid lg:grid-cols-[1fr_220px] lg:gap-14',
+          showToc && 'lg:grid lg:grid-cols-[1fr_220px] lg:gap-14',
         ]"
       >
         <article class="mx-auto w-full min-w-0">
@@ -64,14 +62,14 @@
               v-else
               :key="page._id"
               :value="page"
-              class="docs-content"
+              class="page-content"
             /> -->
-          <!-- ℹ️ .docs-content is only used for TOC -->
+          <!-- ℹ️ .page-content is only used for TOC -->
           <ContentCms
             v-else
             :key="page._id"
             :value="page"
-            class="docs-content"
+            class="page-content"
           />
 
           <LayoutPageFooter
@@ -80,7 +78,7 @@
         </article>
 
         <div
-          v-if="config.toc.enable && (page.toc ?? true)"
+          v-if="showToc"
           class="text-sm hidden lg:block lg:sticky lg:top-[calc(var(--header-height)+var(--banner-height)+1.75rem)] h-min max-h-[calc(100vh-var(--header-height)-var(--banner-height)-6rem)]"
         >
           <div class="overflow-hidden">
@@ -99,6 +97,11 @@ const config = useConfig()
 const showAside = computed(() => {
   return (Object.keys(config.value.aside).length || page.value?.aside) && (page.value?.body && true)
 })
+
+const showToc = computed(() => {
+  return (config.value.toc.enable && page.value?.toc !== false) || !!page.value?.toc
+})
+
 const showPageFooter = computed(() => {
   return (config.value.main.pageFooter.enable && page.value?.body) || !!page.value?.pageFooter
 })
