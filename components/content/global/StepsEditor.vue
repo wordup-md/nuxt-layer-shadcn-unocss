@@ -1,21 +1,24 @@
 <template>
   <div class="relative">
     <UiEditorDropdown
-      v-model="mdcAttrs.level"
+      v-model="levelModel"
       chevron
       tooltip="Level"
       placement="bottom-end"
-      :items="levels"
+      :items="levels.map(level => `H${level}`)"
       class="absolute right-1 top-1 z-10 opacity-25 transition-opacity group-hover:opacity-100"
     >
-      <span class="text-xs font-mono capitalize">h{{ model.level }}</span>
+      <span class="text-xs font-mono capitalize">{{ levelModel }}</span>
     </UiEditorDropdown>
 
     <Steps
       v-bind="model"
-      :class="levelClass[model.level]"
+      :class="levelClass[model.level as keyof typeof levelClass]"
     >
-      <div :ref="props.contentRef" />
+      <div
+        :ref="props.contentRef"
+        class="[&>div]:min-h-5.5 [&_p]:mt-6"
+      />
     </Steps>
   </div>
 </template>
@@ -50,6 +53,15 @@ const { model, mdcAttrs } = getComponentProps(props, {
     validator(value: string) {
       return levels.includes(value)
     },
+  },
+})
+
+const levelModel = computed({
+  get() {
+    return `H${model.level}`
+  },
+  set(value) {
+    mdcAttrs.level = value.replace('H', '')
   },
 })
 </script>

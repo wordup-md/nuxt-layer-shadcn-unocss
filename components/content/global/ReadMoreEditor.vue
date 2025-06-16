@@ -34,7 +34,7 @@ import type { VueNodeViewProps } from 'prosekit/vue'
 const props = defineProps<VueNodeViewProps>()
 const { getComponentProps } = useMdcEditor()
 
-const { model } = getComponentProps(props, {
+const { mdcAttrs, model } = getComponentProps(props, {
   id: {
     type: String,
   },
@@ -62,9 +62,9 @@ const { model } = getComponentProps(props, {
 
 function updatePrefix(event: Event) {
   const target = event.target as HTMLDivElement
-  model.prefix = target.innerHTML
+  mdcAttrs.prefix = target.innerHTML
 }
 function updateLink(to: string) {
-  model.to = to
+  mdcAttrs.to = to
 }
 </script>
