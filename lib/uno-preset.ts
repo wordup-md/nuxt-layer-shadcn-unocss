@@ -76,7 +76,7 @@ export default definePreset((options?: MyPresetOptions) => {
         return `
           [counter-increment:step]
           before:[content:counter(step)] before:absolute before:w-9 before:h-9 before:bg-muted before:rounded-full before:font-mono before:font-medium before:text-center before:text-base before:inline-flex before:items-center before:justify-center before:-indent-px before:border-4 before:border-background
-          before:-ml-[50px] before:-mt-1
+          before:-ml-[50px] before:font-bold
         `
       }],
     ],
