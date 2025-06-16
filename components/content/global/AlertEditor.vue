@@ -12,7 +12,10 @@
     </UiEditorDropdown>
 
     <Alert v-bind="model">
-      <div :ref="props.contentRef" />
+      <p
+        :ref="props.contentRef"
+        class="[&>div]:min-h-5.5"
+      />
     </Alert>
   </div>
 </template>

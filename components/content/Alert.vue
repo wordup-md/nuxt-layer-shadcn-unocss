@@ -9,7 +9,10 @@
     ]"
     @click="alertClick"
   >
-    <div class="flex flex-row gap-2">
+    <div
+      v-if="title"
+      class="flex flex-row gap-2"
+    >
       <Icon
         v-if="icon && title"
         :name="icon"
@@ -17,7 +20,6 @@
       />
 
       <UiAlertTitle
-        v-if="title"
         class="font-semibold mb-3"
       >
         {{ title }}
