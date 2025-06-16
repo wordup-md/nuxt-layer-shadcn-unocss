@@ -92,6 +92,10 @@ const defaultConfig: DefaultConfig = {
       icon: 'lucide:square-pen',
       placement: ['pageFooter'],
     },
+    pageFooter: {
+      enable: true,
+      restrictSameLevel: false,
+    },
     pm: ['npm', 'pnpm', 'bun', 'yarn'],
     codeIcon: {
       'package.json': 'vscode-icons:file-type-node',

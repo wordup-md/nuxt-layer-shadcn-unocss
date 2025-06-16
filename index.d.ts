@@ -405,6 +405,23 @@ interface DefaultConfig {
       placement: ('pageFooter' | 'toc')[]
     }
     /**
+     * Show page footer
+     */
+    pageFooter: {
+      /**
+       * Enable page footer
+       *
+       * @default true
+       */
+      enable: boolean
+      /**
+       * Restrict page footer to same level
+       *
+       * @default false
+       */
+      restrictSameLevel: boolean
+    }
+    /**
      * Package managers to show in code blocks
      *
      * @values 'npm', 'pnpm', 'bun', 'yarn'
