@@ -10,14 +10,13 @@
         mediaPosition === 'bottom' && 'flex-col-reverse',
         ['cover', 'center'].includes(mediaPosition) && 'bg-opacity-0',
         mediaPosition === 'center' && 'text-center items-center flex-row p-8',
-        $attrs.class,
       ]"
     >
       <div
         v-if="media || $slots.media"
-        class="overflow-hidden"
+        class="card__media overflow-hidden"
         :class="{
-          'w-5/13 shrink-0': media && (mediaPosition === 'left' || mediaPosition === 'right'),
+          'w-5/13 shrink-0': (media || $slots.media) && (mediaPosition === 'left' || mediaPosition === 'right'),
           'absolute inset-0': ['cover', 'center'].includes(mediaPosition),
         }"
       >
@@ -40,6 +39,7 @@
           v-if="
             icon || title || $slots.title || description || $slots.description
           "
+          class="card__header"
           :class="{
             'flex-row gap-5': iconPosition === 'left',
             'items-center': mediaPosition === 'center',
@@ -52,9 +52,18 @@
             :class="{ 'mb-2': iconPosition !== 'left' && (title || $slots.title) }"
           />
 
-          <div class="flex flex-col gap-1.5 w-full">
+          <div class="flex flex-col gap-2 w-full">
+            <div
+              v-if="date"
+              class="card__date text-sm text-muted-foreground"
+              style="text-decoration: none !important"
+            >
+              {{ new Intl.DateTimeFormat(locale, { dateStyle: 'long' }).format(new Date(date)) }}
+            </div>
+
             <UiCardTitle
               v-if="title || $slots.title"
+              class="card__title"
               :class="{ 'group-hover/card:underline': to, 'pr-4': ['left', 'bottom'].includes(mediaPosition) && to }"
             >
               <ContentSlot
@@ -68,7 +77,10 @@
               />
             </UiCardTitle>
 
-            <UiCardDescription v-if="description || $slots.description">
+            <UiCardDescription
+              v-if="description || $slots.description"
+              class="card__description"
+            >
               <ContentSlot
                 :use="$slots.description"
                 unwrap="p"
@@ -86,6 +98,7 @@
 
         <UiCardContent
           v-if="content || $slots.content || $slots.default"
+          class="card__content"
           :class="{ 'py-3': !icon && !(title || $slots.title) && !(description || $slots.description) }"
         >
           <ContentSlot unwrap="p" />
@@ -95,7 +108,10 @@
           />
         </UiCardContent>
 
-        <UiCardFooter v-if="footer || $slots.footer">
+        <UiCardFooter
+          v-if="footer || $slots.footer"
+          class="card__footer"
+        >
           <ContentSlot
             :use="$slots.footer"
             unwrap="p"
@@ -117,7 +133,9 @@
     </UiCard>
   </UseTemplate>
 
-  <div class="group/card group-has-[div]:mt-0 [&:not(:first-child)]:mt-5">
+  <div
+    :class="cn('group/card group-has-[div]:mt-0 [&:not(:first-child)]:mt-5', String($attrs.class || ''))"
+  >
     <NuxtLink
       v-if="to"
       :to
@@ -126,11 +144,14 @@
     >
       <CardInner />
     </NuxtLink>
+
     <CardInner v-else />
   </div>
 </template>
 
 <script setup lang="ts">
+import { cn } from '@/lib/utils'
+
 defineOptions({
   inheritAttrs: false,
 })
@@ -146,6 +167,7 @@ const {
 } = defineProps<{
   title?: string
   description?: string
+  date?: string
   content?: string
   footer?: string
 
@@ -163,6 +185,8 @@ const {
 
   inStack?: boolean
 }>()
+
+const { locale } = useI18nDocs()
 
 defineSlots()
 
