@@ -2,6 +2,7 @@
   <NuxtLink
     :to="to || href"
     :target="(blank && '_blank') || target"
+    class="button-link block"
   >
     <UiButton
       :variant
@@ -12,6 +13,9 @@
         :name="leftIcon"
         class="mr-1"
       />
+      <span v-if="title">
+        {{ title }}
+      </span>
       <ContentSlot unwrap="p" />
       <Icon
         v-if="rightIcon"
@@ -28,6 +32,7 @@ import type { ButtonVariants } from '../ui/button'
 defineProps<{
   variant?: ButtonVariants['variant']
   size?: ButtonVariants['size']
+  title?: string
   leftIcon?: string
   rightIcon?: string
   to?: string
