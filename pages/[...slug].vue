@@ -72,9 +72,7 @@
             class="page-content"
           />
 
-          <LayoutPageFooter
-            v-if="showPageFooter"
-          />
+          <LayoutPageFooter />
         </article>
 
         <div
@@ -100,10 +98,6 @@ const showAside = computed(() => {
 
 const showToc = computed(() => {
   return (config.value.toc.enable && page.value?.toc !== false) || !!page.value?.toc
-})
-
-const showPageFooter = computed(() => {
-  return (config.value.main.pageFooter.enable && page.value?.body) || !!page.value?.pageFooter
 })
 
 useSeoMeta({
