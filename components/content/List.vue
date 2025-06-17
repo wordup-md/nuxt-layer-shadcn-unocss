@@ -23,10 +23,10 @@
 </template>
 
 <script setup lang="ts">
-import type { QueryBuilder, MarkdownParsedContent } from '@nuxt/content'
+import type { QueryBuilderParams, ParsedContent } from '@nuxt/content'
 import { cn } from '@/lib/utils'
 
-type ListQuery = QueryBuilder & { sort?: { date?: 'ASC' | 'DESC' | 1 | -1 } }
+type ListQuery = QueryBuilderParams & { sort?: { date?: 'ASC' | 'DESC' | 1 | -1 } }
 
 const {
   path = '',
@@ -42,14 +42,14 @@ const {
   itemClass?: string
 }>()
 
-const filterList = (list: MarkdownParsedContent[]) => {
+const filterList = (list: ParsedContent[]) => {
   return list.filter(item => !item?._file?.includes('index.md'))
 }
 
-const sortedList = (list: MarkdownParsedContent[]) => {
+const sortedList = (list: ParsedContent[]) => {
   if (query?.sort && 'date' in query.sort) {
     return [...list].sort((a, b) =>
-      query.sort.date === 'DESC' || query.sort.date === -1
+      query.sort!.date === 'DESC' || query.sort!.date === -1
         ? new Date(b.date).getTime() - new Date(a.date).getTime()
         : new Date(a.date).getTime() - new Date(b.date).getTime(),
     )
