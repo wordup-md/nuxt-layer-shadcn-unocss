@@ -52,7 +52,7 @@
     }
   }
 
-  & p a {
+  & p > a {
     text-underline-offset: 4px;
     text-decoration-line: underline;
     font-weight: 600;

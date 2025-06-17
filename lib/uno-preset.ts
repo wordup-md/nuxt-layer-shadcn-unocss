@@ -74,11 +74,20 @@ export default definePreset((options?: MyPresetOptions) => {
     shortcuts: [
       [/^step$/, () => {
         return `
-          [counter-increment:step]
-          before:[content:counter(step)] before:absolute before:w-9 before:h-9 before:bg-muted before:rounded-full before:font-mono before:font-medium before:text-center before:text-base before:inline-flex before:items-center before:justify-center before:-indent-px before:border-4 before:border-background
-          before:-ml-[50px] before:font-bold
+          [counter-increment:step] before:[content:counter(step)]
+          before:absolute before:-ml-[51px] before:w-9 before:h-9 before:bg-primary before:rounded-full
+          before:border-4 before:border-background
+          before:text-white before:font-mono before:font-bold before:text-center before:text-base before:-indent-px before:leading-[1.9rem]
         `
       }],
+      [/^footnotes$/, () => {
+        return `
+          text-sm
+        `
+      }],
+    ],
+    safelist: [
+      'footnotes',
     ],
     preflights: [
       {

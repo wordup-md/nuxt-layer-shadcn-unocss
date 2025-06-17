@@ -1,6 +1,6 @@
 <template>
   <div
-    class="[&>li]:step ml-4 border-l pl-8 [counter-reset:step] [&:not(:first-child)]:mt-6 [&:not(:last-child)]:mb-12"
+    class="steps [&>li]:step ml-4 border-l-2 pl-8 [counter-reset:step] [&:not(:first-child)]:mt-6 [&:not(:last-child)]:mb-12"
     :class="levelClass[level]"
   >
     <slot />

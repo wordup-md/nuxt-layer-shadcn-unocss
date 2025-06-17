@@ -1,5 +1,5 @@
 <template>
-  <div class="[--padding-inline:1rem] md:[--padding-inline:2rem]">
+  <div class="[--padding-inline:1rem] md:[--padding-inline:2rem] mb-12">
     <slot />
   </div>
 </template>

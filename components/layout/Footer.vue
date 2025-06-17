@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="site-footer border-t mt-6"
+    class="site-footer border-t"
     :class="footer.class"
   >
     <div
