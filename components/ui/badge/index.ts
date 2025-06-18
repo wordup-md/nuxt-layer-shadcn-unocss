@@ -23,7 +23,7 @@ export const badgeVariants = cva(
       },
       variant: {
         default:
-          'border-transparent !bg-opacity-15 !dark:bg-opacity-20', // cva breaks bg-opacity-* without !
+          'border-transparent !bg-opacity-10 !dark:bg-opacity-15', // cva breaks bg-opacity-* without !
         fill:
           'text-white border-transparent',
         outline:
