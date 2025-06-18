@@ -13,10 +13,11 @@ export default definePreset((options?: MyPresetOptions) => {
   return {
     name: 'nuxt-layer-unocss-preset-shadcn',
     theme: {
+      // https://github.com/unocss/unocss/blob/main/packages-presets/preset-wind3/src/rules/container.ts
       container: {
         center: true,
         maxWidth: {
-          '2xl': 'var(--breakpoint-container)',
+          xl: 'var(--default-container-max-width, 1400px)',
         },
       },
       colors: {
@@ -100,7 +101,6 @@ export default definePreset((options?: MyPresetOptions) => {
           return `
           :root {
             ${breakpoints}
-            --breakpoint-container: 1200px;
 
             --info: 200 90% 50%;
             --info-foreground: 200 90% 50%;

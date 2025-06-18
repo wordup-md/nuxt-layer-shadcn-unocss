@@ -6,17 +6,18 @@
 
 <style lang="css">
 .content-grid {
-  --content-max-width: 80ch;
-  --wide-content-max-width: var(--breakpoint-container);
-  --wide-content-size: calc((var(--wide-content-max-width) - var(--content-max-width)) / 2 - var(--padding-inline));
+  --epi: var(--padding-inline, 1rem);
+  --ecmw: var(--editorial-content-max-width, 80ch);
+  --ewcmw: var(--editorial-wide-content-max-width, 1280px);
+  --wcs: calc((var(--ewcmw) - var(--ecmw)) / 2 - var(--epi));
 
   display: grid;
   grid-template-columns:
-    [full-width-start] minmax(var(--padding-inline), 1fr)
-    [wide-content-start] minmax(0, var(--wide-content-size))
-    [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width))
-    [content-end] minmax(0, var(--wide-content-size))
-    [wide-content-end] minmax(var(--padding-inline), 1fr)
+    [full-width-start] minmax(var(--epi), 1fr)
+    [wide-content-start] minmax(0, var(--wcs))
+    [content-start] min(100% - (var(--epi) * 2), var(--ecmw))
+    [content-end] minmax(0, var(--wcs))
+    [wide-content-end] minmax(var(--epi), 1fr)
     [full-width-end];
 }
 
@@ -36,7 +37,7 @@
   grid-column: full-width;
 
   & > * {
-    max-width: min(100% - (var(--padding-inline) * 2), var(--content-max-width));
+    max-width: min(100% - (var(--epi) * 2), var(--ecmw));
     margin-left: auto;
     margin-right: auto;
   }
@@ -47,7 +48,7 @@
 }
 .content-grid > .full-width.wide-content > *   {
   grid-column: wide-content;
-  max-width: min(100% - (var(--padding-inline) * 2), var(--wide-content-max-width) - (var(--padding-inline) * 2));
+  max-width: min(100% - (var(--epi) * 2), var(--ewcmw) - (var(--epi) * 2));
   margin-left: auto;
   margin-right: auto;
 }
