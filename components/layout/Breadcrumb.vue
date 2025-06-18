@@ -10,6 +10,7 @@
             :href="breadcrumb.href || '#'"
             class="transition-colors hover:text-foreground flex items-center gap-2"
             :class="index === breadcrumbs.length - 1 && 'text-foreground'"
+            :aria-label="breadcrumb.href === '/' ? $t('Home') : breadcrumb.title"
           >
             <Icon
               v-if="(breadcrumb.icon && config.main.breadCrumb.showIcon)"

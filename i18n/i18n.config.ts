@@ -4,6 +4,9 @@ export default defineI18nConfig(() => ({
   missingWarn: false,
   messages: {
     'en': {
+      // Breadcrumb
+      'Home': 'Home',
+
       // Search
       'Search...': 'Search...',
       'Search documentation...': 'Search documentation...',
@@ -49,6 +52,9 @@ export default defineI18nConfig(() => ({
       'required': 'required',
     },
     'fr': {
+      // Breadcrumb
+      'Home': 'Accueil',
+
       // Search
       'Search...': 'Rechercher...',
       'Search documentation...': 'Rechercher dans la documentation...',
@@ -94,6 +100,9 @@ export default defineI18nConfig(() => ({
       'required': 'requis',
     },
     'zh-CN': {
+      // Breadcrumb
+      'Home': '首页',
+
       // Search
       'Search...': '搜索...',
       'Search documentation...': '搜索文档...',
@@ -139,6 +148,9 @@ export default defineI18nConfig(() => ({
       'required': '必填',
     },
     'zh-TW': {
+      // Breadcrumb
+      'Home': '首頁',
+
       // Search
       'Search...': '搜尋...',
       'Search documentation...': '搜尋文件...',
@@ -184,6 +196,9 @@ export default defineI18nConfig(() => ({
       'required': '必填',
     },
     'ja': {
+      // Breadcrumb
+      'Home': 'ホーム',
+
       // Search
       'Search...': '検索...',
       'Search documentation...': 'ドキュメントを検索...',
@@ -229,6 +244,9 @@ export default defineI18nConfig(() => ({
       'required': '必須',
     },
     'ru': {
+      // Breadcrumb
+      'Home': 'Главная',
+
       // Search
       'Search...': 'Поиск...',
       'Search documentation...': 'Поиск в документации...',
@@ -275,6 +293,9 @@ export default defineI18nConfig(() => ({
     },
 
     'ko': {
+      // Breadcrumb
+      'Home': '홈',
+
       // Search
       'Search...': '검색...',
       'Search documentation...': '문서 검색...',
@@ -321,6 +342,9 @@ export default defineI18nConfig(() => ({
     },
 
     'hi': {
+      // Breadcrumb
+      'Home': 'होम',
+
       // Search
       'Search...': 'खोजें...',
       'Search documentation...': 'दस्तावेज़ खोजें...',
@@ -366,6 +390,9 @@ export default defineI18nConfig(() => ({
       'required': 'आवश्यक',
     },
     'bn': {
+      // Breadcrumb
+      'Home': 'হোম',
+
       // Search
       'Search...': 'অনুসন্ধান...',
       'Search documentation...': 'ডকুমেন্টেশন খুঁজুন...',
