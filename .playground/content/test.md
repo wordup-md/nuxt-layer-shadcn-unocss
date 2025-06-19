@@ -12,7 +12,7 @@ actions:
     to: /getting-started
   - name: GitHub
     variant: outline
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
     leftIcon: lucide:github
 announcement:
   title: Release v1.0.0
@@ -51,7 +51,7 @@ Beautifully designed Nuxt Content template with shadcn-vue. Customizable. Compat
 {{ $doc.title || 'default' }}
 
   :::alert
-  Alternatively, you can clone or download the template from the [GitHub repo](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter).
+  Alternatively, you can clone or download the template from the [GitHub repo](https://github.com/wordup-md/nuxt-layer-shadcn-unocss-starter).
   :::
 
 ### Install Dependencies

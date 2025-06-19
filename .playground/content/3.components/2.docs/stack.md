@@ -4,7 +4,7 @@ icon: lucide:rows-3
 badges:
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Stack.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/Stack.vue
     target: _blank
   - value: 0.6.2
 ---

@@ -7,7 +7,7 @@ badges:
     target: _blank
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Alert.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/Alert.vue
     target: _blank
 ---
 
@@ -41,7 +41,7 @@ badges:
   ::alert{to="/getting-started/introduction" icon="lucide:rocket"}
     An **internal link** alert.
   ::
-  ::alert{to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank" icon="lucide:link"}
+  ::alert{to="https://github.com/wordup-md/nuxt-layer-shadcn-unocss" target="_blank" icon="lucide:link"}
     An **external link** alert.
   ::
   ::
@@ -49,7 +49,7 @@ badges:
   ::alert{to="/getting-started/introduction" icon="lucide:rocket"}
     An **internal link** alert.
   ::
-  ::alert{to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank" icon="lucide:link"}
+  ::alert{to="https://github.com/wordup-md/nuxt-layer-shadcn-unocss" target="_blank" icon="lucide:link"}
     An **external link** alert.
   ::
   ```

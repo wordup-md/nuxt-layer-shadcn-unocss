@@ -4,7 +4,7 @@ icon: lucide:align-left
 badges:
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/HeroAlt.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/HeroAlt.vue
     target: _blank
   - value: 0.4.0
 toc: false
@@ -25,7 +25,7 @@ toc: false
         to: /getting-started
       - name: GitHub
         variant: ghost
-        to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+        to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
     ---
 
     #title
@@ -47,7 +47,7 @@ toc: false
       to: /getting-started
     - name: GitHub
       variant: outline
-      to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+      to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
       leftIcon: 'lucide:github'
   ---
 
@@ -75,7 +75,7 @@ toc: false
         to: /getting-started
       - name: GitHub
         variant: ghost
-        to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+        to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
     mobileRight: 'top' # 'top' | 'bottom'
     ---
 
@@ -101,7 +101,7 @@ toc: false
       to: /getting-started
     - name: GitHub
       variant: ghost
-      to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+      to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
   mobileRight: 'top' # 'top' | 'bottom'
   ---
 

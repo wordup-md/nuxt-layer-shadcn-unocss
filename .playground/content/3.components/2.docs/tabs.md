@@ -7,7 +7,7 @@ badges:
     target: _blank
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Tabs.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/Tabs.vue
     target: _blank
 ---
 

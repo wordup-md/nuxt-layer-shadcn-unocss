@@ -1,0 +1,58 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Documentation Rules
+
+## Frontmatter Rule
+
+When writing documentation in Markdown (.md) format, always include a YAML frontmatter block at the top of the file with the following fields:
+
+- `title`: The document's title
+- `description`: A concise summary of the document's purpose or content
+- `icon`: A Lucide icon representing the document's theme or category, using the format `i-lucide:{name of the icon}`. You can choose any icon from [Lucide Icons](mdc:https:/lucide.dev/icons).
+- Optional: `layout`, `header`, `navigation`, or any other fields required by your Nuxt Content setup.
+
+Example:
+
+```yaml
+---
+title: Project Brief
+description: Foundation document outlining project requirements and goals
+icon: i-lucide:file-text
+---
+```
+
+## Content Structure
+- Use **Markdown** for all documentation.
+- Use **Nuxt Content** and **shadcn-vue** custom components/slots (e.g., `::hero`, `::steps`, `::prose-section`, `::card`, etc.) for rich, interactive docs.
+- Follow **atomic design principles**: document from smallest (atoms) to largest (pages).
+- Use **semantic headings** (`#`, `##`, `###`) for clear hierarchy.
+- Use **code blocks** with language tags for all code samples.
+- Use **alert**, **card**, and **steps** blocks for clarity and emphasis.
+
+## Style and Accessibility
+- Write in clear, concise, and accessible language.
+- Use **ShadcnUI** and **Unocss** for all custom component styling.
+- Ensure all docs are **responsive** and **accessible** (keyboard navigation, ARIA roles, color contrast).
+- Prefer **mobile-first** examples and screenshots.
+
+## Best Practices
+- Keep documentation **modular**: one topic per file.
+- Cross-link related docs using `[link text](mdc:path/to/doc)`.
+- Document **all** composables, components, and utilities with usage examples.
+- For every new feature or pattern, update the relevant Memory Bank file and reference it in the docs if appropriate.
+- Use **versioned announcements** in the hero block for major releases.
+
+## Project-Specific Conventions
+- All documentation must align with the **Memory Bank** (projectbrief.md, productContext.md, etc.) for consistency.
+- When documenting code, always use **TypeScript** examples and prefer interfaces over types.
+- Avoid class-based or enum examples.
+- Document both SSR and client-side usage patterns where relevant.
+- For data fetching, explain when to use `useFetch`, `$fetch`, or `useAsyncData` (see rules in your repo-specific section).
+
+## Updating Documentation
+- When a new pattern, feature, or decision is made, update both the relevant Markdown doc and the Memory Bank.
+- Use the **progress.md** file to track documentation status and known issues.
+- If a doc is experimental or in progress, note this in the description.

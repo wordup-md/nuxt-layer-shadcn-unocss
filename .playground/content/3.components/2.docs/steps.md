@@ -4,7 +4,7 @@ icon: lucide:arrow-down-0-1
 badges:
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Steps.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/Steps.vue
     target: _blank
 ---
 
@@ -28,7 +28,7 @@ badges:
       ::
 
       ::alert
-      Alternatively, you can clone or download the template from the [GitHub repo](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter).
+      Alternatively, you can clone or download the template from the [GitHub repo](https://github.com/wordup-md/nuxt-layer-shadcn-unocss-starter).
       ::
 
       ### Install Dependencies
@@ -77,7 +77,7 @@ badges:
     ::
 
     ::alert
-    Alternatively, you can clone or download the template from the [GitHub repo](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter).
+    Alternatively, you can clone or download the template from the [GitHub repo](https://github.com/wordup-md/nuxt-layer-shadcn-unocss-starter).
     ::
 
     ### Install Dependencies

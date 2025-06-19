@@ -4,7 +4,7 @@ icon: lucide:align-center
 badges:
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Hero.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/Hero.vue
     target: _blank
 ---
 
@@ -23,7 +23,7 @@ badges:
         to: /getting-started
       - name: GitHub
         variant: outline
-        to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+        to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
         leftIcon: 'lucide:github'
     ---
 
@@ -46,7 +46,7 @@ badges:
       to: /getting-started
     - name: GitHub
       variant: outline
-      to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+      to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
       leftIcon: 'lucide:github'
   ---
 

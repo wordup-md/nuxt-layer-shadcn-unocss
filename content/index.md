@@ -6,14 +6,14 @@
 announcement:
   title: 'Release v0.8.9'
   icon: '🎉'
-  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases/latest
+  to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/releases/latest
   target: _blank
 actions:
   - name: Get Started
     to: /getting-started
   - name: GitHub
     variant: outline
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
     leftIcon: 'lucide:github'
 ---
 

@@ -13,12 +13,12 @@ actions:
     to: /getting-started/introduction
   - name: GitHub
     variant: outline
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
     leftIcon: lucide:github
 announcement:
   title: Release v0.8.13
   icon: 🎉
-  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/releases/latest
+  to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/releases/latest
   target: _blank
 class: bg-gradient-to-b from-primary/20 to-transparent full-width full-content
 ---
@@ -26,42 +26,91 @@ class: bg-gradient-to-b from-primary/20 to-transparent full-width full-content
 Effortless and Beautiful Template.
 
 #description
-Beautifully designed Nuxt Content template built with :br
-[shadcn-vue](https://www.shadcn-vue.com) and [unocss](https://unocss.dev).
+Build documentation, blog, shop or anything else with ease. :br
+
+Nuxt Content template built with [shadcn-vue](https://www.shadcn-vue.com) and [unocss](https://unocss.dev).
 ::
 
-::div{.bg-gray-100}
-test div
-::
-
-::section{.bg-gray-100}
-test section
-::
-
-::prose-section{.bg-gray-100}
+::section
+---
+class: wide-content grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 [&>div]:mt-0!
+---
   :::card
-  lorem ipsum
+  ---
+  title: Focus on Your Content
+  icon: i-lucide:file-pen
+  iconPosition: top
+  ---
+  Effortlessly write content with just **markdown**. Use csv, json or yaml files for data.
   :::
 
   :::card
-  auiea
+  ---
+  title: Minimal by Design
+  icon: i-lucide:package-minus
+  iconPosition: top
+  ---
+  Only files, **no database**.\
+  Deploy anywhere, backup with ease, no vendor lock-in.
+  :::
+
+  :::card
+  ---
+  title: Customize Your Site
+  icon: i-lucide:paint-bucket
+  iconPosition: top
+  ---
+  Limitless themes and styles.\
+  Manage layouts, components and more with ease.
+  :::
+
+  :::card
+  ---
+  title: Ship Fast Sites
+  icon: i-lucide:rocket
+  iconPosition: top
+  ---
+  Fast initial load with static HTML, fast post-load navigation with client-side routing.
   :::
 ::
 
-latuinerst nrst auiea Quisque rutrum. Praesent congue erat at massa. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Duis vel nibh at velit scelerisque suscipit. Praesent nec nisl a purus blandit viverra.
 
-::prose-section{.wide-content.bg-gray-100}
-section wide-content
-::
+::prose-section{.wide-content.bg-muted.full-width.mt-20.py-10.text-center}
+# Are you convinced yet? :br Need more features?
 
-::prose-section{.full-width.bg-gray-100}
-section full-width
-::
+:br
+:br
 
-::prose-section{.bg-gray-100.full-width.wide-content}
-section full-width wide-content
-::
-
-::prose-section{.bg-gray-100.full-width.full-content}
-section full-width full-content
+  :::div{class="flex flex-wrap gap-y-4 gap-x-2 justify-center"}
+  :badge[Nuxt Content]{size="lg" type="success"}
+  :badge[Nuxt I18n]{size="lg" type="success"}
+  :badge[Nuxt Scripts]{size="lg" type="success"}
+  :badge[Nuxt Fonts]{size="lg" type="success"}
+  :badge[Nuxt OG Image]{size="lg" type="success"}
+  :badge[Nuxt SEO]{size="lg" type="success"}
+  :badge[Nuxt LLMs]{size="lg" type="success"}
+  :badge[Nuxt Color Mode]{size="lg" type="success"}
+  :badge[Nuxt Icon]{size="lg" type="success"}
+  :badge[Nuxt Image]{size="lg" type="success"}
+  :badge[Nuxt UI]{size="lg" type="success"}
+  :badge[Dark Mode]{size="lg" type="info"}
+  :badge[Customizable theme]{size="lg" type="info"}
+  :badge[Shadcn UI]{size="lg" type="info"}
+  :badge[Reka UI]{size="lg" type="info"}
+  :badge[Uno CSS]{size="lg" type="info"}
+  :badge[Clean Codebase]{size="lg" type="danger"}
+  :badge[Easy to Customize]{size="lg" type="danger"}
+  :badge[Beginner Friendly]{size="lg" type="danger"}
+  :badge[SEO optimized]{size="lg" type="warning"}
+  :badge[AI compatible]{size="lg" type="warning"}
+  :badge[Easy backup]{size="lg" type="warning"}
+  :badge[Mobile Friendly]{size="lg" type="warning"}
+  :badge[Fast Initial Load]{size="lg" type="new"}
+  :badge[Fast Post-Load Navigation]{size="lg" type="new"}
+  :badge[Client-Side Routing]{size="lg" type="new"}
+  :badge[Static Site Generation]{size="lg" type="new"}
+  :badge[Single-Page Application]{size="lg" type="new"}
+  :badge[Easy to Deploy]{size="lg" type="new"}
+  :badge[Edge compatible]{size="lg" type="new"}
+  :::
 ::

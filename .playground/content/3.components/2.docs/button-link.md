@@ -7,7 +7,7 @@ badges:
     target: _blank
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/ButtonLink.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/ButtonLink.vue
     target: _blank
   - value: 0.6.5
 ---
@@ -19,10 +19,10 @@ badges:
   ::button-link{right-icon="lucide:arrow-up-right" to="/getting-started" target="_blank"}
     Get Started
   ::
-  ::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
+  ::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/wordup-md/nuxt-layer-shadcn-unocss" target="_blank"}
     GitHub
   ::
-  ::button-link{left-icon="lucide:ghost" variant="ghost" href="https://github.com/ZTL-UwU/shadcn-docs-nuxt" blank}
+  ::button-link{left-icon="lucide:ghost" variant="ghost" href="https://github.com/wordup-md/nuxt-layer-shadcn-unocss" blank}
     Ghost
   ::
   ::
@@ -30,10 +30,10 @@ badges:
   ::button-link{right-icon="lucide:arrow-up-right" to="/getting-started" target="_blank"}
     Get Started
   ::
-  ::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
+  ::button-link{left-icon="lucide:github" variant="outline" to="https://github.com/wordup-md/nuxt-layer-shadcn-unocss" target="_blank"}
     GitHub
   ::
-  ::button-link{left-icon="lucide:ghost" variant="ghost" href="https://github.com/ZTL-UwU/shadcn-docs-nuxt" blank}
+  ::button-link{left-icon="lucide:ghost" variant="ghost" href="https://github.com/wordup-md/nuxt-layer-shadcn-unocss" blank}
     Ghost
   ::
   ```

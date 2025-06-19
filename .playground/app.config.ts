@@ -1,7 +1,7 @@
 export default defineAppConfig({
   shadcnDocs: {
     site: {
-      name: 'shadcn-docs',
+      name: 'Shadcn Site',
       description: 'Beautifully designed Nuxt Content template built with shadcn-vue and unocss.',
       ogImage: '/hero.png',
       ogImageComponent: 'ShadcnDocs',
@@ -19,13 +19,13 @@ export default defineAppConfig({
     banner: {
       enable: true,
       showClose: true,
-      content: 'Welcome to **shadcn-docs-nuxt**',
-      to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+      content: 'Welcome to **shadcn-site-nuxt**',
+      to: 'https://github.com/wordup-md/nuxt-layer-shadcn-unocss',
       target: '_blank',
       border: true,
     },
     header: {
-      title: 'shadcn-docs',
+      title: 'Shadcn Site',
       showTitle: true,
       logo: {
         light: '/logo.svg',
@@ -38,7 +38,7 @@ export default defineAppConfig({
         links: [{
           title: 'Getting Started',
           to: '/getting-started',
-          description: 'Start building your document with shadcn-docs-nuxt',
+          description: 'Start building your document with shadcn-site-nuxt',
           icon: 'lucide:rocket',
         }, {
           title: 'Development',
@@ -97,7 +97,7 @@ export default defineAppConfig({
       codeCopyToast: true,
       editLink: {
         enable: true,
-        pattern: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/edit/main/content/:path',
+        pattern: 'https://github.com/wordup-md/nuxt-layer-shadcn-unocss/edit/main/content/:path',
         text: 'Edit this page',
         icon: 'lucide:square-pen',
         placement: ['pageFooter', 'toc'],
@@ -157,7 +157,7 @@ export default defineAppConfig({
         },
         {
           icon: 'lucide:github',
-          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+          to: 'https://github.com/wordup-md/nuxt-layer-shadcn-unocss',
           target: '_blank',
         },
       ],
@@ -168,13 +168,13 @@ export default defineAppConfig({
       links: [{
         title: 'Star on GitHub',
         icon: 'lucide:star',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+        to: 'https://github.com/wordup-md/nuxt-layer-shadcn-unocss',
         target: '_blank',
         showLinkIcon: true,
       }, {
         title: 'Create Issues',
         icon: 'lucide:circle-dot',
-        to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
+        to: 'https://github.com/wordup-md/nuxt-layer-shadcn-unocss/issues',
         target: '_blank',
         showLinkIcon: true,
       }],

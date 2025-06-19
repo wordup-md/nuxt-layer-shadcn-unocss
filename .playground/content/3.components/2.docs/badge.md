@@ -7,7 +7,7 @@ badges:
     target: _blank
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Badge.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/Badge.vue
     target: _blank
 ---
 
@@ -109,12 +109,12 @@ badges:
 
 ::stack
   ::div{class="p-3"}
-  ::badge{variant="outline" type="info" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
+  ::badge{variant="outline" type="info" to="https://github.com/wordup-md/nuxt-layer-shadcn-unocss" target="_blank"}
   Link
   ::
   ::
   ```mdc
-  ::badge{variant="outline" type="info" to="https://github.com/ZTL-UwU/shadcn-docs-nuxt" target="_blank"}
+  ::badge{variant="outline" type="info" to="https://github.com/wordup-md/nuxt-layer-shadcn-unocss" target="_blank"}
   Link
   ::
   ```

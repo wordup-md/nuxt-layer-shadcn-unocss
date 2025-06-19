@@ -169,7 +169,7 @@ Card Title #test uit auiesrt auienrst auie auieeee
       to: /getting-started
     - name: GitHub
       variant: outline
-      to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+      to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
       leftIcon: lucide:github
   announcement:
     title: Release v1.0.0

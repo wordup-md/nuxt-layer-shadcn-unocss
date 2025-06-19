@@ -5,7 +5,7 @@ description: ''
 badges:
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/TeamCard.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/TeamCard.vue
     target: _blank
   - value: 0.7.7
 ---

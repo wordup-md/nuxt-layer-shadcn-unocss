@@ -5,7 +5,7 @@ badges:
   - value: 0.8.10
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/FileTree.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/FileTree.vue
     target: _blank
 ---
 

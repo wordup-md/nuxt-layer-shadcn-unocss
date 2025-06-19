@@ -10,7 +10,7 @@ badges:
     target: _blank
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/Card.vue
+    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/blob/main/components/content/Card.vue
     target: _blank
 ---
 
@@ -63,7 +63,7 @@ badges:
   ::div{class="p-4"}
   ::card
   ---
-  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+  to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
   target: _blank
   # showLinkIcon: false
   ---
@@ -78,7 +78,7 @@ badges:
   ```mdc
   ::card
   ---
-  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+  to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
   target: _blank
   # showLinkIcon: false
   ---
