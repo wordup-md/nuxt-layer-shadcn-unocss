@@ -1,9 +1,7 @@
 ---
 title: Home
-navigation: false
+description: Effortless and Beautiful Template.
 layout: editorial
-header:
-  position: over
 ---
 
 ::hero
@@ -20,7 +18,7 @@ announcement:
   icon: 🎉
   to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/releases/latest
   target: _blank
-class: bg-gradient-to-b from-primary/20 to-transparent full-width full-content
+class: full-width full-content
 ---
 #title
 Effortless and Beautiful Template.
@@ -47,11 +45,11 @@ class: wide-content grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 [&>div]
   :::card
   ---
   title: Minimal by Design
-  icon: i-lucide:package-minus
+  icon: i-lucide:package-check
   iconPosition: top
   ---
   Only files, **no database**.\
-  Deploy anywhere, backup with ease, no vendor lock-in.
+  Deploy anywhere, backup with ease, **no vendor lock-in**.
   :::
 
   :::card
