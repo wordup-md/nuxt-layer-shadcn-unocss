@@ -1,6 +1,6 @@
 ---
 title: Accordion
-icon: lucide:layout-list
+icon: i-mingcute:list-expansion-line
 badges:
   - value: Source
     icon: lucide:code

@@ -1,6 +1,6 @@
 ---
 title: Hero
-icon: lucide:align-center
+icon: i-lucide:layout-panel-top
 badges:
   - value: Source
     icon: lucide:code
