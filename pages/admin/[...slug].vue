@@ -1,32 +1,27 @@
 <script setup lang="ts">
 import type { NavItem } from '@nuxt/content'
-import { useUnpress } from '#imports'
 
-const { client, mountCms, login } = useUnpress()
 const config = useConfig()
 
-const isDev = import.meta.dev
-const isLoggedIn = computed(() => !!client.value)
-
-const path = 'content-doc.json'
-
+const contentDocFile = 'content-doc.json'
+const adminPath = '/admin'
 // const { data: tree, status, error, refresh, clear } = await useAsyncData<NavItem[]>(
 const { data: tree } = await useAsyncData<NavItem[]>(
   'admin-docs',
-  () => $fetch(`/${path}`), {
+  () => $fetch(`/${contentDocFile}`), {
     transform: (data) => {
       return data.map((item: NavItem) => ({
         ...item,
-        '_path': `/admin/${item._path}`,
-        'navigation.redirect': item['navigation.redirect'] ? '/admin' + item['navigation.redirect'] : undefined,
+        '_path': `${adminPath}/${item._path}`,
+        'navigation.redirect': item['navigation.redirect'] ? adminPath + item['navigation.redirect'] : undefined,
         'children': item.children?.map((child: NavItem) => ({
           ...child,
-          '_path': `/admin/${child._path}`,
-          'navigation.redirect': child['navigation.redirect'] ? '/admin' + child['navigation.redirect'] : undefined,
+          '_path': `${adminPath}/${child._path}`,
+          'navigation.redirect': child['navigation.redirect'] ? adminPath + child['navigation.redirect'] : undefined,
           'children': child.children?.map((child2: NavItem) => ({
             ...child2,
-            '_path': `/admin/${child2._path}`,
-            'navigation.redirect': child2['navigation.redirect'] ? '/admin' + child2['navigation.redirect'] : undefined,
+            '_path': `${adminPath}/${child2._path}`,
+            'navigation.redirect': child2['navigation.redirect'] ? adminPath + child2['navigation.redirect'] : undefined,
           })),
         })),
       }))
@@ -36,7 +31,7 @@ const { data: tree } = await useAsyncData<NavItem[]>(
 
 const { slug } = useRoute().params
 
-if (isLoggedIn.value && slug?.length === 0 && tree.value) {
+if (slug?.length === 0 && tree.value) {
   if (tree.value[0]['navigation.redirect']) {
     await navigateTo(tree.value[0]['navigation.redirect'])
   }
@@ -47,19 +42,19 @@ if (isLoggedIn.value && slug?.length === 0 && tree.value) {
 
 const page = computed(() => {
   if (slug.length > 2) {
-    const level0 = tree.value?.find(item => item._path === `/admin/${slug[0]}`)
-    const level1 = level0?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}`)
-    return level1?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}/${slug[2]}`)
+    const level0 = tree.value?.find(item => item._path === `${adminPath}/${slug[0]}`)
+    const level1 = level0?.children?.find(item => item._path === `${adminPath}/${slug[0]}/${slug[1]}`)
+    return level1?.children?.find(item => item._path === `${adminPath}/${slug[0]}/${slug[1]}/${slug[2]}`)
   }
   else if (slug.length > 1) {
-    const level0 = tree.value?.find(item => item._path === `/admin/${slug[0]}`)
-    return level0?.children?.find(item => item._path === `/admin/${slug[0]}/${slug[1]}`)
+    const level0 = tree.value?.find(item => item._path === `${adminPath}/${slug[0]}`)
+    return level0?.children?.find(item => item._path === `${adminPath}/${slug[0]}/${slug[1]}`)
   }
   else {
-    const page = tree.value?.find(item => item._path === `/admin/${slug[0]}`)
+    const page = tree.value?.find(item => item._path === `${adminPath}/${slug[0]}`)
 
     if (!page?.['navigation.redirect'] && !page?.content && page?.children?.length) {
-      return page.children.find(item => item._path === `/admin/${slug[0]}/index`)
+      return page.children.find(item => item._path === `${adminPath}/${slug[0]}/index`)
     }
 
     return page
@@ -77,7 +72,6 @@ watch(page, async (newVal) => {
   <NuxtLayout>
     <div class="h-full">
       <div
-        v-if="isLoggedIn"
         class="flex-1 items-start px-4 md:grid md:gap-6 md:px-8 lg:gap-10"
         :class="[
           config.main.padded && 'container',
@@ -124,21 +118,6 @@ watch(page, async (newVal) => {
             />
           </div>
         </main>
-      </div>
-
-      <div
-        v-else
-        class="col-span-3 mt-[20vh] flex items-center justify-center"
-      >
-        <div class="flex items-center justify-center gap-4">
-          <h3 class="scroll-m-20 py-3 text-2xl font-semibold">
-            Open administration
-          </h3>
-          <Icon name="lucide:arrow-right" />
-          <UiButton @click="isDev ? mountCms() : login()">
-            Connect & Open
-          </Uibutton>
-        </div>
       </div>
     </div>
   </NuxtLayout>

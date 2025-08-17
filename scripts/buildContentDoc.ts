@@ -14,6 +14,8 @@ interface TreeNode {
   icon?: string
 }
 
+const dirFile = '_dir.yml'
+
 export async function buildContentTree(dirPath: string): Promise<TreeNode[]> {
   const tree: TreeNode[] = []
 
@@ -25,7 +27,7 @@ export async function buildContentTree(dirPath: string): Promise<TreeNode[]> {
       const stats = await stat(fullPath)
 
       // Skip hidden files and _dir.yml
-      if (file.startsWith('.') || file === '_dir.yml') {
+      if (file.startsWith('.') || file === dirFile) {
         continue
       }
 
@@ -38,9 +40,9 @@ export async function buildContentTree(dirPath: string): Promise<TreeNode[]> {
             children,
           }
 
-          const dirConfigPath = join(fullPath, '_dir.yml')
+          const dirConfigPath = join(fullPath, dirFile)
           if (await stat(dirConfigPath).catch(() => false)) {
-            const _dir = await readFile(fullPath + '/_dir.yml', 'utf-8')
+            const _dir = await readFile(fullPath + '/' + dirFile, 'utf-8')
             const yaml = parse(_dir)
             dir = {
               ...dir,
