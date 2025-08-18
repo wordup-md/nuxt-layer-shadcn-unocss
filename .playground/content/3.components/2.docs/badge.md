@@ -40,7 +40,7 @@ badges:
 
 ### Types
 
-::stack{label="default"}
+::stack
   ::div{class="p-3"}
     :badge[Default]
     :badge[Primary]{type="primary"}
@@ -64,46 +64,24 @@ badges:
 
 ### Variants
 
-::stack{label="default"}
-  ::div{class="p-3"}
-    :badge[Default]{variant="fill"}
-    :badge[Primary]{type="primary" variant="fill"}
-    :badge[Secondary]{type="secondary" variant="fill"}
-    :badge[Info]{type="info" variant="fill"}
-    :badge[Warning]{type="warning" variant="fill"}
-    :badge[Success]{type="success" variant="fill"}
-    :badge[Danger]{type="danger" variant="fill"}
-    :badge[New]{type="new" variant="fill"}
-  ::
+|Default|Fill|Outline|Text|
+|---|---|---|---|
+|:badge[Default]|:badge[Default]{variant="fill"}|:badge[Default]{variant="outline"}|:badge[Default]{variant="text"}|
+|:badge[Primary]{type="primary"}|:badge[Primary]{type="primary" variant="fill"}|:badge[Primary]{type="primary" variant="outline"}|:badge[Primary]{type="primary" variant="text"}|
+|:badge[Secondary]{type="secondary"}|:badge[Secondary]{type="secondary" variant="fill"}|:badge[Secondary]{type="secondary" variant="outline"}|:badge[Secondary]{type="secondary" variant="text"}|
+|:badge[Info]{type="info"}|:badge[Info]{type="info" variant="fill"}|:badge[Info]{type="info" variant="outline"}|:badge[Info]{type="info" variant="text"}|
+|:badge[Warning]{type="warning"}|:badge[Warning]{type="warning" variant="fill"}|:badge[Warning]{type="warning" variant="outline"}|:badge[Warning]{type="warning" variant="text"}|
+|:badge[Success]{type="success"}|:badge[Success]{type="success" variant="fill"}|:badge[Success]{type="success" variant="outline"}|:badge[Success]{type="success" variant="text"}|
+|:badge[Danger]{type="danger"}|:badge[Danger]{type="danger" variant="fill"}|:badge[Danger]{type="danger" variant="outline"}|:badge[Danger]{type="danger" variant="text"}|
+|:badge[New]{type="new"}|:badge[New]{type="new" variant="fill"}|:badge[New]{type="new" variant="outline"}|:badge[New]{type="new" variant="text"}|
 
-  ::div{class="p-3"}
-    :badge[Default]{variant="outline"}
-    :badge[Primary]{type="primary" variant="outline"}
-    :badge[Secondary]{type="secondary" variant="outline"}
-    :badge[Info]{type="info" variant="outline"}
-    :badge[Warning]{type="warning" variant="outline"}
-    :badge[Success]{type="success" variant="outline"}
-    :badge[Danger]{type="danger" variant="outline"}
-    :badge[New]{type="new" variant="outline"}
-  ::
+**Examples:**
 
-  ::div{class="p-3"}
-    :badge[Default]{variant="text"}
-    :badge[Primary]{type="primary" variant="text"}
-    :badge[Secondary]{type="secondary" variant="text"}
-    :badge[Info]{type="info" variant="text"}
-    :badge[Warning]{type="warning" variant="text"}
-    :badge[Success]{type="success" variant="text"}
-    :badge[Danger]{type="danger" variant="text"}
-    :badge[New]{type="new" variant="text"}
-  ::
-
-  ```mdc
-  :badge[...]{type="..." variant="fill"}
-  :badge[...]{type="..." variant="outline"}
-  :badge[...]{type="..." variant="text"}
-  ```
-::
+```mdc
+:badge[Some text]{type="info" variant="fill"}
+:badge[Some text]{type="danger" variant="outline"}
+:badge[Some text]{type="new" variant="text"}
+```
 
 ### Link
 
@@ -123,6 +101,7 @@ badges:
 ## Props
 
 ::field-group
+  :field{name="title" type="string"}[Can be used to set the label of the badge instead of the content]
   :field{name="type" type="'default' | 'info' | 'warning' | 'success' | 'danger' | 'lime'" default-value="'default'"}
   :field{name="variant" type="'default' | 'secondary' | 'destructive' | 'outline'" default-value="'default'"}
   :field{name="size" type="'md' | 'sm'" default-value="'md'"}

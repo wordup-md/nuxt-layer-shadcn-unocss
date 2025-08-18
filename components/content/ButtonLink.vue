@@ -13,10 +13,12 @@
         :name="icon"
         class="mr-2"
       />
+
       <span v-if="title">
         {{ title }}
       </span>
       <ContentSlot unwrap="p" />
+
       <Icon
         v-if="trailingIcon"
         :name="trailingIcon"

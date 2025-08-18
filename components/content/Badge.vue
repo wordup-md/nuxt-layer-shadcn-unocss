@@ -14,6 +14,9 @@
           && 'rounded-md px-1.5 py-0.5 text-xs font-normal leading-none',
       ]"
     >
+      <span v-if="title">
+        {{ title }}
+      </span>
       <ContentSlot unwrap="p" />
     </UiBadge>
   </NuxtLink>
@@ -32,6 +35,9 @@
           && 'px-3 text-base',
       ]"
     >
+      <span v-if="title">
+        {{ title }}
+      </span>
       <ContentSlot unwrap="p" />
     </UiBadge>
   </span>
@@ -44,6 +50,7 @@ const {
   size = 'md',
 } = defineProps<{
   type?: 'default' | 'primary' | 'secondary' | 'info' | 'warning' | 'success' | 'danger' | 'new'
+  title?: string
   to?: string
   target?: Target
   variant?: 'default' | 'fill' | 'outline' | 'text'
