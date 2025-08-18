@@ -15,6 +15,7 @@ const { model, mdcAttrs } = getComponentProps(props, {
     type: String,
   },
   query: {
+    default: () => ({}),
     type: Object,
   },
   component: {
@@ -31,6 +32,15 @@ const { model, mdcAttrs } = getComponentProps(props, {
         flex-1
         placeholder="Path to folder"
         label="Chemin"
+        input-classes="INPUT_GHOST"
+      />
+
+      <UiEditorInput
+        v-model="mdcAttrs.query.limit"
+        flex-1
+        placeholder="Sans limite"
+        label="Limit"
+        input-classes="INPUT_GHOST"
       />
     </UiEditorHorizontalControls>
 
@@ -40,6 +50,7 @@ const { model, mdcAttrs } = getComponentProps(props, {
       :query="model.query"
       :component="model.component"
       contenteditable="false"
+      :class="model.class"
     />
   </div>
 </template>

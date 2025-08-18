@@ -1,5 +1,5 @@
 <template>
-  <div class="[&:not(:first-child)]:mt-5">
+  <div class="[&:not(:first-child)]:mt-4">
     <UiEditorHorizontalControls class="mb--1">
       <UiEditorInput
         v-model="mdcAttrs.data"
