@@ -50,6 +50,10 @@ export default defineI18nConfig(() => ({
 
       // Field
       'required': 'required',
+
+      // 404
+      'This page could not be found.': 'This page could not be found.',
+      'Go to home': 'Go to home',
     },
     'fr': {
       // Breadcrumb
@@ -98,6 +102,114 @@ export default defineI18nConfig(() => ({
 
       // Field
       'required': 'requis',
+
+      // 404
+      'This page could not be found.': 'Cette page n\'existe pas.',
+      'Go to home': 'Retour à l\'accueil',
+    },
+    'es': {
+      // Breadcrumb
+      'Home': 'Inicio',
+
+      // Search
+      'Search...': 'Buscar...',
+      'Search documentation...': 'Buscar en la documentación...',
+      'No results found.': 'No se encontraron resultados.',
+
+      // TOC
+      'On This Page': 'En esta página',
+
+      // Search command
+      'Light': 'Claro',
+      'Dark': 'Oscuro',
+      'System': 'Sistema',
+
+      // Doc footer
+      'Edit this page': 'Editar esta página',
+      'Back to Top': 'Volver al inicio',
+
+      // Collapse Code
+      'Expand': 'Expandir',
+      'Collapse': 'Colapsar',
+
+      // Language Switcher
+      'Language': 'Idioma',
+      'Choose your language': 'Elegir tu idioma',
+
+      // Theme Switcher
+      'Customize': 'Personalizar',
+      'Pick a style and color for the docs.': 'Elige un estilo y color para la documentación.',
+      'Color': 'Color',
+      'Radius': 'Radio',
+      'Theme': 'Tema',
+
+      // Copy Code
+      'Copied to clipboard!': 'Copiado al portapapeles!',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': 'Por favor, apoyanos desactivando tu bloqueador de publicidad.',
+
+      // Read More
+      'Read more at': 'Leer más en',
+
+      // Field
+      'required': 'requerido',
+
+      // 404
+      'This page could not be found.': 'Esta página no existe.',
+      'Go to home': 'Ir a la página de inicio',
+    },
+    'de': {
+      // Breadcrumb
+      'Home': 'Startseite',
+
+      // Search
+      'Search...': 'Suchen...',
+      'Search documentation...': 'Dokumentation suchen...',
+      'No results found.': 'Keine Ergebnisse gefunden.',
+
+      // TOC
+      'On This Page': 'In dieser Seite',
+
+      // Search command
+      'Light': 'Hell',
+      'Dark': 'Dunkel',
+      'System': 'System',
+
+      // Doc footer
+      'Edit this page': 'Diese Seite bearbeiten',
+      'Back to Top': 'Nach oben',
+
+      // Collapse Code
+      'Expand': 'Erweitern',
+      'Collapse': 'Einklappen',
+
+      // Language Switcher
+      'Language': 'Sprache',
+      'Choose your language': 'Sprache auswählen',
+
+      // Theme Switcher
+      'Customize': 'Anpassen',
+      'Pick a style and color for the docs.': 'Wählen Sie ein Stil und eine Farbe für die Dokumentation.',
+      'Color': 'Farbe',
+      'Radius': 'Radius',
+      'Theme': 'Thema',
+
+      // Copy Code
+      'Copied to clipboard!': 'In Zwischenablage kopiert!',
+
+      // Carbon Ads
+      'Please support us by disabling your ad blocker.': 'Bitte unterstützen Sie uns, indem Sie Ihren Werbeblocker deaktivieren.',
+
+      // Read More
+      'Read more at': 'Mehr erfahren auf',
+
+      // Field
+      'required': 'erforderlich',
+
+      // 404
+      'This page could not be found.': 'Diese Seite existiert nicht.',
+      'Go to home': 'Zurück zur Startseite',
     },
     'zh-CN': {
       // Breadcrumb
@@ -146,6 +258,10 @@ export default defineI18nConfig(() => ({
 
       // Field
       'required': '必填',
+
+      // 404
+      'This page could not be found.': '此页面不存在。',
+      'Go to home': '返回首页',
     },
     'zh-TW': {
       // Breadcrumb
@@ -194,6 +310,10 @@ export default defineI18nConfig(() => ({
 
       // Field
       'required': '必填',
+
+      // 404
+      'This page could not be found.': '此页面不存在。',
+      'Go to home': '返回首页',
     },
     'ja': {
       // Breadcrumb
@@ -242,6 +362,10 @@ export default defineI18nConfig(() => ({
 
       // Field
       'required': '必須',
+
+      // 404
+      'This page could not be found.': '此页面不存在。',
+      'Go to home': '返回首页',
     },
     'ru': {
       // Breadcrumb
@@ -290,8 +414,11 @@ export default defineI18nConfig(() => ({
 
       // Field
       'required': 'обязательно',
-    },
 
+      // 404
+      'This page could not be found.': 'Эта страница не существует.',
+      'Go to home': 'На главную',
+    },
     'ko': {
       // Breadcrumb
       'Home': '홈',
@@ -339,8 +466,11 @@ export default defineI18nConfig(() => ({
 
       // Field
       'required': '필수',
-    },
 
+      // 404
+      'This page could not be found.': '이 페이지는 존재하지 않습니다.',
+      'Go to home': '홈으로 이동',
+    },
     'hi': {
       // Breadcrumb
       'Home': 'होम',
@@ -388,6 +518,10 @@ export default defineI18nConfig(() => ({
 
       // Field
       'required': 'आवश्यक',
+
+      // 404
+      'This page could not be found.': 'यह पृष्ठ मौजूद नहीं है।',
+      'Go to home': 'होम पर जाएं',
     },
     'bn': {
       // Breadcrumb
@@ -436,6 +570,10 @@ export default defineI18nConfig(() => ({
 
       // Field
       'required': 'অবশ্যক',
+
+      // 404
+      'This page could not be found.': 'এই পাতাটি অনুপস্থিত।',
+      'Go to home': 'হোম পর যান',
     },
   },
 }))

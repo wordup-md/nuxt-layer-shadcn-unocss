@@ -14,15 +14,7 @@
         <LayoutAside :is-mobile="false" />
       </aside>
 
-      <div
-        v-if="!page?.body"
-        class="col-span-3 mt-[20vh] flex items-center justify-center"
-      >
-        <h3 class="scroll-m-20 border-r px-4 py-3 text-2xl font-semibold">
-          404
-        </h3>
-        <span class="scroll-m-20 px-4"> This page could not be found. </span>
-      </div>
+      <LayoutBlock404 v-if="!page?.body" />
 
       <main
         v-else
