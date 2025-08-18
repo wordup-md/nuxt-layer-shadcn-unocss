@@ -12,13 +12,13 @@ npx create-nuxt-app <project-name>
 
 - Install the layer
 ```bash
-pnpm add @unpress/nuxt-layer-shadcn-unocss
+pnpm add @wordup-md/nuxt-layer-shadcn-unocss
 ```
 
 - Extend the layer in your nuxt.config.ts
 ```ts
 defineNuxtConfig({
-  extends: '@unpress/nuxt-layer-shadcn-unocss'
+  extends: '@wordup-md/nuxt-layer-shadcn-unocss'
 })
 ``` 
 

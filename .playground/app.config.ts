@@ -78,7 +78,7 @@ export default defineAppConfig({
       }],
       links: [{
         icon: 'lucide:twitter',
-        to: 'https://x.com/unpress_dev',
+        to: 'https://x.com/wordup_md',
         target: '_blank',
       }],
     },
@@ -97,7 +97,7 @@ export default defineAppConfig({
       codeCopyToast: true,
       editLink: {
         enable: true,
-        pattern: 'https://github.com/wordup-md/nuxt-layer-shadcn-unocss/edit/main/content/:path',
+        pattern: 'https://github.com/wordup-md/nuxt-layer-shadcn-unocss/edit/main/.playground/content/:path',
         text: 'Edit this page',
         icon: 'lucide:square-pen',
         placement: ['pageFooter', 'toc'],
@@ -147,7 +147,7 @@ export default defineAppConfig({
       },
     },
     footer: {
-      credits: 'Made with ❤️ by [**Emmanuel Salomon**](https://github.com/ManUtopiK/) with [Unpress](https://unpress.dev)',
+      credits: 'Made with ❤️ by [**Emmanuel Salomon**](https://github.com/ManUtopiK/) with [WordUp](https://wordup.md)',
       links: [
         {
           title: 'shadcn-vue',
