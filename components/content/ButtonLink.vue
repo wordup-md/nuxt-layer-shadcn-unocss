@@ -9,18 +9,18 @@
       :size
     >
       <Icon
-        v-if="leftIcon"
-        :name="leftIcon"
-        class="mr-1"
+        v-if="icon"
+        :name="icon"
+        class="mr-2"
       />
       <span v-if="title">
         {{ title }}
       </span>
       <ContentSlot unwrap="p" />
       <Icon
-        v-if="rightIcon"
-        :name="rightIcon"
-        class="ml-1"
+        v-if="trailingIcon"
+        :name="trailingIcon"
+        class="ml-2"
       />
     </UiButton>
   </NuxtLink>
@@ -33,8 +33,8 @@ defineProps<{
   variant?: ButtonVariants['variant']
   size?: ButtonVariants['size']
   title?: string
-  leftIcon?: string
-  rightIcon?: string
+  icon?: string
+  trailingIcon?: string
   to?: string
   href?: string
   target?: Target
