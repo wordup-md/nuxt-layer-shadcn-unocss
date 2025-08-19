@@ -54,6 +54,10 @@ export default defineI18nConfig(() => ({
       // 404
       'This page could not be found.': 'This page could not be found.',
       'Go to home': 'Go to home',
+
+      // Footer
+      'Login': 'Login',
+      'Logout': 'Logout',
     },
     'fr': {
       // Breadcrumb
@@ -106,6 +110,10 @@ export default defineI18nConfig(() => ({
       // 404
       'This page could not be found.': 'Cette page n\'existe pas.',
       'Go to home': 'Retour à l\'accueil',
+
+      // Footer
+      'Login': 'Se connecter',
+      'Logout': 'Se déconnecter',
     },
     'es': {
       // Breadcrumb
@@ -158,6 +166,10 @@ export default defineI18nConfig(() => ({
       // 404
       'This page could not be found.': 'Esta página no existe.',
       'Go to home': 'Ir a la página de inicio',
+
+      // Footer
+      'Login': 'Iniciar sesión',
+      'Logout': 'Cerrar sesión',
     },
     'de': {
       // Breadcrumb
@@ -210,6 +222,10 @@ export default defineI18nConfig(() => ({
       // 404
       'This page could not be found.': 'Diese Seite existiert nicht.',
       'Go to home': 'Zurück zur Startseite',
+
+      // Footer
+      'Login': 'Anmelden',
+      'Logout': 'Abmelden',
     },
     'zh-CN': {
       // Breadcrumb
@@ -262,6 +278,10 @@ export default defineI18nConfig(() => ({
       // 404
       'This page could not be found.': '此页面不存在。',
       'Go to home': '返回首页',
+
+      // Footer
+      'Login': '登录',
+      'Logout': '退出',
     },
     'zh-TW': {
       // Breadcrumb
@@ -314,6 +334,10 @@ export default defineI18nConfig(() => ({
       // 404
       'This page could not be found.': '此页面不存在。',
       'Go to home': '返回首页',
+
+      // Footer
+      'Login': '登錄',
+      'Logout': '登出',
     },
     'ja': {
       // Breadcrumb
@@ -418,6 +442,10 @@ export default defineI18nConfig(() => ({
       // 404
       'This page could not be found.': 'Эта страница не существует.',
       'Go to home': 'На главную',
+
+      // Footer
+      'Login': 'Войти',
+      'Logout': 'Выйти',
     },
     'ko': {
       // Breadcrumb
@@ -470,6 +498,10 @@ export default defineI18nConfig(() => ({
       // 404
       'This page could not be found.': '이 페이지는 존재하지 않습니다.',
       'Go to home': '홈으로 이동',
+
+      // Footer
+      'Login': '로그인',
+      'Logout': '로그아웃',
     },
     'hi': {
       // Breadcrumb
@@ -522,6 +554,10 @@ export default defineI18nConfig(() => ({
       // 404
       'This page could not be found.': 'यह पृष्ठ मौजूद नहीं है।',
       'Go to home': 'होम पर जाएं',
+
+      // Footer
+      'Login': 'लॉग इन',
+      'Logout': 'लॉग आउट',
     },
     'bn': {
       // Breadcrumb
@@ -574,6 +610,10 @@ export default defineI18nConfig(() => ({
       // 404
       'This page could not be found.': 'এই পাতাটি অনুপস্থিত।',
       'Go to home': 'হোম পর যান',
+
+      // Footer
+      'Login': 'লগ ইন',
+      'Logout': 'লগ আউট',
     },
   },
 }))

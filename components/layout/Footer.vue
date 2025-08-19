@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="site-footer border-t"
+    class="site-footer border-t relative"
     :class="footer.class"
   >
     <div
@@ -33,16 +33,7 @@
         </UiButton>
       </NuxtLink>
 
-      <CmsAuth>
-        <template #default="{ login }">
-          <UiButton
-            variant="ghost"
-            @click="login()"
-          >
-            Admin
-          </UiButton>
-        </template>
-      </CmsAuth>
+      <ButtonLogin />
     </div>
 
     <MDCRenderer
