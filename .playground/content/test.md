@@ -1,8 +1,31 @@
 ---
-title: test
+title: Test
 layout: editorial
 header:
   position: over
+sidebarRight:
+  enable: true
+  components:
+    - ButtonLink:
+        title: GitHub
+        variant: outline
+        to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss
+        icon: lucide:github
+        class: w-full
+    - Menu:
+        title: Menu test
+        items:
+          - /getting-started
+          - title: Menu
+            to: /getting-started
+            icon: lucide:menu
+    - Alert:
+        title: New
+        to: /getting-started
+        icon: lucide:party-popper
+navBadges:
+  - value: New
+    type: new
 ---
 
 ::hero

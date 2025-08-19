@@ -68,11 +68,34 @@
         </article>
 
         <div
-          v-if="showToc"
+          v-if="showToc || showSidebarRight"
           class="text-sm hidden lg:block lg:sticky lg:top-[calc(var(--header-height)+var(--banner-height)+1.75rem)] h-min max-h-[calc(100vh-var(--header-height)-var(--banner-height)-6rem)]"
         >
-          <div class="overflow-hidden">
-            <LayoutToc :is-small="false" />
+          <div class="overflow-hidden flex flex-col gap-5">
+            <LayoutToc
+              v-if="showToc"
+              :is-small="false"
+            />
+
+            <div
+              v-if="showSidebarRight && sidebarRightComponents.length"
+              class="border-t pt-5 flex flex-col gap-5"
+            >
+              <!-- <LayoutSubmenuTree
+                  :level="1"
+                /> -->
+
+              <div
+                v-for="component in sidebarRightComponents"
+                :key="component.name"
+              >
+                <Component
+                  :is="component.name"
+                  v-bind="component.props || {}"
+                />
+                <!-- <Component :is="sidebarComponents[component as keyof typeof sidebarComponents]" /> -->
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -90,6 +113,26 @@ const showAside = computed(() => {
 
 const showToc = computed(() => {
   return (config.value.toc.enable && page.value?.toc !== false) || !!page.value?.toc
+})
+
+const showSidebarRight = computed(() => {
+  return (config.value.sidebarRight.enable && page.value?.sidebarRight !== false) || !!page.value?.sidebarRight
+})
+
+const sidebarRightComponents = computed(() => {
+  return config.value.sidebarRight.components.map((component) => {
+    if (typeof component === 'string') {
+      return {
+        name: component,
+      }
+    }
+
+    const [name, props] = Object.entries(component)[0]
+    return {
+      name,
+      props,
+    }
+  })
 })
 
 useSeoMeta({

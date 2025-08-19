@@ -309,7 +309,7 @@ interface DefaultConfig {
      *
      * @default []
      */
-    components: string[]
+    components: string[] | Record<string, unknown>[]
   }
   /**
    * Main content area configuration

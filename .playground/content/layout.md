@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Layout
 navigation: false
 layout: editorial
 header:

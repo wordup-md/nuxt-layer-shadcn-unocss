@@ -2,6 +2,7 @@
 title: Home
 description: Effortless and Beautiful Template.
 layout: editorial
+navigation: false
 ---
 
 ::hero
