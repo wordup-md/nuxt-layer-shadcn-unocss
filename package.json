@@ -1,7 +1,7 @@
 {
   "name": "@wordup-md/nuxt-layer-shadcn-unocss",
   "type": "module",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "author": "Emmanuel Salomon <emmanuel.salomon@gmail.com>",
   "main": "./nuxt.config.ts",
   "repository": {
@@ -25,6 +25,7 @@
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
     "build:json-doc": "tsx scripts/buildContentDoc-cli.ts",
+    "release": "pnpm build:json-doc && bumpp --skip-install --commit --push --tag && npm publish",
     "clean": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name '.nuxt' -type d -prune -exec rm -rf '{}' + && find . -name '.output' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -prune -exec rm -rf '{}' +"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "@unocss/nuxt": "^66.0.0",
     "@vueuse/core": "^13.2.0",
     "@vueuse/nuxt": "^13.1.0",
+    "bumpp": "^10.2.3",
     "eslint": "^9.26.0",
     "shadcn-nuxt": "^2.1.0",
     "shiki": "^2.1.0",
