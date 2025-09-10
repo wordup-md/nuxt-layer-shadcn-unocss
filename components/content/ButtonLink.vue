@@ -7,6 +7,7 @@
     <UiButton
       :variant
       :size
+      :class="String($attrs.class || '')"
     >
       <Icon
         v-if="icon"

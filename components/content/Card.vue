@@ -7,7 +7,7 @@
         inStack && 'mb-0 rounded-none border-none shadow-none',
         ['left', 'right'].includes(mediaPosition) && 'flex-row',
         mediaPosition === 'right' && 'flex-row-reverse',
-        mediaPosition === 'bottom' && 'flex-col-reverse',
+        mediaPosition === 'bottom' && 'flex-col-reverse justify-between',
         ['cover', 'center'].includes(mediaPosition) && 'bg-opacity-0',
         mediaPosition === 'center' && 'text-center items-center flex-row p-8',
       ]"
