@@ -22,8 +22,8 @@ jobs:
         with:
           version: 8
 
-      # - name: Install dependencies
-      #   run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       # - name: Build Nuxt (if needed)
       #   run: pnpm run build
