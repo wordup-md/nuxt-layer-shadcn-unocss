@@ -5,7 +5,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     if (!client.value) {
       return navigateTo({
         path: '/admin/login',
-        query: { redirectFrom: from.fullPath },
+        query: { redirectTo: from.fullPath },
       })
     }
   }

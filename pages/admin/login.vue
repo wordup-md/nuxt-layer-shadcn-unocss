@@ -16,7 +16,7 @@ function onLogin() {
 function navigateToAdmin() {
   if (client.value) {
     const route = useRoute()
-    const originUrl = route.query.redirectFrom
+    const originUrl = route.query.redirectTo
 
     if (originUrl) {
       return navigateTo(originUrl as string)
