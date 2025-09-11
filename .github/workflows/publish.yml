@@ -23,7 +23,11 @@ jobs:
           version: 8
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: |
+          echo 'shamefully-hoist=true' >> .npmrc
+          echo 'strict-peer-dependencies=false' >> .npmrc
+          echo 'only-built-dependencies=["sharp"]' >> .npmrc
+          pnpm install --frozen-lockfile
 
       # - name: Build Nuxt (if needed)
       #   run: pnpm run build
