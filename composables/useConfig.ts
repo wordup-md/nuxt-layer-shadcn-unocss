@@ -146,6 +146,7 @@ const defaultConfig: DefaultConfig = {
     credits: '',
     links: [],
     class: '',
+    showLogin: false,
   },
   toc: {
     enable: true,

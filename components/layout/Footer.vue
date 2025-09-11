@@ -33,7 +33,7 @@
         </UiButton>
       </NuxtLink>
 
-      <ButtonLogin />
+      <ButtonLogin v-if="footer.showLogin" />
     </div>
 
     <MDCRenderer

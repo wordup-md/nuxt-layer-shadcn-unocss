@@ -462,6 +462,12 @@ interface DefaultConfig {
      * @default ''
      */
     class: string
+    /**
+     * Show login button in footer
+     *
+     * @default false
+     */
+    showLogin: boolean
   }
   /**
    * Table of contents configuration
