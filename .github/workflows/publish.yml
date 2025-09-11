@@ -27,7 +27,7 @@ jobs:
           echo 'shamefully-hoist=true' >> .npmrc
           echo 'strict-peer-dependencies=false' >> .npmrc
           echo 'only-built-dependencies=["sharp"]' >> .npmrc
-          pnpm install --frozen-lockfile
+          pnpm install --no-frozen-lockfile
 
       # - name: Build Nuxt (if needed)
       #   run: pnpm run build
