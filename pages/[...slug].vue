@@ -36,7 +36,7 @@
           <LayoutTitle
             v-if="config.main?.showTitle && (page.showTitle ?? true)"
             :title="page?.title"
-            :description="page?.description"
+            :description="config.main?.showDescription ? page?.description : ''"
             :badges="page?.badges"
           />
 

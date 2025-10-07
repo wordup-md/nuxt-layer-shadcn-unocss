@@ -345,6 +345,12 @@ interface DefaultConfig {
      */
     showTitle: boolean
     /**
+     * Show or hide description in header
+     *
+     * @default true
+     */
+    showDescription: boolean
+    /**
      * Show toast when code is copied
      *
      * @default true

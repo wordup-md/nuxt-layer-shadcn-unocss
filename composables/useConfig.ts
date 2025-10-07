@@ -81,6 +81,7 @@ const defaultConfig: DefaultConfig = {
       },
     },
     showTitle: true,
+    showDescription: true,
     codeCopyToast: true,
     codeCopyToastText: 'Copied to clipboard!',
     fieldRequiredText: 'required',
