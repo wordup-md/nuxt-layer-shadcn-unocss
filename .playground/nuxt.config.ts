@@ -47,6 +47,7 @@ export default defineNuxtConfig({
   },
 
   unpress: {
-    // autoMountIfDevMode: false,
+    autoMountIfDevMode: false,
+    allowMountWithoutLogin: true,
   },
 })
