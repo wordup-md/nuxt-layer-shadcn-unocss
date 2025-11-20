@@ -1,7 +1,7 @@
 export default defineAppConfig({
   shadcnDocs: {
     site: {
-      name: 'Shadcn Site',
+      name: 'WordUp Demo Site',
       description: 'Beautifully designed Nuxt Content template built with shadcn-vue and unocss.',
       ogImage: '/hero.png',
       ogImageComponent: 'ShadcnDocs',
@@ -25,7 +25,7 @@ export default defineAppConfig({
       border: true,
     },
     header: {
-      title: 'Shadcn Site',
+      title: 'WordUp Demo Site',
       showTitle: true,
       logo: {
         light: '/logo.svg',
@@ -147,7 +147,7 @@ export default defineAppConfig({
       },
     },
     footer: {
-      credits: 'Made with ❤️ by [**Emmanuel Salomon**](https://github.com/ManUtopiK/) with [WordUp](https://wordup.md)',
+      credits: 'Made with ❤️ by [Emmanuel Salomon](https://github.com/ManUtopiK/) with :icon{.rotate-x-180.translate-y-1 name="i-pajamas:markdown-mark-solid"} [WordUp.md](https://wordup.md)',
       links: [
         {
           title: 'shadcn-vue',

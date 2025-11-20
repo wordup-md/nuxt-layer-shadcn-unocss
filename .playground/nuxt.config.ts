@@ -39,7 +39,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    defaultLocale: 'fr',
+    defaultLocale: 'en',
   },
 
   unocss: {
@@ -47,7 +47,7 @@ export default defineNuxtConfig({
   },
 
   unpress: {
-    autoMountIfDevMode: false,
+    autoMountIfDevMode: true,
     allowMountWithoutLogin: true,
   },
 })

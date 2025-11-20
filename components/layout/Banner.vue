@@ -11,7 +11,7 @@
       <NuxtLink
         :to
         class="container flex items-stretch w-full md:px-8 h-full"
-        @click.stop="navigate"
+        @click.prevent.stop="navigate"
       >
         <div class="hidden lg:block" />
         <MDC
@@ -20,7 +20,7 @@
         />
       </NuxtLink>
 
-      <div class="absolute right-0 top-0 w-full h-full">
+      <div class="absolute right-0 top-0 h-full">
         <div class="container h-full flex items-stretch justify-end">
           <UiButton
             v-if="showClose"

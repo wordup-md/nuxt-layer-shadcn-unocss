@@ -30,7 +30,7 @@ export function useI18nDocs() {
       }
       return nav._path.startsWith(`/${locale.value}`)
     })
-    console.log(locale.value, 'aa', !!defaultLocale, 'pp', filteredNav)
+
     return locale.value === defaultLocale ? filteredNav : filteredNav[0]?.children
   })
 
