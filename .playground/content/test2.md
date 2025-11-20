@@ -1,5 +1,6 @@
 ---
 title: test 2
+navigation: false
 ---
 
 ::mdc-example

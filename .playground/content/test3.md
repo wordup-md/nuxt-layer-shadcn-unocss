@@ -4,6 +4,7 @@ layout: editorial
 toc: false
 aside: false
 breadcrumb: false
+navigation: false
 ---
 
 ## Basic

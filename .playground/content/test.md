@@ -1,5 +1,7 @@
 ---
-title: Test
+title: AI
+icon: i-lucide:bot
+navigation: false
 layout: editorial
 header:
   position: over

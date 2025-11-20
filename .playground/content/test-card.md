@@ -1,6 +1,7 @@
 ---
 title: Card test
 toc: false
+navigation: false
 ---
 
 ## Basic
