@@ -9,8 +9,8 @@
   }
 
   /* & > p:not(:has(span)):not(:first-child) { */
-  & > p:not(:first-child) {
-    margin-top: 1.5rem;
+  & p:not(:first-child) {
+    --at-apply: "leading-7 [&:not(:first-child)]:mt-6";
   }
 
   & h2.prose-h2:first-child {
@@ -34,16 +34,24 @@
   }
 
   & code {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    position: relative;
-    border-radius: 0.25rem;
-    padding: 0.2rem 0.3rem;
+    --at-apply: "px-1.5 py-0.5 text-sm font-mono font-medium rounded-md inline-block border bg-muted/50";
+  }
 
-    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  & pre {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    --at-apply: "p-3 rounded-lg border bg-muted/30! text-card-foreground shadow-sm overflow-x-auto";
 
-    --un-bg-opacity: 1;
-    background-color: hsl(var(--muted) / var(--un-bg-opacity)) /* hsl(var(--muted)) */;
+    & code {
+      --at-apply: "bg-transparent p-0 border-none";
+    }
+  }
+
+  [in-stack="true"] pre {
+    --at-apply: "rounded-none border-b-none border-l-none border-r-none shadow-none";
+  }
+  .FRONTMATTER pre {
+    --at-apply: "rounded-none border-none shadow-none bg-transparent";
   }
 
   & > div {

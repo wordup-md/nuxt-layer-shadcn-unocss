@@ -1,5 +1,5 @@
 <template>
-  <FieldGroup class="[&>div>div]:divide-y">
+  <FieldGroup class="[&>div>div>span]:block [&>div>div]:divide-y [&>div>div>span:not(:first-child)]:mt-4 [&>div>div>span:not(:first-child)]:pt-4">
     <slot />
   </FieldGroup>
 </template>

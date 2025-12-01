@@ -595,19 +595,19 @@ interface DefaultConfig {
  *
  * @values 'zinc', 'slate', 'stone', 'gray', 'neutral', 'red', 'rose', 'orange', 'green', 'blue', 'yellow', 'violet'
  */
-type Color =
-  | 'zinc'
-  | 'slate'
-  | 'stone'
-  | 'gray'
-  | 'neutral'
-  | 'red'
-  | 'rose'
-  | 'orange'
-  | 'green'
-  | 'blue'
-  | 'yellow'
-  | 'violet'
+type Color
+  = | 'zinc'
+    | 'slate'
+    | 'stone'
+    | 'gray'
+    | 'neutral'
+    | 'red'
+    | 'rose'
+    | 'orange'
+    | 'green'
+    | 'blue'
+    | 'yellow'
+    | 'violet'
 
 /**
  * HTML anchor target attribute values

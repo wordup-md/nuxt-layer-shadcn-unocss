@@ -1,5 +1,5 @@
 <template>
-  <code class="inline-code relative rounded bg-muted px-[0.3rem] pt-[0.2rem] font-mono">
+  <code class="inline-code px-1.5 py-0.5 text-sm font-mono font-medium rounded-md inline-block border bg-muted/50">
     <slot />
   </code>
 </template>
@@ -14,9 +14,9 @@
   line-height: 1.25rem;
 }
 
-p .inline-code {
+/* p .inline-code {
   vertical-align: -0.05rem;
-}
+} */
 
 strong .inline-code {
   font-weight: inherit;
