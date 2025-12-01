@@ -152,6 +152,7 @@ const defaultConfig: DefaultConfig = {
   toc: {
     enable: true,
     enableInMobile: false,
+    progressBar: true,
     title: 'On This Page',
     links: [],
     carbonAds: {
@@ -177,10 +178,10 @@ export function useConfig() {
   const appConfig = computed(() => useAppConfig()?.shadcnDocs || {})
   const { navKeyFromPath } = useContentHelpers()
   const { navigation, page } = useContent()
-  const route = useRoute()
 
   return computed(
     () => {
+      const route = useRoute()
       const processedConfig = customDefu(appConfig.value, defaultConfig)
       const header = processedConfig.header
       const banner = processedConfig.banner

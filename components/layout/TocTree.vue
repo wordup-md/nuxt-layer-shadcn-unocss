@@ -3,15 +3,25 @@
     <li
       v-for="link in links"
       :key="link.id"
-      class="pt-2"
+      class="relative pt-2"
     >
-      <NuxtLink
-        :to="`#${link.id}`"
-        class="text-muted-foreground transition-all hover:text-primary"
-        :class="[activeHeadings.includes(link.id) && 'text-primary']"
-      >
-        {{ link.text }}
-      </NuxtLink>
+      <div class="flex items-center">
+        <div
+          v-if="level === 0 && progressBar"
+          class="absolute md:ml-1.5 left-0 top-0 bottom-0 w-px transition-colors duration-300 ease-in-out"
+          :class="isActive(link) ? 'bg-primary' : 'bg-border'"
+        />
+        <NuxtLink
+          :to="`#${link.id}`"
+          class="text-muted-foreground transition-all hover:text-primary"
+          :class="{
+            'pl-4.5 md:pl-5.5': progressBar,
+            'text-primary': isActive(link),
+          }"
+        >
+          {{ link.text }}
+        </NuxtLink>
+      </div>
       <TocTree
         v-if="link.children"
         :links="(link.children || []).filter((x: any) => x.id !== 'hide-toc')"
@@ -29,7 +39,15 @@ defineProps<{
   level: number
 }>()
 
+const config = useConfig()
+const progressBar = config.value.toc.progressBar
+
 const { activeHeadings, updateHeadings } = useScrollspy()
+
+function isActive(link: TocLink) {
+  return activeHeadings.value.includes(link.id)
+    || link.children?.some(child => activeHeadings.value.includes(child.id))
+}
 
 onMounted(() =>
   updateHeadings([

@@ -492,6 +492,12 @@ interface DefaultConfig {
      */
     enableInMobile: boolean
     /**
+     * Show progress bar in table of contents
+     *
+     * @default true
+     */
+    progressBar: boolean
+    /**
      * Table of contents title
      *
      * @default 'On This Page'

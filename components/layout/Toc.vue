@@ -21,10 +21,10 @@
           v-if="links"
           class="pt-5 text-muted-foreground"
         >
-          <NuxtLink
+          <NuxtLinkLocale
             v-for="(link, i) in links"
             :key="i"
-            :to="link.to"
+            :to="localePath(link.to)"
             :target="link.target"
             class="flex w-full gap-1 underline-offset-4 hover:underline [&:not(:first-child)]:pt-3"
           >
@@ -40,7 +40,7 @@
               class="ml-auto self-center text-muted-foreground"
               size="13"
             />
-          </NuxtLink>
+          </NuxtLinkLocale>
         </div>
       </div>
       <!-- <div class="flex-grow" /> -->
@@ -76,6 +76,7 @@
 defineProps<{ isSmall?: boolean }>()
 
 const { toc } = useContent()
+const { localePath } = useI18nDocs()
 const { title, links: configLinks } = useConfig().value.toc
 const { border } = useConfig().value.header
 const isOpen = ref(false)
