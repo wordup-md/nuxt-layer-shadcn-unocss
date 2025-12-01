@@ -4,14 +4,17 @@
       v-model="mdcAttrs.type"
       chevron
       tooltip="Type"
-      placement="bottom-end"
+      placement="bottom-start"
       :items="types"
-      class="absolute right-1 top-1 z-10 opacity-25 transition-opacity group-hover:opacity-100"
+      class="absolute left-3 top--2 z-10 opacity-0 border rounded pl-2 pr-1 transition-opacity group-hover:opacity-100 bg-background"
     >
       <span class="text-xs font-mono capitalize">{{ model.type }}</span>
     </UiEditorDropdown>
 
-    <Alert v-bind="model">
+    <Alert
+      v-bind="model"
+      no-click
+    >
       <p
         :ref="props.contentRef"
         class="[&>div]:min-h-5.5"
@@ -26,7 +29,7 @@ import type { VueNodeViewProps } from 'prosekit/vue'
 const props = defineProps<VueNodeViewProps>()
 const { getComponentProps } = useMdcEditor()
 
-const types = ['default', 'info', 'success', 'warning', 'danger', 'primary']
+const types = ['default', 'info', 'success', 'warning', 'danger', 'example', 'secondary']
 
 const { model, mdcAttrs } = getComponentProps(props, {
   id: {
