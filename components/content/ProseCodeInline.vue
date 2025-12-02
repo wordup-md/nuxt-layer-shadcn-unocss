@@ -1,5 +1,5 @@
 <template>
-  <code class="inline-code px-1.5 py-0.5 text-sm font-mono font-medium rounded-md inline-block border bg-muted/50">
+  <code class="inline-code px-1.5 text-sm font-mono font-medium rounded-md inline-block border bg-muted/50">
     <slot />
   </code>
 </template>

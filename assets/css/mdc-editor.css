@@ -34,12 +34,10 @@
   }
 
   & code {
-    --at-apply: "px-1.5 py-0.5 text-sm font-mono font-medium rounded-md inline-block border bg-muted/50";
+    --at-apply: "px-1.5 text-sm font-mono font-medium rounded-md inline-block border bg-muted/50";
   }
 
   & pre {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
     --at-apply: "p-3 rounded-lg border bg-muted/30! text-card-foreground shadow-sm overflow-x-auto";
 
     & code {
