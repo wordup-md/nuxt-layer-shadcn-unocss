@@ -1,4 +1,4 @@
-import { dirname, join } from 'node:path'
+import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
@@ -14,10 +14,36 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
-    '@unpress/nuxt-module',
-    // '../../../unpress/packages/nuxt-module/src/module',
     // 'nuxt-og-image',
   ],
+
+  $development: {
+    modules: [
+      '../../../unpress/packages/nuxt-module/src/module',
+    ],
+    alias: {
+      '@unpress/mdc-editor': r('../../unpress/packages/mdc-editor/src/module'),
+      '@unpress/nuxt-module': r('../../unpress/packages/nuxt-module/src/module'),
+    },
+    vite: {
+      server: {
+        fs: {
+          allow: [
+            // Allow serving files from the project root
+            currentDir,
+            // Allow serving files from the monorepo root (parent directories)
+            resolve(currentDir, '../../..'),
+          ],
+        },
+      },
+    },
+  },
+
+  $production: {
+    modules: [
+      '@unpress/nuxt-module',
+    ],
+  },
 
   components: {
     dirs: [
@@ -123,3 +149,7 @@ export default defineNuxtConfig({
     componentDir: join(currentDir, './components/ui'),
   },
 })
+
+function r(p: string) {
+  return resolve(__dirname, p)
+}
