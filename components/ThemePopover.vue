@@ -4,6 +4,7 @@
       <UiButton
         variant="ghost"
         size="icon"
+        aria-label="Toggle theme"
       >
         <NuxtIcon
           name="lucide:paintbrush"

@@ -5,6 +5,7 @@
         variant="ghost"
         size="icon"
         class="md:hidden"
+        aria-label="Open navigation"
       >
         <NuxtIcon
           name="lucide:menu"
