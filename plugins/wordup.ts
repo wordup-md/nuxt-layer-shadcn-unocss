@@ -37,9 +37,84 @@ export default defineNuxtPlugin((nuxtApp) => {
       transform() {
         return { type: 'containerComponent', attrs: { componentName: 'read-more' } }
       },
-      onSelect: () => editor.commands.insertContainerComponent({
-        name: 'read-more',
-      }),
+      onSelect: () => {
+        editor.commands.insertContainerComponent({
+          name: 'read-more',
+        })
+
+        // Set cursor on the input of the component after insertion
+        // Use setTimeout to wait for the DOM update
+        nextTick(() => {
+          const { view, state } = editor
+          if (!view || !state) return
+
+          // Get the current selection position
+          const { $anchor } = state.selection
+          const pos = $anchor.pos
+          // Find the inserted containerComponent node
+          // Walk backwards to find the node we just inserted
+          let node = null
+          let nodePos = -1
+
+          // Check if we're inside a containerComponent
+          for (let depth = $anchor.depth; depth > 0; depth--) {
+            const nodeAtDepth = $anchor.node(depth)
+            if (nodeAtDepth.type.name === 'containerComponent'
+              && nodeAtDepth.attrs.componentName === 'read-more') {
+              node = nodeAtDepth
+              nodePos = $anchor.before(depth)
+              break
+            }
+          }
+
+          // If not found, search forward from current position
+          if (!node) {
+            const doc = state.doc
+            for (let i = Math.max(0, pos - 50); i < Math.min(doc.content.size, pos + 50); i++) {
+              const $pos = doc.resolve(i)
+              for (let depth = $pos.depth; depth > 0; depth--) {
+                const nodeAtDepth = $pos.node(depth)
+                if (nodeAtDepth.type.name === 'containerComponent'
+                  && nodeAtDepth.attrs.componentName === 'read-more') {
+                  node = nodeAtDepth
+                  nodePos = $pos.before(depth)
+                  break
+                }
+              }
+              if (node) break
+            }
+          }
+
+          const prevNode = view.domAtPos(nodePos - 1)
+          // get next html element with js
+          setTimeout(() => {
+            prevNode.node.nextElementSibling?.querySelector('input.INLINE_MENU_LINK_INPUT')?.focus()
+          }, 100)
+          // const node = editor.state.doc.nodeAt(nodePos)
+          // if (node && node.type.name === 'read-more') {
+          //   const input = node.firstChild?.firstChild?.firstChild as HTMLInputElement
+          //   if (input) {
+          //     input.focus()
+          //   }
+          // }
+          // if (node && nodePos >= 0) {
+          //   // Set cursor inside the component (at the start of its content)
+          //   // Position is after the opening tag, typically nodePos + 1
+          //   const insidePos = nodePos + 1
+
+          //   // Import TextSelection dynamically and set selection
+          //   import('prosemirror-state').then(({ TextSelection }) => {
+          //     const tr = state.tr
+          //     const selection = TextSelection.create(tr.doc, insidePos)
+          //     tr.setSelection(selection)
+          //     view.dispatch(tr)
+
+          //     // Focus the editor
+          //     view.focus()
+          //   })
+          // }
+        })
+      },
     })
 
     config.components.push({
