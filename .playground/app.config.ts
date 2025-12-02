@@ -151,6 +151,7 @@ export default defineAppConfig({
       links: [
         {
           title: 'shadcn-vue',
+          alt: 'shadcn vue logo',
           icon: 'https://www.shadcn-vue.com/favicon.ico',
           to: 'https://www.shadcn-vue.com/',
           target: '_blank',

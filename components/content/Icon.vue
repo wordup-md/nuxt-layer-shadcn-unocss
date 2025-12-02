@@ -1,13 +1,7 @@
 <template>
-  <span
-    v-if="name?.endsWith('.svg')"
-    class="svg-icon"
-    :style="`--svg: url(${name}); width: ${size}px; height: ${size}px;`"
-    v-bind="$attrs"
-  />
   <!-- Iconify Icons -->
   <NuxtIcon
-    v-else-if="isValidIcon"
+    v-if="isValidIcon"
     :name
     :size="+size"
     :style="`min-width: ${+size + 1}px; min-height: ${+size + 1}px;`"
@@ -23,10 +17,18 @@
     {{ name }}
   </span>
 
+  <span
+    v-else-if="!name?.startsWith('http') && name?.endsWith('.svg')"
+    class="svg-icon"
+    :style="`--svg: url(${name}); width: ${size}px; height: ${size}px;`"
+    v-bind="$attrs"
+  />
+
   <!-- Link -->
   <NuxtImg
     v-else
     :src="name"
+    :alt
     :style="`width: ${size}px; height: ${size}px;`"
     class="inline-block"
     :class="$attrs.class"
@@ -38,6 +40,7 @@ import { stringToIcon, validateIconName } from '@iconify/utils'
 
 const { name, size = 16 } = defineProps<{
   name: string
+  alt?: string
   size?: number | string
 }>()
 

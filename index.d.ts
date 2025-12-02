@@ -459,6 +459,7 @@ interface DefaultConfig {
     links: ({
       icon: string
       title: string
+      alt?: string
       to: string
       target: string
     })[]

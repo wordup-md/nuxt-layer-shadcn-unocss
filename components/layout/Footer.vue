@@ -27,6 +27,7 @@
           <Icon
             v-if="link?.icon"
             :name="link.icon"
+            :alt="link.alt"
             :size="20"
           />
           <span v-if="link?.title">{{ $t(link.title) }}</span>
