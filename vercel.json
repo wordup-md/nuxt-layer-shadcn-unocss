@@ -1,0 +1,7 @@
+{
+  "buildCommand": "pnpm build",
+  "outputDirectory": ".playground/.vercel/output",
+  "installCommand": "pnpm install",
+  "ignoreCommand": "git describe --exact-match --tags HEAD > /dev/null 2>&1 && exit 1 || exit 0"
+}
+
