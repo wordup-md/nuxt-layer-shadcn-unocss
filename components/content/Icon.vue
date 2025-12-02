@@ -28,6 +28,7 @@
     v-else
     :src="name"
     :style="`width: ${size}px; height: ${size}px;`"
+    class="inline-block"
     :class="$attrs.class"
   />
 </template>

@@ -67,7 +67,7 @@ You can put iconify icons, emojis and urls in `icon`. Smart icon will render the
     <div class="space-x-2">
 
     :icon{name="/logo.svg"}
-    :icon{name="https://vueuse.org/favicon.svg" size=40}
+    :icon{name="https://img.icons8.com/color/48/vue-js.png" size=40}
 
     </div>
   ::
@@ -85,7 +85,7 @@ You can put iconify icons, emojis and urls in `icon`. Smart icon will render the
 
   **URL**
   :icon{name="/logo.svg"}
-  :icon{name="https://vueuse.org/favicon.svg" size=40}
+  :icon{name="https://img.icons8.com/color/48/vue-js.png" size=40} # Keep care of CORS origin restrictions.
   ```
 ::
 
