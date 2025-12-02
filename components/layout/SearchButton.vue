@@ -3,7 +3,7 @@
     <UiButton
       v-if="style === 'input'"
       variant="outline"
-      class="h-8 w-full self-center rounded-md px-1.5 font-normal bg-white/50 text-muted-foreground hover:text-accent-foreground"
+      class="h-8 w-full self-center rounded-md px-1.5 font-normal bg-muted/50 text-muted-foreground hover:text-accent-foreground"
       :class="[inAside ? 'mb-4' : 'md:w-32 lg:w-40']"
       @click="isOpen = true"
     >
