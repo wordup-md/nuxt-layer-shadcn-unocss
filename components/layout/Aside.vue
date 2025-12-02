@@ -4,57 +4,50 @@
     class="app__aside relative overflow-hidden text-sm mt-6 pr-6 md:pr-4 h-[calc(100vh-var(--header-height)-var(--banner-height)-7rem)]"
     type="hover"
   >
-    <LayoutHeaderNavMobile
-      v-if="isMobile"
-      class="mb-5 border-b pb-2"
-    />
-    <LayoutSearchButton v-if="config.search.inAside" />
-    <ul
-      v-if="config.aside.useLevel"
-      class="flex flex-col gap-1 border-b pb-4"
-    >
-      <li
-        v-for="link in navigation || nav"
-        :key="link.id"
-      >
-        <NuxtLink
-          :to="link.redirect ?? link._path"
-          class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
-          :class="[path.startsWith(link._path) && 'bg-muted !text-primary']"
-        >
-          <Icon
-            v-if="link.icon"
-            :name="link.icon"
-            class="self-center"
-            :size="16"
-          />
-          {{ link.title }}
+    <template v-if="!tree?.children.length">
+      <LayoutHeaderNavMobile
+        v-if="isMobile"
+        class="mb-5 border-b pb-2"
+      />
 
-          <span
-            v-for="(badge, i) in link.navBadges"
-            :key="i"
-          >
-            <Badge
-              :variant="badge.variant"
-              :type="badge.type"
-              :size="badge.size ?? 'sm'"
-            >
-              {{ badge.value }}
-            </Badge>
-          </span>
-        </NuxtLink>
-      </li>
-    </ul>
-    <LayoutAsideTree
-      :links
-      :level="0"
-      :class="[config.aside.useLevel ? 'pt-4' : 'pt-1']"
+      <LayoutSearchButton v-if="config.search.inAside" />
+
+      <ul
+        v-if="config.aside.useLevel"
+        class="flex flex-col gap-1 border-b pb-4"
+      >
+        <li
+          v-for="link in navigation || nav"
+          :key="link.id"
+        >
+          <LayoutAsideMenuItem v-bind="{ ...link, children: [] }" />
+        </li>
+      </ul>
+
+      <LayoutAsideTree
+        :links
+        :level="0"
+        :class="[config.aside.useLevel ? 'pt-4' : 'pt-1']"
+      />
+    </template>
+
+    <MDCRenderer
+      v-else
+      :body="tree"
+      class="min-h-10"
+      :class="{ 'flex flex-col gap-1': !!tree }"
+      :components="{
+        'aside-menu-item': AsideMenuItem,
+        'aside-tree-2': AsideTree2,
+      }"
     />
   </UiScrollArea>
 </template>
 
 <script setup lang="ts">
 import type { NavItem } from '@nuxt/content'
+import AsideMenuItem from './AsideMenuItem.vue'
+import AsideTree2 from './AsideTree2.vue'
 
 const { isMobile, navigation, level = 0 } = defineProps<{
   isMobile: boolean
@@ -80,4 +73,19 @@ const links = computed(() => {
 })
 
 const path = computed(() => useRoute().path)
+
+const menu = '/_menu-aside'
+const { data: count } = await useAsyncData(menu + '-count', () => queryContent(menu).count())
+
+let tree = undefined
+if (count.value) {
+  const { data } = await useAsyncData(menu, () =>
+    queryContent(menu).findOne(),
+  )
+  tree = await useMdcMenu(data, {
+    menuComponentName: 'aside-menu-item',
+    submenuComponentName: 'aside-tree-2',
+  })
+  console.log('aime', tree)
+}
 </script>

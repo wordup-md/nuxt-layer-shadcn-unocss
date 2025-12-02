@@ -4,7 +4,7 @@
     <div v-if="link.children">
       <template v-if="folderStyle === 'group'">
         <div
-          class="mt-2 flex items-center gap-2 rounded-md px-2 text-xs font-semibold text-foreground/70 outline-none"
+          class="mt-4 flex items-center gap-2 rounded-md px-2 text-base font-semibold outline-none"
           :class="[link.navTruncate !== false && 'h-8']"
         >
           <LayoutAsideTreeItemButton :link />
