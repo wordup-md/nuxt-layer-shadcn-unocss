@@ -2,7 +2,7 @@
   <NuxtLink
     v-if="prevNext && prevNext._path"
     :to="prevNext._path"
-    class="mb-6 space-y-2 rounded-lg border p-4 transition-all hover:bg-muted/50"
+    class="inline-block w-full mb-6 space-y-2 rounded-lg border p-4 transition-all hover:bg-muted/50"
   >
     <div class="flex flex-row gap-3">
       <div
