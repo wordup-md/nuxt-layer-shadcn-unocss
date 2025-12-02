@@ -19,6 +19,11 @@ export default defineNuxtConfig({
   ],
 
   $env: {
+    development: {
+      modules: [
+        '@unpress/nuxt-module',
+      ],
+    },
     production: {
       modules: [
         '@unpress/nuxt-module',
