@@ -157,6 +157,7 @@ export default defineAppConfig({
           target: '_blank',
         },
         {
+          alt: 'GitHub logo',
           icon: 'lucide:github',
           to: 'https://github.com/wordup-md/nuxt-layer-shadcn-unocss',
           target: '_blank',
