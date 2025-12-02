@@ -1,6 +1,6 @@
 # Nuxt Layer Starter
 
-Fork of [shadcn-docs-nuxt](https://github.com/shadcn/shadcn-docs-nuxt) at v0.8.13
+Fork of [shadcn-docs-nuxt](https://github.com/shadcn/shadcn-docs-nuxt) at v0.8.13\
 `git diff --name-status 54b80e2e96bbc7249170150fb72e20078629a170`
 
 ## Build your website using this layer
