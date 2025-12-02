@@ -14,6 +14,10 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-01-10',
 
+  nitro: {
+    preset: 'vercel',
+  },
+
   // vite: {
   //   server: {
   //     fs: {
@@ -47,6 +51,7 @@ export default defineNuxtConfig({
   },
 
   unpress: {
+    repo: 'https://github.com/wordup-md/nuxt-layer-shadcn-unocss',
     autoMountIfDevMode: true,
     allowMountWithoutLogin: true,
   },
