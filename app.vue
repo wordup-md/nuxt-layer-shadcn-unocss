@@ -44,10 +44,15 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+const { locale } = useI18nDocs()
 useHead({
   bodyAttrs: {
     class: themeClass.value,
     style: `--radius: ${radius.value}rem;--header-height: ${config.value.header.height};--banner-height: 0px;`,
+  },
+  htmlAttrs: {
+    lang: locale.value,
+    dir: locale.value === 'ar' ? 'rtl' : 'ltr',
   },
 })
 </script>

@@ -86,6 +86,5 @@ if (count.value) {
     menuComponentName: 'aside-menu-item',
     submenuComponentName: 'aside-tree-2',
   })
-  console.log('aime', tree)
 }
 </script>
