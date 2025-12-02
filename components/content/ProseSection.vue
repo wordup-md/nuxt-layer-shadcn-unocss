@@ -1,14 +1,19 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
+import Slugger from 'github-slugger'
+
+const slugger = new Slugger()
 
 // Don't inherit attrs, we want to use it with cn
 defineOptions({
   inheritAttrs: false,
 })
 
-defineProps<{
+const props = defineProps<{
   title?: string
 }>()
+
+const id = computed(() => slugger.slug(props.title ?? ''))
 
 defineSlots()
 </script>
@@ -20,6 +25,7 @@ defineSlots()
       'relative p-6 mt-6',
       classToString($attrs.class),
     )"
+    :aria-labelledby="id"
   >
     <div>
       <div
@@ -32,7 +38,10 @@ defineSlots()
         />
       </div>
 
-      <ProseH2 v-if="title">
+      <ProseH2
+        v-if="title"
+        :id
+      >
         {{ title }}
       </ProseH2>
 
