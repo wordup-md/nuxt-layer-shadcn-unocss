@@ -16,15 +16,33 @@
 
     <div
       v-if="badges"
-      class="flex gap-2 pt-4"
+      class="flex items-center gap-2 pt-4"
     >
-      <NuxtLink
+      <template
         v-for="(badge, i) in badges"
         :key="i"
-        :to="badge.to"
-        :target="badge.target"
       >
+        <template v-if="badge.to">
+          <NuxtLink
+            :to="badge.to"
+            :target="badge.target"
+          >
+            <UiBadge
+              :variant="badge.variant || 'secondary'"
+              :type="badge.type"
+              class="gap-1 rounded-md"
+            >
+              <Icon
+                :size="12"
+                :name="badge.icon || 'lucide:external-link'"
+              />
+              {{ badge.value }}
+            </UiBadge>
+          </NuxtLink>
+        </template>
+
         <UiBadge
+          v-else
           :variant="badge.variant || 'secondary'"
           :type="badge.type"
           class="gap-1 rounded-md"
@@ -36,7 +54,7 @@
           />
           {{ badge.value }}
         </UiBadge>
-      </NuxtLink>
+      </template>
     </div>
 
     <div
