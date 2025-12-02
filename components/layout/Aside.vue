@@ -72,7 +72,7 @@ const links = computed(() => {
   return navigation || nav.value
 })
 
-const path = computed(() => useRoute().path)
+// const path = computed(() => useRoute().path)
 
 const menu = '/_menu-aside'
 const { data: count } = await useAsyncData(menu + '-count', () => queryContent(menu).count())

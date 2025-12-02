@@ -84,7 +84,6 @@
               <!-- <LayoutSubmenuTree
                   :level="1"
                 /> -->
-
               <div
                 v-for="component in sidebarRightComponents"
                 :key="component.name"
