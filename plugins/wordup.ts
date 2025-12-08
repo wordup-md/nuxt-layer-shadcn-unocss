@@ -1,3 +1,5 @@
+import { TextSelection } from 'prosemirror-state'
+
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.hook('mdc-editor:config', ({ config, editor }: { config: any, editor: any }) => {
     config.components.push({
@@ -16,9 +18,25 @@ export default defineNuxtPlugin((nuxtApp) => {
       transform() {
         return { type: 'containerComponent', attrs: { componentName: 'alert' } }
       },
-      onSelect: () => editor.commands.insertContainerComponent({
-        name: 'alert',
-      }),
+      onSelect: async () => {
+        const nodes = await config.convertMarkdownToNode(`::alert{type="info"}
+{|}
+::
+:alert{type="danger"}`)
+        console.log('nodes', nodes, editor, editor.commands, editor.schema.nodeFromJSON(nodes))
+
+        const { schema, view, state } = editor
+        const parsedNodes = schema.nodeFromJSON(nodes)
+        console.log('parsedNodes', parsedNodes)
+        const tr = state.tr
+        tr.insert(state.selection.anchor - 2, parsedNodes)
+        // put caret after the inserted nodes
+        // tr.setSelection(TextSelection.create(tr.doc, state.selection.anchor + parsedNodes.nodeSize))
+        // focus the editor
+
+        // view.focus()
+        return view.dispatch(tr)
+      },
     })
 
     config.components.push({
