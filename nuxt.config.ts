@@ -21,35 +21,35 @@ export default defineNuxtConfig({
   $env: {
     development: {
       modules: [
-        '@unpress/nuxt-module',
+        !process.env.UNPRESS ? '@unpress/nuxt-module' : '../../../unpress/packages/nuxt-module/src/module',
       ],
+
+      alias: !process.env.UNPRESS
+        ? undefined
+        : {
+            '@unpress/mdc-editor': r('../../unpress/packages/mdc-editor/src/module'),
+            '@unpress/nuxt-module': r('../../unpress/packages/nuxt-module/src/module'),
+          },
+
+      vite: !process.env.UNPRESS
+        ? undefined
+        : {
+            server: {
+              fs: {
+                allow: [
+                  // Allow serving files from the project root
+                  currentDir,
+                  // Allow serving files from the monorepo root (parent directories)
+                  resolve(currentDir, '../../..'),
+                ],
+              },
+            },
+          },
     },
     production: {
       modules: [
         '@unpress/nuxt-module',
       ],
-    },
-
-    unpress: {
-      modules: [
-        '../../../unpress/packages/nuxt-module/src/module',
-      ],
-      alias: {
-        '@unpress/mdc-editor': r('../../unpress/packages/mdc-editor/src/module'),
-        '@unpress/nuxt-module': r('../../unpress/packages/nuxt-module/src/module'),
-      },
-      vite: {
-        server: {
-          fs: {
-            allow: [
-            // Allow serving files from the project root
-              currentDir,
-              // Allow serving files from the monorepo root (parent directories)
-              resolve(currentDir, '../../..'),
-            ],
-          },
-        },
-      },
     },
   },
 
