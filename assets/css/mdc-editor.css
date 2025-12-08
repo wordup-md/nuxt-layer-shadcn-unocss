@@ -38,7 +38,7 @@
   }
 
   & pre {
-    --at-apply: "p-3 rounded-lg border bg-muted/30! text-card-foreground shadow-sm overflow-x-auto";
+    --at-apply: "my-5! p-3 rounded-lg border bg-muted/30! text-card-foreground shadow-sm overflow-x-auto";
 
     & code {
       --at-apply: "bg-transparent p-0 border-none";
@@ -49,7 +49,7 @@
     --at-apply: "rounded-none border-b-none border-l-none border-r-none shadow-none";
   }
   .FRONTMATTER pre {
-    --at-apply: "rounded-none border-none shadow-none bg-transparent";
+    --at-apply: "my-0! rounded-none border-none shadow-none bg-transparent";
   }
 
   & > div {
