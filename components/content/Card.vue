@@ -136,14 +136,14 @@
   <div
     :class="cn('group/card group-has-[div]:mt-0 [&:not(:first-child)]:mt-5', String($attrs.class || ''))"
   >
-    <NuxtLink
+    <NuxtLinkLocale
       v-if="to"
       :to
       :target
       style="text-decoration: none; font-weight: 500"
     >
       <CardInner />
-    </NuxtLink>
+    </NuxtLinkLocale>
 
     <CardInner v-else />
   </div>

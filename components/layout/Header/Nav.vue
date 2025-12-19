@@ -19,7 +19,7 @@
                 v-for="link in item.links"
                 :key="link.title"
               >
-                <NuxtLink
+                <NuxtLinkLocale
                   :to="link.to"
                   :target="link.target"
                   class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
@@ -39,12 +39,12 @@
                       {{ $t(link.description) }}
                     </div>
                   </div>
-                </NuxtLink>
+                </NuxtLinkLocale>
               </li>
             </ul>
           </UiNavigationMenuContent>
         </template>
-        <NuxtLink
+        <NuxtLinkLocale
           v-else
           :to="item.to"
           :target="item.target"
@@ -64,7 +64,7 @@
           >
             {{ $t(item.title) }}
           </div>
-        </NuxtLink>
+        </NuxtLinkLocale>
       </UiNavigationMenuItem>
     </UiNavigationMenuList>
   </UiNavigationMenu>

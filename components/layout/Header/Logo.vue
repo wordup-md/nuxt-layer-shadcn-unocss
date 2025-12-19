@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLink
+    <NuxtLinkLocale
       v-if="logo.light && logo.dark"
       to="/"
       class="logo__container flex transition"
@@ -21,7 +21,7 @@
       >
         {{ $t(title) }}
       </div>
-    </NuxtLink>
+    </NuxtLinkLocale>
   </div>
 </template>
 

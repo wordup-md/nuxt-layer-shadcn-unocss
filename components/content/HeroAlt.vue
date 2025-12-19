@@ -7,7 +7,7 @@
       class="flex flex-col items-start gap-2"
       :class="{ 'md:col-span-2': $slots.right }"
     >
-      <NuxtLink
+      <NuxtLinkLocale
         v-if="announcement"
         :to="announcement.to"
         :target="announcement.target"
@@ -30,7 +30,7 @@
           name="lucide:arrow-right"
           class="ml-1 size-4"
         />
-      </NuxtLink>
+      </NuxtLinkLocale>
 
       <h1
         class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]"
@@ -48,7 +48,7 @@
       </p>
 
       <div class="flex w-full items-center justify-start gap-2 py-2">
-        <NuxtLink
+        <NuxtLinkLocale
           v-for="(action, i) in actions"
           :key="i"
           :to="action.to"
@@ -70,7 +70,7 @@
               class="ml-1"
             />
           </UiButton>
-        </NuxtLink>
+        </NuxtLinkLocale>
       </div>
     </section>
     <div

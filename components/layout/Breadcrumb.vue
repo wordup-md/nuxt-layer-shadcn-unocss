@@ -6,7 +6,7 @@
         :key="breadcrumb.title"
       >
         <UiBreadcrumbItem>
-          <NuxtLink
+          <NuxtLinkLocale
             :href="breadcrumb.href || '#'"
             class="transition-colors hover:text-foreground flex items-center gap-2"
             :class="index === breadcrumbs.length - 1 && 'text-foreground'"
@@ -23,7 +23,7 @@
               :name="breadcrumb.media"
             />
             {{ breadcrumb.title }}
-          </NuxtLink>
+          </NuxtLinkLocale>
         </UiBreadcrumbItem>
 
         <UiBreadcrumbSeparator v-if="index !== breadcrumbs.length - 1" />

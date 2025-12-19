@@ -3,7 +3,7 @@
     v-if="enabledPageFooter"
     class="mb-6 w-fit"
   >
-    <NuxtLink
+    <NuxtLinkLocale
       :to="url"
       target="_blank"
       class="text-sm font-semibold text-primary"
@@ -14,7 +14,7 @@
           {{ $t(text) }}
         </span>
       </div>
-    </NuxtLink>
+    </NuxtLinkLocale>
   </div>
 </template>
 

@@ -23,7 +23,7 @@
         :key="i"
       >
         <template v-if="badge.to">
-          <NuxtLink
+          <NuxtLinkLocale
             :to="badge.to"
             :target="badge.target"
           >
@@ -38,7 +38,7 @@
               />
               {{ badge.value }}
             </UiBadge>
-          </NuxtLink>
+          </NuxtLinkLocale>
         </template>
 
         <UiBadge
@@ -61,7 +61,7 @@
       v-if="authors"
       class="-mx-4 flex divide-x pt-4"
     >
-      <NuxtLink
+      <NuxtLinkLocale
         v-for="author in authors"
         :key="author.name"
         :to="author.to"
@@ -88,7 +88,7 @@
             @{{ author.username }}
           </div>
         </div>
-      </NuxtLink>
+      </NuxtLinkLocale>
     </div>
   </div>
 </template>

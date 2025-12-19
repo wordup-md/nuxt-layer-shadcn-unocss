@@ -12,7 +12,7 @@ const { to, target, icon, title, description, tag } = defineProps<{
 
 <template>
   <component :is="tag || 'div'">
-    <NuxtLink
+    <NuxtLinkLocale
       :to
       :target
       class="mb-1 flex w-full gap-1 group"
@@ -34,6 +34,6 @@ const { to, target, icon, title, description, tag } = defineProps<{
           {{ description }}
         </div>
       </div>
-    </NuxtLink>
+    </NuxtLinkLocale>
   </component>
 </template>

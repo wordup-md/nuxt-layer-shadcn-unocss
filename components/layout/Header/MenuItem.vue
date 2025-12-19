@@ -17,7 +17,7 @@ const { to, target, showLinkIcon, icon, title, tag, dropdownClass }
 
 <template>
   <UiNavigationMenuItem class="relative">
-    <NuxtLink
+    <NuxtLinkLocale
       v-if="!$slots.content"
       :to
       :target
@@ -42,7 +42,7 @@ const { to, target, showLinkIcon, icon, title, tag, dropdownClass }
         <span v-if="title">{{ title }}</span>
         <slot v-else-if="$slots.default" />
       </div>
-    </NuxtLink>
+    </NuxtLinkLocale>
 
     <template v-else>
       <UiNavigationMenuTrigger

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink
+  <NuxtLinkLocale
     v-if="prevNext && prevNext._path"
     :to="prevNext._path"
     class="inline-block w-full mb-6 space-y-2 rounded-lg border p-4 transition-all hover:bg-muted/50"
@@ -37,7 +37,7 @@
         />
       </div>
     </div>
-  </NuxtLink>
+  </NuxtLinkLocale>
 </template>
 
 <script setup lang="ts">

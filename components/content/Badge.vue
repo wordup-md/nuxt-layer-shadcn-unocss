@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink
+  <NuxtLinkLocale
     v-if="to"
     :to
     :target
@@ -21,7 +21,7 @@
       </span>
       <ContentSlot unwrap="p" />
     </UiBadge>
-  </NuxtLink>
+  </NuxtLinkLocale>
 
   <span
     v-else

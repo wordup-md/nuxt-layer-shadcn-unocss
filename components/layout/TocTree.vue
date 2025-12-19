@@ -11,7 +11,7 @@
           class="absolute md:ml-1.5 left-0 top-0 bottom-0 w-px transition-colors duration-300 ease-in-out"
           :class="isActive(link) ? 'bg-primary' : 'bg-border'"
         />
-        <NuxtLink
+        <NuxtLinkLocale
           :to="`#${link.id}`"
           class="text-muted-foreground transition-all hover:text-primary"
           :class="{
@@ -20,7 +20,7 @@
           }"
         >
           {{ link.text }}
-        </NuxtLink>
+        </NuxtLinkLocale>
       </div>
       <TocTree
         v-if="link.children"

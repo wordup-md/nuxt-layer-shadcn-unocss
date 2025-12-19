@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink
+  <NuxtLinkLocale
     :to="to || href"
     :target="(blank && '_blank') || target"
     class="button-link block"
@@ -26,7 +26,7 @@
         class="ml-2"
       />
     </UiButton>
-  </NuxtLink>
+  </NuxtLinkLocale>
 </template>
 
 <script setup lang="ts">

@@ -54,7 +54,7 @@
           <NuxtLinkLocale
             v-for="(link, i) in config.header.links"
             :key="i"
-            :to="localePath(link?.to)"
+            :to="link?.to"
             :target="link?.target"
           >
             <UiButton
@@ -87,7 +87,7 @@ import { useWindowScroll } from '@vueuse/core'
 import { cn } from '@/lib/utils'
 
 const config = useConfig()
-const { i18nEnabled, localePath } = useI18nDocs()
+const { i18nEnabled } = useI18nDocs()
 
 const { y } = useWindowScroll()
 

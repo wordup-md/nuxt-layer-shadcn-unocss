@@ -19,7 +19,7 @@
             v-for="link in item.links"
             :key="link.title"
           >
-            <NuxtLink
+            <NuxtLinkLocale
               :to="link.to"
               :target="link.to"
               class="mb-1 flex w-full gap-2 rounded-md px-3 py-2 transition-all hover:bg-muted"
@@ -39,13 +39,13 @@
                   {{ $t(link.description) }}
                 </div>
               </div>
-            </NuxtLink>
+            </NuxtLinkLocale>
           </li>
         </ul>
       </UiCollapsibleContent>
     </UiCollapsible>
   </template>
-  <NuxtLink
+  <NuxtLinkLocale
     v-else
     :to="item.to"
     :target="item.target"
@@ -58,7 +58,7 @@
       class="ml-1 text-muted-foreground"
       size="12"
     />
-  </NuxtLink>
+  </NuxtLinkLocale>
 </template>
 
 <script setup lang="ts">

@@ -1,6 +1,7 @@
 <template>
-  <NuxtLayout :class="page.header?.position === 'over' && 'header-over'">
+  <NuxtLayout :class="page?.header?.position === 'over' && 'header-over'">
     <ContentCms
+      v-if="page"
       :key="page._id"
       :value="page"
       class="content-grid"

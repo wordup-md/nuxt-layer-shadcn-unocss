@@ -30,7 +30,7 @@
     </div>
 
     <div class="hero__content flex flex-col gap-6 w-full z-1 of-hidden">
-      <NuxtLink
+      <NuxtLinkLocale
         v-if="announcement"
         :to="announcement.to"
         :target="announcement.target"
@@ -55,7 +55,7 @@
           name="lucide:arrow-right"
           class="ml-1 size-4"
         />
-      </NuxtLink>
+      </NuxtLinkLocale>
 
       <h1 class="hero__title text-center text-3xl font-bold md:text-6xl md:leading-[1.25]">
         <ContentSlot
@@ -78,7 +78,7 @@
         v-if="actions"
         class="hero__actions flex w-full items-center justify-center space-x-4 py-4 md:pb-10"
       >
-        <NuxtLink
+        <NuxtLinkLocale
           v-for="(action, i) in actions"
           :key="i"
           :to="action.to"
@@ -100,7 +100,7 @@
               class="ml-1"
             />
           </UiButton>
-        </NuxtLink>
+        </NuxtLinkLocale>
       </section>
 
       <div

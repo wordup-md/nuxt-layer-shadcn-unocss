@@ -3,12 +3,12 @@
     :id
     class="prose-h5 scroll-m-20 text-lg font-semibold tracking-tight [&:not(:first-child)]:mt-6"
   >
-    <NuxtLink
+    <NuxtLinkLocale
       v-if="id && generate"
       :to="`#${id}`"
     >
       <slot />
-    </NuxtLink>
+    </NuxtLinkLocale>
     <slot v-else />
   </h5>
 </template>

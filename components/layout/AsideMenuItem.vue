@@ -72,7 +72,7 @@ const isOpen = ref(false)
     </template>
   </div>
 
-  <NuxtLink
+  <NuxtLinkLocale
     v-else
     :to="redirect ?? _path ?? to"
     class="flex h-8 items-center gap-2 rounded-md p-2 text-sm text-foreground/80 hover:bg-muted hover:text-primary"
@@ -99,5 +99,5 @@ const isOpen = ref(false)
         {{ badge.value }}
       </Badge>
     </span>
-  </NuxtLink>
+  </NuxtLinkLocale>
 </template>

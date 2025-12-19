@@ -8,7 +8,7 @@
         'border-b': border,
       }"
     >
-      <NuxtLink
+      <NuxtLinkLocale
         :to
         class="container flex items-stretch w-full md:px-8 h-full"
         @click.prevent.stop="navigate"
@@ -18,7 +18,7 @@
           :value="content"
           class="flex items-center justify-center text-primary text-lg w-full"
         />
-      </NuxtLink>
+      </NuxtLinkLocale>
 
       <div class="absolute right-0 top-0 h-full">
         <div class="container h-full flex items-stretch justify-end">

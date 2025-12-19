@@ -13,7 +13,7 @@
         class="text-sm"
       />
       <span class="flex-1" />
-      <NuxtLink
+      <NuxtLinkLocale
         v-for="(link, i) in footer.links"
         :key="i"
         :to="link?.to"
@@ -32,7 +32,7 @@
           />
           <span v-if="link?.title">{{ $t(link.title) }}</span>
         </UiButton>
-      </NuxtLink>
+      </NuxtLinkLocale>
 
       <ButtonLogin v-if="footer.showLogin" />
     </div>

@@ -23,14 +23,14 @@
           class="flex gap-3 text-secondary-foreground"
           :class="{ 'mx-auto': center }"
         >
-          <NuxtLink
+          <NuxtLinkLocale
             v-for="link in links"
             :key="link.to"
             :to="link.to"
             :target="link.target"
           >
             <Icon :name="link.icon" />
-          </NuxtLink>
+          </NuxtLinkLocale>
         </div>
       </div>
     </UiCardHeader>
