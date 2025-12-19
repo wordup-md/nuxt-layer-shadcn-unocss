@@ -32,6 +32,9 @@ export default defineAppConfig({
         dark: '/logo-dark.svg',
       },
       border: true,
+      languageSwitcher: {
+        enable: true,
+      },
       darkModeToggle: true,
       nav: [{
         title: 'Docs',

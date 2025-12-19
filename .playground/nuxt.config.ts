@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   extends: ['..'],
   modules: [
     '@nuxt/eslint',
-    '@unpress/nuxt-module',
+    // '@unpress/nuxt-module',
     // '../../../unpress/packages/nuxt-module/src/module',
   ],
 
@@ -44,6 +44,18 @@ export default defineNuxtConfig({
 
   i18n: {
     defaultLocale: 'en',
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        language: 'en-US',
+      },
+      {
+        code: 'fr',
+        name: 'Français',
+        language: 'fr-FR',
+      },
+    ],
   },
 
   unocss: {
@@ -51,7 +63,7 @@ export default defineNuxtConfig({
   },
 
   unpress: {
-    repo: 'https://github.com/wordup-md/nuxt-layer-shadcn-unocss',
+    // repo: 'https://gitlab.com/ManUtopiK/nuxt-layer/-/tree/gitlab',
     autoMountIfDevMode: true,
     allowMountWithoutLogin: true,
   },

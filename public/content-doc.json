@@ -801,15 +801,6 @@
     "_path": "development"
   },
   {
-    "title": "Démo",
-    "_id": "content:demo.md",
-    "_path": "demo",
-    "content": "\n\n## Un titre\n\n",
-    "description": "Démo",
-    "icon": "lucide:camera",
-    "key": "example"
-  },
-  {
     "title": "Layout",
     "_id": "content:layout.md",
     "_path": "layout",
