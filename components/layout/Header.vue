@@ -46,14 +46,15 @@
             v-if="!config.search.inAside && config.search.style === 'button'"
           />
 
+          <LangSwitcher v-if="i18nEnabled" />
           <ThemePopover v-if="config.theme.customizable" />
           <DarkModeToggle v-if="config.header.darkModeToggle" />
           <A11yModeToggle />
 
-          <NuxtLink
+          <NuxtLinkLocale
             v-for="(link, i) in config.header.links"
             :key="i"
-            :to="link?.to"
+            :to="localePath(link?.to)"
             :target="link?.target"
           >
             <UiButton
@@ -67,7 +68,7 @@
                 :size="18"
               />
             </UiButton>
-          </NuxtLink>
+          </NuxtLinkLocale>
         </div>
       </div>
     </div>
@@ -86,6 +87,7 @@ import { useWindowScroll } from '@vueuse/core'
 import { cn } from '@/lib/utils'
 
 const config = useConfig()
+const { i18nEnabled, localePath } = useI18nDocs()
 
 const { y } = useWindowScroll()
 
