@@ -801,6 +801,20 @@
     "_path": "development"
   },
   {
+    "title": "fr",
+    "children": [
+      {
+        "title": "Accueil",
+        "_id": "content:fr:index.md",
+        "_path": "fr/index",
+        "content": "\n\n::hero\n---\nactions:\n  - name: Démarrez\n    to: /fr/getting-started/introduction\n  - name: GitHub\n    variant: outline\n    to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss\n    leftIcon: lucide:github\nannouncement:\n  title: Version 0.8.13\n  icon: 🎉\n  to: https://github.com/wordup-md/nuxt-layer-shadcn-unocss/releases/latest\n  target: _blank\nclass: full-width full-content\n---\n#title\nAccueil\n\n#description\nConstruisez votre documentation, blog, boutique ou tout autre chose avec facilité. :br\n\nTemplate Nuxt Content construit avec [shadcn-vue](https://www.shadcn-vue.com) et [unocss](https://unocss.dev).\n::\n",
+        "description": "Effortless and Beautiful Template.",
+        "layout": "editorial",
+        "navigation": false
+      }
+    ]
+  },
+  {
     "title": "Layout",
     "_id": "content:layout.md",
     "_path": "layout",
